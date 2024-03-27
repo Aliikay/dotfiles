@@ -1,0 +1,34 @@
+[pyprland]
+plugins = [
+    "expose",
+    #"workspaces_follow_focus",
+    "scratchpads",
+    "shortcuts_menu",
+    "fetch_client_menu"
+]
+
+[workspaces_follow_focus]
+max_workspaces = 10 # number of workspaces before cycling
+
+# Note: scratchpads are ALWAYS loaded and running. Make sure they're light and you dont have too many
+[scratchpads.volume]
+animation = "fromBottom"
+command = "pavucontrol"
+class = "pavucontrol"
+size = "40% 90%"
+unfocus = "hide"
+lazy = true
+
+[shortcuts_menu.entries]
+
+"Open Jira ticket" = 'open-jira-ticket "$(wl-paste)"'
+Relayout = "pypr relayout"
+"Fetch window" = "pypr fetch_client_menu"
+"Hyprland socket" = 'kitty  socat - "UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"'
+"Hyprland logs" = 'kitty tail -f /tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log'
+
+"Serial USB Term" = [
+    {name="device", command="ls -1 /dev/ttyUSB*; ls -1 /dev/ttyACM*"},
+    {name="speed", options=["115200", "9600", "38400", "115200", "256000", "512000"]},
+    "kitty miniterm --raw --eol LF [device] [speed]"
+]
