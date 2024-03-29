@@ -15,14 +15,6 @@
   boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
-  boot.loader.grub.enableCryptodisk=true;
-
-  boot.initrd.luks.devices."luks-471a899d-23e7-45be-ac34-fa166290f24c".keyFile = "/crypto_keyfile.bin";
   boot.initrd.availableKernelModules = [
     "aesni_intel"
     "cryptd"
