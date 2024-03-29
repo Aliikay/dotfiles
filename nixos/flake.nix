@@ -8,6 +8,9 @@
     # Makes various tweaks for audio production
     musnix  = { url = "github:musnix/musnix"; };
     
+    # Flatpaks
+    nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
+    
     # Home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -19,13 +22,15 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-flatpak, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
 			specialArgs = { inherit inputs; };
 			modules = [
 				inputs.musnix.nixosModules.musnix
+				nix-flatpak.nixosModules.nix-flatpak
+				
 				./configuration.nix
 				
 				home-manager.nixosModules.home-manager
