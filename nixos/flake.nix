@@ -2,8 +2,12 @@
   description = "A very basic flake";
 
   inputs = {
-  	# Base system
-    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
+  	# Default to the nixos-unstable branch
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Latest stable branch of nixpkgs, used for version rollback
+    # The current latest version is 23.11
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     
     # Makes various tweaks for audio production
     musnix  = { url = "github:musnix/musnix"; };
@@ -25,11 +29,25 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpgkgs-stable, home-manager, nix-flatpak, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
-			specialArgs = { inherit inputs; };
+			specialArgs = {
+					inherit inputs;
+					inherit system;
+          # To use packages from nixpkgs-stable,
+          # we configure some parameters for it first
+          pkgs-stable = import nixpkgs-stable {
+            # Refer to the `system` parameter from
+            # the outer scope recursively
+            inherit system;
+            inherit inputs;
+            # To use Chrome, we need to allow the
+            # installation of non-free software.
+            config.allowUnfree = true;
+           };
+			};
 			modules = [
 				inputs.musnix.nixosModules.musnix
 				nix-flatpak.nixosModules.nix-flatpak
