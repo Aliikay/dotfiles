@@ -2,7 +2,8 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs = { url = "github:NixOS/nixpkgs/nixos-23.11"; };
+    musnix  = { url = "github:musnix/musnix"; };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
@@ -11,6 +12,7 @@
 			
 			specialArgs = { inherit inputs; };
 			modules = [
+				inputs.musnix.nixosModules.musnix
 				./configuration.nix
 			];
 		};
