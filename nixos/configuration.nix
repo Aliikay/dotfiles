@@ -169,6 +169,7 @@
   #  wget
      foot
      aseprite
+     ags
      bear
      blueberry
      blender
