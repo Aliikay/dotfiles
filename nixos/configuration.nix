@@ -78,6 +78,7 @@
   
   # Hyprland
   programs.hyprland.enable = true;
+  programs.hyprland.xwayland.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -111,7 +112,7 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input"];
     packages = with pkgs; [
       firefox
     #  thunderbird
