@@ -155,6 +155,12 @@
     "us.zoom.Zoom"
     "com.system76.Popsicle"
   ];
+  
+  # Flatpak auto updates
+  services.flatpak.update.auto = {
+		enable = true;
+		onCalendar = "weekly"; # Default value
+	};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
