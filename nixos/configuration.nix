@@ -111,7 +111,7 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio"];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -120,6 +120,13 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Music Production tweaks
+  musnix = {
+  	enable = true;
+  	# kernel.realtime = true;
+  }
+  
   
   # Setup steam
   programs.steam = {
