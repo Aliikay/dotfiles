@@ -140,6 +140,20 @@
   services.flatpak.enable = true;
   services.flatpak.packages = [
     "md.obsidian.Obsidian"
+    "com.usebottles.bottles"
+    "com.github.tchx84.Flatseal"
+    "de.haeckerfelix.Fragments"
+    "com.gitfiend.GitFiend"
+    "com.google.Chrome"
+    "org.pipewire.Helvum"
+    "de.haeckerfelix.Shortwave"
+    "com.nextcloud.desktopclient.nextcloud"
+    "org.prismlauncher.PrismLauncher"
+    "it.mijorus.smile"
+    "com.spotify.Client"
+    "io.github.spacingbat3.webcord"
+    "us.zoom.Zoom"
+    "com.system76.Popsicle"
   ];
 
   # List packages installed in system profile. To search, run:
@@ -177,8 +191,12 @@
      pyprland
      
      itch
+     krita
+     libreoffice
      libsForQt5.qt5ct
      qt6Packages.qt6ct
+     lutris
+     melonDS
      nautilus-open-any-terminal
      neofetch
      onlyoffice-bin
@@ -190,6 +208,8 @@
      renoise
      slurp
      thermald
+     thunderbird
+     vlc
      wine
      webp-pixbuf-loader
      waydroid
