@@ -32,6 +32,7 @@
 				nix-flatpak.nixosModules.nix-flatpak
 				
 				./configuration.nix
+				./illogical-impulse-dependancies.nix
 				
 				home-manager.nixosModules.home-manager
         {
