@@ -7,6 +7,9 @@
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  
+  programs.npm.enable = true;
+  
   environment.systemPackages = with pkgs; [
   	# Basic
 		coreutils
@@ -18,7 +21,6 @@
 		wget
 		ripgrep
 		gojq
-		npm
 		meson
 		typescript
 		gjs
@@ -26,19 +28,15 @@
 		axel
 		
 		# Python
-		python-build
-		python-materialyoucolor-git
-		python-pillow
-		python-pywal
-		python-setuptools-scm
-		python-wheel
-		
-		# Basic Graphical Env
-		xorg-xrandr
+		#python-build
+		#python-materialyoucolor-git
+		#python-pillow
+		#python-pywal
+		#python-setuptools-scm
+		#python-wheel
 		
 		# Audio
 		pavucontrol
-		wireplumber
 		libdbusmenu-gtk3
 		plasma-browser-integration
 		playerctl
@@ -55,34 +53,29 @@
 		ydotool
 		
 		# Gnome
-		polkit-gnome
-		gnome-keyring
-		gnome-control-center
 		blueberry
-		networkmanager
 		brightnessctl
 		wlsunset
-		gnome-bluetooth-3.0
 		
 		# Widgets
-		python-pywayland
-		python-psutil
+		#python-pywayland
+		#python-psutil
 		wlogout
 		wl-clipboard
 		
 		# Fonts & Themes
-		adw-gtk3-git
 		qt5ct
-		qt5-wayland
-		gradience-git
+		gradience
 		fontconfig
-		ttf-readex-pro
-		ttf-jetbrains-mono-nerd
-		ttf-material-symbols-variable-git
-		ttf-space-mono-nerd
 		fish
 		foot
 		starship
+		nerdfonts
+  ];
+  
+  fonts.packages = with pkgs; [
+	jetbrains-mono
+	material-symbols
   ];
 
 }

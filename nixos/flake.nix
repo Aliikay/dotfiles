@@ -11,6 +11,9 @@
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
     
+    # Ags
+    ags.url = "github:Aylur/ags";
+    
     # Home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -38,8 +41,9 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          
+          home-manager.extraSpecialArgs = {inherit inputs; };
 
-          # TODO replace ryan with your own username
           home-manager.users.alikay = import ./home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix

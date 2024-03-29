@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   # TODO please change the username & home directory to your own
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
+  
+  imports = [ inputs.ags.homeManagerModules.default ];
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -25,6 +27,11 @@
   home.packages = with pkgs; [
     cowsay
   ];
+  
+  # AGS
+  programs.ags = {
+  	enable = true;  	
+  };
 
   # basic configuration of git, please change to your own
   programs.git = {

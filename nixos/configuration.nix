@@ -170,8 +170,8 @@
   #  wget
      foot
      aseprite
-     ags
      bear
+     btop
      blueberry
      blender
      brightnessctl
