@@ -38,6 +38,9 @@
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
+  # Allow for broken packages
+  nixpkgs.config.allowBroken = true;
+  
   # Automatic System Updates
   system.autoUpgrade = {
   	enable = true;
@@ -162,8 +165,8 @@
 		enable = true;
 		onCalendar = "weekly"; # Default value
 	};
-
-  # List packages installed in system profile. To search, run:
+ 
+  # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -175,7 +178,6 @@
      blueberry
      blender
      brightnessctl
-     butler
      celluloid
      dart-sass
      docker

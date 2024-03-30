@@ -7,7 +7,7 @@
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/23.11";
     
     # Makes various tweaks for audio production
     musnix  = { url = "github:musnix/musnix"; };
@@ -20,7 +20,7 @@
     
     # Home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,
@@ -29,22 +29,19 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpgkgs-stable, home-manager, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
 			specialArgs = {
 					inherit inputs;
-					inherit system;
           # To use packages from nixpkgs-stable,
           # we configure some parameters for it first
           pkgs-stable = import nixpkgs-stable {
             # Refer to the `system` parameter from
             # the outer scope recursively
-            inherit system;
             inherit inputs;
-            # To use Chrome, we need to allow the
-            # installation of non-free software.
+            system = "x86_64-linux";
             config.allowUnfree = true;
            };
 			};
