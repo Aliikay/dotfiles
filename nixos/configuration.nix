@@ -98,8 +98,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -212,7 +212,7 @@
      hyprpicker
      pyprland
      
-     itch
+     pkgs-stable.itch
      krita
      libreoffice
      libsForQt5.qt5ct
