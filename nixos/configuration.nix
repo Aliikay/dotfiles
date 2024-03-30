@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, inputs, ... }:
+{ config, pkgs, pkgs-unstable, inputs, ... }:
 
 {
   imports =
@@ -131,7 +131,6 @@
   	# kernel.realtime = true;
   };
   
-  
   # Setup steam
   programs.steam = {
     enable = true;
@@ -172,7 +171,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
      foot
-     aseprite
+     #aseprite
      bear
      btop
      blueberry
