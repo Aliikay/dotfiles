@@ -3,11 +3,11 @@
 
   inputs = {
   	# Default to the nixos-unstable branch
-    nixpkgs.url = "github:nixos/nixpkgs/23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/23.11";
     
     # Makes various tweaks for audio production
     musnix  = { url = "github:musnix/musnix"; };
@@ -17,6 +17,9 @@
     
     # Ags
     ags.url = "github:Aylur/ags";
+    
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
     
     # Home-manager, used for managing user configuration
     home-manager = {
@@ -30,7 +33,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
@@ -38,7 +41,7 @@
 					inherit inputs;
           # To use packages from nixpkgs-unstable,
           # we configure some parameters for it first
-          pkgs-unstable = import nixpkgs-unstable {
+          pkgs-stable = import nixpkgs-stable {
             # Refer to the `system` parameter from
             # the outer scope recursively
             inherit inputs;

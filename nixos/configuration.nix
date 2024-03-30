@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, inputs, ... }:
+{ config, pkgs, pkgs-stable, inputs, ... }:
 
 {
   imports =
@@ -79,9 +79,22 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   
+  # Hardware
+  #hardware = {
+  #	opengl = {
+  #		enable = true;
+  #		driSupport32Bit = true;
+  #		package = pkgs-unstable.mesa.drivers;
+  #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  #	};
+  #};
+  
   # Hyprland
-  programs.hyprland.enable = true;
-  programs.hyprland.xwayland.enable = true;
+  programs.hyprland = {
+  	enable = true;
+  	xwayland.enable = true;
+  	#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
   # Configure keymap in X11
   services.xserver = {
