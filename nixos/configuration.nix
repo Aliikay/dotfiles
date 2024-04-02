@@ -44,7 +44,7 @@
   # Automatic System Updates
   system.autoUpgrade = {
   	enable = true;
-  	flake = inputs.self.outPath;
+  	flake = "/home/alikay/dotfiles/nixos";
   	flags = [
   		"--update-input"
   		"nixpkgs"
@@ -222,6 +222,7 @@
      melonDS
      nautilus-open-any-terminal
      neofetch
+     nix-tree
      onlyoffice-bin
      #obsidian
      obs-studio
