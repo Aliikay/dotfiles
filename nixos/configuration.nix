@@ -51,6 +51,7 @@
   		"--commit-lock-file"
   		"-L" # print build logs
   	];
+  	operation = "boot";
   	dates = "05:00";
   	randomizedDelaySec = "45min";
   };
