@@ -81,7 +81,12 @@
 		  cd /etc/nixos
 		  nix flake update --include /etc/nixos
 		  ${nixos-rebuild} boot --flake /etc/nixos#alikay
-		  git add flake.nix
+		  cd /home/alikay/dotfiles/nixos
+		  rm flake.lock
+		  cp /etc/nixos/flake.lock flake.lock
+		  chown alikay:users flake.lock
+		  
+		  git add flake.lock
 		  git commit -m "Automatic Update to flake.lock"
 		'';
 		serviceConfig = {
@@ -267,7 +272,7 @@
      lutris
      melonDS
      nautilus-open-any-terminal
-     #neofetch
+     neofetch
      nix-tree
      onlyoffice-bin
      #obsidian
