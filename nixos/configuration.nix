@@ -64,6 +64,7 @@
         coreutils
         gnutar
         xz.bin
+        sudo
         gzip
         gitMinimal
         config.nix.package.out
@@ -86,8 +87,8 @@
 		  cp /etc/nixos/flake.lock flake.lock
 		  chown alikay:users flake.lock
 		  
-		  git add flake.lock
-		  git commit -m "Automatic Update to flake.lock"
+		  sudo -u alikay git add flake.lock
+		  sudo -u alikay git commit -m "Automatic Update to flake.lock"
 		'';
 		serviceConfig = {
 		  Type = "oneshot";
