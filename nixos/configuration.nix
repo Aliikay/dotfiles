@@ -80,15 +80,7 @@
         nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild"; 
     in ''
 		  cd /etc/nixos
-		  nix flake update --include /etc/nixos
-		  ${nixos-rebuild} boot --flake /etc/nixos#alikay
-		  cd /home/alikay/dotfiles/nixos
-		  rm flake.lock
-		  cp /etc/nixos/flake.lock flake.lock
-		  chown alikay:users flake.lock
-		  
-		  sudo -u alikay git add flake.lock
-		  sudo -u alikay git commit -m "Automatic Update to flake.lock"
+		  ./update-nixos-auto-script.sh
 		'';
 		serviceConfig = {
 		  Type = "oneshot";
