@@ -245,6 +245,7 @@
      firejail
      fish
      gamescope
+     gedit
      gimp
      gnome.sushi
      gnome.totem
@@ -266,7 +267,7 @@
      lutris
      melonDS
      nautilus-open-any-terminal
-     neofetch
+     #neofetch
      nix-tree
      onlyoffice-bin
      #obsidian
