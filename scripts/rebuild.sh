@@ -23,7 +23,7 @@ function askYesNo {
 cd ~/dotfiles
 gedit nixos/configuration.nix
 git status
-git diff nixos/configuration.nix
+git diff
 
 askYesNo "Would you like to apply this configuration?" true
 DOIT=$ANSWER
