@@ -42,19 +42,63 @@
   nixpkgs.config.allowBroken = true;
   
   # Automatic System Updates
-  system.autoUpgrade = {
-  	enable = true;
-  	flake = "/home/alikay/dotfiles/nixos";
-  	flags = [
-  		"--update-input"
-  		"nixpkgs"
-  		"--commit-lock-file"
-  		"-L" # print build logs
-  	];
-  	operation = "boot";
-  	dates = "05:00";
-  	randomizedDelaySec = "45min";
-  };
+  #system.autoUpgrade = {
+  #	enable = true;
+  #	flake = "/home/alikay/dotfiles/nixos";
+  #	flags = [
+  #		"--update-input"
+  #		"nixpkgs"
+  #		"--commit-lock-file"
+  #		"-L" # print build logs
+  #	];
+  #	operation = "boot";
+  #	dates = "05:00";
+  #	randomizedDelaySec = "45min";
+  #};
+  systemd.services."nixos-auto-upgrade" = {
+		description = "NixOS Automatic Updates";
+  	restartIfChanged = false;
+  	unitConfig.X-StopOnRemoval = false;
+  	
+  	path = with pkgs; [
+        coreutils
+        gnutar
+        xz.bin
+        gzip
+        gitMinimal
+        config.nix.package.out
+        config.programs.ssh.package
+    ];
+    
+    environment = config.nix.envVars // {
+      inherit (config.environment.sessionVariables) NIX_PATH;
+      HOME = "/root";
+    };
+    
+		script = let
+        nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild"; 
+    in ''
+		  cd /etc/nixos
+		  nix flake update --include /etc/nixos
+		  ${nixos-rebuild} boot --flake /etc/nixos#alikay
+		  git add flake.nix
+		  git commit -m "Automatic Update to flake.lock"
+		'';
+		serviceConfig = {
+		  Type = "oneshot";
+		  User = "root";
+		};
+		
+		startAt = "daily";
+		after = [ "network-online.target" ];
+		wants = [ "network-online.target" ];
+	};
+  systemd.timers."nixos-auto-upgrade" = {
+		  timerConfig = {
+		    Persistent = true;
+		    RandomizedDelaySec = "15min";
+		  };
+	};
   
   # Automatic Garbage Collection for Generations
   nix.gc = {
