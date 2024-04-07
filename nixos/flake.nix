@@ -19,7 +19,7 @@
     ags.url = "github:Aylur/ags";
     
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     
     # Home-manager, used for managing user configuration
     home-manager = {
