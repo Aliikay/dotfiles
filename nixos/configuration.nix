@@ -95,7 +95,7 @@
 		  User = "root";
 		};
 		
-		startAt = "daily";
+		startAt = "03:00:00";
 		after = [ "network-online.target" ];
 		wants = [ "network-online.target" ];
 	};
