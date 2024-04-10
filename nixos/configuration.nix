@@ -265,6 +265,7 @@
      melonDS
      nautilus-open-any-terminal
      neofetch
+     libnotify
      nix-tree
      onlyoffice-bin
      #obsidian

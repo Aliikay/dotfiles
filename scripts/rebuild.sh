@@ -21,7 +21,7 @@ function askYesNo {
 }
 
 cd ~/dotfiles
-gedit nixos/configuration.nix
+gnome-text-editor nixos/configuration.nix nixos/flake.nix nixos/home.nix
 git status
 git diff
 
@@ -29,6 +29,12 @@ askYesNo "Would you like to apply this configuration?" true
 DOIT=$ANSWER
 
 if [ "$DOIT" = true ]; then
+	askYesNo "Update the flake inputs as well?" true
+	DOIT=$ANSWER
+	if [ "$DOIT" = true ]; then
+		cd /home/alikay/dotfiles/nixos
+		nix flake update
+	fi
 	echo "Delete old backup of /etc/nixos"
 	sudo rm -r /etc/nixos.last
 	echo "Moving last /etc/nixos to a backup"
