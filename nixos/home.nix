@@ -33,12 +33,15 @@
   	enable = true;  	
   };
 
-  # basic configuration of git, please change to your own
+  # Git
   programs.git = {
     enable = true;
     userName = "Alikay";
     userEmail = "1401288@gmail.com";
   };
+  
+  # PATH
+  home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
