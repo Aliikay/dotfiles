@@ -140,9 +140,9 @@
   };
   
   # Mullvad
-  services.mullvad-vpm = {
+  services.mullvad-vpn = {
   	enable = true;
-  	package = "mullvad-vpn";
+  	package = pkgs.mullvad-vpn;
   };
 
   # Configure keymap in X11
@@ -271,6 +271,7 @@
      melonDS
      nautilus-open-any-terminal
      neofetch
+     nil
      libnotify
      nix-tree
      onlyoffice-bin
