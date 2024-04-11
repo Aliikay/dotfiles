@@ -21,6 +21,10 @@
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland";
     
+    # NixOS Conf Manager
+    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    nix-software-center.url = "github:snowfallorg/nix-software-center";
+    
     # Home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";

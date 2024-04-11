@@ -291,6 +291,9 @@
      udiskie
      yabridge
      yabridgectl
+     
+     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+     inputs.nix-software-center.packages.${system}.nix-software-center
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
