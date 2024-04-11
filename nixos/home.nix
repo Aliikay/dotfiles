@@ -45,6 +45,11 @@
   	enable = true;
   };
   
+  # Vim
+  programs.vim = {
+  	enable = true;
+  };
+  
   # PATH
   home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
 
