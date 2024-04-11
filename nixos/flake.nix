@@ -18,6 +18,10 @@
     # Ags
     ags.url = "github:Aylur/ags";
     
+    # Flake version for command-not-found
+  	flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+  	flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
+    
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland";
     
@@ -33,7 +37,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
@@ -55,6 +59,8 @@
 				
 				./configuration.nix
 				./illogical-impulse-dependancies.nix
+				
+				flake-programs-sqlite.nixosModules.programs-sqlite
 				
 				home-manager.nixosModules.home-manager
         {
