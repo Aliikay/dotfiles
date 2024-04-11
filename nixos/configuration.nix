@@ -256,7 +256,7 @@
      git
      gh
      godot_4
-     
+     heroic
      
      hyprpaper
      hyprpicker
