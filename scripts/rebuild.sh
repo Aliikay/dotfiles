@@ -42,7 +42,7 @@ if [ "$DOIT" = true ]; then
 	echo "Copying in dotfiles/nixos to /etc/nixos"
 	sudo cp -r /home/alikay/dotfiles/nixos /etc/nixos
 	echo "Rebuilding the system..."
-	sudo nixos-rebuild switch
+	sudo nixos-rebuild switch --show-trace
 	
 	if [ $? = 0 ]
 	then

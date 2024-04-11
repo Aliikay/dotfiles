@@ -40,6 +40,16 @@
     userEmail = "1401288@gmail.com";
   };
   
+  # Fish
+  programs.fish = {
+  	enable = true;
+  };
+  
+  # Vim
+  programs.vim = {
+  	enable = true;
+  };
+  
   # PATH
   home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
 

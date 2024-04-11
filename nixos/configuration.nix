@@ -140,9 +140,9 @@
   };
   
   # Mullvad
-  services.mullvad-vpm = {
+  services.mullvad-vpn = {
   	enable = true;
-  	package = "mullvad-vpn";
+  	package = pkgs.mullvad-vpn;
   };
 
   # Configure keymap in X11
@@ -264,6 +264,10 @@
      
      pkgs-stable.itch
      krita
+     
+     kdePackages.kate
+     kdePackages.dolphin
+     
      libreoffice
      libsForQt5.qt5ct
      qt6Packages.qt6ct
@@ -271,6 +275,7 @@
      melonDS
      nautilus-open-any-terminal
      neofetch
+     nil
      libnotify
      nix-tree
      onlyoffice-bin
