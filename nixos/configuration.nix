@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      modules/nix-ld.nix
     ];
 
   # Bootloader.
@@ -107,12 +108,6 @@
   # Automatic store optimization
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "03:45" ];
-  
-  # Dynamic linker fix
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  	# Add any dynamicly linked libraries you are missing here
-  ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
