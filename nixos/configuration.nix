@@ -264,6 +264,10 @@
      
      pkgs-stable.itch
      krita
+     
+     kdePackages.kate
+     kdePackages.dolphin
+     
      libreoffice
      libsForQt5.qt5ct
      qt6Packages.qt6ct
