@@ -138,6 +138,12 @@
   	xwayland.enable = true;
   	#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+  
+  # Mullvad
+  services.mullvad-vpm = {
+  	enable = true;
+  	package = "mullvad-vpn";
+  };
 
   # Configure keymap in X11
   services.xserver = {
