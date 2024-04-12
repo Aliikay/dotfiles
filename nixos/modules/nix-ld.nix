@@ -2,7 +2,6 @@
 {
   # Enable nix ld
   programs.nix-ld.enable = true;
-  programs.nix-ld.package = self.inputs.nix-ld-rs.packages.${pkgs.hostPlatform.system}.nix-ld-rs;
 
   programs.nix-ld.libraries = with pkgs; [
     alsa-lib
