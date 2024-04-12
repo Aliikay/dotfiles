@@ -172,7 +172,7 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" ];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -195,6 +195,10 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  
+  # Virtual Machines
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
   
   # Flatpaks
   services.flatpak.enable = true;

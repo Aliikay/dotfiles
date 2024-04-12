@@ -50,6 +50,15 @@
   	enable = true;
   };
   
+  # Dconf
+  dconf.settings = {
+  	# Virt manager
+  	"org/virt-manager/virt/manager/connections" = {
+  		autoconnect = ["qemuL///system"];
+  		uris = ["qemu:///system"];
+  	};
+  };
+  
   # PATH
   home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
 
