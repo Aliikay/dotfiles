@@ -13,11 +13,12 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 	echo "Updating flake..."
 	nix flake update --include /etc/nixos
 	
+	cd /home/alikay/dotfiles/nixos
 	if ! sudo -u alikay git diff --quiet flake.lock
 	then
 		echo "Rebuilding the system"
 		$REBUILD boot --flake /etc/nixos#alikay
-		cd /home/alikay/dotfiles/nixos
+		
 		rm flake.lock
 		cp /etc/nixos/flake.lock flake.lock
 		chown alikay:users flake.lock
