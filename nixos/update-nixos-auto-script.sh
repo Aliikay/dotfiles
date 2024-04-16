@@ -12,19 +12,21 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 	cd /etc/nixos
 	echo "Updating flake..."
 	nix flake update --include /etc/nixos
-	$REBUILD boot --flake /etc/nixos#alikay
-	cd /home/alikay/dotfiles/nixos
-	rm flake.lock
-	cp /etc/nixos/flake.lock flake.lock
-	chown alikay:users flake.lock
 	
 	if ! sudo -u alikay git diff --quiet flake.lock
 	then
+		echo "Rebuilding the system"
+		$REBUILD boot --flake /etc/nixos#alikay
+		cd /home/alikay/dotfiles/nixos
+		rm flake.lock
+		cp /etc/nixos/flake.lock flake.lock
+		chown alikay:users flake.lock
+		
 		echo "Commiting to repo"
 		sudo -u alikay git add flake.lock
 		sudo -u alikay git commit -m "Automatic Update to flake.lock"
 	else
-		echo "There were no changes, so commit was skipped..."
+		echo "There were no changes to flake lock, so update was skipped..."
 	fi
 else
 	echo "Skipped update, battery was at $capacity% and $status"
