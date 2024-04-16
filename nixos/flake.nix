@@ -70,9 +70,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          
           home-manager.extraSpecialArgs = {inherit inputs; };
-
           home-manager.users.alikay = import ./home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix

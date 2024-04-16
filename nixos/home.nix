@@ -28,6 +28,7 @@
     cowsay
     
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.forge
   ];
   
   # AGS
