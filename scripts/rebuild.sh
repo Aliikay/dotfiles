@@ -23,7 +23,7 @@ function askYesNo {
 cd ~/dotfiles
 gnome-text-editor nixos/configuration.nix nixos/flake.nix nixos/home.nix
 git status
-git diff
+git --no-pager diff
 
 askYesNo "Would you like to apply this configuration?" true
 DOIT=$ANSWER

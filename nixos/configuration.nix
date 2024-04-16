@@ -252,6 +252,7 @@
      gnome.sushi
      gnome.totem
      gnome.gnome-software
+     gnome.gnome-tweaks
      git
      gh
      godot_4
