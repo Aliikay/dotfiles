@@ -18,7 +18,7 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 	cp /etc/nixos/flake.lock flake.lock
 	chown alikay:users flake.lock
 	
-	if ! sudo -u alikay git diff flake.lock --quiet
+	if ! sudo -u alikay git diff --quiet flake.lock
 	then
 		echo "Commiting to repo"
 		sudo -u alikay git add flake.lock
