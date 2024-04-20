@@ -236,7 +236,7 @@
      bear
      btop
      blueberry
-     blender
+     blender-hip
      brightnessctl
      celluloid
      dart-sass
