@@ -61,8 +61,8 @@
 				inputs.musnix.nixosModules.musnix
 				nix-flatpak.nixosModules.nix-flatpak
 				
-				./configuration.nix
-				./illogical-impulse-dependancies.nix
+				./nixos/configuration.nix
+				./nixos/illogical-impulse-dependancies.nix
 				
 				flake-programs-sqlite.nixosModules.programs-sqlite
 				

@@ -21,7 +21,7 @@ function askYesNo {
 }
 
 cd ~/dotfiles
-gnome-text-editor nixos/configuration.nix nixos/flake.nix nixos/home.nix
+gnome-text-editor nixos/configuration.nix flake.nix nixos/home.nix
 git status
 git --no-pager diff
 
@@ -32,17 +32,17 @@ if [ "$DOIT" = true ]; then
 	askYesNo "Update the flake inputs as well?" true
 	DOIT=$ANSWER
 	if [ "$DOIT" = true ]; then
-		cd /home/alikay/dotfiles/nixos
+		cd /home/alikay/dotfiles
 		nix flake update
 	fi
 	echo "Delete old backup of /etc/nixos"
 	sudo rm -r /etc/nixos.last
 	echo "Moving last /etc/nixos to a backup"
 	sudo mv /etc/nixos /etc/nixos.last
-	echo "Copying in dotfiles/nixos to /etc/nixos"
-	sudo cp -r /home/alikay/dotfiles/nixos /etc/nixos
+	echo "Copying in dotfiles to /etc/nixos"
+	sudo cp -r /home/alikay/dotfiles /etc/nixos
 	echo "Rebuilding the system..."
-	sudo nixos-rebuild switch --show-trace
+	sudo nixos-rebuild switch
 	
 	if [ $? = 0 ]
 	then

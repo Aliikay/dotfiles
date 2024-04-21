@@ -31,6 +31,13 @@
     gnomeExtensions.forge
   ];
   
+  # Hypr
+  #home.file.".config/hypr" = {
+  #  source = ./.config/hypr;
+  #  recursive = true;   # link recursively
+  #};
+  
+  
   # AGS
   programs.ags = {
   	enable = true;  	

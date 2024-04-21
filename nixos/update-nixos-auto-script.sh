@@ -13,7 +13,7 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 	echo "Updating flake..."
 	nix flake update --include /etc/nixos
 	
-	cd /home/alikay/dotfiles/nixos
+	cd /home/alikay/dotfiles
 	if ! sudo -u alikay git diff --quiet flake.lock
 	then
 		echo "Rebuilding the system"

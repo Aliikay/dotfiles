@@ -43,19 +43,6 @@
   nixpkgs.config.allowBroken = true;
   
   # Automatic System Updates
-  #system.autoUpgrade = {
-  #	enable = true;
-  #	flake = "/home/alikay/dotfiles/nixos";
-  #	flags = [
-  #		"--update-input"
-  #		"nixpkgs"
-  #		"--commit-lock-file"
-  #		"-L" # print build logs
-  #	];
-  #	operation = "boot";
-  #	dates = "05:00";
-  #	randomizedDelaySec = "45min";
-  #};
   systemd.services."nixos-auto-upgrade" = {
 		description = "NixOS Automatic Updates";
   	restartIfChanged = false;
