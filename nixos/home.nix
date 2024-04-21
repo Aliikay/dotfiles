@@ -32,10 +32,10 @@
   ];
   
   # Hypr
-  #home.file.".config/hypr" = {
-  #  source = ./.config/hypr;
-  #  recursive = true;   # link recursively
-  #};
+  home.file.".config/hypr" = {
+    source = ../.config/hypr;
+    recursive = true;   # link recursively
+  };
   
   
   # AGS
