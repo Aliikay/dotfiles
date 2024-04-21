@@ -20,6 +20,7 @@
     "aesni_intel"
     "cryptd"
   ];
+  boot.tmp.cleanOnBoot = true;
   networking.hostName = "alikay"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -146,6 +147,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -223,6 +225,7 @@
      bear
      btop
      blueberry
+     bibata-cursors
      blender-hip
      brightnessctl
      celluloid
@@ -251,6 +254,7 @@
      
      pkgs-stable.itch
      krita
+     killall
      
      kdePackages.kate
      kdePackages.dolphin

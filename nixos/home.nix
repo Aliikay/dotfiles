@@ -25,22 +25,45 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    ollama
+    pywal
+    sassc
+    (python311.withPackages (p: [
+    	p.material-color-utilities
+    	p.pywayland    
+    ]))
     cowsay
     
     gnomeExtensions.blur-my-shell
     gnomeExtensions.forge
+    
+    
   ];
   
-  # Hypr
-  home.file.".config/hypr" = {
-    source = ../.config/hypr;
+  # .config
+  home.file.".config" = {
+    source = ../.config;
     recursive = true;   # link recursively
   };
   
   
   # AGS
   programs.ags = {
-  	enable = true;  	
+  	enable = true;
+  	configDir = null;
+  	
+  	extraPackages = with pkgs; [
+  		gtksourceview
+  		gtksourceview4
+  		ollama
+  		python311Packages.material-color-utilities
+  		python311Packages.pywayland
+  		pywal
+  		sassc
+  		webkitgtk
+  		webp-pixbuf-loader
+  		ydotool
+  	];
   };
 
   # Git
