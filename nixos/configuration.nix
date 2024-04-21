@@ -43,19 +43,6 @@
   nixpkgs.config.allowBroken = true;
   
   # Automatic System Updates
-  #system.autoUpgrade = {
-  #	enable = true;
-  #	flake = "/home/alikay/dotfiles/nixos";
-  #	flags = [
-  #		"--update-input"
-  #		"nixpkgs"
-  #		"--commit-lock-file"
-  #		"-L" # print build logs
-  #	];
-  #	operation = "boot";
-  #	dates = "05:00";
-  #	randomizedDelaySec = "45min";
-  #};
   systemd.services."nixos-auto-upgrade" = {
 		description = "NixOS Automatic Updates";
   	restartIfChanged = false;
@@ -87,7 +74,7 @@
 		  User = "root";
 		};
 		
-		startAt = "03:00:00";
+		startAt = "Sat 05:00:00";
 		after = [ "network-online.target" ];
 		wants = [ "network-online.target" ];
 	};
@@ -232,11 +219,11 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
      foot
-     #aseprite
+     pkgs-stable.aseprite
      bear
      btop
      blueberry
-     blender
+     blender-hip
      brightnessctl
      celluloid
      dart-sass
@@ -252,6 +239,7 @@
      gnome.sushi
      gnome.totem
      gnome.gnome-software
+     gnome.gnome-tweaks
      git
      gh
      godot_4

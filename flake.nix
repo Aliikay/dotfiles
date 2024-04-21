@@ -61,8 +61,8 @@
 				inputs.musnix.nixosModules.musnix
 				nix-flatpak.nixosModules.nix-flatpak
 				
-				./configuration.nix
-				./illogical-impulse-dependancies.nix
+				./nixos/configuration.nix
+				./nixos/illogical-impulse-dependancies.nix
 				
 				flake-programs-sqlite.nixosModules.programs-sqlite
 				
@@ -70,10 +70,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          
           home-manager.extraSpecialArgs = {inherit inputs; };
-
-          home-manager.users.alikay = import ./home.nix;
+          home-manager.users.alikay = import ./nixos/home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }

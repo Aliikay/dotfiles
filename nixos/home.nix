@@ -26,7 +26,17 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     cowsay
+    
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.forge
   ];
+  
+  # Hypr
+  home.file.".config/hypr" = {
+    source = ../.config/hypr;
+    recursive = true;   # link recursively
+  };
+  
   
   # AGS
   programs.ags = {
