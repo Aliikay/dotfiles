@@ -142,6 +142,9 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.sudo.extraConfig = ''
+  	Defaults passwd_timeout=0
+  '';
   services.pipewire = {
     enable = true;
     alsa.enable = true;
