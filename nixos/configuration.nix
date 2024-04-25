@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      modules/nix-ld.nix
     ];
 
   # Bootloader.
@@ -249,7 +248,6 @@
      gnome.gnome-tweaks
      git
      gh
-     godot_4
      heroic
      
      hyprpaper

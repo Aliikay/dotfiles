@@ -63,6 +63,8 @@
 				
 				./nixos/configuration.nix
 				./nixos/illogical-impulse-dependancies.nix
+				./nixos/modules/nix-ld.nix
+      	./nixos/modules/godot.nix
 				
 				flake-programs-sqlite.nixosModules.programs-sqlite
 				
