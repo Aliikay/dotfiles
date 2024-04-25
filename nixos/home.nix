@@ -107,7 +107,7 @@
   			while true; do
   				sleep 5
   				if test -f "$FILE"; then
-  					read line < "$FILE" ; notify-send "$line"
+  					read line < "$FILE" ; notify-send "NixOS Auto Updates" "$line"
   					rm "$FILE"
   				fi
   			done

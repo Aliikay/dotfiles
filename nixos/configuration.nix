@@ -268,6 +268,7 @@
      nautilus-open-any-terminal
      neofetch
      nil
+     nh
      libnotify
      nix-tree
      onlyoffice-bin
