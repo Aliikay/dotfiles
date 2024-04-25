@@ -55,6 +55,7 @@
         xz.bin
         sudo
         gzip
+        libnotify
         gitMinimal
         config.nix.package.out
         config.programs.ssh.package
@@ -68,7 +69,7 @@
 		script = let
         nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild"; 
     in ''
-		  REBUILD=${nixos-rebuild} /etc/nixos/update-nixos-auto-script.sh
+		  REBUILD=${nixos-rebuild} /etc/nixos/nixos/update-nixos-auto-script.sh
 		'';
 		serviceConfig = {
 		  Type = "oneshot";

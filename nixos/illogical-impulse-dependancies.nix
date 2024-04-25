@@ -72,7 +72,7 @@
 		starship
 		nerdfonts
 		
-		# COPIED FROM 
+		# COPIED FROM end4's flake
 		# gui
     blueberry
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
