@@ -46,6 +46,16 @@
     recursive = true;   # link recursively
   };
   
+  # Hyprland
+  wayland.windowManager.hyprland = {
+    enable = true;
+    # ...
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # ...
+    ];
+  };
+  
   
   # AGS
   programs.ags = {
