@@ -1,0 +1,7 @@
+[default]
+duration = "24h"
+mode = "center"
+sorting = "random"
+
+[any]
+path = "/home/alikay/dotfiles/wallpapers"
