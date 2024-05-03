@@ -286,6 +286,7 @@
      wine
      webp-pixbuf-loader
      waydroid
+     wpaperd
      unityhub
      udiskie
      yabridge
