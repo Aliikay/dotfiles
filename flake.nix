@@ -23,7 +23,11 @@
   	flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
     
     # Hyprland
-    #hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+		  url = "github:hyprwm/hyprland-plugins";
+		  inputs.hyprland.follows = "hyprland";
+		};
     
     # NixOS Conf Manager
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
