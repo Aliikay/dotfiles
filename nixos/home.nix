@@ -63,7 +63,7 @@
   	enable = true;
   	settings = {
   		default = {
-  			path = "${config.home.homeDirectory}/.dotfiles/wallpapers";
+  			path = "${config.home.homeDirectory}/dotfiles/wallpapers";
   			duration = "24h";
   			sorting = "random";
   		};
