@@ -127,6 +127,8 @@
   	xwayland.enable = true;
   	package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ xdg-desktop-portal-gtk ];
   
   # Mullvad
   services.mullvad-vpn = {
@@ -242,13 +244,16 @@
      dart-sass
      docker
      distrobox
+     eww
      ffmpeg
      ffmpegthumbnailer
      firejail
      fish
+     fuzzel
      gamescope
      gedit
      gimp
+     grim
      gnome.sushi
      gnome.totem
      gnome.gnome-software
@@ -292,6 +297,7 @@
      vlc
      wine
      webp-pixbuf-loader
+     waybar
      unityhub
      udiskie
      yabridge
