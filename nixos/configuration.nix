@@ -196,7 +196,7 @@
   
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
-  virtualization.waydroid.enable = true;
+  virtualisation.waydroid.enable = true;
   programs.virt-manager.enable = true;
   
   # Flatpaks
