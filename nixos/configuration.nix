@@ -196,6 +196,7 @@
   
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
+  virtualization.waydroid.enable = true;
   programs.virt-manager.enable = true;
   
   # Flatpaks
@@ -291,8 +292,6 @@
      vlc
      wine
      webp-pixbuf-loader
-     waydroid
-     wpaperd
      unityhub
      udiskie
      yabridge

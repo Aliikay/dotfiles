@@ -58,6 +58,10 @@
     ];
   };
   
+  # Wpaperd
+  programs.wpaperd = {
+  	enable = true;
+  };
   
   # AGS
   programs.ags = {
