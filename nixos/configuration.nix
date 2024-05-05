@@ -128,7 +128,8 @@
   	package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ xdg-desktop-portal-gtk ];
+  # Removed since GNOME already adds this, add back if getting rid of GNOME
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   
   # Mullvad
   services.mullvad-vpn = {
@@ -245,6 +246,7 @@
      docker
      distrobox
      eww
+     fastfetch
      ffmpeg
      ffmpegthumbnailer
      firejail
@@ -261,9 +263,12 @@
      git
      gh
      heroic
+     hyfetch
      
      hyprpaper
      hyprpicker
+     hyprlock
+     hypridle
      pyprland
      
      pkgs-stable.itch

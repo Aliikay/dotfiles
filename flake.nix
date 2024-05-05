@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Alikay's System";
 
   inputs = {
   	# Default to the nixos-unstable branch
@@ -45,7 +45,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, hyprland, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
@@ -64,6 +64,7 @@
 			modules = [
 				inputs.musnix.nixosModules.musnix
 				nix-flatpak.nixosModules.nix-flatpak
+				hyprland.nixosModules.default
 				
 				./nixos/configuration.nix
 				./nixos/illogical-impulse-dependancies.nix
