@@ -5,7 +5,10 @@
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
   
-  imports = [ inputs.ags.homeManagerModules.default ];
+  imports = [ 
+  	inputs.ags.homeManagerModules.default 
+  	./modules/desktop-entries.nix
+  ];
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
