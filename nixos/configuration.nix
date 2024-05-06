@@ -102,6 +102,15 @@
   # Automatic store optimization
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "03:45" ];
+  
+  # Enable ThermalD
+  services.thermald.enable = true;
+  
+  # Enable TLP
+  services.tlp = {
+  	enable = true;
+  };
+  services.power-profiles-daemon.enable = false;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -297,7 +306,6 @@
      powertop
      renoise
      slurp
-     thermald
      thunderbird
      vlc
      wine

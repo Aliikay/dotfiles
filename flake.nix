@@ -23,7 +23,7 @@
   	flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
     
     # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
     hyprland-plugins = {
 		  url = "github:hyprwm/hyprland-plugins";
 		  inputs.hyprland.follows = "hyprland";

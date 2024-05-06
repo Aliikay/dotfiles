@@ -42,7 +42,7 @@ if [ "$DOIT" = true ]; then
 	echo "Copying in dotfiles to /etc/nixos"
 	sudo cp -r /home/alikay/dotfiles /etc/nixos
 	echo "Rebuilding the system..."
-	nh os switch /etc/nixos
+	nh os switch /home/alikay/dotfiles
 	
 	if [ $? = 0 ]
 	then
