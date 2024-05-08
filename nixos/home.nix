@@ -37,9 +37,11 @@
     ]))
     cowsay
     
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.forge
-    
+  	gnomeExtensions.blur-my-shell
+  	gnomeExtensions.forge
+  	gnomeExtensions.dash-to-dock
+  	gnomeExtensions.dash-to-panel
+  	gnomeExtensions.what-watch
     
   ];
   
@@ -59,6 +61,10 @@
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
     ];
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    
+    extraConfig = ''
+    	${builtins.readFile ../.config/hypr/hyprland.conf}
+    '';
   };
   
   # Wpaperd
@@ -91,6 +97,9 @@
   		ydotool
   	];
   };
+  
+  # Gnome Extensions
+  
 
   # Git
   programs.git = {
