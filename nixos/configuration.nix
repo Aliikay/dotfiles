@@ -305,6 +305,7 @@
      psensor
      powertop
      renoise
+     reaper
      slurp
      thunderbird
      vlc

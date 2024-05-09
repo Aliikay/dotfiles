@@ -144,6 +144,94 @@
     gcc
     typescript
     eslint
+    
+    # Copied from PacificViking's config
+    pkgs.nerdfonts
+    pkgs.nodejs
+    pkgs.ghc
+    pkgs.wofi
+    pkgs.wl-clipboard
+    pkgs.wl-clipboard-x11
+    pkgs.wl-clip-persist
+    pkgs.udisks
+    pkgs.udisks2
+    pkgs.udiskie
+    pkgs.inxi
+    pkgs.powertop
+    pkgs.yt-dlp
+    
+    pkgs.ffmpeg
+    pkgs.grim
+    pkgs.slurp
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    pkgs.hyprpicker
+    pkgs.findutils
+    pkgs.ripgrep
+    pkgs.killall
+    pkgs.bat
+    pkgs.curl.dev
+    pkgs.dfeet
+    pkgs.d-spy
+    pkgs.pqiv
+
+    pkgs.nodejs_21
+
+    #pkgs.gnome.nautilus
+    pkgs.xfce.xfce4-icon-theme
+    #pkgs.xfce.thunar-volman
+    #pkgs.xfce.tumbler
+    #pkgs.gvfs
+    pkgs.polkit_gnome
+    pkgs.xdg-utils
+    pkgs.easyeffects
+
+    pkgs.egl-wayland
+    #pkgs.opentabletdriver
+    #pkgs.wacomtablet
+    #pkgs.xf86_input_wacom
+    #pkgs.libwacom
+    pkgs.font-awesome
+
+    pkgs.xorg.setxkbmap
+    pkgs.xkb-switch
+    pkgs.xkblayout-state
+    pkgs.perl538Packages.FileMimeInfo
+    pkgs.xorg.xdpyinfo
+
+    pkgs.mpd
+    pkgs.mpdevil
+    pkgs.ncmpcpp
+    pkgs.mpc-cli
+    pkgs.pms
+    pkgs.hydrogen  # drum synthesizer
+    #pkgs.vcv-rack
+    pkgs.freepats
+    pkgs.ChowKick
+    pkgs.drumkv1
+    pkgs.drumgizmo
+    pkgs.bitwig-studio
+
+    (pkgs.fenix.latest.withComponents [
+      "cargo"
+      "clippy"
+      "rust-src"
+      "rustc"
+      "rustfmt"
+    ])
+
+    pkgs.gnome.dconf-editor
+    pkgs.nvtop-nvidia
+
+    pkgs.qt5.full
+    pkgs.libsForQt5.qt5ct
+    pkgs.libsForQt5.qt5.qtwayland
+    pkgs.libsForQt5.plasma-wayland-protocols
+    #pkgs.libsForQt5.dolphin
+    pkgs.libsForQt5.kwayland
+    pkgs.libsForQt5.kwayland-integration
+    #pkgs.libsForQt5.qtstyleplugin-kvantum
+    (pkgs.catppuccin-kvantum.override {accent = "Yellow"; variant = "Mocha";})
+    pkgs.libsForQt5.breeze-icons
   ];
   
   fonts.packages = with pkgs; [
