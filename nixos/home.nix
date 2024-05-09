@@ -63,7 +63,7 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     
     extraConfig = ''
-    	${builtins.readFile ../.config/hypr/hyprland.conf}
+    	${builtins.readFile ../.config/hypr-mine/hyprland.conf}
     '';
   };
   
