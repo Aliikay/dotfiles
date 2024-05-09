@@ -25,12 +25,18 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 		echo "Rebuilding the system"
 		$REBUILD boot --flake /etc/nixos#alikay
 		
-		echo "Commiting to repo"
-		sudo -u alikay git add flake.lock
-		sudo -u alikay git commit -m "Automatic Update to flake.lock"
+		if [ $? -gt 0 ]; then
+			echo "Commiting to repo"
+			sudo -u alikay git add flake.lock
+			sudo -u alikay git commit -m "Automatic Update to flake.lock"
+			
+			echo "Updates finished. They will be applied after the next reboot" > "$OUTPUTPIPE"
+			echo "Updates finished"
+		else
+			echo "Rebuilding the system failed! Check logs for details." > "$OUTPUTPIPE"
+			echo "Updates failed to apply."
+		fi
 		
-		echo "Updates finished. They will be applied after the next reboot" > "$OUTPUTPIPE"
-		echo "Updates finished"
 	else
 		echo "There were no changes to flake.lock, so auto update was skipped..." > "$OUTPUTPIPE"
 		echo "There were no changes to flake lock, so update was skipped..."

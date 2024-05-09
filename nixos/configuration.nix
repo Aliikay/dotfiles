@@ -213,12 +213,15 @@
   
   # Flatpaks
   services.flatpak.enable = true;
+  services.flatpak.remotes = [{
+		name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+	}];
   services.flatpak.packages = [
     "md.obsidian.Obsidian"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     "de.haeckerfelix.Fragments"
-    "com.gitfiend.GitFiend"
+    #"com.gitfiend.GitFiend"
     "com.google.Chrome"
     "org.pipewire.Helvum"
     "de.haeckerfelix.Shortwave"
