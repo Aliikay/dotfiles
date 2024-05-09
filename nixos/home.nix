@@ -57,13 +57,12 @@
     systemdIntegration = true;
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprtrails
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
     ];
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     
     extraConfig = ''
-    	${builtins.readFile ../.config/hypr-mine/hyprland.conf}
+    	source=~/.config/hypr/main.conf
     '';
   };
   
