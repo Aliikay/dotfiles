@@ -324,6 +324,9 @@
      
      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
      inputs.nix-software-center.packages.${system}.nix-software-center
+     
+     inputs.pip2nix.defaultPackage.${system}
+     
      audacity
   ];
 

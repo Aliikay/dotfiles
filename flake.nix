@@ -33,6 +33,9 @@
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     
+    # pip2nix, autogenerate nix packages based on pip files
+    pip2nix.url = "github:nix-community/pip2nix";
+    
     # Home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -45,7 +48,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, hyprland, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, pip2nix, hyprland, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
