@@ -30,6 +30,8 @@
 		# Python
 		#python-build
 		#python-materialyoucolor-git
+		python311Packages.material-color-utilities
+		python312Packages.material-color-utilities
 		#python-pillow
 		#python-pywal
 		#python-setuptools-scm
@@ -56,6 +58,9 @@
 		blueberry
 		brightnessctl
 		wlsunset
+		gtksourceview
+		gtksourceview4
+		gtksourceview5
 		
 		# Widgets
 		#python-pywayland
@@ -163,18 +168,14 @@
     pkgs.ffmpeg
     pkgs.grim
     pkgs.slurp
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     pkgs.hyprpicker
     pkgs.findutils
     pkgs.ripgrep
     pkgs.killall
     pkgs.bat
     pkgs.curl.dev
-    pkgs.dfeet
     pkgs.d-spy
     pkgs.pqiv
-
-    pkgs.nodejs_21
 
     #pkgs.gnome.nautilus
     pkgs.xfce.xfce4-icon-theme
@@ -210,14 +211,6 @@
     pkgs.drumkv1
     pkgs.drumgizmo
     pkgs.bitwig-studio
-
-    (pkgs.fenix.latest.withComponents [
-      "cargo"
-      "clippy"
-      "rust-src"
-      "rustc"
-      "rustfmt"
-    ])
 
     pkgs.gnome.dconf-editor
     pkgs.nvtop-nvidia
