@@ -16,6 +16,10 @@ nix.settings = {
 read -p "Press enter to continue"
 sudo nano /etc/nixos/configuration.nix
 
+echo "Copy the current hardware config to the dotfiles"
+rm ~/dotfiles/nixos/hardware-configuration.nix
+cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nixos/hardware-configuration.nix
+
 echo "Rebuilding the system with substituters enabled"
 sudo nixos-rebuild switch
 
