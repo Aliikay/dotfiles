@@ -131,11 +131,11 @@
   #};
   
   # Hyprland
-  programs.hyprland = {
-  	enable = true;
-  	xwayland.enable = true;
-  	package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
+  #programs.hyprland = {
+  #	enable = true;
+  #	xwayland.enable = true;
+  #	package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  #};
   xdg.portal.enable = true;
   # Removed since GNOME already adds this, add back if getting rid of GNOME
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -214,7 +214,7 @@
   # Flatpaks
   services.flatpak.enable = true;
   services.flatpak.remotes = [{
-		name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
+		name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
 	}];
   services.flatpak.packages = [
     "md.obsidian.Obsidian"
