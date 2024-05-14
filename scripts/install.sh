@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Changing channel to unstable..."
 nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 nix-channel --update
@@ -12,7 +14,9 @@ echo "Please add the following to your configuration.nix:
 nix.settings = {
     substituters = [\"https://hyprland.cachix.org\"];
     trusted-public-keys = [\"hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=\"];
-};"
+};
+nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];
+"
 read -p "Press enter to continue"
 sudo nano /etc/nixos/configuration.nix
 
