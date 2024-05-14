@@ -1,5 +1,6 @@
 echo "Changing channel to unstable..."
 nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+nix-channel --update
 
 echo "Getting a new nix shell with the needed components for github auth..."
 nix-shell -p gh --command "gh auth login"
