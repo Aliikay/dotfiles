@@ -4,6 +4,9 @@
   inputs = {
   	# Default to the nixos-unstable branch
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    # Latest unstable branch of nixos
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
@@ -24,10 +27,10 @@
     
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland/v0.40.0";
-    hyprland.url = "github:hyprwm/Hyprland";
+    #hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
 		  url = "github:hyprwm/hyprland-plugins";
-		  inputs.hyprland.follows = "hyprland";
+		  #inputs.hyprland.follows = "hyprland";
 		};
     
     # NixOS Conf Manager
@@ -36,6 +39,9 @@
     
     # pip2nix, autogenerate nix packages based on pip files
     pip2nix.url = "github:nix-community/pip2nix";
+    
+    # stylix to theme the entire system
+    stylix.url = "github:danth/stylix";
     
     # Home-manager, used for managing user configuration
     home-manager = {
@@ -49,7 +55,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nix-flatpak, flake-programs-sqlite, pip2nix, hyprland, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, home-manager, ...}: {#, hyprland, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
@@ -64,18 +70,27 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
            };
+           
+           pkgs-unstable = import nixpkgs-unstable {
+            # Refer to the `system` parameter from
+            # the outer scope recursively
+            inherit inputs;
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+           };
 			};
 			modules = [
 				inputs.musnix.nixosModules.musnix
-				nix-flatpak.nixosModules.nix-flatpak
-				hyprland.nixosModules.default
+				inputs.nix-flatpak.nixosModules.nix-flatpak
+				#hyprland.nixosModules.default
 				
 				./nixos/configuration.nix
 				./nixos/illogical-impulse-dependancies.nix
 				./nixos/modules/nix-ld.nix
       	./nixos/modules/godot.nix
 				
-				flake-programs-sqlite.nixosModules.programs-sqlite
+				inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+				inputs.stylix.nixosModules.stylix
 				
 				home-manager.nixosModules.home-manager
         {

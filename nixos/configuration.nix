@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, inputs, ... }:
+{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }:
 
 {
   imports =
@@ -131,11 +131,11 @@
   #};
   
   # Hyprland
-  #programs.hyprland = {
-  #	enable = true;
-  #	xwayland.enable = true;
-  #	package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  #};
+  programs.hyprland = {
+  	enable = true;
+  	xwayland.enable = true;
+  	#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
   xdg.portal.enable = true;
   # Removed since GNOME already adds this, add back if getting rid of GNOME
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -221,7 +221,7 @@
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     "de.haeckerfelix.Fragments"
-    #"com.gitfiend.GitFiend"
+    "com.gitfiend.GitFiend"
     "com.google.Chrome"
     "org.pipewire.Helvum"
     "de.haeckerfelix.Shortwave"
@@ -238,6 +238,13 @@
   services.flatpak.update.auto = {
 		enable = true;
 		onCalendar = "weekly"; # Default value
+	};
+	
+	# Stylix theme
+	stylix = {
+	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+		image = ../wallpapers/kurapika-gruv.png;
 	};
  
   # List packages installed in unstable system profile. To search, run:

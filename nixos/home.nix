@@ -52,19 +52,19 @@
   };
   
   # Hyprland
-  #wayland.windowManager.hyprland = {
-  #  enable = true;
-  #  systemdIntegration = true;
-  #  plugins = [
+  wayland.windowManager.hyprland = {
+    enable = true;
+    #systemdIntegration = true;
+    plugins = [
       #inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       #inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-  #  ];
-  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    
-  #  extraConfig = ''
-  #  	source=~/.config/hypr/main.conf
-  #  '';
-  #};
+    ];
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+     
+    extraConfig = ''
+    	source=~/.config/hypr/main.conf
+    '';
+  };
   
   # Wpaperd
   programs.wpaperd = {
