@@ -248,6 +248,10 @@
 		
 		cursor.package = pkgs.bibata-cursors;
 		cursor.name = "Bibata-Modern-Classic";
+		
+		targets.grub.useImage = true;
+		
+		polarity = "dark";
 	};
  
   # List packages installed in unstable system profile. To search, run:
