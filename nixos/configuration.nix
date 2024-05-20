@@ -232,6 +232,7 @@
     "io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
     "com.system76.Popsicle"
+    "io.github.Foldex.AdwSteamGtk"
   ];
   
   # Flatpak auto updates
