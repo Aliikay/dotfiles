@@ -42,6 +42,8 @@
   	gnomeExtensions.dash-to-dock
   	gnomeExtensions.dash-to-panel
   	gnomeExtensions.what-watch
+  	gnomeExtensions.appindicator
+  	gnomeExtensions.useless-gaps
     
   ];
   
