@@ -44,6 +44,10 @@
   	gnomeExtensions.what-watch
   	gnomeExtensions.appindicator
   	gnomeExtensions.useless-gaps
+  	gnomeExtensions.somafm-internet-radio
+  	gnomeExtensions.user-avatar-in-quick-settings
+  	gnomeExtensions.rectangle
+  	gnomeExtensions.window-title-is-back
     
   ];
   
