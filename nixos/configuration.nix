@@ -269,8 +269,10 @@
      blender-hip
      brightnessctl
      celluloid
+     cemu
      dart-sass
      docker
+     dolphin-emu
      distrobox
      eww
      fastfetch
@@ -310,6 +312,7 @@
      qt6Packages.qt6ct
      lutris
      melonDS
+     mupen64plus
      nautilus-open-any-terminal
      neofetch
      nil
