@@ -328,6 +328,7 @@
      thunderbird
      vlc
      wine
+     warp
      webp-pixbuf-loader
      waybar
      unityhub
