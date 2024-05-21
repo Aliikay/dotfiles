@@ -48,6 +48,26 @@
   	gnomeExtensions.user-avatar-in-quick-settings
   	gnomeExtensions.rectangle
   	gnomeExtensions.window-title-is-back
+  	gnomeExtensions.just-perfection
+  	gnomeExtensions.openweather
+  	gnomeExtensions.pano
+  	gnomeExtensions.cpufreq
+  	gnomeExtensions.quick-web-search
+  	gnomeExtensions.arcmenu
+  	gnomeExtensions.vitals
+  	gnomeExtensions.coverflow-alt-tab
+  	gnomeExtensions.gnome-clipboard
+  	gnomeExtensions.clipboard-indicator
+  	gnomeExtensions.gsconnect
+  	gnomeExtensions.gtile
+  	gnomeExtensions.paperwm
+  	gnomeExtensions.media-controls
+  	gnomeExtensions.quick-settings-audio-panel
+  	gnomeExtensions.pip-on-top
+  	gnomeExtensions.twitchlive-panel
+  	gnomeExtensions.logo-widget
+  	gnomeExtensions.logo-menu
+  	
     
   ];
   

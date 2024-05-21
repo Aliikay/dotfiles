@@ -244,7 +244,7 @@
 	# Stylix theme
 	stylix = {
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 		image = ../wallpapers/kurapika-gruv.png;
 		
 		cursor.package = pkgs.bibata-cursors;
