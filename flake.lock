@@ -495,11 +495,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1715993859,
-        "narHash": "sha256-hBPn1xF4Wspf6kJ+SR9FHy9vRUFmtJEZjrTLIWjFib8=",
+        "lastModified": 1716266702,
+        "narHash": "sha256-oV/XDEBXjEpdFx6b4qmhicMNlOMo2aWCdpDBFf98G70=",
         "owner": "musnix",
         "repo": "musnix",
-        "rev": "3ba4dba298a4720d51db6269f97038601f3fe2c1",
+        "rev": "2446a10ec9a2958ff8a3d3d160ff3758419364d2",
         "type": "github"
       },
       "original": {
@@ -586,6 +586,21 @@
       "original": {
         "owner": "snowfallorg",
         "repo": "nixos-conf-editor",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1716173274,
+        "narHash": "sha256-FC21Bn4m6ctajMjiUof30awPBH/7WjD0M5yqrWepZbY=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "d9e0b26202fd500cf3e79f73653cce7f7d541191",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
         "type": "github"
       }
     },
@@ -778,6 +793,7 @@
         "nix-flatpak": "nix-flatpak",
         "nix-software-center": "nix-software-center",
         "nixos-conf-editor": "nixos-conf-editor",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",

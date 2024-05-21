@@ -43,6 +43,9 @@
     # stylix to theme the entire system
     stylix.url = "github:danth/stylix";
     
+    # Framework specific tweaks
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    
     # Home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -80,6 +83,7 @@
            };
 			};
 			modules = [
+			  inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
 				inputs.musnix.nixosModules.musnix
 				inputs.nix-flatpak.nixosModules.nix-flatpak
 				#hyprland.nixosModules.default

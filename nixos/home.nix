@@ -66,9 +66,7 @@
   	gnomeExtensions.pip-on-top
   	gnomeExtensions.twitchlive-panel
   	gnomeExtensions.logo-widget
-  	gnomeExtensions.logo-menu
-  	
-    
+  	gnomeExtensions.logo-menu    
   ];
   
   # .config
