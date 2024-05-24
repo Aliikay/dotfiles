@@ -233,6 +233,10 @@
     "us.zoom.Zoom"
     "com.system76.Popsicle"
     "io.github.Foldex.AdwSteamGtk"
+    "dev.vencord.Vesktop"
+    "ca.parallel_launcher.ParallelLauncher"
+    "com.github.muriloventuroso.easyssh"
+    "in.srev.guiscrcpy"
   ];
   
   # Flatpak auto updates
@@ -262,6 +266,7 @@
   #  wget
      foot
      pkgs-stable.aseprite
+     amberol
      bear
      btop
      blueberry
@@ -270,6 +275,7 @@
      brightnessctl
      celluloid
      cemu
+     cubiomes-viewer
      dart-sass
      docker
      dolphin-emu
@@ -289,6 +295,9 @@
      gnome.totem
      gnome.gnome-software
      gnome.gnome-tweaks
+     gnome.gnome-sound-recorder
+     gnome.gnome-maps
+     gnome-graphs
      git
      gh
      heroic
@@ -300,19 +309,25 @@
      hypridle
      pyprland
      
+     inkscape
      pkgs-stable.itch
      krita
+     komikku
      killall
      
      kdePackages.kate
      kdePackages.dolphin
+     kdePackages.qtstyleplugin-kvantum
      
      libreoffice
      libsForQt5.qt5ct
      qt6Packages.qt6ct
      lutris
      melonDS
+     mpv
      mupen64plus
+     musescore
+     mission-center
      nautilus-open-any-terminal
      neofetch
      nil
@@ -323,13 +338,19 @@
      #obsidian
      obs-studio
      pavucontrol
+     protonup-qt
+     pkgs-unstable.parabolic
      psensor
      powertop
      renoise
      reaper
      slurp
+     setzer
+     superTuxKart
+     sqlitebrowser
      thunderbird
      vlc
+     video-trimmer
      wine
      warp
      webp-pixbuf-loader
