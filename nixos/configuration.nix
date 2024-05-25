@@ -232,15 +232,12 @@
     "com.github.tchx84.Flatseal"
     "com.gitfiend.GitFiend"
     "com.google.Chrome"
-    "org.pipewire.Helvum"
-    "de.haeckerfelix.Shortwave"
     "com.nextcloud.desktopclient.nextcloud"
     "org.prismlauncher.PrismLauncher"
     "it.mijorus.smile"
     "com.spotify.Client"
     "io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
-    "com.system76.Popsicle"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
     "ca.parallel_launcher.ParallelLauncher"
@@ -334,6 +331,7 @@
      git
      gh
      heroic
+     helvum
      hyfetch
      
      hyprpaper
@@ -375,6 +373,7 @@
      obs-studio
      pavucontrol
      protonup-qt
+     popsicle
      pitivi
      pkgs-unstable.parabolic
      psensor
@@ -382,6 +381,7 @@
      renoise
      reaper
      slurp
+     shortwave
      setzer
      superTuxKart
      sqlitebrowser
