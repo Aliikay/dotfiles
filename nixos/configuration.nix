@@ -329,6 +329,7 @@
      musescore
      mission-center
      nautilus-open-any-terminal
+     ncdu
      neofetch
      nil
      nh
