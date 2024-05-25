@@ -121,9 +121,6 @@
   	];
   };
   
-  # Gnome Extensions
-  
-
   # Git
   programs.git = {
     enable = true;

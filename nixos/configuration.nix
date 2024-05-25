@@ -255,6 +255,25 @@
 		onCalendar = "weekly"; # Default value
 	};
 	
+	# Flatpak overrides
+	services.flatpak.overrides = {
+		global = {
+			Environment = {
+				QT_STYLE_OVERRIDE="kvantum";
+			};
+			
+			Context = {
+				filesystems = [
+					"xdg-config/gtk-3.0:ro"
+					"/home/alikay/.icons:ro"
+					"xdg-config/gtk-4.0"
+					"/usr/share/icons:ro"
+					"xdg-config/Kvantum:ro"
+				];
+			};
+		};
+	};
+	
 	# Stylix theme
 	stylix = {
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
