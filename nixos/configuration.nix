@@ -296,6 +296,7 @@
      foot
      pkgs-stable.aseprite
      amberol
+     ardour
      appimage-run
      bear
      btop
