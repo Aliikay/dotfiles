@@ -230,7 +230,6 @@
     "md.obsidian.Obsidian"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
-    "de.haeckerfelix.Fragments"
     "com.gitfiend.GitFiend"
     "com.google.Chrome"
     "org.pipewire.Helvum"
@@ -299,6 +298,7 @@
      ardour
      appimage-run
      bear
+     blanket
      btop
      blueberry
      bibata-cursors
@@ -308,6 +308,7 @@
      cemu
      cubiomes-viewer
      dart-sass
+     drawing
      docker
      dolphin-emu
      distrobox
@@ -317,6 +318,7 @@
      ffmpegthumbnailer
      firejail
      fish
+     fragments
      fuzzel
      gamescope
      gedit
@@ -340,6 +342,7 @@
      hypridle
      pyprland
      
+     identity
      inkscape
      pkgs-stable.itch
      krita
@@ -356,6 +359,7 @@
      lutris
      melonDS
      mpv
+     mousai
      mupen64plus
      musescore
      mission-center
@@ -371,6 +375,7 @@
      obs-studio
      pavucontrol
      protonup-qt
+     pitivi
      pkgs-unstable.parabolic
      psensor
      powertop
@@ -380,6 +385,7 @@
      setzer
      superTuxKart
      sqlitebrowser
+     textpieces
      thunderbird
      vlc
      video-trimmer
