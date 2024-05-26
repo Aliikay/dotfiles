@@ -145,6 +145,9 @@
   		autoconnect = ["qemuL///system"];
   		uris = ["qemu:///system"];
   	};
+  	"org/gnome/mutter" = { 
+  		experimental-features = [ "scale-monitor-framebuffer" ];
+  	};
   };
   
   # Notify changes with the auto update script
