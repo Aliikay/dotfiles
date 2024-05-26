@@ -293,6 +293,7 @@
      foot
      pkgs-stable.aseprite
      amberol
+     apostrophe
      ardour
      appimage-run
      bear
@@ -303,6 +304,7 @@
      blender-hip
      brightnessctl
      celluloid
+     cartridges
      cemu
      cubiomes-viewer
      dart-sass
@@ -342,6 +344,7 @@
      pyprland
      
      identity
+     impression
      inkscape
      pkgs-stable.itch
      krita
@@ -365,6 +368,7 @@
      nautilus-open-any-terminal
      ncdu
      neofetch
+     newsflash
      nil
      nh
      libnotify
