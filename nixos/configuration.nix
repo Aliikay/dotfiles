@@ -408,6 +408,12 @@
      
      audacity
   ];
+  
+  fonts.packages = with pkgs; [
+  	nerdfonts
+  	corefonts
+  	vistafonts
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
