@@ -390,6 +390,7 @@
      setzer
      superTuxKart
      sqlitebrowser
+     tangram
      textpieces
      thunderbird
      vlc
