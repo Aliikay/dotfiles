@@ -243,6 +243,7 @@
     "ca.parallel_launcher.ParallelLauncher"
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
+    "camp.nook.nookdesktop"
   ];
   
   # Flatpak auto updates
