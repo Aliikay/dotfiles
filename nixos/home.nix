@@ -69,6 +69,11 @@
   	gnomeExtensions.logo-menu
   	gnomeExtensions.quick-settings-tweaker
   	gnomeExtensions.quick-settings-audio-panel
+  	gnomeExtensions.ddterm
+  	gnomeExtensions.miniview
+  	gnomeExtensions.top-bar-organizer
+  	gnomeExtensions.burn-my-windows
+  	gnomeExtensions.caffeine
   ];
   
   # .config
