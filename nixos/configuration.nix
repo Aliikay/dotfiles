@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }:
+{ config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
 
 {
   imports =
@@ -346,7 +346,7 @@
      identity
      impression
      inkscape
-     pkgs-stable.itch
+     pkgs-last-stable.itch
      krita
      komikku
      killall
@@ -380,7 +380,7 @@
      protonup-qt
      popsicle
      pitivi
-     pkgs-unstable.parabolic
+     parabolic
      psensor
      powertop
      renoise
