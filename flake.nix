@@ -2,8 +2,8 @@
   description = "Alikay's System";
 
   inputs = {
-  	# Default to the nixos-unstable branch
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  	# Default to the June 2024 branch
+    nixpkgs.url = "github:nixos/nixpkgs/24.05";
     
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
