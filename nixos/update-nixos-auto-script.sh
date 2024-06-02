@@ -25,7 +25,7 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 		echo "Rebuilding the system"
 		$REBUILD boot --flake /etc/nixos#alikay
 		
-		if [ $? -gt 0 ]; then
+		if [ $? -eq 0 ]; then
 			echo "Commiting to repo"
 			sudo -u alikay git add flake.lock
 			sudo -u alikay git commit -m "Automatic Update to flake.lock"
