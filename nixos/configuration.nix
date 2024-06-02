@@ -174,6 +174,23 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  
+  # MPD daemon
+  services.mpd = {
+  	enable = true;
+  	musicDirectory = "${config.users.users.alikay.home}/Music";
+  	startWhenNeeded = true;
+  	user = "alikay";
+		extraConfig = ''
+			audio_output {
+				type "pipewire"
+				name "MPD Pipewire Output"
+			}
+		'';
+  };
+  systemd.services.mpd.environment = {
+  	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
