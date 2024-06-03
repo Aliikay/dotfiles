@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }:
+{ config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
 
 {
   imports =
@@ -169,11 +169,34 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
+    
+    # Pipewire runs as root
+    systemWide = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  
+  # MPD daemon
+  services.mpd = {
+  	enable = true;
+  	musicDirectory = "${config.users.users.alikay.home}/Music";
+  	#user = "alikay";
+		extraConfig = ''
+			audio_output {
+				type "pipewire"
+				name "MPD Pipewire Output"
+			}
+		'';
+		
+		network.listenAddress = "any";
+		startWhenNeeded = true;
+  };
+  systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+  #systemd.services.mpd.environment = {
+  #	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+  #};
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -187,6 +210,10 @@
       firefox
     #  thunderbird
     ];
+  };
+  
+  users.groups.media = {
+  	members = [ "mpd" "alikay" ];
   };
 
   # Allow unfree packages
@@ -274,8 +301,8 @@
 	# Stylix theme
 	stylix = {
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-		image = ../wallpapers/kurapika-gruv.png;
+		#base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+		image = ../wallpapers/houses.jpg;
 		
 		cursor.package = pkgs.bibata-cursors;
 		cursor.name = "Bibata-Modern-Classic";
@@ -293,6 +320,7 @@
      foot
      pkgs-stable.aseprite
      amberol
+     apostrophe
      ardour
      appimage-run
      bear
@@ -303,6 +331,7 @@
      blender-hip
      brightnessctl
      celluloid
+     cartridges
      cemu
      cubiomes-viewer
      dart-sass
@@ -342,8 +371,9 @@
      pyprland
      
      identity
+     impression
      inkscape
-     pkgs-stable.itch
+     pkgs-last-stable.itch
      krita
      komikku
      killall
@@ -358,6 +388,7 @@
      lutris
      melonDS
      mpv
+     mpc-cli
      mousai
      mupen64plus
      musescore
@@ -365,6 +396,7 @@
      nautilus-open-any-terminal
      ncdu
      neofetch
+     newsflash
      nil
      nh
      libnotify
@@ -376,7 +408,7 @@
      protonup-qt
      popsicle
      pitivi
-     pkgs-unstable.parabolic
+     parabolic
      psensor
      powertop
      renoise
@@ -386,6 +418,7 @@
      setzer
      superTuxKart
      sqlitebrowser
+     tangram
      textpieces
      thunderbird
      vlc
@@ -407,6 +440,12 @@
      inputs.pip2nix.defaultPackage.${system}
      
      audacity
+  ];
+  
+  fonts.packages = with pkgs; [
+  	nerdfonts
+  	corefonts
+  	vistafonts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

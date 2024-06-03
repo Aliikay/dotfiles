@@ -2,15 +2,19 @@
   description = "Alikay's System";
 
   inputs = {
-  	# Default to the nixos-unstable branch
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  	# Default to the June 2024 branch
+    nixpkgs.url = "github:nixos/nixpkgs/24.05";
     
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Latest stable branch of nixpkgs, used for version rollback
+    # The current latest version is 24.05
+    nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
+    
+    # Last stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
-    nixpkgs-stable.url = "github:nixos/nixpkgs/23.11";
+    nixpkgs-last-stable.url = "github:nixos/nixpkgs/23.11";
     
     # Makes various tweaks for audio production
     musnix  = { url = "github:musnix/musnix"; };
@@ -58,7 +62,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, home-manager, ...}: {#, hyprland, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: {#, hyprland, ... }: {
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
 			
@@ -72,15 +76,23 @@
             inherit inputs;
             system = "x86_64-linux";
             config.allowUnfree = true;
-           };
+          };
            
-           pkgs-unstable = import nixpkgs-unstable {
+		      pkgs-last-stable = import nixpkgs-last-stable {
+		        # Refer to the `system` parameter from
+		        # the outer scope recursively
+		        inherit inputs;
+		        system = "x86_64-linux";
+		        config.allowUnfree = true;
+		      };
+           
+          pkgs-unstable = import nixpkgs-unstable {
             # Refer to the `system` parameter from
             # the outer scope recursively
             inherit inputs;
             system = "x86_64-linux";
             config.allowUnfree = true;
-           };
+          };
 			};
 			modules = [
 			  inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
