@@ -169,6 +169,9 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
+    
+    # Pipewire runs as root
+    systemWide = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -179,18 +182,21 @@
   services.mpd = {
   	enable = true;
   	musicDirectory = "${config.users.users.alikay.home}/Music";
-  	startWhenNeeded = true;
-  	user = "alikay";
+  	#user = "alikay";
 		extraConfig = ''
 			audio_output {
 				type "pipewire"
 				name "MPD Pipewire Output"
 			}
 		'';
+		
+		network.listenAddress = "any";
+		startWhenNeeded = true;
   };
-  systemd.services.mpd.environment = {
-  	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
-  };
+  systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+  #systemd.services.mpd.environment = {
+  #	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+  #};
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -204,6 +210,10 @@
       firefox
     #  thunderbird
     ];
+  };
+  
+  users.groups.media = {
+  	members = [ "mpd" "alikay" ];
   };
 
   # Allow unfree packages
@@ -291,8 +301,8 @@
 	# Stylix theme
 	stylix = {
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-		image = ../wallpapers/kurapika-gruv.png;
+		#base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+		image = ../wallpapers/houses.jpg;
 		
 		cursor.package = pkgs.bibata-cursors;
 		cursor.name = "Bibata-Modern-Classic";
@@ -378,6 +388,7 @@
      lutris
      melonDS
      mpv
+     mpc-cli
      mousai
      mupen64plus
      musescore
