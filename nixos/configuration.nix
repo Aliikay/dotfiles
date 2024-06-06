@@ -349,6 +349,7 @@
      gedit
      gimp
      grim
+     gradience
      gnome.sushi
      gnome.totem
      gnome.gnome-software
