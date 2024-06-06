@@ -169,9 +169,6 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
-    
-    # Pipewire runs as root
-    systemWide = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -193,10 +190,10 @@
 		network.listenAddress = "any";
 		startWhenNeeded = true;
   };
-  systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
-  #systemd.services.mpd.environment = {
-  #	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
-  #};
+  #systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+  systemd.services.mpd.environment = {
+  	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -301,8 +298,8 @@
 	# Stylix theme
 	stylix = {
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		#base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-		image = ../wallpapers/houses.jpg;
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+		image = ../wallpapers/kurapika-gruv.png;
 		
 		cursor.package = pkgs.bibata-cursors;
 		cursor.name = "Bibata-Modern-Classic";
@@ -326,6 +323,7 @@
      bear
      blanket
      btop
+     blackbox-terminal
      blueberry
      bibata-cursors
      blender-hip
