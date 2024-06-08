@@ -74,6 +74,7 @@
   	gnomeExtensions.top-bar-organizer
   	gnomeExtensions.burn-my-windows
   	gnomeExtensions.caffeine
+  	gnomeExtensions.open-bar
   ];
   
   # .config
