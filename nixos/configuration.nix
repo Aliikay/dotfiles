@@ -268,7 +268,6 @@
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
-    "com.mattjakeman.ExtensionManager"
   ];
   
   # Flatpak auto updates
@@ -358,6 +357,7 @@
      gnome.gnome-sound-recorder
      gnome.gnome-maps
      gnome-graphs
+     gnome-extension-manager
      git
      gh
      heroic
