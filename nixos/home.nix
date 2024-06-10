@@ -74,7 +74,7 @@
   	gnomeExtensions.top-bar-organizer
   	gnomeExtensions.burn-my-windows
   	gnomeExtensions.caffeine
-  	gnomeExtensions.open-bar
+  	#gnomeExtensions.open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
   	gnomeExtensions.search-light
   	gnomeExtensions.space-bar
   ];
