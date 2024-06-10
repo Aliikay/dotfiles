@@ -268,6 +268,7 @@
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
+    "com.mattjakeman.ExtensionManager"
   ];
   
   # Flatpak auto updates

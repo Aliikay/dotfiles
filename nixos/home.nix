@@ -75,6 +75,8 @@
   	gnomeExtensions.burn-my-windows
   	gnomeExtensions.caffeine
   	gnomeExtensions.open-bar
+  	gnomeExtensions.search-light
+  	gnomeExtensions.space-bar
   ];
   
   # .config
