@@ -27,8 +27,9 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 		
 		if [ $? -eq 0 ]; then
 			echo "Commiting to repo"
+			gen=$(nixos-rebuild list-generations | grep current | awk '{print $1;}')
 			sudo -u alikay git add flake.lock
-			sudo -u alikay git commit -m "Automatic Update to flake.lock"
+			sudo -u alikay git commit -m "Automatic Update. Generation $gen"
 			
 			echo "Updates finished. They will be applied after the next reboot" > "$OUTPUTPIPE"
 			echo "Updates finished"
