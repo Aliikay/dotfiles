@@ -26,8 +26,9 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 		$REBUILD boot --flake /etc/nixos#alikay
 		
 		if [ $? -eq 0 ]; then
-			echo "Commiting to repo"
+			echo "Finding current NixOS Generation"
 			gen=$(nixos-rebuild list-generations | grep current | awk '{print $1;}')
+			echo "Commiting to repo"
 			sudo -u alikay git add flake.lock
 			sudo -u alikay git commit -m "Automatic Update. Generation $gen"
 			

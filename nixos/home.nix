@@ -77,6 +77,7 @@
   	#gnomeExtensions.open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
   	gnomeExtensions.search-light
   	gnomeExtensions.space-bar
+  	gnomeExtensions.rounded-corners
   ];
   
   # .config
