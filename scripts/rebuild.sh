@@ -49,8 +49,9 @@ if [ "$DOIT" = true ]; then
 		askYesNo "Commit these changes?" true
 		DOIT=$ANSWER
 		if [ "$DOIT" = true ]; then
+			gen = $(nixos-rebuild list-generations  | grep current | awk '{print $1;}')
 			git add *
-			git commit -m "Automatic commit from rebuild script"
+			git commit -m "Automatic commit: Generation $gen"
 			git push
 		fi
 	fi
