@@ -297,6 +297,7 @@
 	
 	# Stylix theme
 	stylix = {
+		enable = true;
 		autoEnable = true;
 	
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
