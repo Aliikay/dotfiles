@@ -49,9 +49,12 @@ if [ "$DOIT" = true ]; then
 		askYesNo "Commit these changes?" true
 		DOIT=$ANSWER
 		if [ "$DOIT" = true ]; then
+			echo "Finding NixOS Generation Number"
 			gen=$(nixos-rebuild list-generations  | grep current | awk '{print $1;}')
+			echo "Comitting files to repo"
 			git add *
 			git commit -m "Automatic commit: Generation $gen"
+			echo "Pushing..."
 			git push
 		fi
 	fi
