@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{config, pkgs, inputs, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -79,6 +79,7 @@
   	gnomeExtensions.space-bar
   	gnomeExtensions.rounded-corners
   	gnomeExtensions.panel-corners
+  	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
   # .config
