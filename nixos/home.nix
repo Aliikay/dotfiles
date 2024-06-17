@@ -78,6 +78,7 @@
   	gnomeExtensions.search-light
   	gnomeExtensions.space-bar
   	gnomeExtensions.rounded-corners
+  	gnomeExtensions.panel-corners
   ];
   
   # .config
