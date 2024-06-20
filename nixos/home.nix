@@ -79,6 +79,12 @@
   	gnomeExtensions.space-bar
   	gnomeExtensions.rounded-corners
   	gnomeExtensions.panel-corners
+  	gnomeExtensions.auto-activities
+  	gnomeExtensions.hide-top-bar
+  	gnomeExtensions.autohide-battery
+  	gnomeExtensions.gnome-40-ui-improvements
+  	gnomeExtensions.app-icons-taskbar
+  	gnomeExtensions.battery-health-charging
   	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
