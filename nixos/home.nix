@@ -85,6 +85,8 @@
   	gnomeExtensions.gnome-40-ui-improvements
   	gnomeExtensions.app-icons-taskbar
   	gnomeExtensions.battery-health-charging
+  	gnomeExtensions.mullvad-indicator
+  	gnomeExtensions.usable-overview
   	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
