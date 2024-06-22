@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
+{ config, lib, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
 
 {
   imports =
@@ -121,14 +121,14 @@
   services.xserver.displayManager.gdm.wayland = true;
   
   # Hardware
-  #hardware = {
-  #	opengl = {
-  #		enable = true;
-  #		driSupport32Bit = true;
+  hardware = {
+  	opengl = {
+  		enable = lib.mkForce true;
+  		driSupport32Bit = lib.mkForce true;
   #		package = pkgs-unstable.mesa.drivers;
   #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-  #	};
-  #};
+  	};
+  };
   
   # Hyprland
   programs.hyprland = {
