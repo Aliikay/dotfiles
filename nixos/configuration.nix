@@ -390,9 +390,10 @@
      kdePackages.kate
      kdePackages.dolphin
      kdePackages.qtstyleplugin-kvantum
+     libsForQt5.qtstyleplugin-kvantum
      
      libreoffice
-     libsForQt5.qt5ct
+     libsForQt5.qt5ct 
      qt6Packages.qt6ct
      lutris
      melonDS
