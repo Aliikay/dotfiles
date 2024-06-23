@@ -36,6 +36,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
   
+  # Environment Variables
+  environment.sessionVariables = rec {
+  	QT_QPA_PLATFORMTHEME = "qt6ct";
+  };
+  
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
