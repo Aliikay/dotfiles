@@ -403,6 +403,7 @@
      newsflash
      nil
      nh
+     nwg-displays
      libnotify
      nix-tree
      onlyoffice-bin
