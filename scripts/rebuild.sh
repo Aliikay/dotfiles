@@ -1,5 +1,7 @@
 #!/bin/sh
 
+LOCK_FILE=/home/alikay/.nixos-system-update-lock
+
 function askYesNo {
         QUESTION=$1
         DEFAULT=$2
@@ -31,6 +33,20 @@ DOIT=$ANSWER
 if [ "$DOIT" = true ]; then
 	askYesNo "Update the flake inputs as well?" true
 	DOIT=$ANSWER
+	
+	# Wait for lock to be released
+	while [ -f "$LOCK_FILE" ]
+	do
+		sleep 1
+		printf "Waiting for the lock file at $LOCK_FILE \033[0K\r"
+	done
+
+	echo ""
+	echo "No current lock file, locking changes..."
+
+	# Create lock file
+	sudo touch "$LOCK_FILE"
+	
 	if [ "$DOIT" = true ]; then
 		cd /home/alikay/dotfiles
 		nix flake update
@@ -44,13 +60,20 @@ if [ "$DOIT" = true ]; then
 	echo "Rebuilding the system..."
 	nh os switch /home/alikay/dotfiles --hostname alikay
 	
+	# Remove lock file
+	sudo rm "$LOCK_FILE"
+	
 	if [ $? = 0 ]
 	then
 		askYesNo "Commit these changes?" true
 		DOIT=$ANSWER
 		if [ "$DOIT" = true ]; then
+			echo "Finding NixOS Generation Number"
+			gen=$(nixos-rebuild list-generations  | grep current | awk '{print $1;}')
+			echo "Comitting files to repo"
 			git add *
-			git commit -m "Automatic commit from rebuild script"
+			git commit -m "Automatic commit: Generation $gen"
+			echo "Pushing..."
 			git push
 		fi
 	fi

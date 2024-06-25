@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
+{ config, lib, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
 
 {
   imports =
@@ -35,6 +35,11 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
+  
+  # Environment Variables
+  environment.sessionVariables = rec {
+  	QT_QPA_PLATFORMTHEME = "qt6ct";
+  };
   
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -121,14 +126,14 @@
   services.xserver.displayManager.gdm.wayland = true;
   
   # Hardware
-  #hardware = {
-  #	opengl = {
-  #		enable = true;
-  #		driSupport32Bit = true;
+  hardware = {
+  	opengl = {
+  		enable = lib.mkForce true;
+  		driSupport32Bit = lib.mkForce true;
   #		package = pkgs-unstable.mesa.drivers;
   #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-  #	};
-  #};
+  	};
+  };
   
   # Hyprland
   programs.hyprland = {
@@ -169,9 +174,6 @@
     pulse.enable = true;
     jack.enable = true;
     wireplumber.enable = true;
-    
-    # Pipewire runs as root
-    systemWide = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -193,10 +195,10 @@
 		network.listenAddress = "any";
 		startWhenNeeded = true;
   };
-  systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
-  #systemd.services.mpd.environment = {
-  #	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
-  #};
+  #systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+  systemd.services.mpd.environment = {
+  	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -300,9 +302,13 @@
 	
 	# Stylix theme
 	stylix = {
+		enable = true;
+		autoEnable = true;
+	
 	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		#base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-		image = ../wallpapers/houses.jpg;
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+		#base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
+		image = ../wallpapers/kurapika-gruv.png;
 		
 		cursor.package = pkgs.bibata-cursors;
 		cursor.name = "Bibata-Modern-Classic";
@@ -326,6 +332,7 @@
      bear
      blanket
      btop
+     blackbox-terminal
      blueberry
      bibata-cursors
      blender-hip
@@ -351,6 +358,7 @@
      gedit
      gimp
      grim
+     gradience
      gnome.sushi
      gnome.totem
      gnome.gnome-software
@@ -358,6 +366,7 @@
      gnome.gnome-sound-recorder
      gnome.gnome-maps
      gnome-graphs
+     gnome-extension-manager
      git
      gh
      heroic
@@ -381,9 +390,10 @@
      kdePackages.kate
      kdePackages.dolphin
      kdePackages.qtstyleplugin-kvantum
+     libsForQt5.qtstyleplugin-kvantum
      
      libreoffice
-     libsForQt5.qt5ct
+     libsForQt5.qt5ct 
      qt6Packages.qt6ct
      lutris
      melonDS
@@ -399,6 +409,7 @@
      newsflash
      nil
      nh
+     nwg-displays
      libnotify
      nix-tree
      onlyoffice-bin

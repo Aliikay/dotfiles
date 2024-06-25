@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{config, pkgs, inputs, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -74,6 +74,20 @@
   	gnomeExtensions.top-bar-organizer
   	gnomeExtensions.burn-my-windows
   	gnomeExtensions.caffeine
+  	#gnomeExtensions.open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
+  	gnomeExtensions.search-light
+  	gnomeExtensions.space-bar
+  	gnomeExtensions.rounded-corners
+  	gnomeExtensions.panel-corners
+  	gnomeExtensions.auto-activities
+  	gnomeExtensions.hide-top-bar
+  	gnomeExtensions.autohide-battery
+  	gnomeExtensions.gnome-40-ui-improvements
+  	gnomeExtensions.app-icons-taskbar
+  	gnomeExtensions.battery-health-charging
+  	gnomeExtensions.mullvad-indicator
+  	gnomeExtensions.usable-overview
+  	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
   # .config

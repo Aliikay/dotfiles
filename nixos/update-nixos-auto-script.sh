@@ -2,6 +2,21 @@
 
 echo $REBUILD
 OUTPUTPIPE=/home/alikay/.upgrade-script-pipe
+LOCK_FILE=/home/alikay/.nixos-system-update-lock
+
+# Wait for lock to be released
+if [ -f "$LOCK_FILE" ]; then
+	echo "Waiting for lock file at $LOCK_FILE to be free before updating..." > "$OUTPUTPIPE"
+	echo "Waiting for lock file at $LOCK_FILE"
+fi
+
+while [ -f "$LOCK_FILE" ]
+do
+	sleep 1
+done
+
+# Create lock file
+touch "$LOCK_FILE"
 
 # Check for battery > 90% on laptops
 battery="/sys/class/power_supply/BAT1"
@@ -26,9 +41,11 @@ if [ $? -gt 0 ] || [ $capacity -gt 90 ] || [ $status = "Charging" ]; then
 		$REBUILD boot --flake /etc/nixos#alikay
 		
 		if [ $? -eq 0 ]; then
+			echo "Finding current NixOS Generation"
+			gen=$(nixos-rebuild list-generations | grep current | awk '{print $1;}')
 			echo "Commiting to repo"
 			sudo -u alikay git add flake.lock
-			sudo -u alikay git commit -m "Automatic Update to flake.lock"
+			sudo -u alikay git commit -m "Automatic Update. Generation $gen"
 			
 			echo "Updates finished. They will be applied after the next reboot" > "$OUTPUTPIPE"
 			echo "Updates finished"
@@ -46,4 +63,5 @@ else
 	echo "Skipped update, battery was at $capacity% and $status"
 fi
 
-
+# Delete lock file
+rm "$LOCK_FILE"
