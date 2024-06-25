@@ -72,7 +72,7 @@ if [ "$DOIT" = true ]; then
 			gen=$(nixos-rebuild list-generations  | grep current | awk '{print $1;}')
 			echo "Comitting files to repo"
 			git add *
-			git commit -m "Automatic commit: Generation $gen"
+			git commit -m "Auto commit from manual change: Generation $gen"
 			echo "Pushing..."
 			git push
 		fi
