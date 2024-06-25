@@ -2,6 +2,21 @@
 
 echo $REBUILD
 OUTPUTPIPE=/home/alikay/.upgrade-script-pipe
+LOCK_FILE=/home/alikay/.nixos-system-update-lock
+
+# Wait for lock to be released
+if [ -f "$LOCK_FILE" ]; then
+	echo "Waiting for lock file at $LOCK_FILE to be free before updating..." > "$OUTPUTPIPE"
+	echo "Waiting for lock file at $LOCK_FILE"
+fi
+
+while [ -f "$LOCK_FILE" ]
+do
+	sleep 1
+done
+
+# Create lock file
+touch "$LOCK_FILE"
 
 # Check for battery > 90% on laptops
 battery="/sys/class/power_supply/BAT1"
@@ -48,4 +63,5 @@ else
 	echo "Skipped update, battery was at $capacity% and $status"
 fi
 
-
+# Delete lock file
+rm "$LOCK_FILE"
