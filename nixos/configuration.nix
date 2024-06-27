@@ -273,6 +273,7 @@
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
+    "dev.gbstudio.gb-studio"
   ];
   
   # Flatpak auto updates
