@@ -316,6 +316,13 @@
 		
 		targets.grub.useImage = true;
 		
+		fonts = {
+			sansSerif = {
+				package = pkgs.cantarell-fonts;
+				name = "Cantarell-VF";
+			};
+		};
+		
 		polarity = "dark";
 	};
  
@@ -348,6 +355,7 @@
      dolphin-emu
      distrobox
      eww
+     easyeffects
      fastfetch
      ffmpeg
      ffmpegthumbnailer
@@ -419,6 +427,7 @@
      pavucontrol
      protonup-qt
      popsicle
+     plattenalbum
      pitivi
      parabolic
      psensor
