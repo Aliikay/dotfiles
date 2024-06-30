@@ -274,6 +274,7 @@
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
     "dev.gbstudio.gb-studio"
+    "xyz.ketok.Speedtest"
   ];
   
   # Flatpak auto updates
