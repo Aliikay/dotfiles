@@ -275,6 +275,7 @@
     "camp.nook.nookdesktop"
     "dev.gbstudio.gb-studio"
     "xyz.ketok.Speedtest"
+    "io.github.RodZill4.Material-Maker"
   ];
   
   # Flatpak auto updates
