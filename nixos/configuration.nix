@@ -129,6 +129,7 @@
   hardware = {
   	opengl = {
   		enable = lib.mkForce true;
+  		driSupport = lib.mkForce true;
   		driSupport32Bit = lib.mkForce true;
   #		package = pkgs-unstable.mesa.drivers;
   #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
@@ -234,6 +235,7 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  programs.gamemode.enable = true;
   
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
@@ -365,7 +367,6 @@
      fish
      fragments
      fuzzel
-     gamescope
      gedit
      gimp
      grim
@@ -407,6 +408,7 @@
      libsForQt5.qt5ct 
      qt6Packages.qt6ct
      lutris
+     mangohud
      melonDS
      mpv
      mpc-cli
