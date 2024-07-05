@@ -88,6 +88,7 @@
   	gnomeExtensions.mullvad-indicator
   	gnomeExtensions.usable-overview
   	gnomeExtensions.tray-icons-reloaded
+  	gnomeExtensions.fly-pie
   	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
