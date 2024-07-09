@@ -171,6 +171,11 @@
   	"org/gnome/mutter" = { 
   		experimental-features = [ "scale-monitor-framebuffer" ];
   	};
+  	
+  	# Default Terminal
+  	"org.gnome.desktop.default-applications.terminal" = {
+  		exec = "blackbox";
+  	};
   };
   
   # Notify changes with the auto update script
