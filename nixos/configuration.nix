@@ -39,7 +39,11 @@
   # Environment Variables
   environment.sessionVariables = rec {
   	QT_QPA_PLATFORMTHEME = "qt6ct";
+  	#NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
+  environment.pathsToLink = [
+		"/share/nautilus-python/extensions"
+  ];
   
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -165,9 +169,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  security.sudo.extraConfig = ''
-  	Defaults passwd_timeout=0
-  '';
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -180,6 +181,12 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  
+  # Security
+  security.sudo.extraConfig = ''
+  	Defaults passwd_timeout=0
+  '';
+  security.apparmor.enable = true;
   
   # MPD daemon
   services.mpd = {
@@ -329,6 +336,12 @@
 		
 		polarity = "dark";
 	};
+	
+	# Making blackbox the default terminal
+	programs.nautilus-open-any-terminal = {
+		enable = true;
+		terminal = "blackbox";
+	};
  
   # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
@@ -373,6 +386,8 @@
      gradience
      gnome.sushi
      gnome.totem
+     gnome.nautilus
+     gnome.nautilus-python
      gnome.gnome-software
      gnome.gnome-tweaks
      gnome.gnome-sound-recorder
