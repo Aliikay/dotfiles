@@ -394,6 +394,7 @@
      gnome.gnome-maps
      gnome-graphs
      gnome-extension-manager
+     gnome.dconf-editor
      git
      gh
      heroic
