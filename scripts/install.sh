@@ -20,11 +20,17 @@ nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];
 read -p "Press enter to continue"
 sudo nano /etc/nixos/configuration.nix
 
+echo "Please transfer any LUKS encryption stuff from the generated configuration.nix to the new one. First the generated config file will open, and then the new one will be opened."
+read -p "Press enter to open the generated configuration.nix"
+sudo nano /etc/nixos/configuration.nix
+read -p "Press enter to open the new configuration.nix"
+sudo nano ~/dotfiles/nixos/configuration.nix
+
 echo "Copy the current hardware config to the dotfiles"
 rm ~/dotfiles/nixos/hardware-configuration.nix
 cp -r /etc/nixos/hardware-configuration.nix ~/dotfiles/nixos/hardware-configuration.nix
 
-echo "Rebuilding  & updating the system with substituters enabled"
+echo "Rebuilding & updating the system with substituters enabled"
 sudo nixos-rebuild switch --upgrade
 
 echo "Building the new system..."
