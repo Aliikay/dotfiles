@@ -20,6 +20,20 @@
     "cryptd"
   ];
   boot.tmp.cleanOnBoot = true;
+  
+  # LUKS Encryption
+  boot.initrd.luks.devices."luks-e8892065-d076-46dd-8e76-3fb3c75be354".device = "/dev/disk/by-uuid/e8892065-d076-46dd-8e76-3fb3c75be354";
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+  boot.loader.grub.enableCryptodisk=true;
+
+  boot.initrd.luks.devices."luks-cf31e63a-3a1b-4cb2-9f5a-420e97dc06b2".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-e8892065-d076-46dd-8e76-3fb3c75be354".keyFile = "/crypto_keyfile.bin";
+
+  # Networking
   networking.hostName = "alikay"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -452,7 +466,7 @@
      parabolic
      psensor
      powertop
-     renoise
+     #renoise # ADD BACK WITH FULL VERSION
      reaper
      slurp
      shortwave
