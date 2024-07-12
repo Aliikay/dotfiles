@@ -368,6 +368,8 @@
      apostrophe
      ardour
      appimage-run
+     base16-shell-preview
+     base16-universal-manager
      bear
      blanket
      btop
