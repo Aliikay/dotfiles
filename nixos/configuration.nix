@@ -200,7 +200,7 @@
   security.sudo.extraConfig = ''
   	Defaults passwd_timeout=0
   '';
-  security.apparmor.enable = true;
+  security.apparmor.enable = false;
   
   # MPD daemon
   services.mpd = {
@@ -441,6 +441,7 @@
      qt6Packages.qt6ct
      lutris
      mangohud
+     menulibre
      melonDS
      mpv
      mpc-cli
