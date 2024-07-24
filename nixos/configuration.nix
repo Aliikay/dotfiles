@@ -372,6 +372,7 @@
      base16-universal-manager
      bear
      blanket
+     boxbuddy
      btop
      blackbox-terminal
      blueberry

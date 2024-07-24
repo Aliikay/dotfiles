@@ -89,6 +89,7 @@
   	gnomeExtensions.usable-overview
   	gnomeExtensions.tray-icons-reloaded
   	gnomeExtensions.fly-pie
+  	gnomeExtensions.window-gestures
   	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
