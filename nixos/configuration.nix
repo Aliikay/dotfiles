@@ -395,6 +395,7 @@
      distrobox
      eww
      easyeffects
+     eyedropper
      fastfetch
      ffmpeg
      ffmpegthumbnailer

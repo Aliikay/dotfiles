@@ -40,6 +40,7 @@
   	gnomeExtensions.blur-my-shell
   	gnomeExtensions.forge
   	gnomeExtensions.dash-to-dock
+  	gnomeExtensions.color-picker
   	gnomeExtensions.dash-to-panel
   	gnomeExtensions.what-watch
   	gnomeExtensions.appindicator
