@@ -261,6 +261,11 @@
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+  	enable = true;
+  	setSocketVariable = true;
+  };
   programs.virt-manager.enable = true;
   
   # Appimage Support
