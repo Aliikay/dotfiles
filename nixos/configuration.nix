@@ -409,6 +409,7 @@
      gnome.gnome-tweaks
      gnome.gnome-sound-recorder
      gnome.gnome-maps
+     gnome.ghex
      gnome-graphs
      gnome-extension-manager
      gnome.dconf-editor
