@@ -485,6 +485,7 @@
      sqlitebrowser
      tangram
      textpieces
+     texturepacker
      thunderbird
      vlc
      video-trimmer
