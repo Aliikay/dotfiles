@@ -487,6 +487,7 @@
      share-preview
      superTuxKart
      sqlitebrowser
+     sysprof
      tangram
      textpieces
      texturepacker
