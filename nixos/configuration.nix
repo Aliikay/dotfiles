@@ -419,6 +419,8 @@
      gnome-graphs
      gnome-extension-manager
      gnome.dconf-editor
+     gnome.zenity
+     gnome-podcasts
      git
      gh
      heroic
@@ -482,6 +484,7 @@
      slurp
      shortwave
      setzer
+     share-preview
      superTuxKart
      sqlitebrowser
      tangram
@@ -494,6 +497,7 @@
      warp
      webp-pixbuf-loader
      waybar
+     wike
      unityhub
      udiskie
      yabridge
