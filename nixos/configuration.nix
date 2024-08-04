@@ -372,6 +372,7 @@
      amberol
      apostrophe
      ardour
+     alvr
      appimage-run
      base16-shell-preview
      base16-universal-manager
