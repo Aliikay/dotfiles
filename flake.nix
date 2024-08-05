@@ -62,40 +62,39 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: {#, hyprland, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: {#, hyprland, ... }: {			
 		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
 			system = "x86_64-linux";
-			
 			specialArgs = {
-					inherit inputs;
-          # To use packages from nixpkgs-unstable,
-          # we configure some parameters for it first
-          pkgs-stable = import nixpkgs-stable {
-            # Refer to the `system` parameter from
-            # the outer scope recursively
-            inherit inputs;
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-           
-		      pkgs-last-stable = import nixpkgs-last-stable {
-		        # Refer to the `system` parameter from
-		        # the outer scope recursively
-		        inherit inputs;
-		        system = "x86_64-linux";
-		        config.allowUnfree = true;
-		      };
-           
-          pkgs-unstable = import nixpkgs-unstable {
-            # Refer to the `system` parameter from
-            # the outer scope recursively
-            inherit inputs;
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+				inherit inputs;
+			  # To use packages from nixpkgs-unstable,
+			  # we configure some parameters for it first
+			  pkgs-stable = import nixpkgs-stable {
+			    # Refer to the `system` parameter from
+			    # the outer scope recursively
+			    inherit inputs;
+			    system = "x86_64-linux";
+			    config.allowUnfree = true;
+			  };
+			   
+				pkgs-last-stable = import nixpkgs-last-stable {
+				  # Refer to the `system` parameter from
+				  # the outer scope recursively
+				  inherit inputs;
+				  system = "x86_64-linux";
+				  config.allowUnfree = true;
+				};
+			   
+			  pkgs-unstable = import nixpkgs-unstable {
+			    # Refer to the `system` parameter from
+			    # the outer scope recursively
+			    inherit inputs;
+			    system = "x86_64-linux";
+			    config.allowUnfree = true;
+			  };
 			};
 			modules = [
-			  inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+				inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
 				inputs.musnix.nixosModules.musnix
 				inputs.nix-flatpak.nixosModules.nix-flatpak
 				#hyprland.nixosModules.default
@@ -103,20 +102,20 @@
 				./nixos/configuration.nix
 				#./nixos/illogical-impulse-dependancies.nix
 				./nixos/modules/nix-ld.nix
-      	./nixos/modules/godot.nix
+	    	./nixos/modules/godot.nix
 				
 				inputs.flake-programs-sqlite.nixosModules.programs-sqlite
 				inputs.stylix.nixosModules.stylix
 				
 				home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {inherit inputs; };
-          home-manager.users.alikay = import ./nixos/home.nix;
+	      {
+	        home-manager.useGlobalPkgs = true;
+	        home-manager.useUserPackages = true;
+	        home-manager.extraSpecialArgs = {inherit inputs;};
+	        home-manager.users.alikay = import ./nixos/home.nix;
 
-          # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-        }
+	        # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	      }
 			];
 		};
   };
