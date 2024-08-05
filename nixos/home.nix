@@ -1,4 +1,4 @@
-{config, pkgs, inputs, ... }:
+{config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
 
 {
   # TODO please change the username & home directory to your own
@@ -37,63 +37,65 @@
     ]))
     cowsay
     
-  	gnomeExtensions.blur-my-shell
-  	gnomeExtensions.forge
-  	gnomeExtensions.dash-to-dock
-  	gnomeExtensions.color-picker
-  	gnomeExtensions.dash-to-panel
-  	gnomeExtensions.what-watch
-  	gnomeExtensions.appindicator
-  	gnomeExtensions.useless-gaps
-  	gnomeExtensions.somafm-internet-radio
-  	gnomeExtensions.user-avatar-in-quick-settings
-  	gnomeExtensions.rectangle
-  	gnomeExtensions.window-title-is-back
-  	gnomeExtensions.just-perfection
-  	gnomeExtensions.openweather
-  	gnomeExtensions.pano
-  	gnomeExtensions.cpufreq
-  	gnomeExtensions.quick-web-search
-  	gnomeExtensions.arcmenu
-  	gnomeExtensions.vitals
-  	gnomeExtensions.coverflow-alt-tab
-  	gnomeExtensions.gnome-clipboard
-  	gnomeExtensions.clipboard-indicator
-  	gnomeExtensions.gsconnect
-  	gnomeExtensions.gtile
-  	gnomeExtensions.paperwm
-  	gnomeExtensions.media-controls
-  	gnomeExtensions.quick-settings-audio-panel
-  	gnomeExtensions.pip-on-top
-  	gnomeExtensions.twitchlive-panel
-  	gnomeExtensions.logo-widget
-  	gnomeExtensions.logo-menu
-  	gnomeExtensions.quick-settings-tweaker
-  	gnomeExtensions.quick-settings-audio-panel
-  	gnomeExtensions.ddterm
-  	gnomeExtensions.miniview
-  	gnomeExtensions.top-bar-organizer
-  	gnomeExtensions.burn-my-windows
-  	gnomeExtensions.caffeine
-  	#gnomeExtensions.open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
-  	gnomeExtensions.search-light
-  	gnomeExtensions.space-bar
-  	gnomeExtensions.rounded-corners
-  	gnomeExtensions.panel-corners
-  	gnomeExtensions.auto-activities
-  	gnomeExtensions.hide-top-bar
-  	gnomeExtensions.autohide-battery
-  	gnomeExtensions.gnome-40-ui-improvements
-  	gnomeExtensions.app-icons-taskbar
-  	gnomeExtensions.battery-health-charging
-  	gnomeExtensions.mullvad-indicator
-  	gnomeExtensions.usable-overview
-  	gnomeExtensions.tray-icons-reloaded
-  	gnomeExtensions.fly-pie
-  	gnomeExtensions.window-gestures
-  	gnomeExtensions.vertical-workspaces
-  	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
-  ];
+  # Gnome Extensions
+  ] ++ (with pkgs-unstable.gnomeExtensions; [
+  	blur-my-shell
+  	forge
+  	dash-to-dock
+  	color-picker
+  	dash-to-panel
+  	what-watch
+  	appindicator
+  	useless-gaps
+  	somafm-internet-radio
+  	user-avatar-in-quick-settings
+  	rectangle
+  	window-title-is-back
+  	just-perfection
+  	openweather
+  	pano
+  	cpufreq
+  	quick-web-search
+  	arcmenu
+  	vitals
+  	coverflow-alt-tab
+  	gnome-clipboard
+  	clipboard-indicator
+  	gsconnect
+  	gtile
+  	paperwm
+  	media-controls
+  	quick-settings-audio-panel
+  	pip-on-top
+  	twitchlive-panel
+  	logo-widget
+  	logo-menu
+  	quick-settings-tweaker
+  	quick-settings-audio-panel
+  	ddterm
+  	miniview
+  	top-bar-organizer
+  	burn-my-windows
+  	caffeine
+  	#open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
+  	search-light
+  	space-bar
+  	rounded-corners
+  	panel-corners
+  	auto-activities
+  	hide-top-bar
+  	autohide-battery
+  	gnome-40-ui-improvements
+  	app-icons-taskbar
+  	battery-health-charging
+  	mullvad-indicator
+  	usable-overview
+  	tray-icons-reloaded
+  	fly-pie
+  	window-gestures
+  	vertical-workspaces
+  	#inputs.pkgs-unstable..media-progress #dunno how to get it to work since its on unstable
+  ]);
   
   # .config
   home.file.".config" = {

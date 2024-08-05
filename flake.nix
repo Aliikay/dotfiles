@@ -62,10 +62,9 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: {#, hyprland, ... }: {			
-		nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
-			system = "x86_64-linux";
-			specialArgs = {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: 
+  let
+  	mySpecialArgs = {
 				inherit inputs;
 			  # To use packages from nixpkgs-unstable,
 			  # we configure some parameters for it first
@@ -93,30 +92,35 @@
 			    config.allowUnfree = true;
 			  };
 			};
-			modules = [
-				inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
-				inputs.musnix.nixosModules.musnix
-				inputs.nix-flatpak.nixosModules.nix-flatpak
-				#hyprland.nixosModules.default
-				
-				./nixos/configuration.nix
-				#./nixos/illogical-impulse-dependancies.nix
-				./nixos/modules/nix-ld.nix
-	    	./nixos/modules/godot.nix
-				
-				inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-				inputs.stylix.nixosModules.stylix
-				
-				home-manager.nixosModules.home-manager
-	      {
-	        home-manager.useGlobalPkgs = true;
-	        home-manager.useUserPackages = true;
-	        home-manager.extraSpecialArgs = {inherit inputs;};
-	        home-manager.users.alikay = import ./nixos/home.nix;
+	in
+		{#, hyprland, ... }: {			
+			nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
+				system = "x86_64-linux";
+				specialArgs = mySpecialArgs;
+				modules = [
+					inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+					inputs.musnix.nixosModules.musnix
+					inputs.nix-flatpak.nixosModules.nix-flatpak
+					#hyprland.nixosModules.default
+					
+					./nixos/configuration.nix
+					#./nixos/illogical-impulse-dependancies.nix
+					./nixos/modules/nix-ld.nix
+			  	./nixos/modules/godot.nix
+					
+					inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+					inputs.stylix.nixosModules.stylix
+					
+					home-manager.nixosModules.home-manager
+			    {
+			      home-manager.useGlobalPkgs = true;
+			      home-manager.useUserPackages = true;
+			      home-manager.extraSpecialArgs = mySpecialArgs;
+			      home-manager.users.alikay = import ./nixos/home.nix;
 
-	        # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	      }
-			];
-		};
+			      # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+			    }
+				];
+			};
   };
 }
