@@ -94,7 +94,7 @@
   	fly-pie
   	window-gestures
   	vertical-workspaces
-  	#inputs.pkgs-unstable..media-progress #dunno how to get it to work since its on unstable
+  	media-progress
   ]);
   
   # .config
