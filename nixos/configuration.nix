@@ -151,8 +151,31 @@
   		driSupport32Bit = lib.mkForce true;
   #		package = pkgs-unstable.mesa.drivers;
   #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  
+  
+  	# OpenCL Support
+  	extraPackages = with pkgs; [
+  		rocmPackages.clr.icd
+		];
+
   	};
   };
+
+  
+  # Allow programs to find the HIP binary
+  systemd.tmpfiles.rules = 
+  let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with pkgs.rocmPackages; [
+        rocblas
+        hipblas
+        clr
+      ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  ];
   
   # Hyprland
   programs.hyprland = {
