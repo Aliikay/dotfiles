@@ -40,6 +40,7 @@
   	gnomeExtensions.blur-my-shell
   	gnomeExtensions.forge
   	gnomeExtensions.dash-to-dock
+  	gnomeExtensions.color-picker
   	gnomeExtensions.dash-to-panel
   	gnomeExtensions.what-watch
   	gnomeExtensions.appindicator
@@ -87,6 +88,10 @@
   	gnomeExtensions.battery-health-charging
   	gnomeExtensions.mullvad-indicator
   	gnomeExtensions.usable-overview
+  	gnomeExtensions.tray-icons-reloaded
+  	gnomeExtensions.fly-pie
+  	gnomeExtensions.window-gestures
+  	gnomeExtensions.vertical-workspaces
   	#inputs.pkgs-unstable.gnomeExtensions.media-progress #dunno how to get it to work since its on unstable
   ];
   
@@ -196,6 +201,11 @@
   
   # PATH
   home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
+  
+  # Variables
+  home.sessionVariables = {
+  	#TERMINAL = "blackbox";
+  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

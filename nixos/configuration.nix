@@ -20,6 +20,20 @@
     "cryptd"
   ];
   boot.tmp.cleanOnBoot = true;
+  
+  # LUKS Encryption
+  boot.initrd.luks.devices."luks-e8892065-d076-46dd-8e76-3fb3c75be354".device = "/dev/disk/by-uuid/e8892065-d076-46dd-8e76-3fb3c75be354";
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+  boot.loader.grub.enableCryptodisk=true;
+
+  boot.initrd.luks.devices."luks-cf31e63a-3a1b-4cb2-9f5a-420e97dc06b2".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-e8892065-d076-46dd-8e76-3fb3c75be354".keyFile = "/crypto_keyfile.bin";
+
+  # Networking
   networking.hostName = "alikay"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -39,7 +53,11 @@
   # Environment Variables
   environment.sessionVariables = rec {
   	QT_QPA_PLATFORMTHEME = "qt6ct";
+  	#NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
+  environment.pathsToLink = [
+		"/share/nautilus-python/extensions"
+  ];
   
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -129,6 +147,7 @@
   hardware = {
   	opengl = {
   		enable = lib.mkForce true;
+  		driSupport = lib.mkForce true;
   		driSupport32Bit = lib.mkForce true;
   #		package = pkgs-unstable.mesa.drivers;
   #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
@@ -164,9 +183,6 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  security.sudo.extraConfig = ''
-  	Defaults passwd_timeout=0
-  '';
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -179,6 +195,12 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  
+  # Security
+  security.sudo.extraConfig = ''
+  	Defaults passwd_timeout=0
+  '';
+  security.apparmor.enable = false;
   
   # MPD daemon
   services.mpd = {
@@ -234,10 +256,16 @@
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  programs.gamemode.enable = true;
   
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+  	enable = true;
+  	setSocketVariable = true;
+  };
   programs.virt-manager.enable = true;
   
   # Appimage Support
@@ -273,6 +301,9 @@
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
+    "dev.gbstudio.gb-studio"
+    "xyz.ketok.Speedtest"
+    "io.github.RodZill4.Material-Maker"
   ];
   
   # Flatpak auto updates
@@ -315,7 +346,20 @@
 		
 		targets.grub.useImage = true;
 		
+		fonts = {
+			sansSerif = {
+				package = pkgs.cantarell-fonts;
+				name = "Cantarell-VF";
+			};
+		};
+		
 		polarity = "dark";
+	};
+	
+	# Making blackbox the default terminal
+	programs.nautilus-open-any-terminal = {
+		enable = true;
+		terminal = "blackbox";
 	};
  
   # List packages installed in unstable system profile. To search, run:
@@ -328,9 +372,13 @@
      amberol
      apostrophe
      ardour
+     alvr
      appimage-run
+     base16-shell-preview
+     base16-universal-manager
      bear
      blanket
+     boxbuddy
      btop
      blackbox-terminal
      blueberry
@@ -347,6 +395,8 @@
      dolphin-emu
      distrobox
      eww
+     easyeffects
+     eyedropper
      fastfetch
      ffmpeg
      ffmpegthumbnailer
@@ -354,19 +404,24 @@
      fish
      fragments
      fuzzel
-     gamescope
      gedit
      gimp
      grim
      gradience
      gnome.sushi
      gnome.totem
+     gnome.nautilus
+     gnome.nautilus-python
      gnome.gnome-software
      gnome.gnome-tweaks
      gnome.gnome-sound-recorder
      gnome.gnome-maps
+     gnome.ghex
      gnome-graphs
      gnome-extension-manager
+     gnome.dconf-editor
+     gnome.zenity
+     gnome-podcasts
      git
      gh
      heroic
@@ -396,6 +451,8 @@
      libsForQt5.qt5ct 
      qt6Packages.qt6ct
      lutris
+     mangohud
+     menulibre
      melonDS
      mpv
      mpc-cli
@@ -418,19 +475,23 @@
      pavucontrol
      protonup-qt
      popsicle
+     plattenalbum
      pitivi
      parabolic
      psensor
      powertop
-     renoise
+     #renoise # ADD BACK WITH FULL VERSION
      reaper
      slurp
      shortwave
      setzer
+     share-preview
      superTuxKart
      sqlitebrowser
+     sysprof
      tangram
      textpieces
+     texturepacker
      thunderbird
      vlc
      video-trimmer
@@ -438,12 +499,13 @@
      warp
      webp-pixbuf-loader
      waybar
+     wike
      unityhub
      udiskie
      yabridge
      yabridgectl
-     
      uwuify
+     zed-editor
      
      inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
      inputs.nix-software-center.packages.${system}.nix-software-center
