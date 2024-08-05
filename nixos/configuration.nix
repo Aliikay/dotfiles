@@ -149,18 +149,16 @@
   		enable = lib.mkForce true;
   		driSupport = lib.mkForce true;
   		driSupport32Bit = lib.mkForce true;
-  #		package = pkgs-unstable.mesa.drivers;
-  #		package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+  		#package = pkgs-unstable.mesa.drivers;
+  		#package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   
-  
-  	# OpenCL Support
-  	extraPackages = with pkgs; [
-  		rocmPackages.clr.icd
-		];
+			# OpenCL Support
+			extraPackages = with pkgs; [
+				rocmPackages.clr.icd
+			];
 
   	};
   };
-
   
   # Allow programs to find the HIP binary
   systemd.tmpfiles.rules = 
