@@ -507,6 +507,7 @@
      shortwave
      setzer
      share-preview
+     sidequest
      superTuxKart
      sqlitebrowser
      sysprof
