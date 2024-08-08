@@ -395,6 +395,7 @@
      ardour
      alvr
      appimage-run
+     audio-sharing
      base16-shell-preview
      base16-universal-manager
      bear
@@ -406,6 +407,7 @@
      bibata-cursors
      blender-hip
      brightnessctl
+     bustle
      celluloid
      cartridges
      cemu
@@ -413,6 +415,7 @@
      dart-sass
      drawing
      docker
+     dialect
      dolphin-emu
      distrobox
      eww
@@ -423,6 +426,7 @@
      ffmpegthumbnailer
      firejail
      fish
+     foliate
      fragments
      fuzzel
      gedit
@@ -443,9 +447,11 @@
      gnome.dconf-editor
      gnome.zenity
      gnome-podcasts
+     gnome-decoder
      git
      gh
      heroic
+     health
      helvum
      hyfetch
      
@@ -469,12 +475,14 @@
      libsForQt5.qtstyleplugin-kvantum
      
      libreoffice
-     libsForQt5.qt5ct 
+     libsForQt5.qt5ct
      qt6Packages.qt6ct
      lutris
      mangohud
+     marker
      menulibre
      melonDS
+     monophony
      mpv
      mpc-cli
      mousai
@@ -494,10 +502,13 @@
      #obsidian
      obs-studio
      pavucontrol
+     paperwork
+     paper-clip
      protonup-qt
      popsicle
      plattenalbum
      pitivi
+     pika-backup
      parabolic
      psensor
      powertop
@@ -514,6 +525,8 @@
      tangram
      textpieces
      texturepacker
+     turtle
+     tilix
      thunderbird
      vlc
      video-trimmer
