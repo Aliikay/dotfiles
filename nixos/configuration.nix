@@ -21,16 +21,7 @@
   ];
   boot.tmp.cleanOnBoot = true;
   
-  boot.initrd.luks.devices."luks-b99c792b-f935-456f-b4cb-085aacfa38c7".device = "/dev/disk/by-uuid/b99c792b-f935-456f-b4cb-085aacfa38c7";
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
-  boot.loader.grub.enableCryptodisk=true;
-
-  boot.initrd.luks.devices."luks-5c24bc66-2bd6-407d-adc3-c483713e1d16".keyFile = "/crypto_keyfile.bin";
-  boot.initrd.luks.devices."luks-b99c792b-f935-456f-b4cb-085aacfa38c7".keyFile = "/crypto_keyfile.bin";
+  boot.initrd.luks.devices."luks-6d12415e-9780-46e6-a254-e02e70705125".device = "/dev/disk/by-uuid/6d12415e-9780-46e6-a254-e02e70705125";
 
   # Networking
   networking.hostName = "alikay"; # Define your hostname.
