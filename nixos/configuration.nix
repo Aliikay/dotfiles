@@ -11,17 +11,21 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/vda";
+  # boot.loader.grub.useOSProber = true;
 
-  boot.initrd.availableKernelModules = [
-    "aesni_intel"
-    "cryptd"
-  ];
+  # boot.initrd.availableKernelModules = [
+  #   "aesni_intel"
+  #   "cryptd"
+  # ];
   boot.tmp.cleanOnBoot = true;
   
-  boot.initrd.luks.devices."luks-6d12415e-9780-46e6-a254-e02e70705125".device = "/dev/disk/by-uuid/6d12415e-9780-46e6-a254-e02e70705125";
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices."luks-69f62bf0-92d5-426b-aa83-eebed3395eca".device = "/dev/disk/by-uuid/69f62bf0-92d5-426b-aa83-eebed3395eca";
 
   # Networking
   networking.hostName = "alikay"; # Define your hostname.
