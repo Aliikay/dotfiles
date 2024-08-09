@@ -489,6 +489,7 @@
      newsflash
      nil
      nh
+     nvtopPackages.full
      nwg-displays
      libnotify
      nix-tree
