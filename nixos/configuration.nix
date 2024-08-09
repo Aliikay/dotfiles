@@ -512,7 +512,7 @@
      parabolic
      psensor
      powertop
-     #renoise # ADD BACK WITH FULL VERSION
+     #renoise # Need to edit to add full version
      reaper
      slurp
      shortwave
