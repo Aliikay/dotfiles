@@ -9,5 +9,14 @@
 			icon = "/home/alikay/dotfiles/icons/nixos-rebuild.png";
 			categories = [ "System" "Utility" ];
 		};
+		
+		run-with-split-tunnel = {
+			name = "Start Apps Under VPN";
+			genericName = "System Utility";
+			exec = "/home/alikay/dotfiles/scripts/run-apps-with-split-tunnel.sh";
+			terminal = false;
+			icon = "/home/alikay/dotfiles/icons/run-apps-split-tunnel.png";
+			categories = [ "System" "Utility" ];
+		};
 	};
 }
