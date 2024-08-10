@@ -4,7 +4,7 @@
 	
 	# Main Service File
   systemd.services."all-ways-egpu" = {
-  	enable = false;
+  	enable = true;
 		description = "Configure eGPU as primary under Wayland desktops";
 			
 		path = with pkgs; [
@@ -25,7 +25,7 @@
 	
 	# Configure GPU as main under boot_vga
   systemd.services."all-ways-egpu-boot-vga" = {
-    enable = false;
+    enable = true;
 		description = "Configure eGPU as primary using boot_vga under Wayland desktops";
 			
 		path = with pkgs; [
@@ -45,7 +45,7 @@
 	
 	# Shutdown Process to cleanup boot_vga
   systemd.services."all-ways-egpu-shutdown" = {
-  	enable = false;
+  	enable = true;
 		description = "Cleanup boot_vga eGPU configuration at shutdown";
 			
 		path = with pkgs; [
@@ -65,7 +65,7 @@
 	
 	# Configure GPU as main uusing compositor variables
   systemd.services."all-ways-egpu-set-compositor" = {
-  	enable = false;
+  	enable = true;
 		description = "Configure eGPU as primary using compositor variables under Wayland desktops";
 			
 		path = with pkgs; [
