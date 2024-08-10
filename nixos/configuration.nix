@@ -22,6 +22,14 @@
   # ];
   boot.tmp.cleanOnBoot = true;
   
+  boot.kernelParams = [
+  
+  ];
+  
+  boot.extraModprobeConfig = ''
+  		options amdgpu pcie_gen_cap=0x40000
+  '';
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
