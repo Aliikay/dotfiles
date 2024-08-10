@@ -11,7 +11,7 @@
 		};
 		
 		splittunnel = {
-			name = "Start Apps Under VPN";
+			name = "Split Tunnel Apps";
 			genericName = "System Utility";
 			exec = "/home/alikay/dotfiles/scripts/run-apps-with-split-tunnel.sh";
 			terminal = false;
