@@ -500,6 +500,7 @@
      pavucontrol
      paperwork
      paper-clip
+     pciutils
      protonup-qt
      popsicle
      plattenalbum
