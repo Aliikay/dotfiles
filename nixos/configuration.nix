@@ -465,6 +465,7 @@
      
      kdePackages.kate
      kdePackages.dolphin
+     kdePackages.kdenlive
      kdePackages.qtstyleplugin-kvantum
      libsForQt5.qtstyleplugin-kvantum
      
