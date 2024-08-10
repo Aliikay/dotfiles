@@ -4,12 +4,14 @@
 	
 	# Main Service File
   systemd.services."all-ways-egpu" = {
-  	enable = true;
+  	enable = false;
 		description = "Configure eGPU as primary under Wayland desktops";
 			
 		path = with pkgs; [
       coreutils
       pciutils
+      gawk
+      util-linux
     ];
     
 		serviceConfig = {
@@ -31,6 +33,8 @@
 		path = with pkgs; [
       coreutils
       pciutils
+      gawk
+      util-linux
     ];
     
 		serviceConfig = {
@@ -51,6 +55,8 @@
 		path = with pkgs; [
       coreutils
       pciutils
+      gawk
+      util-linux
     ];
     
 		serviceConfig = {
@@ -65,12 +71,14 @@
 	
 	# Configure GPU as main uusing compositor variables
   systemd.services."all-ways-egpu-set-compositor" = {
-  	enable = true;
+  	enable = false;
 		description = "Configure eGPU as primary using compositor variables under Wayland desktops";
 			
 		path = with pkgs; [
       coreutils
       pciutils
+      gawk
+      util-linux
     ];
     
 		serviceConfig = {

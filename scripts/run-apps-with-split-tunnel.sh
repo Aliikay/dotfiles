@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 flatpak run dev.vencord.Vesktop --disable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder & disown
 mullvad split-tunnel add $!
 
-/usr/bin/steam-runtime %U -nochatui -nofriendsui -silent & disown
+steam %U -nochatui -nofriendsui -silent & disown
 mullvad split-tunnel add $!
 
-flatpak run com.heroicgameslauncher.hgl & disown
+heroic & disown
 mullvad split-tunnel add $!
