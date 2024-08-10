@@ -14,7 +14,7 @@
 			name = "Split Tunnel Apps";
 			genericName = "System Utility";
 			exec = "/home/alikay/dotfiles/scripts/run-apps-with-split-tunnel.sh";
-			terminal = false;
+			terminal = true;
 			icon = "/home/alikay/dotfiles/icons/run-apps-split-tunnel.png";
 			categories = [ "System" "Utility" ];
 		};
