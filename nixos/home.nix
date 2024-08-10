@@ -202,7 +202,7 @@
   };
   
   # PATH
-  home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" ];
+  home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
   
   # Variables
   home.sessionVariables = {
