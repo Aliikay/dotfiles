@@ -46,8 +46,8 @@
   
   # Environment Variables
   environment.sessionVariables = rec {
-  	QT_QPA_PLATFORMTHEME = "qt6ct";
-  	#NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
+  		QT_QPA_PLATFORMTHEME = "qt6ct";
+  		#NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
   environment.pathsToLink = [
 		"/share/nautilus-python/extensions"
@@ -68,19 +68,19 @@
   # Automatic System Updates
   systemd.services."nixos-auto-upgrade" = {
 		description = "NixOS Automatic Updates";
-  	restartIfChanged = false;
-  	unitConfig.X-StopOnRemoval = false;
-  	
-  	path = with pkgs; [
-        coreutils
-        gnutar
-        xz.bin
-        sudo
-        gzip
-        libnotify
-        gitMinimal
-        config.nix.package.out
-        config.programs.ssh.package
+		restartIfChanged = false;
+		unitConfig.X-StopOnRemoval = false;
+			
+		path = with pkgs; [
+      coreutils
+      gnutar
+      xz.bin
+      sudo
+      gzip
+      libnotify
+      gitMinimal
+      config.nix.package.out
+      config.programs.ssh.package
     ];
     
     environment = config.nix.envVars // {
@@ -111,9 +111,9 @@
   
   # Automatic Garbage Collection for Generations
   nix.gc = {
-  	automatic = true;
-  	dates = "weekly";
-  	options = "--delete-older-than 30d";
+  		automatic = true;
+  		dates = "weekly";
+  		options = "--delete-older-than 30d";
   };
   
   # Automatic store optimization
@@ -125,7 +125,7 @@
   
   # Enable TLP
   services.tlp = {
-  	enable = true;
+  		enable = true;
   };
   services.power-profiles-daemon.enable = false;
 
@@ -139,19 +139,19 @@
   
   # Hardware
   hardware = {
-  	opengl = {
-  		enable = lib.mkForce true;
-  		driSupport = lib.mkForce true;
-  		driSupport32Bit = lib.mkForce true;
-  		#package = pkgs-unstable.mesa.drivers;
-  		#package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-  
+		opengl = {
+			enable = lib.mkForce true;
+			driSupport = lib.mkForce true;
+			driSupport32Bit = lib.mkForce true;
+			#package = pkgs-unstable.mesa.drivers;
+			#package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+	
 			# OpenCL Support
 			extraPackages = with pkgs; [
 				rocmPackages.clr.icd
 			];
 
-  	};
+		};
   };
   
   # Allow programs to find the HIP binary
@@ -171,9 +171,9 @@
   
   # Hyprland
   programs.hyprland = {
-  	enable = true;
-  	xwayland.enable = true;
-  	#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  		enable = true;
+  		xwayland.enable = true;
+  		#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   xdg.portal.enable = true;
   # Removed since GNOME already adds this, add back if getting rid of GNOME
@@ -181,8 +181,8 @@
   
   # Mullvad
   services.mullvad-vpn = {
-  	enable = true;
-  	package = pkgs.mullvad-vpn;
+  		enable = true;
+  		package = pkgs.mullvad-vpn;
   };
 
   # Configure keymap in X11
@@ -219,9 +219,9 @@
   
   # MPD daemon
   services.mpd = {
-  	enable = true;
-  	musicDirectory = "${config.users.users.alikay.home}/Music";
-  	#user = "alikay";
+		enable = true;
+		musicDirectory = "${config.users.users.alikay.home}/Music";
+		#user = "alikay";
 		extraConfig = ''
 			audio_output {
 				type "pipewire"
@@ -231,10 +231,10 @@
 		
 		network.listenAddress = "any";
 		startWhenNeeded = true;
-  };
-  #systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
-  systemd.services.mpd.environment = {
-  	XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+	};
+	#systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+	systemd.services.mpd.environment = {
+		XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -252,7 +252,7 @@
   };
   
   users.groups.media = {
-  	members = [ "mpd" "alikay" ];
+  		members = [ "mpd" "alikay" ];
   };
 
   # Allow unfree packages
@@ -260,8 +260,8 @@
   
   # Music Production tweaks
   musnix = {
-  	enable = true;
-  	# kernel.realtime = true;
+  		enable = true;
+  		# kernel.realtime = true;
   };
   
   # Setup steam
@@ -278,8 +278,8 @@
   virtualisation.waydroid.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
-  	enable = true;
-  	setSocketVariable = true;
+  		enable = true;
+  		setSocketVariable = true;
   };
   programs.virt-manager.enable = true;
   
@@ -546,9 +546,9 @@
   ];
   
   fonts.packages = with pkgs; [
-  	nerdfonts
-  	corefonts
-  	vistafonts
+  		nerdfonts
+  		corefonts
+  		vistafonts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -566,10 +566,17 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 
-  	9943 9944 # ALVR
+  		9943 9944 # ALVR
   ];
+  networking.firewall.allowedTCPPortRanges = [
+  		{from = 1714; to = 1764;} # KDE Connect
+  ];
+  
   networking.firewall.allowedUDPPorts = [ 
-  	9943 9944 # ALVR
+  		9943 9944 # ALVR
+  ];
+  networking.firewall.allowedUDPPortRanges = [
+  		{from = 1714; to = 1764;} # KDE Connect
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
