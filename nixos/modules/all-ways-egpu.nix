@@ -4,6 +4,7 @@
 	
 	# Main Service File
   systemd.services."all-ways-egpu" = {
+  	enable = false;
 		description = "Configure eGPU as primary under Wayland desktops";
 			
 		path = with pkgs; [
@@ -13,7 +14,7 @@
     
 		serviceConfig = {
 		  Type = "oneshot";
-			ExecStart=/home/alikay/bin/all-ways-egpu boot
+			ExecStart="/home/alikay/bin/all-ways-egpu boot";
 		};
 		
 		wantedBy = [ "graphical.target" ];
@@ -24,6 +25,7 @@
 	
 	# Configure GPU as main under boot_vga
   systemd.services."all-ways-egpu-boot-vga" = {
+    enable = false;
 		description = "Configure eGPU as primary using boot_vga under Wayland desktops";
 			
 		path = with pkgs; [
@@ -33,7 +35,7 @@
     
 		serviceConfig = {
 		  Type = "oneshot";
-			ExecStart=/home/alikay/bin/all-ways-egpu set-boot-vga egpu
+			ExecStart="/home/alikay/bin/all-ways-egpu set-boot-vga egpu";
 		};
 		
 		wantedBy = [ "graphical.target" ];
@@ -43,6 +45,7 @@
 	
 	# Shutdown Process to cleanup boot_vga
   systemd.services."all-ways-egpu-shutdown" = {
+  	enable = false;
 		description = "Cleanup boot_vga eGPU configuration at shutdown";
 			
 		path = with pkgs; [
@@ -52,7 +55,7 @@
     
 		serviceConfig = {
 		  Type = "oneshot";
-			ExecStart=/home/alikay/bin/all-ways-egpu set-boot-vga internal
+			ExecStart="/home/alikay/bin/all-ways-egpu set-boot-vga internal";
 		};
 		
 		wantedBy = [ "halt.target" "shutdown.target" "reboot.target" ];
@@ -62,6 +65,7 @@
 	
 	# Configure GPU as main uusing compositor variables
   systemd.services."all-ways-egpu-set-compositor" = {
+  	enable = false;
 		description = "Configure eGPU as primary using compositor variables under Wayland desktops";
 			
 		path = with pkgs; [
@@ -71,7 +75,7 @@
     
 		serviceConfig = {
 		  Type = "oneshot";
-			ExecStart=/home/alikay/bin/all-ways-egpu set-compositor-primary egpu
+			ExecStart="/home/alikay/bin/all-ways-egpu set-compositor-primary egpu";
 		};
 		
 		wantedBy = [ "graphical.target" ];
