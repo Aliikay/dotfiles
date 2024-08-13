@@ -543,7 +543,7 @@
      thunderbird
      vlc
      video-trimmer
-     wine
+     wineWowPackages.stable
      warp
      webp-pixbuf-loader
      waybar
