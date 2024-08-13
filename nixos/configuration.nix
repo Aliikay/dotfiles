@@ -239,7 +239,7 @@
 		'';
 		
 		network.listenAddress = "any";
-		startWhenNeeded = true;
+		#startWhenNeeded = true;
 	};
 	#systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
 	systemd.services.mpd.environment = {
