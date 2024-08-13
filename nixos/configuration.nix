@@ -230,7 +230,7 @@
   services.mpd = {
 		enable = true;
 		musicDirectory = "${config.users.users.alikay.home}/Music";
-		#user = "alikay";
+		user = "alikay";
 		extraConfig = ''
 			audio_output {
 				type "pipewire"
