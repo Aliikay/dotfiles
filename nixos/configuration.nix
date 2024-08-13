@@ -385,6 +385,13 @@
 		enable = true;
 		terminal = "blackbox";
 	};
+	
+	# Enable man pages
+	documentation = {
+		enable = true;
+		man.enable = true;
+		dev.enable = true;
+	};
  
   # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
