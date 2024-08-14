@@ -523,6 +523,7 @@
      pitivi
      pika-backup
      parabolic
+     pcsx2
      psensor
      powertop
      #renoise # Need to edit to add full version
