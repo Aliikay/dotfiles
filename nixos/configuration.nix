@@ -480,7 +480,7 @@
      killall
      
      kdePackages.kate
-     kdePackages.dolphin
+     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
      kdePackages.kdenlive
      kdePackages.qtstyleplugin-kvantum
      libsForQt5.qtstyleplugin-kvantum
