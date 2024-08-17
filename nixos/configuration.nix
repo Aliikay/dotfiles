@@ -253,7 +253,7 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" "media" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" ];
     packages = with pkgs; [
   			
     ];
@@ -262,7 +262,7 @@
   users.users.alikay-alt = {
     isNormalUser = true;
     description = "alikay-alt";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" "media" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" ];
     packages = with pkgs; [
   			
     ];
