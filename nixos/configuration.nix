@@ -253,15 +253,23 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" "media" ];
     packages = with pkgs; [
-      firefox
-    #  thunderbird
+  			
+    ];
+  };
+  
+  users.users.alikay-alt = {
+    isNormalUser = true;
+    description = "alikay-alt";
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "input" "libvirtd" "media" ];
+    packages = with pkgs; [
+  			
     ];
   };
   
   users.groups.media = {
-  		members = [ "mpd" "alikay" ];
+  		members = [ "mpd" ];
   };
 
   # Allow unfree packages
@@ -435,6 +443,7 @@
      ffmpeg
      ffmpegthumbnailer
      firejail
+     firefox
      fish
      foliate
      fragments
