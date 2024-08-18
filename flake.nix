@@ -99,6 +99,7 @@
 				specialArgs = mySpecialArgs;
 				modules = [
 					inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+					#inputs.nixos-hardware.nixosModules.common-gpu-amd
 					inputs.musnix.nixosModules.musnix
 					inputs.nix-flatpak.nixosModules.nix-flatpak
 					#hyprland.nixosModules.default

@@ -159,23 +159,29 @@
 			extraPackages = with pkgs; [
 				rocmPackages.clr.icd
 			];
-
 		};
+		#extraPackages = with pkgs; [
+		#		rocmPackages.clr.icd
+		#];
   };
   
   # Allow programs to find the HIP binary
-  systemd.tmpfiles.rules = 
-  let
-    rocmEnv = pkgs.symlinkJoin {
-      name = "rocm-combined";
-      paths = with pkgs.rocmPackages; [
-        rocblas
-        hipblas
-        clr
-      ];
-    };
-  in [
-    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  #systemd.tmpfiles.rules = 
+  #let
+  #  rocmEnv = pkgs.symlinkJoin {
+  #    name = "rocm-combined";
+  #    paths = with pkgs.rocmPackages; [
+  #      rocblas
+  #      hipblas
+  #      clr
+  #    ];
+  #  };
+  #in [
+  #  "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  #];
+  
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
   
   # Hyprland
