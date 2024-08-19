@@ -429,9 +429,11 @@
      blackbox-terminal
      blueberry
      bibata-cursors
-     blender-hip
+     #blender-hip
+     blender
      brightnessctl
      bustle
+     clinfo
      celluloid
      cartridges
      cemu
@@ -509,6 +511,7 @@
      marker
      menulibre
      melonDS
+     milkytracker
      monophony
      mpv
      mpc-cli
@@ -544,6 +547,8 @@
      powertop
      #renoise # Need to edit to add full version
      reaper
+     rocm-opencl-icd
+  		 rocm-opencl-runtime
      slurp
      shortwave
      setzer

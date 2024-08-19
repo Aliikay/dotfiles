@@ -95,6 +95,7 @@
   	window-gestures
   	vertical-workspaces
   	media-progress
+  	tiling-shell
   ]);
   
   # .config
