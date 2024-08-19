@@ -104,6 +104,12 @@
     recursive = true;   # link recursively
   };
   
+  # templates
+  home.file."Templates" = {
+  	source = ../templates;
+  	recursive = true;
+  };
+  
   # Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
