@@ -447,6 +447,7 @@
      eww
      easyeffects
      eyedropper
+     f3d
      fastfetch
      ffmpeg
      ffmpegthumbnailer
