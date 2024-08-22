@@ -478,6 +478,7 @@
      gimp
      grim
      gradience
+     glaxnimate
      gnome.sushi
      gnome.totem
      gnome.nautilus
