@@ -524,6 +524,7 @@
      libsForQt5.qtstyleplugin-kvantum
      
      libreoffice
+     pkgs-unstable.lime3ds
      libsForQt5.qt5ct
      qt6Packages.qt6ct
      lutris
