@@ -571,6 +571,7 @@
      rocm-opencl-icd
   		 rocm-opencl-runtime
      slurp
+     scrcpy
      shortwave
      setzer
      share-preview
