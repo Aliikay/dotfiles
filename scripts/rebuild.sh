@@ -24,6 +24,8 @@ function askYesNo {
 
 cd ~/dotfiles
 gnome-text-editor nixos/configuration.nix flake.nix nixos/home.nix
+# Add any new files to git to be tracked
+git add *
 git status
 git --no-pager diff
 
