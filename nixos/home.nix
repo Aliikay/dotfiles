@@ -67,6 +67,7 @@
   	media-controls
   	quick-settings-audio-panel
   	pip-on-top
+  	fuzzy-app-search
   	twitchlive-panel
   	logo-widget
   	logo-menu
