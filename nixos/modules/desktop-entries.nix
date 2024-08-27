@@ -18,5 +18,13 @@
 			icon = "/home/alikay/dotfiles/icons/run-apps-split-tunnel.png";
 			categories = [ "System" "Utility" ];
 		};
+		
+		convert-videos-to-webm = {
+			name = "Convert To Webm";
+			genericName = "System Utility";
+			exec = "python /home/alikay/dotfiles/scripts/convert-videos-to-webm.py";
+			terminal = true;
+			categories = [ "System" "Utility" ];
+		};
 	};
 }
