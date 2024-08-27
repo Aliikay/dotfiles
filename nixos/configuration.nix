@@ -346,9 +346,8 @@
     "com.google.Chrome"
     "com.nextcloud.desktopclient.nextcloud"
     "org.prismlauncher.PrismLauncher"
-    "it.mijorus.smile"
     "com.spotify.Client"
-    "io.github.spacingbat3.webcord"
+    #"io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
@@ -359,6 +358,7 @@
     "dev.gbstudio.gb-studio"
     "xyz.ketok.Speedtest"
     "io.github.RodZill4.Material-Maker"
+    "io.github.zen_browser.zen"
   ];
   
   # Flatpak auto updates
@@ -576,6 +576,7 @@
      setzer
      share-preview
      sidequest
+     smile
      superTuxKart
      sqlitebrowser
      sysprof

@@ -25,7 +25,6 @@ function askYesNo {
 cd ~/dotfiles
 gnome-text-editor nixos/configuration.nix flake.nix nixos/home.nix
 # Add any new files to git to be tracked
-git add *
 git status
 git --no-pager diff
 
@@ -53,6 +52,8 @@ if [ "$DOIT" = true ]; then
 		cd /home/alikay/dotfiles
 		nix flake update
 	fi
+	echo "Adding files to git"
+	git add *
 	echo "Delete old backup of /etc/nixos"
 	sudo rm -r /etc/nixos.last
 	echo "Moving last /etc/nixos to a backup"
