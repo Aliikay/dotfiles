@@ -323,6 +323,9 @@
   };
   programs.virt-manager.enable = true;
   
+  # Enable ADB
+  programs.adb.enable = true;
+  
   # Appimage Support
   boot.binfmt.registrations.appimage = {
 		wrapInterpreterInShell = false;

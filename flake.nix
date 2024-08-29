@@ -45,7 +45,7 @@
     pip2nix.url = "github:nix-community/pip2nix";
     
     # stylix to theme the entire system
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/release-24.05";
     
     # Framework specific tweaks
     nixos-hardware.url = "github:NixOS/nixos-hardware";
