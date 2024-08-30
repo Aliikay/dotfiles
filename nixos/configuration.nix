@@ -572,7 +572,8 @@
      #renoise # Need to edit to add full version
      reaper
      rocm-opencl-icd
-  		 rocm-opencl-runtime
+  	 rocm-opencl-runtime
+     sbcl
      slurp
      scrcpy
      shortwave
