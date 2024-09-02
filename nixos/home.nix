@@ -6,8 +6,8 @@
   home.homeDirectory = "/home/alikay";
   
   imports = [ 
-  	inputs.ags.homeManagerModules.default 
-  	./modules/desktop-entries.nix
+			inputs.ags.homeManagerModules.default 
+			./modules/desktop-entries.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory

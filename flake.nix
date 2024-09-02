@@ -117,6 +117,8 @@
 			      home-manager.useUserPackages = true;
 			      home-manager.extraSpecialArgs = mySpecialArgs;
 			      home-manager.users.alikay = import ./nixos/home.nix;
+			      #home-manager.users.alikay-alt = import ./nixos/home.nix;
+			      #home-manager.users.guest = import ./nixos/home.nix;
 
 			      # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 			    }
