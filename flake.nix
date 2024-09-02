@@ -64,7 +64,7 @@
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: 
   let
-  	mySpecialArgs = {
+  		mySpecialArgs = {
 				inherit inputs;
 			  # To use packages from nixpkgs-unstable,
 			  # we configure some parameters for it first
@@ -92,9 +92,8 @@
 			    config.allowUnfree = true;
 			  };
 			};
-	in
-		{#, hyprland, ... }: {			
-			nixosConfigurations.alikay = nixpkgs.lib.nixosSystem{
+			
+			generic-system = nixpkgs.lib.nixosSystem{
 				system = "x86_64-linux";
 				specialArgs = mySpecialArgs;
 				modules = [
@@ -107,7 +106,7 @@
 					./nixos/configuration.nix
 					#./nixos/illogical-impulse-dependancies.nix
 					./nixos/modules/nix-ld.nix
-			  	./nixos/modules/godot.nix
+			  		./nixos/modules/godot.nix
 					
 					inputs.flake-programs-sqlite.nixosModules.programs-sqlite
 					inputs.stylix.nixosModules.stylix
@@ -123,5 +122,10 @@
 			    }
 				];
 			};
+	in
+		{#, hyprland, ... }: {			
+			nixosConfigurations.alikay = generic-system;
+			nixosConfigurations.alikay-alt = generic-system;
+			nixosConfigurations.guest = generic-system;
   };
 }
