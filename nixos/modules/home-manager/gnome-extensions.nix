@@ -1,0 +1,65 @@
+{config, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
+
+{
+	# Gnome Extensions
+  home.packages = with pkgs-unstable.gnomeExtensions; [
+		blur-my-shell
+		forge
+		dash-to-dock
+		color-picker
+		dash-to-panel
+		what-watch
+		appindicator
+		useless-gaps
+		somafm-internet-radio
+		user-avatar-in-quick-settings
+		rectangle
+		window-title-is-back
+		just-perfection
+		openweather
+		pano
+		cpufreq
+		quick-web-search
+		arcmenu
+		vitals
+		coverflow-alt-tab
+		gnome-clipboard
+		clipboard-indicator
+		gsconnect
+		gtile
+		paperwm
+		media-controls
+		quick-settings-audio-panel
+		pip-on-top
+		fuzzy-app-search
+		twitchlive-panel
+		logo-widget
+		logo-menu
+		quick-settings-tweaker
+		quick-settings-audio-panel
+		ddterm
+		miniview
+		top-bar-organizer
+		burn-my-windows
+		caffeine
+		#open-bar #needs to be installed imperativly because it requires write permissions to the installation directory
+		search-light
+		space-bar
+		rounded-corners
+		panel-corners
+		auto-activities
+		hide-top-bar
+		autohide-battery
+		gnome-40-ui-improvements
+		app-icons-taskbar
+		battery-health-charging
+		mullvad-indicator
+		usable-overview
+		tray-icons-reloaded
+		fly-pie
+		window-gestures
+		vertical-workspaces
+		media-progress
+		tiling-shell
+  ];
+}

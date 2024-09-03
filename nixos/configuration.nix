@@ -294,7 +294,7 @@
   users.users.guest = {
     isNormalUser = true;
     description = "Guest Account";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" ];
+    extraGroups = [ "networkmanager" "audio" "video" "render" "input" "libvirtd" "media" ];
     packages = with pkgs; [
   			
     ];
