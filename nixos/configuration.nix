@@ -526,6 +526,7 @@
      krita
      komikku
      killall
+     klystrack
      
      kdePackages.kate
      #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
@@ -590,6 +591,7 @@
      share-preview
      sidequest
      smile
+     schismtracker
      superTuxKart
      sqlitebrowser
      sysprof
