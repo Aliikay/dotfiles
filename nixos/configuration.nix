@@ -247,7 +247,12 @@
   security.sudo.extraConfig = ''
   	Defaults passwd_timeout=0
   '';
-  security.apparmor.enable = false;
+  security.apparmor.enable = true;
+  
+	nixpkgs.config.permittedInsecurePackages = [
+		"freeimage-unstable-2021-11-01"	 #Allow for trenchbroom to be installed
+	];
+
   
   # MPD daemon
   services.mpd = {
@@ -598,6 +603,7 @@
      tangram
      textpieces
      texturepacker
+     trenchbroom
      turtle
      tilix
      thunderbird
