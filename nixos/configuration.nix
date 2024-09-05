@@ -586,6 +586,7 @@
      powertop
      #renoise # Need to edit to add full version
      reaper
+     ripgrep
      rocm-opencl-icd
   	 rocm-opencl-runtime
      sbcl
