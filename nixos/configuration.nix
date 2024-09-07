@@ -491,6 +491,7 @@
      fish
      fishPlugins.hydro
      fishPlugins.puffer
+     fishPlugins.pisces
      
      foliate
      fragments
