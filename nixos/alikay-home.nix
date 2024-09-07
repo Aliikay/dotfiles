@@ -67,11 +67,66 @@
   		enable = true;
   		interactiveShellInit = ''
 		    set fish_greeting # Disable greeting
-		    fastfetch
+		    # fastfetch -l "None"
 		  '';
 		  plugins = [
 		  	{ name = "hydro"; src = pkgs.fishPlugins.hydro; }
 		  ];
+  };
+  
+  #Fastfetch
+  programs.fastfetch = {
+  	enable = true;
+  	settings = {
+  		logo = {
+				#source = "nix_small";
+				padding = {
+				  right = 1;
+				};
+			};
+			display = {
+				size = {
+				  binaryPrefix = "si";
+				};
+				color = "blue";
+				separator = "   ";
+			};
+			modules = [
+				"title"
+				{
+				  type = "datetime";
+				  key = "Date";
+				  format = "{1}-{3}-{11}";
+				}
+				{
+				  type = "datetime";
+				  key = "Time";
+				  format = "{14}:{17}:{20}";
+				}
+				
+				# Hardware
+				"cpu"
+				"gpu"
+				"battery"
+				
+				# System
+				"kernel"
+				"packages"
+				
+				# Desktop 
+				"de"
+				"uptime"
+				
+				# Player
+				#"player"
+				#"media"
+				#"break"
+				
+				# Colors
+				#"colors"
+				
+			];
+  	};
   };
   
   # Vim
