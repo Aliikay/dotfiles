@@ -487,7 +487,10 @@
      ffmpegthumbnailer
      firejail
      firefox
+     
      fish
+     fishPlugins.hydro
+     
      foliate
      fragments
      fuzzel
