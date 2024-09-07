@@ -70,7 +70,7 @@
 		    # fastfetch -l "None"
 		  '';
 		  plugins = [
-		  	{ name = "hydro"; src = pkgs.fishPlugins.hydro; }
+		  
 		  ];
   };
   

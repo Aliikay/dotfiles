@@ -490,6 +490,7 @@
      
      fish
      fishPlugins.hydro
+     fishPlugins.puffer
      
      foliate
      fragments
