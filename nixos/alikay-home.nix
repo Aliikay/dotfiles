@@ -67,6 +67,7 @@
   		enable = true;
   		interactiveShellInit = ''
 		    set fish_greeting # Disable greeting
+		    fastfetch
 		  '';
 		  plugins = [
 		  	{ name = "hydro"; src = pkgs.fishPlugins.hydro; }
