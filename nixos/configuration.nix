@@ -506,11 +506,14 @@
      gnome.nautilus
      gnome.nautilus-python
      gnome.gnome-software
+     gnome.gnome-user-share
+     
      gnome.gnome-tweaks
      gnome.gnome-sound-recorder
      gnome.gnome-maps
      gnome.ghex
      gnome-graphs
+     gnome-frog
      gnome-extension-manager
      gnome.dconf-editor
      gnome.zenity
