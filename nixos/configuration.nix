@@ -520,6 +520,7 @@
      gnome-podcasts
      gnome-decoder
      git
+     github-desktop
      gh
      heroic
      health
@@ -617,6 +618,7 @@
      tilix
      thunderbird
      vlc
+     vscode.fhs
      video-trimmer
      wineWowPackages.stable
      warp
