@@ -26,8 +26,8 @@
     ags.url = "github:Aylur/ags";
     
     # Flake version for command-not-found
-  	flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
-  	flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
+		flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+		flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
     
     # Hyprland
     #hyprland.url = "github:hyprwm/Hyprland/v0.40.0";

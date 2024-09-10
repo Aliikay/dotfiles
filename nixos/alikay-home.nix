@@ -45,13 +45,13 @@
   
   # .config
   home.file.".config" = {
-    source = ../.config;
+    source = ../home-folders/alikay/.config;
     recursive = true;   # link recursively
   };
   
   # templates
   home.file."Templates" = {
-  		source = ../templates;
+  		source = ../home-folders/alikay/Templates;
   		recursive = true;
   };
   
@@ -69,9 +69,6 @@
 		    set fish_greeting # Disable greeting
 		    # fastfetch -l "None"
 		  '';
-		  plugins = [
-		  
-		  ];
   };
   
   #Fastfetch
@@ -123,7 +120,7 @@
 				#"break"
 				
 				# Colors
-				#"colors"
+				"colors"
 				
 			];
   	};
