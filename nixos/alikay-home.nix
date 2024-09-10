@@ -32,13 +32,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    ollama
-    pywal
-    sassc
-    (python311.withPackages (p: [
-    	p.material-color-utilities
-    	p.pywayland    
-    ]))
     cowsay
   ];
   
