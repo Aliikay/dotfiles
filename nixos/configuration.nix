@@ -490,7 +490,7 @@
      firefox
      
      fish
-     fishPlugins.hydro
+     #fishPlugins.hydro
      fishPlugins.puffer
      fishPlugins.pisces
      
