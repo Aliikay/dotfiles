@@ -69,6 +69,12 @@
 		    set fish_greeting # Disable greeting
 		    # fastfetch -l "None"
 		  '';
+		  
+		plugins = [
+			{ name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+			{ name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
+			{ name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
+		];
   };
   
   #Fastfetch
