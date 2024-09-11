@@ -64,7 +64,7 @@
 		  '';
 		  
 		plugins = [
-			{ name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+			#{ name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
 			{ name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
 			{ name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
 		];
