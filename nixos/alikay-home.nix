@@ -61,6 +61,7 @@
   		interactiveShellInit = ''
 		    set fish_greeting # Disable greeting
 		    # fastfetch -l "None"
+		    fish_config prompt choose scales
 		  '';
 		  
 		plugins = [
