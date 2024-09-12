@@ -377,6 +377,7 @@
     "xyz.ketok.Speedtest"
     "io.github.RodZill4.Material-Maker"
     "io.github.zen_browser.zen"
+    "com.github.treagod.spectator"
   ];
   
   # Flatpak auto updates
