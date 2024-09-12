@@ -480,6 +480,7 @@
      dolphin-emu
      distrobox
      eww
+     pkgs-unstable.exhibit
      easyeffects
      eyedropper
      f3d
