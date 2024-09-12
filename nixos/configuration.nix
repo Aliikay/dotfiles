@@ -612,7 +612,7 @@
      textpieces
      
      texliveTeTeX
-     texlivePackages.enumitem
+     texlive.combined.scheme-tetex
      
      texturepacker
      trenchbroom
