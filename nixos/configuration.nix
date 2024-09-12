@@ -616,6 +616,7 @@
      		scheme-tetex
      		enumitem
      		sourcesanspro
+     		tcolorbox
      		;
      })
      
