@@ -611,8 +611,12 @@
      tangram
      textpieces
      
-     texliveTeTeX
-     texlive.combined.scheme-tetex
+     (pkgs.texlive.combine {
+     	inherit (pkgs.texlive)
+     		scheme-tetex
+     		enumitem
+     		;
+     })
      
      texturepacker
      trenchbroom
