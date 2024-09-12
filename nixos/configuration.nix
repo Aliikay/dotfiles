@@ -615,6 +615,7 @@
      	inherit (pkgs.texlive)
      		scheme-tetex
      		enumitem
+     		sourcesanspro
      		;
      })
      
