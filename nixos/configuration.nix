@@ -610,7 +610,10 @@
      sysprof
      tangram
      textpieces
+     
      texliveTeTeX
+     texlivePackages.enumitem
+     
      texturepacker
      trenchbroom
      turtle
