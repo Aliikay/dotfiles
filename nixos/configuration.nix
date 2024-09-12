@@ -610,6 +610,7 @@
      sysprof
      tangram
      textpieces
+     texliveTeTeX
      texturepacker
      trenchbroom
      turtle
