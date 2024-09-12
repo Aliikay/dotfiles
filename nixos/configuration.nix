@@ -617,6 +617,7 @@
      		enumitem
      		sourcesanspro
      		tcolorbox
+     		synctex
      		;
      })
      
