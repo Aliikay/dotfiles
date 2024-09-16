@@ -15,6 +15,7 @@ in pkgs.mkShell {
   		#python311Packages.pygame
   		python311
   		python311Packages.pygobject3
+  		python311Packages.tkinter
   ];
   
 }

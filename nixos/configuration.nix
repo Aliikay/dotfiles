@@ -638,6 +638,7 @@
      wike
      unityhub
      udiskie
+     x2goclient
      yabridge
      yabridgectl
      uwuify

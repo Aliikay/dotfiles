@@ -1,11 +1,14 @@
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk as gtk
+#import gi
+#gi.require_version('Gtk', '3.0')
+#from gi.repository import Gtk as gtk
 import os
 import time
 import sys
 import subprocess
-gtk_enabled = True
+import tkinter as tk
+from tkinter import filedialog
+from tkinter.filedialog import askopenfilenames
+gtk_enabled = False
 
 def main():
 	print("Select videos folder to convert...")
@@ -129,7 +132,7 @@ def get_files():
 		root = tk.Tk()
 		root.withdraw()
 
-		path_strings = filedialog.askopenfilenames(filetypes = [("All Files", "*")])
+		path_strings = askopenfilenames(filetypes = [("Video", ".mp4"), ("Video", ".mov")])
 		paths = list(root.tk.splitlist(path_strings))
 
 		return paths
@@ -156,11 +159,9 @@ def get_save_path():
 		dialog.destroy()
 
 		del dialog
-
 		return name[0]
 	else:
-		print("GTK missing")
-		sys.exit()
+	    return filedialog.askdirectory()
 
 if __name__ == "__main__":
     main()
