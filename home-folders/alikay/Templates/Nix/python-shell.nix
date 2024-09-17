@@ -3,16 +3,24 @@
 	pkgs ? import <nixpkgs> {
 		inherit system;
 	}
-}:
-
-let
-	pythonPkgs = pkgs.callPackage ./python-packages.nix { inherit pkgs; };
-  my-python = pkgs.python311.override { packageOverrides = pythonPkgs; };
-in pkgs.mkShell {
-  packages = with pkgs; with pkgs.python311Packages; [
-  		my-python
-  		#my-python.pkgs.numpy
-  		#python311Packages.pygame
-  ];
+}: pkgs.mkShell {
+	venvDir = "./.venv";
+		
+	buildInputs = with pkgs; [
+		python311
+		python3Packages.venvShellHook
+	];
+	
+	packages = with pkgs; with pkgs.python311Packages; [
+			python311
+	];
+	
+	postVenvCreation = ''
+	  pip install -r ${./requirements.txt}
+	'';
+	
+	shellHook = ''
+	  venvShellHook
+	'';
   
 }
