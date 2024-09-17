@@ -476,6 +476,7 @@
      cubiomes-viewer
      dart-sass
      drawing
+     droidcam
      docker
      dialect
      dolphin-emu
