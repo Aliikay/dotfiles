@@ -130,6 +130,12 @@
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "03:45" ];
   
+  # Enable power management
+  powerManagement = {
+  		enable = true;
+  		powertop.enable = true;
+  };
+  
   # Enable ThermalD
   services.thermald.enable = true;
   
@@ -593,7 +599,6 @@
      parabolic
      pcsx2
      psensor
-     powertop
      #renoise # Need to edit to add full version
      reaper
      ripgrep
