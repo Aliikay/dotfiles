@@ -56,6 +56,12 @@
     userEmail = "1401288@gmail.com";
   };
   
+  # MPD
+  services.mpd = {
+  	enable = true;
+  	musicDirectory = "${config.home.homeDirectory}/Music";
+  };
+  
   # Fish
   programs.fish = {
   		enable = true;
