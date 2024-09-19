@@ -131,10 +131,10 @@
   nix.optimise.dates = [ "03:45" ];
   
   # Enable power management
-  powerManagement = {
-  		enable = true;
-  		powertop.enable = true;
-  };
+  #powerManagement = {
+  #		enable = true;
+  #		powertop.enable = true;
+  #};
   
   # Enable ThermalD
   services.thermald.enable = true;
