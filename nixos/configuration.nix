@@ -599,7 +599,6 @@
      parabolic
      pcsx2
      psensor
-     #renoise # Need to edit to add full version
      reaper
      ripgrep
      rocm-opencl-icd
