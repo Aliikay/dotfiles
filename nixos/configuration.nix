@@ -600,6 +600,9 @@
      pcsx2
      psensor
      reaper
+     
+     inputs.secrets.packages.x86_64-linux.renoise
+     
      ripgrep
      rocm-opencl-icd
   	 rocm-opencl-runtime

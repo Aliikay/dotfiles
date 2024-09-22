@@ -60,6 +60,10 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Secrets - comment out if you want to use this system yourself
+    # This flake contains a bunch of stuff that I can't include in the main repo (blobs, keys, etc...)
+    secrets.url = "/home/alikay/dotfile-secrets";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixpkgs-stable, nixpkgs-last-stable, home-manager, ...}: 
@@ -102,12 +106,13 @@
 					inputs.musnix.nixosModules.musnix
 					inputs.nix-flatpak.nixosModules.nix-flatpak
 					#hyprland.nixosModules.default
+					#inputs.secrets.nixosModules.config
 					
 					./nixos/configuration.nix
 					#./nixos/illogical-impulse-dependancies.nix
 					./nixos/modules/nix-ld.nix
-			  		./nixos/modules/godot.nix
-					
+			  	./nixos/modules/godot.nix
+			  	
 					inputs.flake-programs-sqlite.nixosModules.programs-sqlite
 					inputs.stylix.nixosModules.stylix
 					

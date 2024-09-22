@@ -22,7 +22,7 @@ function askYesNo {
         fi
 }
 
-cd ~/dotfiles
+cd /home/alikay/dotfiles
 gnome-text-editor nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
 # Add any new files to git to be tracked
 git status
@@ -49,9 +49,14 @@ if [ "$DOIT" = true ]; then
 	sudo touch "$LOCK_FILE"
 	
 	if [ "$DOIT" = true ]; then
+		echo "Updating main flake..."
 		cd /home/alikay/dotfiles
 		nix flake update
+		echo "Updating secrets flake..."
+		cd /home/alikay/dotfile-secrets
+		nix flake update
 	fi
+	cd /home/alikay/dotfiles
 	echo "Adding files to git"
 	git add *
 	echo "Delete old backup of /etc/nixos"

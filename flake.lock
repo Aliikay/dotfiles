@@ -772,6 +772,22 @@
     },
     "nixpkgs_8": {
       "locked": {
+        "lastModified": 1726755586,
+        "narHash": "sha256-PmUr/2GQGvFTIJ6/Tvsins7Q43KTMvMFhvG6oaYK+Wk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c04d5652cfa9742b1d519688f65d1bbccea9eb7e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_9": {
+      "locked": {
         "lastModified": 1714912032,
         "narHash": "sha256-clkcOIkg8G4xuJh+1onLG4HPMpbtzdLv4rHxFzgsH9c=",
         "owner": "NixOS",
@@ -821,7 +837,23 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "pip2nix": "pip2nix",
+        "secrets": "secrets",
         "stylix": "stylix"
+      }
+    },
+    "secrets": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1726970747,
+        "narHash": "sha256-rWNgWCrjbShOrlw2Tkv7bVN5IwP3XTQhpIzzW9bp5cM=",
+        "path": "/home/alikay/dotfile-secrets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/alikay/dotfile-secrets",
+        "type": "path"
       }
     },
     "snowfall-lib": {
@@ -859,7 +891,7 @@
         "flake-compat": "flake-compat_3",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
         "lastModified": 1718122552,
