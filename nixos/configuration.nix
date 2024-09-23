@@ -371,7 +371,7 @@
     "com.github.tchx84.Flatseal"
     "com.gitfiend.GitFiend"
     "com.google.Chrome"
-    "com.nextcloud.desktopclient.nextcloud"
+    #"com.nextcloud.desktopclient.nextcloud"
     "org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
     #"io.github.spacingbat3.webcord"
@@ -580,6 +580,7 @@
      nautilus-open-any-terminal
      ncdu
      neofetch
+     nextcloud-client
      newsflash
      nil
      nh
