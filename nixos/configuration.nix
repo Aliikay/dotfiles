@@ -130,6 +130,9 @@
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "03:45" ];
   
+  # Filesystem trim
+  services.fstrim.enable = true;
+  
   # Enable power management
   powerManagement = {
   		enable = true;
