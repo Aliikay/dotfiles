@@ -654,6 +654,7 @@
      unityhub
      udiskie
      x2goclient
+     xwaylandvideobridge
      yabridge
      yabridgectl
      uwuify
