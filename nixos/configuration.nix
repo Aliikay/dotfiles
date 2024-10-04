@@ -580,6 +580,7 @@
      melonDS
      milkytracker
      monophony
+     moonlight-qt
      mpv
      mpc-cli
      mousai
