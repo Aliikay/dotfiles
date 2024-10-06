@@ -396,6 +396,7 @@
     "io.github.RodZill4.Material-Maker"
     "io.github.zen_browser.zen"
     "es.danirod.Cartero"
+    "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
   ];
   
   # Flatpak auto updates
@@ -601,7 +602,6 @@
      onlyoffice-bin
      #obsidian
      obs-studio
-     openarena
      pavucontrol
      paperwork
      paper-clip
