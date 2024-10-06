@@ -601,6 +601,7 @@
      onlyoffice-bin
      #obsidian
      obs-studio
+     openarena
      pavucontrol
      paperwork
      paper-clip
