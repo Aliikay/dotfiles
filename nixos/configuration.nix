@@ -470,6 +470,7 @@
      foot
      pkgs-stable.aseprite
      amberol
+     alacarte
      apostrophe
      ardour
      alvr
