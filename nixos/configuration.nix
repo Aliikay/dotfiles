@@ -196,9 +196,6 @@
 				rocmPackages.clr.icd
 			];
 		};
-		#extraPackages = with pkgs; [
-		#		rocmPackages.clr.icd
-		#];
   };
   
   # Allow programs to find the HIP binary
@@ -484,8 +481,8 @@
      blackbox-terminal
      blueberry
      bibata-cursors
-     #blender-hip
-     blender
+     blender-hip
+     #blender
      brightnessctl
      bustle
      clinfo
