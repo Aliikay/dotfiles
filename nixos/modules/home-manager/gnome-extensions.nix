@@ -61,5 +61,6 @@
 		vertical-workspaces
 		media-progress
 		tiling-shell
+		inhibition-indicator
   ];
 }
