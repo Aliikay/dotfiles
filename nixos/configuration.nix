@@ -201,23 +201,23 @@
   };
   
   # Allow programs to find the HIP binary
-  #systemd.tmpfiles.rules = 
-  #let
-  #  rocmEnv = pkgs.symlinkJoin {
-  #    name = "rocm-combined";
-  #    paths = with pkgs.rocmPackages; [
-  #      rocblas
-  #      hipblas
-  #      clr
-  #    ];
-  #  };
-  #in [
-  #  "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-  #];
-  
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  systemd.tmpfiles.rules = 
+  let
+    rocmEnv = pkgs.symlinkJoin {
+      name = "rocm-combined";
+      paths = with pkgs.rocmPackages; [
+        rocblas
+        hipblas
+        clr
+      ];
+    };
+  in [
+    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
+  
+  #systemd.tmpfiles.rules = [
+  #  "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  #];
   
   # Hyprland
   programs.hyprland = {
@@ -614,7 +614,10 @@
      pcsx2
      psensor
      reaper
-     rocmPackages.clr
+     
+     pkgs.rocmPackages.clr
+     pkgs.rocmPackages.rocblas
+     pkgs.rocmPackages.hipblas
      
      inputs.secrets.packages.x86_64-linux.renoise
      
