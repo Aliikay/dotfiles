@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-stable, inputs, ... }:
+{ config, pkgs, pkgs-stable, pkgs-unstable, inputs, ... }:
 {
 #let
 #  # Godot
@@ -8,6 +8,7 @@
 #  });
 #in {
 	environment.systemPackages = with pkgs; [
-		godot_4
+		scons #building
+		godot_4 #editor
 	];
 }
