@@ -570,7 +570,7 @@
      libsForQt5.qtstyleplugin-kvantum
      
      libreoffice
-     pkgs-unstable.lime3ds
+     #pkgs-unstable.lime3ds #was broken at the time, uncomment when needed
      libsForQt5.qt5ct
      qt6Packages.qt6ct
      lutris

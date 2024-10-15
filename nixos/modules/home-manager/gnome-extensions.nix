@@ -62,5 +62,6 @@
 		media-progress
 		tiling-shell
 		inhibition-indicator
+		smile-complementary-extension
   ];
 }
