@@ -579,6 +579,7 @@
      menulibre
      melonDS
      milkytracker
+     micro
      monophony
      moonlight-qt
      mpv

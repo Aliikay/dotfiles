@@ -152,6 +152,7 @@
   # Variables
   home.sessionVariables = {
   	#TERMINAL = "blackbox";
+  	EDITOR="micro";
   };
 
   # This value determines the home Manager release that your
