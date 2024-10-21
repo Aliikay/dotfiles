@@ -26,5 +26,13 @@
 			terminal = true;
 			categories = [ "System" "Utility" ];
 		};
+		
+		stream-utilities = {
+			name = "Stream Utilities";
+			genericName = "System Utility";
+			exec = builtins.toString ../../scripts/start-stream-utilities.sh;
+			terminal = false;
+			categories = [ "System" "Utility" ];
+		};
 	};
 }
