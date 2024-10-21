@@ -77,7 +77,7 @@
   };
   
   # Allow for broken packages
-  nixpkgs.config.allowBroken = true;
+  nixpkgs.config.allowBroken = false;
   
   # Automatic System Updates
   systemd.services."nixos-auto-upgrade" = {
@@ -151,22 +151,22 @@
   		enable = true;
   		settings = {
   			CPU_SCALING_GOVERNOR_ON_AC = "performance";
-		    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-				
-				CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-		    CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+	    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+			
+			CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+	    CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
 
-		    CPU_MIN_PERF_ON_AC = 0;
-		    CPU_MAX_PERF_ON_AC = 100;
-		    CPU_MIN_PERF_ON_BAT = 0;
-		    CPU_MAX_PERF_ON_BAT = 50;
-		    
-		    CPU_BOOST_ON_AC = 1;
-        CPU_BOOST_ON_BAT = 0;
+	    CPU_MIN_PERF_ON_AC = 0;
+	    CPU_MAX_PERF_ON_AC = 100;
+	    CPU_MIN_PERF_ON_BAT = 0;
+	    CPU_MAX_PERF_ON_BAT = 50;
+	    
+	    CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
 
-		    #Optional helps save long term battery health
-		    START_CHARGE_THRESH_BAT0 = 80; # 80 and bellow it starts to charge
-		    STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+	    #Optional helps save long term battery health
+	    START_CHARGE_THRESH_BAT0 = 80; # 80 and bellow it starts to charge
+	    STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
 
   		};
   };
@@ -271,7 +271,6 @@
 		"freeimage-unstable-2021-11-01"	 #Allow for trenchbroom to be installed
 	];
 
-  
   # MPD daemon
   services.mpd = {
 		enable = true;
@@ -439,7 +438,6 @@
 		targets.grub.useImage = true;
 		
 		targets.plymouth.enable = true;
-		targets.plymouth.logoAnimated = true;
 		
 		fonts = {
 			sansSerif = {
@@ -467,8 +465,6 @@
   # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
      foot
      pkgs-stable.aseprite
      amberol
@@ -523,12 +519,12 @@
      grim
      gradience
      glaxnimate
+     
      gnome.sushi
      gnome.totem
      gnome.nautilus
      gnome.nautilus-python
      gnome.gnome-software
-     
      gnome.gnome-tweaks
      gnome.gnome-sound-recorder
      gnome.gnome-maps
@@ -541,6 +537,7 @@
      gnome-podcasts
      gnome-decoder
      gnomecast #chrome cast
+     
      git
      github-desktop
      gh
@@ -627,7 +624,7 @@
      
      ripgrep
      rocm-opencl-icd
-  	 rocm-opencl-runtime
+		 rocm-opencl-runtime
      sbcl
      slurp
      scrcpy
