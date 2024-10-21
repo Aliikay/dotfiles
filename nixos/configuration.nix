@@ -539,6 +539,7 @@
      gnomecast #chrome cast
      
      git
+     gitui
      github-desktop
      gh
      heroic
