@@ -438,6 +438,9 @@
 		
 		targets.grub.useImage = true;
 		
+		targets.plymouth.enable = true;
+		targets.plymouth.logoAnimated = true;
+		
 		fonts = {
 			sansSerif = {
 				package = pkgs.cantarell-fonts;
