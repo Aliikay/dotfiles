@@ -540,6 +540,7 @@
      gnome.zenity
      gnome-podcasts
      gnome-decoder
+     gnome-latex
      gnomecast #chrome cast
      
      git
