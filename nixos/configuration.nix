@@ -400,6 +400,9 @@
     "io.github.zen_browser.zen"
     "es.danirod.Cartero"
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
+    "ca.edestcroix.Recordbox" #not in nixpkgs yet
+    "org.dust3d.dust3d" #not in nixpkgs yet
+    
   ];
   
   # Flatpak auto updates
@@ -472,6 +475,7 @@
   environment.systemPackages = with pkgs; [
      foot
      pkgs-stable.aseprite
+     ascii-draw
      amberol
      apostrophe
      ardour
@@ -518,6 +522,7 @@
      foliate
      fragments
      fuzzel
+     furnace
      gedit
      gimp
      grim
