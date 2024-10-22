@@ -846,7 +846,7 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1729559668,
+        "lastModified": 1729571436,
         "narHash": "sha256-nK2YPgycVBZ8NH/Pm3NDYMrHAHihXMvAjOqKJo0PrVM=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
