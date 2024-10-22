@@ -524,7 +524,11 @@
      fuzzel
      furnace
      gedit
-     gimp
+     (gimp-with-plugins.override {
+     	 plugins = with gimpPlugins; [
+     		 gmic
+       ];
+     })
      grim
      gradience
      glaxnimate
