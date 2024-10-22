@@ -344,6 +344,11 @@
   };
   programs.gamemode.enable = true;
   
+  # Enable firefox
+  programs.firefox = {
+  		enable = true;
+  };
+  
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
@@ -507,7 +512,6 @@
      ffmpeg
      ffmpegthumbnailer
      firejail
-     firefox
      
      fish
      
