@@ -553,7 +553,6 @@
      gnomecast #chrome cast
      
      git
-     gitui
      github-desktop
      gh
      heroic
@@ -588,6 +587,8 @@
      #pkgs-unstable.lime3ds #was broken at the time, uncomment when needed
      libsForQt5.qt5ct
      qt6Packages.qt6ct
+     
+     lazygit
      lutris
      mangohud
      marker
