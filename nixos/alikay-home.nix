@@ -75,7 +75,7 @@
       set fish_greeting # Disable greeting
       # fastfetch -l "None"
       fish_config prompt choose scales
-      # atuin init fish
+      eval "$(atuin init fish)"
     '';
 
     plugins = [
