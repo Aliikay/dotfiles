@@ -486,6 +486,7 @@
     foot
     pkgs-stable.aseprite
     ascii-draw
+    atuin
     amberol
     alejandra #nix file formatter
     apostrophe
