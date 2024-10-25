@@ -1,15 +1,21 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, lib, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      modules/all-ways-egpu.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  pkgs-stable,
+  pkgs-last-stable,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    modules/all-ways-egpu.nix
+  ];
 
   # Bootloader.
   # boot.loader.grub.enable = true;
@@ -20,20 +26,19 @@
   #   "aesni_intel"
   #   "cryptd"
   # ];
-  
+
   # Kernel Package
   boot.kernelPackages = pkgs-unstable.linuxPackages_zen;
-  
+
   boot.tmp.cleanOnBoot = true;
-  
+
   boot.kernelParams = [
-  
   ];
-  
+
   boot.extraModprobeConfig = ''
-  		options amdgpu pcie_gen_cap=0x40000
+    options amdgpu pcie_gen_cap=0x40000
   '';
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -56,36 +61,36 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
-  
+
   # Environment Variables
   environment.sessionVariables = rec {
-  		QT_QPA_PLATFORMTHEME = "qt6ct";
-  		NIXOS_OZONE_WL = "1";
-  		#NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    NIXOS_OZONE_WL = "1";
+    #NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
   environment.pathsToLink = [
-		"/share/nautilus-python/extensions"
+    "/share/nautilus-python/extensions"
   ];
-  
+
   # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   # Enable cachix for hyprland flake caching
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-  
+
   # Allow for broken packages
   nixpkgs.config.allowBroken = false;
-  
+
   # Automatic System Updates
   systemd.services."nixos-auto-upgrade" = {
-		description = "NixOS Automatic Updates";
-		restartIfChanged = false;
-		unitConfig.X-StopOnRemoval = false;
-			
-		path = with pkgs; [
+    description = "NixOS Automatic Updates";
+    restartIfChanged = false;
+    unitConfig.X-StopOnRemoval = false;
+
+    path = with pkgs; [
       coreutils
       gnutar
       xz.bin
@@ -96,84 +101,85 @@
       config.nix.package.out
       config.programs.ssh.package
     ];
-    
-    environment = config.nix.envVars // {
-      inherit (config.environment.sessionVariables) NIX_PATH;
-      HOME = "/root";
-    };
-    
-		script = let
-        nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild"; 
+
+    environment =
+      config.nix.envVars
+      // {
+        inherit (config.environment.sessionVariables) NIX_PATH;
+        HOME = "/root";
+      };
+
+    script = let
+      nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild";
     in ''
-		  REBUILD=${nixos-rebuild} /etc/nixos/nixos/update-nixos-auto-script.sh
-		'';
-		serviceConfig = {
-		  Type = "oneshot";
-		  User = "root";
-		};
-		
-		startAt = "Sat 05:00:00";
-		after = [ "network-online.target" ];
-		wants = [ "network-online.target" ];
-	};
+      REBUILD=${nixos-rebuild} /etc/nixos/nixos/update-nixos-auto-script.sh
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+
+    startAt = "Sat 05:00:00";
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
+  };
   systemd.timers."nixos-auto-upgrade" = {
-		  timerConfig = {
-		    Persistent = true;
-		    RandomizedDelaySec = "15min";
-		  };
-	};
-  
+    timerConfig = {
+      Persistent = true;
+      RandomizedDelaySec = "15min";
+    };
+  };
+
   # Automatic Garbage Collection for Generations
   nix.gc = {
-  		automatic = true;
-  		dates = "weekly";
-  		options = "--delete-older-than 30d";
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
-  
+
   # Automatic store optimization
   nix.optimise.automatic = true;
-  nix.optimise.dates = [ "03:45" ];
-  
+  nix.optimise.dates = ["03:45"];
+
   # Filesystem trim
   services.fstrim.enable = true;
-  
+
   # Enable power management
   powerManagement = {
-  		enable = true;
-  		powertop.enable = true;
+    enable = true;
+    powertop.enable = true;
   };
-  
+
   # Enable ThermalD
   services.thermald.enable = true;
-  
+
   # Enable TLP
   services.tlp = {
-  		enable = true;
-  		settings = {
-  			CPU_SCALING_GOVERNOR_ON_AC = "performance";
-	    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-			
-			CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-	    CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-	    CPU_MIN_PERF_ON_AC = 0;
-	    CPU_MAX_PERF_ON_AC = 100;
-	    CPU_MIN_PERF_ON_BAT = 0;
-	    CPU_MAX_PERF_ON_BAT = 50;
-	    
-	    CPU_BOOST_ON_AC = 1;
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 50;
+
+      CPU_BOOST_ON_AC = 1;
       CPU_BOOST_ON_BAT = 0;
 
-	    #Optional helps save long term battery health
-	    START_CHARGE_THRESH_BAT0 = 80; # 80 and bellow it starts to charge
-	    STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
-
-  		};
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 80; # 80 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+    };
   };
   services.power-profiles-daemon.enable = false;
-  
+
   # Make nix follow the input in flake: helps nixd make correct suggestions
-	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -184,28 +190,27 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.gnome.gnome-user-share.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
-  
+
   # Hardware
   hardware = {
-		opengl = {
-			enable = lib.mkForce true;
-			driSupport = lib.mkForce true;
-			driSupport32Bit = lib.mkForce true;
-			#package = pkgs-unstable.mesa.drivers;
-			#package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
-	
-			# OpenCL Support
-			extraPackages = with pkgs; [
-				rocmPackages.clr.icd
-		    rocm-opencl-icd
-		    rocm-opencl-runtime
-			];
-		};
+    opengl = {
+      enable = lib.mkForce true;
+      driSupport = lib.mkForce true;
+      driSupport32Bit = lib.mkForce true;
+      #package = pkgs-unstable.mesa.drivers;
+      #package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+
+      # OpenCL Support
+      extraPackages = with pkgs; [
+        rocmPackages.clr.icd
+        rocm-opencl-icd
+        rocm-opencl-runtime
+      ];
+    };
   };
-  
+
   # Allow programs to find the HIP binary
-  systemd.tmpfiles.rules = 
-  let
+  systemd.tmpfiles.rules = let
     rocmEnv = pkgs.symlinkJoin {
       name = "rocm-combined";
       paths = with pkgs.rocmPackages; [
@@ -217,25 +222,25 @@
   in [
     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
-  
+
   #systemd.tmpfiles.rules = [
   #  "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   #];
-  
+
   # Hyprland
   programs.hyprland = {
-  		enable = true;
-  		xwayland.enable = true;
-  		#package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    enable = true;
+    xwayland.enable = true;
+    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   xdg.portal.enable = true;
   # Removed since GNOME already adds this, add back if getting rid of GNOME
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
+
   # Mullvad
   services.mullvad-vpn = {
-  		enable = true;
-  		package = pkgs.mullvad-vpn;
+    enable = true;
+    package = pkgs.mullvad-vpn;
   };
 
   # Configure keymap in X11
@@ -263,35 +268,35 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  
+
   # Security
   security.sudo.extraConfig = ''
-  	Defaults passwd_timeout=0
+    Defaults passwd_timeout=0
   '';
   security.apparmor.enable = true;
-  
-	nixpkgs.config.permittedInsecurePackages = [
-		"freeimage-unstable-2021-11-01"	 #Allow for trenchbroom to be installed
-	];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "freeimage-unstable-2021-11-01" #Allow for trenchbroom to be installed
+  ];
 
   # MPD daemon
   services.mpd = {
-		enable = true;
-		musicDirectory = "${config.users.users.alikay.home}/Music";
-		user = "alikay";
-		extraConfig = ''
-			audio_output {
-				type "pipewire"
-				name "MPD Pipewire Output"
-			}
-		'';
-		
-		network.listenAddress = "any";
-		#startWhenNeeded = true;
-	};
-	#systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
-	systemd.services.mpd.environment = {
-		XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+    enable = true;
+    musicDirectory = "${config.users.users.alikay.home}/Music";
+    user = "alikay";
+    extraConfig = ''
+      audio_output {
+      	type "pipewire"
+      	name "MPD Pipewire Output"
+      }
+    '';
+
+    network.listenAddress = "any";
+    #startWhenNeeded = true;
+  };
+  #systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+  systemd.services.mpd.environment = {
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -301,43 +306,40 @@
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" ];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media"];
     packages = with pkgs; [
-  			
     ];
   };
-  
+
   users.users.alikay-alt = {
     isNormalUser = true;
     description = "alikay-alt";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" ];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media"];
     packages = with pkgs; [
-  			
     ];
   };
-  
+
   users.users.guest = {
     isNormalUser = true;
     description = "Guest Account";
-    extraGroups = [ "networkmanager" "audio" "video" "render" "input" "libvirtd" "media" ];
+    extraGroups = ["networkmanager" "audio" "video" "render" "input" "libvirtd" "media"];
     packages = with pkgs; [
-  			
     ];
   };
-  
+
   users.groups.media = {
-  		members = [ "mpd" ];
+    members = ["mpd"];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Music Production tweaks
   musnix = {
-  		enable = true;
-  		# kernel.realtime = true;
+    enable = true;
+    # kernel.realtime = true;
   };
-  
+
   # Setup steam
   programs.steam = {
     enable = true;
@@ -346,40 +348,43 @@
     gamescopeSession.enable = true;
   };
   programs.gamemode.enable = true;
-  
+
   # Enable firefox
   programs.firefox = {
-  		enable = true;
+    enable = true;
   };
-  
+
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless = {
-  		enable = true;
-  		setSocketVariable = true;
+    enable = true;
+    setSocketVariable = true;
   };
   programs.virt-manager.enable = true;
-  
+
   # Enable ADB
   programs.adb.enable = true;
-  
+
   # Appimage Support
   boot.binfmt.registrations.appimage = {
-		wrapInterpreterInShell = false;
-		interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-		recognitionType = "magic";
-		offset = 0;
-		mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-		magicOrExtension = ''\x7fELF....AI\x02'';
-	};
-  
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
+
   # Flatpaks
   services.flatpak.enable = true;
-  services.flatpak.remotes = [{
-		name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-	}];
+  services.flatpak.remotes = [
+    {
+      name = "flathub";
+      location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }
+  ];
   services.flatpak.packages = [
     "md.obsidian.Obsidian"
     "com.usebottles.bottles"
@@ -405,306 +410,306 @@
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
     "ca.edestcroix.Recordbox" #not in nixpkgs yet
     "org.dust3d.dust3d" #not in nixpkgs yet
-    
   ];
-  
+
   # Flatpak auto updates
   services.flatpak.update.auto = {
-		enable = true;
-		onCalendar = "weekly"; # Default value
-	};
-	
-	# Flatpak overrides
-	services.flatpak.overrides = {
-		global = {
-			Environment = {
-				QT_STYLE_OVERRIDE="kvantum";
-			};
-			
-			Context = {
-				filesystems = [
-					"xdg-config/gtk-3.0:ro"
-					"/home/alikay/.icons:ro"
-					"xdg-config/gtk-4.0"
-					"/usr/share/icons:ro"
-					"xdg-config/Kvantum:ro"
-				];
-			};
-		};
-	};
-	
-	# Stylix theme
-	stylix = {
-		enable = true;
-		autoEnable = true;
-	
-	  # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-		base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
-		#base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
-		image = ../wallpapers/kurapika-gruv.png;
-		
-		cursor.package = pkgs.bibata-cursors;
-		cursor.name = "Bibata-Modern-Classic";
-		
-		targets.grub.useImage = true;
-		
-		targets.plymouth.enable = true;
-		
-		fonts = {
-			sansSerif = {
-				package = pkgs.cantarell-fonts;
-				name = "Cantarell-VF";
-			};
-		};
-		
-		polarity = "dark";
-	};
-	
-	# Making blackbox the default terminal
-	programs.nautilus-open-any-terminal = {
-		enable = true;
-		terminal = "blackbox";
-	};
-	
-	# Enable man pages
-	documentation = {
-		enable = true;
-		man.enable = true;
-		dev.enable = true;
-	};
- 
+    enable = true;
+    onCalendar = "weekly"; # Default value
+  };
+
+  # Flatpak overrides
+  services.flatpak.overrides = {
+    global = {
+      Environment = {
+        QT_STYLE_OVERRIDE = "kvantum";
+      };
+
+      Context = {
+        filesystems = [
+          "xdg-config/gtk-3.0:ro"
+          "/home/alikay/.icons:ro"
+          "xdg-config/gtk-4.0"
+          "/usr/share/icons:ro"
+          "xdg-config/Kvantum:ro"
+        ];
+      };
+    };
+  };
+
+  # Stylix theme
+  stylix = {
+    enable = true;
+    autoEnable = true;
+
+    # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
+    image = ../wallpapers/kurapika-gruv.png;
+
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata-Modern-Classic";
+
+    targets.grub.useImage = true;
+
+    targets.plymouth.enable = true;
+
+    fonts = {
+      sansSerif = {
+        package = pkgs.cantarell-fonts;
+        name = "Cantarell-VF";
+      };
+    };
+
+    polarity = "dark";
+  };
+
+  # Making blackbox the default terminal
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "blackbox";
+  };
+
+  # Enable man pages
+  documentation = {
+    enable = true;
+    man.enable = true;
+    dev.enable = true;
+  };
+
   # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     foot
-     pkgs-stable.aseprite
-     ascii-draw
-     amberol
-     alejandra #nix file formatter
-     apostrophe
-     ardour
-     alvr
-     appimage-run
-     audio-sharing
-     base16-shell-preview
-     base16-universal-manager
-     bear
-     blanket
-     boxbuddy
-     btop
-     blackbox-terminal
-     blueberry
-     bibata-cursors
-     blender-hip
-     #blender
-     brightnessctl
-     bustle
-     clinfo
-     celluloid
-     cartridges
-     cemu
-     cubiomes-viewer
-     dart-sass
-     drawing
-     droidcam
-     docker
-     dialect
-     dolphin-emu
-     distrobox
-     eww
-     pkgs-unstable.exhibit
-     easyeffects
-     eyedropper
-     f3d
-     fastfetch
-     ffmpeg
-     ffmpegthumbnailer
-     firejail
-     
-     fish
-     
-     foliate
-     fragments
-     fuzzel
-     furnace
-     gedit
-     (gimp-with-plugins.override {
-     	 plugins = with gimpPlugins; [
-     		 gmic
-       ];
-     })
-     grim
-     gradience
-     glaxnimate
-     
-     gnome.sushi
-     gnome.totem
-     gnome.nautilus
-     gnome.nautilus-python
-     gnome.gnome-software
-     gnome.gnome-tweaks
-     gnome.gnome-sound-recorder
-     gnome.gnome-maps
-     gnome.ghex
-     gnome-graphs
-     gnome-frog
-     gnome-extension-manager
-     gnome.dconf-editor
-     gnome.zenity
-     gnome-podcasts
-     gnome-decoder
-     gnome-latex
-     gnomecast #chrome cast
-     
-     git
-     github-desktop
-     gh
-     heroic
-     health
-     helvum
-     hyfetch
-     
-     hyprpaper
-     hyprpicker
-     hyprlock
-     hypridle
-     pyprland
-     
-     identity
-     impression
-     inkscape
-     pkgs-last-stable.itch
-     krita
-     komikku
-     killall
-     klystrack
-     
-     kdePackages.kate
-     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
-     #kdePackages.kdenlive
-     kdenlive
-     kdePackages.kfind
-     kdePackages.qtstyleplugin-kvantum
-     libsForQt5.qtstyleplugin-kvantum
-     
-     libreoffice
-     #pkgs-unstable.lime3ds #was broken at the time, uncomment when needed
-     libsForQt5.qt5ct
-     qt6Packages.qt6ct
-     
-     lazygit
-     lutris
-     mangohud
-     marker
-     menulibre
-     melonDS
-     milkytracker
-     micro
-     monophony
-     moonlight-qt
-     mpv
-     mpc-cli
-     mousai
-     mupen64plus
-     musescore
-     mission-center
-     nautilus-open-any-terminal
-     ncdu
-     neofetch
-     nextcloud-client
-     newsflash
-     nil
-     nixd # nix language LSP
-     nh
-     nvtopPackages.full
-     nwg-displays
-     libnotify
-     nix-tree
-     onlyoffice-bin
-     #obsidian
-     obs-studio
-     pavucontrol
-     paperwork
-     paper-clip
-     pciutils
-     protonup-qt
-     popsicle
-     plattenalbum
-     pitivi
-     pika-backup
-     parabolic
-     pcsx2
-     psensor
-     reaper
-     
-     pkgs.rocmPackages.clr
-     pkgs.rocmPackages.rocblas
-     pkgs.rocmPackages.hipblas
-     
-     inputs.secrets.packages.x86_64-linux.renoise
-     
-     ripgrep
-     rocm-opencl-icd
-		 rocm-opencl-runtime
-     sbcl
-     slurp
-     scrcpy
-     shortwave
-     setzer
-     share-preview
-     sidequest
-     smile
-     schismtracker
-     superTuxKart
-     sqlitebrowser
-     sysprof
-     tangram
-     textpieces
-     
-     (pkgs.texlive.combine {
-     	inherit (pkgs.texlive)
-     		scheme-tetex
-     		enumitem
-     		sourcesanspro
-     		tcolorbox
-     		synctex
-     		;
-     })
-     
-     texturepacker
-     trenchbroom
-     turtle
-     tilix
-     thunderbird
-     vlc
-     vscode.fhs
-     video-trimmer
-     wineWowPackages.stable
-     warp
-     webp-pixbuf-loader
-     waybar
-     wike
-     unityhub
-     udiskie
-     x2goclient
-     xwaylandvideobridge
-     yabridge
-     yabridgectl
-     uwuify
-     zed-editor
-     
-     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
-     inputs.nix-software-center.packages.${system}.nix-software-center
-     
-     inputs.pip2nix.defaultPackage.${system}
-     
-     audacity
+    foot
+    pkgs-stable.aseprite
+    ascii-draw
+    amberol
+    alejandra #nix file formatter
+    apostrophe
+    ardour
+    alvr
+    appimage-run
+    audio-sharing
+    base16-shell-preview
+    base16-universal-manager
+    bear
+    blanket
+    boxbuddy
+    btop
+    blackbox-terminal
+    blueberry
+    bibata-cursors
+    blender-hip
+    #blender
+    brightnessctl
+    bustle
+    clinfo
+    celluloid
+    cartridges
+    cemu
+    cubiomes-viewer
+    dart-sass
+    drawing
+    droidcam
+    docker
+    dialect
+    dolphin-emu
+    distrobox
+    eww
+    pkgs-unstable.exhibit
+    easyeffects
+    eyedropper
+    f3d
+    fastfetch
+    ffmpeg
+    ffmpegthumbnailer
+    firejail
+
+    fish
+
+    foliate
+    fragments
+    fuzzel
+    furnace
+    gedit
+    (gimp-with-plugins.override {
+      plugins = with gimpPlugins; [
+        gmic
+      ];
+    })
+    grim
+    gradience
+    glaxnimate
+
+    gnome.sushi
+    gnome.totem
+    gnome.nautilus
+    gnome.nautilus-python
+    gnome.gnome-software
+    gnome.gnome-tweaks
+    gnome.gnome-sound-recorder
+    gnome.gnome-maps
+    gnome.ghex
+    gnome-graphs
+    gnome-frog
+    gnome-extension-manager
+    gnome.dconf-editor
+    gnome.zenity
+    gnome-podcasts
+    gnome-decoder
+    gnome-latex
+    gnomecast #chrome cast
+
+    git
+    github-desktop
+    gh
+    heroic
+    health
+    helvum
+    hyfetch
+
+    hyprpaper
+    hyprpicker
+    hyprlock
+    hypridle
+    pyprland
+
+    identity
+    impression
+    inkscape
+    pkgs-last-stable.itch
+    krita
+    komikku
+    killall
+    klystrack
+
+    kdePackages.kate
+    #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
+    #kdePackages.kdenlive
+    kdenlive
+    kdePackages.kfind
+    kdePackages.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
+
+    libreoffice
+    #pkgs-unstable.lime3ds #was broken at the time, uncomment when needed
+    libsForQt5.qt5ct
+    qt6Packages.qt6ct
+
+    lazygit
+    lutris
+    mangohud
+    marker
+    menulibre
+    melonDS
+    milkytracker
+    micro
+    monophony
+    moonlight-qt
+    mpv
+    mpc-cli
+    mousai
+    mupen64plus
+    musescore
+    mission-center
+    nautilus-open-any-terminal
+    ncdu
+    neofetch
+    nextcloud-client
+    newsflash
+    nil
+    nixd # nix language LSP
+    nh
+    nvtopPackages.full
+    nwg-displays
+    libnotify
+    nix-tree
+    onlyoffice-bin
+    #obsidian
+    obs-studio
+    pavucontrol
+    paperwork
+    paper-clip
+    pciutils
+    protonup-qt
+    popsicle
+    plattenalbum
+    pitivi
+    pika-backup
+    parabolic
+    pcsx2
+    psensor
+    reaper
+
+    pkgs.rocmPackages.clr
+    pkgs.rocmPackages.rocblas
+    pkgs.rocmPackages.hipblas
+
+    inputs.secrets.packages.x86_64-linux.renoise
+
+    ripgrep
+    rocm-opencl-icd
+    rocm-opencl-runtime
+    sbcl
+    slurp
+    scrcpy
+    shortwave
+    setzer
+    share-preview
+    sidequest
+    smile
+    schismtracker
+    superTuxKart
+    sqlitebrowser
+    sysprof
+    tangram
+    textpieces
+
+    (pkgs.texlive.combine {
+      inherit
+        (pkgs.texlive)
+        scheme-tetex
+        enumitem
+        sourcesanspro
+        tcolorbox
+        synctex
+        ;
+    })
+
+    texturepacker
+    trenchbroom
+    turtle
+    tilix
+    thunderbird
+    vlc
+    vscode.fhs
+    video-trimmer
+    wineWowPackages.stable
+    warp
+    webp-pixbuf-loader
+    waybar
+    wike
+    unityhub
+    udiskie
+    x2goclient
+    xwaylandvideobridge
+    yabridge
+    yabridgectl
+    uwuify
+    zed-editor
+
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    inputs.nix-software-center.packages.${system}.nix-software-center
+
+    inputs.pip2nix.defaultPackage.${system}
+
+    audacity
   ];
-  
+
   fonts.packages = with pkgs; [
-  		nerdfonts
-  		corefonts
-  		vistafonts
+    nerdfonts
+    corefonts
+    vistafonts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -721,18 +726,26 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-  		9943 9944 # ALVR
+  networking.firewall.allowedTCPPorts = [
+    9943
+    9944 # ALVR
   ];
   networking.firewall.allowedTCPPortRanges = [
-  		{from = 1714; to = 1764;} # KDE Connect
+    {
+      from = 1714;
+      to = 1764;
+    } # KDE Connect
   ];
-  
-  networking.firewall.allowedUDPPorts = [ 
-  		9943 9944 # ALVR
+
+  networking.firewall.allowedUDPPorts = [
+    9943
+    9944 # ALVR
   ];
   networking.firewall.allowedUDPPortRanges = [
-  		{from = 1714; to = 1764;} # KDE Connect
+    {
+      from = 1714;
+      to = 1764;
+    } # KDE Connect
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -744,5 +757,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }

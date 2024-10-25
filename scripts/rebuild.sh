@@ -24,6 +24,10 @@ function askYesNo {
 
 cd /home/alikay/dotfiles
 gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+
+# Format the dotfiles with alejandra
+alejandra .
+
 # Add any new files to git to be tracked
 git status
 git --no-pager diff

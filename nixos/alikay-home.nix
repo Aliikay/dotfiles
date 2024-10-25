@@ -1,17 +1,24 @@
-{config, lib, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  pkgs-stable,
+  pkgs-last-stable,
+  inputs,
+  ...
+}: {
   # TODO please change the username & home directory to your own
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
-  
-  imports = [ 
-			inputs.ags.homeManagerModules.default 
-			./modules/home-manager/desktop-entries.nix
-			./modules/home-manager/gnome-extensions.nix
-			./modules/home-manager/dconf.nix
-			./modules/home-manager/update-notifier.nix
-			./modules/home-manager/hyprland.nix
+
+  imports = [
+    inputs.ags.homeManagerModules.default
+    ./modules/home-manager/desktop-entries.nix
+    ./modules/home-manager/gnome-extensions.nix
+    ./modules/home-manager/dconf.nix
+    ./modules/home-manager/update-notifier.nix
+    ./modules/home-manager/hyprland.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -23,7 +30,7 @@
   #   recursive = true;   # link recursively
   #   executable = true;  # make all files executable
   # };
-  
+
   # set cursor size and dpi for 4k monitor
   #xresources.properties = {
   #  "Xcursor.size" = 16;
@@ -35,124 +42,128 @@
     cowsay
     bottom
   ];
-  
-  
+
   # .config
   home.file.".config" = {
     source = ../home-folders/alikay/.config;
-    recursive = true;   # link recursively
+    recursive = true; # link recursively
   };
-  
+
   # templates
   home.file."Templates" = {
-  		source = ../home-folders/alikay/Templates;
-  		recursive = true;
+    source = ../home-folders/alikay/Templates;
+    recursive = true;
   };
-  
+
   # Git
   programs.git = {
     enable = true;
     userName = "Alikay";
     userEmail = "1401288@gmail.com";
   };
-  
+
   # MPD
   services.mpd = {
-  	enable = true;
-  	musicDirectory = "${config.home.homeDirectory}/Music";
-  };
-  
-  # Fish
-  programs.fish = {
-  		enable = true;
-  		interactiveShellInit = ''
-		    set fish_greeting # Disable greeting
-		    # fastfetch -l "None"
-		    fish_config prompt choose scales
-		  '';
-		  
-		plugins = [
-			#{ name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
-			{ name = "puffer"; src = pkgs.fishPlugins.puffer.src; }
-			{ name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
-		];
+    enable = true;
+    musicDirectory = "${config.home.homeDirectory}/Music";
   };
 
-	# Direnv
-	programs.direnv = {
+  # Fish
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      # fastfetch -l "None"
+      fish_config prompt choose scales
+    '';
+
+    plugins = [
+      #{ name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+      {
+        name = "puffer";
+        src = pkgs.fishPlugins.puffer.src;
+      }
+      {
+        name = "pisces";
+        src = pkgs.fishPlugins.pisces.src;
+      }
+    ];
+  };
+
+  # Direnv
+  programs.direnv = {
     enable = true;
     #enableFishIntegration = true; # see note on other shells below
-  		enableBashIntegration = true;
-  		nix-direnv.enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
   };
-    
+
   #Fastfetch
   programs.fastfetch = {
-  	enable = true;
-  	settings = {
-  		logo = {
-				#source = "nix_small";
-				padding = {
-				  right = 1;
-				};
-			};
-			display = {
-				size = {
-				  binaryPrefix = "si";
-				};
-				color = "blue";
-				separator = "   ";
-			};
-			modules = [
-				"title"
-				{
-				  type = "datetime";
-				  key = "Date";
-				  format = "{1}-{3}-{11}";
-				}
-				{
-				  type = "datetime";
-				  key = "Time";
-				  format = "{14}:{17}:{20}";
-				}
-				
-				# Hardware
-				"cpu"
-				"gpu"
-				"battery"
-				
-				# System
-				"kernel"
-				"packages"
-				
-				# Desktop 
-				"de"
-				"uptime"
-				
-				# Player
-				#"player"
-				#"media"
-				#"break"
-				
-				# Colors
-				"colors"
-				
-			];
-  	};
+    enable = true;
+    settings = {
+      logo = {
+        #source = "nix_small";
+        padding = {
+          right = 1;
+        };
+      };
+      display = {
+        size = {
+          binaryPrefix = "si";
+        };
+        color = "blue";
+        separator = "   ";
+      };
+      modules = [
+        "title"
+        {
+          type = "datetime";
+          key = "Date";
+          format = "{1}-{3}-{11}";
+        }
+        {
+          type = "datetime";
+          key = "Time";
+          format = "{14}:{17}:{20}";
+        }
+
+        # Hardware
+        "cpu"
+        "gpu"
+        "battery"
+
+        # System
+        "kernel"
+        "packages"
+
+        # Desktop
+        "de"
+        "uptime"
+
+        # Player
+        #"player"
+        #"media"
+        #"break"
+
+        # Colors
+        "colors"
+      ];
+    };
   };
-  
+
   # Vim
   programs.vim = {
-  		enable = true;
+    enable = true;
   };
-  
+
   # PATH
-  home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
-  
+  home.sessionPath = ["$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
+
   # Variables
   home.sessionVariables = {
-  	#TERMINAL = "blackbox";
-  	EDITOR="micro";
+    #TERMINAL = "blackbox";
+    EDITOR = "micro";
   };
 
   # This value determines the home Manager release that your

@@ -1,35 +1,42 @@
-{config, lib, pkgs, pkgs-unstable, pkgs-stable, pkgs-last-stable, inputs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  pkgs-stable,
+  pkgs-last-stable,
+  inputs,
+  ...
+}: {
   # TODO please change the username & home directory to your own
   home.username = "guest";
   home.homeDirectory = "/home/guest";
-  
-  imports = [ 
-			inputs.ags.homeManagerModules.default 
-			./modules/home-manager/desktop-entries.nix
-			./modules/home-manager/gnome-extensions.nix
-			./modules/home-manager/dconf.nix
-			./modules/home-manager/update-notifier.nix
-			./modules/home-manager/hyprland.nix
+
+  imports = [
+    inputs.ags.homeManagerModules.default
+    ./modules/home-manager/desktop-entries.nix
+    ./modules/home-manager/gnome-extensions.nix
+    ./modules/home-manager/dconf.nix
+    ./modules/home-manager/update-notifier.nix
+    ./modules/home-manager/hyprland.nix
   ];
-  
+
   # Fish
   programs.fish = {
-  		enable = true;
+    enable = true;
   };
-  
+
   # Vim
   programs.vim = {
-  		enable = true;
+    enable = true;
   };
-  
+
   # PATH
   #home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
-  
+
   # Variables
   home.sessionVariables = {
-  	#TERMINAL = "blackbox";
+    #TERMINAL = "blackbox";
   };
 
   # This value determines the home Manager release that your
