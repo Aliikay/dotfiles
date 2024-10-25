@@ -367,6 +367,9 @@
   # Enable ADB
   programs.adb.enable = true;
 
+  # Enable atuin (shell history)
+  services.atuin.enable = true;
+
   # Appimage Support
   boot.binfmt.registrations.appimage = {
     wrapInterpreterInShell = false;
