@@ -171,6 +171,9 @@
   		};
   };
   services.power-profiles-daemon.enable = false;
+  
+  # Make nix follow the input in flake: helps nixd make correct suggestions
+	nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -477,6 +480,7 @@
      pkgs-stable.aseprite
      ascii-draw
      amberol
+     alejandra #nix file formatter
      apostrophe
      ardour
      alvr
@@ -610,6 +614,7 @@
      nextcloud-client
      newsflash
      nil
+     nixd # nix language LSP
      nh
      nvtopPackages.full
      nwg-displays
