@@ -187,11 +187,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1729776962,
-        "narHash": "sha256-+aVNtTBq61XMr5fmRluwfbv624axzV5Y6DxLaww71ZI=",
+        "lastModified": 1729925059,
+        "narHash": "sha256-uEi86LHj+pMlYcvH2xQMKCbRpCOuuGLPVZzRF8KGUuc=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "34923154bf9ab189bd24499c265c0c90a41327ab",
+        "rev": "e1dc280b711470d321d794949d1a13a93410a9d5",
         "type": "github"
       },
       "original": {
@@ -294,11 +294,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1729716953,
-        "narHash": "sha256-FbRKGRRd0amsk/WS/UV9ukJ8jT1dZ2pJBISxkX+uq6A=",
+        "lastModified": 1729894599,
+        "narHash": "sha256-nL9nzNE5/re/P+zOv7NX6bRm5e+DeS1HIufQUJ01w20=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a4353cc43d1b4dd6bdeacea90eb92a8b7b78a9d7",
+        "rev": "93435d27d250fa986bfec6b2ff263161ff8288cb",
         "type": "github"
       },
       "original": {
@@ -846,8 +846,8 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1729828104,
-        "narHash": "sha256-PhOIVzT/WyxvPp/SLCoqzCS3EgGQjembvNY54UU87AQ=",
+        "lastModified": 0,
+        "narHash": "sha256-H94uYVdd/C8ClLJ7oXmGi1p3sexidKOh6oncCpuhVp4=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },
