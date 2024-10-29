@@ -3,18 +3,18 @@
 
   inputs = {
     # Default to the June 2024 branch
-    nixpkgs.url = "github:nixos/nixpkgs/24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 24.05
-    nixpkgs-stable.url = "github:nixos/nixpkgs/24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # Last stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
-    nixpkgs-last-stable.url = "github:nixos/nixpkgs/23.11";
+    nixpkgs-last-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Makes various tweaks for audio production
     musnix = {url = "github:musnix/musnix";};

@@ -700,7 +700,7 @@
     yabridge
     yabridgectl
     uwuify
-    zed-editor
+    pkgs-unstable.zed-editor
 
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     inputs.nix-software-center.packages.${system}.nix-software-center
