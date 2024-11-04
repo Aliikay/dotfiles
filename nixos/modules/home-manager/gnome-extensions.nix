@@ -14,7 +14,6 @@
     dash-to-dock
     color-picker
     dash-to-panel
-    what-watch
     appindicator
     useless-gaps
     somafm-internet-radio
@@ -22,14 +21,14 @@
     rectangle
     window-title-is-back
     just-perfection
-    openweather
+    #openweather
     pano
-    cpufreq
+    #cpufreq
     quick-web-search
     arcmenu
     vitals
     coverflow-alt-tab
-    gnome-clipboard
+    #gnome-clipboard
     clipboard-indicator
     gsconnect
     gtile

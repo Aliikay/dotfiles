@@ -119,6 +119,7 @@
         #./nixos/illogical-impulse-dependancies.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
+        ./nixos/modules/lsp.nix
 
         inputs.flake-programs-sqlite.nixosModules.programs-sqlite
         inputs.stylix.nixosModules.stylix

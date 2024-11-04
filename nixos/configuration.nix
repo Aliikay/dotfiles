@@ -622,7 +622,6 @@
     nextcloud-client
     newsflash
     nil
-    nixd # nix language LSP
     nh
     nvtopPackages.full
     nwg-displays
