@@ -619,6 +619,7 @@
     nautilus-open-any-terminal
     ncdu
     neofetch
+    neovim
     nextcloud-client
     newsflash
     nil
