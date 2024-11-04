@@ -7,7 +7,8 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    nixd # nix language LSP
-    nodePackages.typescript-language-server
+    nixd # nix
+    nodePackages.typescript-language-server # JS and Typescript
+    rust-analyzer #Rust
   ];
 }
