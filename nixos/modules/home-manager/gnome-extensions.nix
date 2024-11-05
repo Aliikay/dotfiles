@@ -68,5 +68,6 @@
     tiling-shell
     inhibition-indicator
     smile-complementary-extension
+    yakuake
   ];
 }
