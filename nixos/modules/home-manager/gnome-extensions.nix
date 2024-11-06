@@ -69,5 +69,7 @@
     inhibition-indicator
     smile-complementary-extension
     yakuake
+    sleep-through-notifications
+    window-state-manager
   ];
 }
