@@ -536,6 +536,7 @@
     fuzzel
     furnace
     gedit
+    geany
     (gimp-with-plugins.override {
       plugins = with gimpPlugins; [
         gmic
