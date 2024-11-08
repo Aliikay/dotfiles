@@ -367,8 +367,14 @@
   # Enable ADB
   programs.adb.enable = true;
 
+  # Enable fish
+  programs.fish.enable = true;
+
   # Enable atuin (shell history)
   services.atuin.enable = true;
+
+  # Set the default shell to fish
+  users.defaultUserShell = pkgs.fish;
 
   # Appimage Support
   boot.binfmt.registrations.appimage = {
@@ -528,8 +534,6 @@
     ffmpeg
     ffmpegthumbnailer
     firejail
-
-    fish
 
     foliate
     fragments
