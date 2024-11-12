@@ -4,6 +4,9 @@ echo $REBUILD
 OUTPUTPIPE=/home/alikay/.upgrade-script-pipe
 LOCK_FILE=/home/alikay/.nixos-system-update-lock
 
+echo "Using dbus session: "
+echo $DBUS_SESSION_BUS_ADDRESS
+
 # Wait for lock to be released
 if [ -f "$LOCK_FILE" ]; then
 	echo "Waiting for lock file at $LOCK_FILE to be free before updating..." > "$OUTPUTPIPE"

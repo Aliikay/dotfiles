@@ -107,6 +107,7 @@
       // {
         inherit (config.environment.sessionVariables) NIX_PATH;
         HOME = "/root";
+        DBUS_SESSION_BUS_ADDRESS = "unix:path=${builtins.getEnv "XDG_RUNTIME_DIR"}/bus";
       };
 
     script = let
