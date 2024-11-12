@@ -18,6 +18,9 @@ done
 # Create lock file
 touch "$LOCK_FILE"
 
+# Start the notifier service
+sudo -u alikay systemctl --user start auto-update-notify-watcher.service
+
 # Check for battery > 90% on laptops
 battery="/sys/class/power_supply/BAT1"
 status="$(cat "$battery/status")"
@@ -65,3 +68,6 @@ fi
 
 # Delete lock file
 rm "$LOCK_FILE"
+
+# Stop the notifier service
+sudo -u alikay systemctl --user stop auto-update-notify-watcher.service

@@ -13,7 +13,7 @@
       Description = "Watches for data on the auto update notifier pipe and passes it to libnotify";
     };
     Install = {
-      WantedBy = ["default.target"];
+      #WantedBy = ["default.target"];
     };
     Service = {
       ExecStart = "${pkgs.writeShellScript "notify-watcher" ''
