@@ -15,15 +15,16 @@
     Install = {
       WantedBy = ["default.target"];
     };
+
     Service = {
       ExecStart = "${pkgs.writeShellScript "notify-watcher" ''
         #!/bin/sh
         FILE=$HOME/.upgrade-script-pipe
         while true; do
-        	sleep 5
+        	${pkgs.coreutils}/bin/sleep 5
         	if test -f "$FILE"; then
-        		read line < "$FILE" ; notify-send "NixOS Auto Updates" "$line"
-        		rm "$FILE"
+        		read line < "$FILE" ; ${pkgs.libnotify} "NixOS Auto Updates" "$line"
+        		${pkgs.coreutils}/bin/rm "$FILE"
         	fi
         done
       ''}";
