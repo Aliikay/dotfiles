@@ -23,7 +23,7 @@
         while true; do
         	${pkgs.coreutils}/bin/sleep 5
         	if test -f "$FILE"; then
-        		read line < "$FILE" ; ${pkgs.libnotify} "NixOS Auto Updates" "$line"
+        		read line < "$FILE" ; ${pkgs.libnotify}/bin/notify-send "NixOS Auto Updates" "$line"
         		${pkgs.coreutils}/bin/rm "$FILE"
         	fi
         done
