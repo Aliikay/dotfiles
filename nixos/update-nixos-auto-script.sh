@@ -4,8 +4,8 @@ echo $REBUILD
 OUTPUTPIPE=/home/alikay/.upgrade-script-pipe
 LOCK_FILE=/home/alikay/.nixos-system-update-lock
 
-echo "Using dbus session: "
-echo $DBUS_SESSION_BUS_ADDRESS
+#echo "Using dbus session: "
+#echo $DBUS_SESSION_BUS_ADDRESS
 
 # Wait for lock to be released
 if [ -f "$LOCK_FILE" ]; then
@@ -22,7 +22,7 @@ done
 touch "$LOCK_FILE"
 
 # Start the notifier service
-sudo -u alikay systemctl --user start auto-update-notify-watcher.service
+#sudo -u alikay systemctl --user start auto-update-notify-watcher.service
 
 # Check for battery > 90% on laptops
 battery="/sys/class/power_supply/BAT1"
@@ -73,4 +73,4 @@ fi
 rm "$LOCK_FILE"
 
 # Stop the notifier service
-sudo -u alikay systemctl --user stop auto-update-notify-watcher.service
+#sudo -u alikay systemctl --user stop auto-update-notify-watcher.service

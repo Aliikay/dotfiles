@@ -107,7 +107,7 @@
       // {
         inherit (config.environment.sessionVariables) NIX_PATH;
         HOME = "/root";
-        DBUS_SESSION_BUS_ADDRESS = "unix:path=${builtins.getEnv "XDG_RUNTIME_DIR"}/bus";
+        #DBUS_SESSION_BUS_ADDRESS = "unix:path=${builtins.getEnv "XDG_RUNTIME_DIR"}/bus"; # from when i tried to make notify service only run while upgrading
       };
 
     script = let
