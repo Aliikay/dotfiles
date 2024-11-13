@@ -737,6 +737,8 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
+    8000 #Development
+
     9943
     9944 # ALVR
   ];
@@ -748,6 +750,8 @@
   ];
 
   networking.firewall.allowedUDPPorts = [
+    8000 #Development
+
     9943
     9944 # ALVR
   ];
