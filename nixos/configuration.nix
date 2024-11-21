@@ -520,6 +520,7 @@
     audio-sharing
     base16-shell-preview
     base16-universal-manager
+    bat
     bear
     blanket
     boxbuddy
