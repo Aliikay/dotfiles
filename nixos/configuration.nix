@@ -480,6 +480,7 @@
     targets.grub.useImage = true;
 
     targets.plymouth.enable = true;
+    targets.plymouth.logoAnimated = false;
 
     fonts = {
       sansSerif = {
