@@ -32,7 +32,24 @@
 
   boot.tmp.cleanOnBoot = true;
 
+  # Disable boot messages to not interrupt the boot splash
+  boot.consoleLogLevel = 0;
+  boot.initrd.verbose = false;
+
+  # Enable plymouth for a good looking boot splash
+  boot.plymouth = {
+    enable = true;
+  };
+
   boot.kernelParams = [
+    # Disable the boot messages
+    "quiet"
+    "splash"
+    "boot.shell_on_fail"
+    "loglevel=3"
+    "rd.systemd.show_status=false"
+    "rd.udev.log_level=3"
+    "udev.log_priority=3"
   ];
 
   boot.extraModprobeConfig = ''
