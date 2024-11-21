@@ -166,6 +166,15 @@
     enable = true;
   };
 
+  # Zellij
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      default_shell = "fish";
+    };
+  };
+
   # PATH
   home.sessionPath = ["$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
 

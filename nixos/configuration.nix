@@ -724,6 +724,7 @@
     yabridgectl
     uwuify
     pkgs-unstable.zed-editor
+    zellij
 
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     inputs.nix-software-center.packages.${system}.nix-software-center
