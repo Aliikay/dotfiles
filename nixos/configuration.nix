@@ -710,6 +710,7 @@
     turtle
     tilix
     thunderbird
+    tuba
     vlc
     vscode.fhs
     video-trimmer
