@@ -707,6 +707,7 @@
 
     texturepacker
     trenchbroom
+    tldr
     turtle
     tilix
     thunderbird
