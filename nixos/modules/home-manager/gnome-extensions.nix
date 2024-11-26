@@ -71,5 +71,6 @@
     yakuake
     sleep-through-notifications
     window-state-manager
+    notification-counter
   ];
 }
