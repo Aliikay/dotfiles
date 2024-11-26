@@ -225,6 +225,11 @@
         rocm-opencl-runtime
       ];
     };
+
+    # AMD GPU
+    amdgpu = {
+      opencl.enable = true;
+    };
   };
 
   # Allow programs to find the HIP binary
