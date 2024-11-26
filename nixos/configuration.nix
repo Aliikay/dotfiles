@@ -538,6 +538,7 @@
     cartridges
     cemu
     cubiomes-viewer
+    davinci-resolve
     dart-sass
     drawing
     droidcam
