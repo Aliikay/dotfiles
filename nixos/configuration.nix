@@ -387,6 +387,11 @@
   };
   programs.virt-manager.enable = true;
 
+  # Enable Podman
+  virtualisation.podman = {
+    enable = true;
+  };
+
   # Enable ADB
   programs.adb.enable = true;
 
