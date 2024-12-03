@@ -211,7 +211,7 @@
 
   # Hardware
   hardware = {
-    opengl = {
+    graphics = {
       enable = lib.mkForce true;
       #driSupport = lib.mkForce true;
       #driSupport32Bit = lib.mkForce true;
