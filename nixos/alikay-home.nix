@@ -161,11 +161,6 @@
     };
   };
 
-  # Vim
-  programs.vim = {
-    enable = true;
-  };
-
   # Zellij
   programs.zellij = {
     enable = true;
@@ -174,6 +169,13 @@
       default_shell = "fish";
     };
   };
+
+  # Stylix
+  #stylix = {
+  #targets.vim.enable = false;
+  #targets.neovim.enable = false; #was breaking the build for some reason??
+  #targets.nixvim.enable = false;
+  #};
 
   # PATH
   home.sessionPath = ["$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];

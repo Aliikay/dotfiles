@@ -3,14 +3,14 @@
 
   inputs = {
     # Default to the June 2024 branch
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 24.05
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Last stable branch of nixpkgs, used for version rollback
     # The current latest version is 23.11
@@ -45,8 +45,9 @@
     pip2nix.url = "github:nix-community/pip2nix";
 
     # stylix to theme the entire system
-    stylix.url = "github:danth/stylix/release-24.05";
+    #stylix.url = "github:danth/stylix/release-24.05";
     #stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/f3c2f5a1796cbba1e1685270cf0f5a66f118ea96";
 
     # Framework specific tweaks
     nixos-hardware.url = "github:NixOS/nixos-hardware";
@@ -54,7 +55,7 @@
     # Home-manager, used for managing user configuration
     home-manager = {
       #url = "github:nix-community/home-manager";
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,

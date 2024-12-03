@@ -213,16 +213,16 @@
   hardware = {
     opengl = {
       enable = lib.mkForce true;
-      driSupport = lib.mkForce true;
-      driSupport32Bit = lib.mkForce true;
+      #driSupport = lib.mkForce true;
+      #driSupport32Bit = lib.mkForce true;
       #package = pkgs-unstable.mesa.drivers;
       #package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
 
       # OpenCL Support
       extraPackages = with pkgs; [
         rocmPackages.clr.icd
-        rocm-opencl-icd
-        rocm-opencl-runtime
+        #rocm-opencl-icd #doesnt exist anymore
+        #rocm-opencl-runtime
       ];
     };
 
@@ -276,7 +276,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -480,7 +479,8 @@
     autoEnable = true;
 
     # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
     image = ../wallpapers/kurapika-gruv.png;
 
@@ -557,6 +557,7 @@
     dolphin-emu
     distrobox
     eww
+    enter-tex
     pkgs-unstable.exhibit
     easyeffects
     eyedropper
@@ -581,23 +582,22 @@
     gradience
     glaxnimate
 
-    gnome.sushi
-    gnome.totem
-    gnome.nautilus
-    gnome.nautilus-python
-    gnome.gnome-software
-    gnome.gnome-tweaks
-    gnome.gnome-sound-recorder
-    gnome.gnome-maps
-    gnome.ghex
+    sushi
+    totem
+    nautilus
+    nautilus-python
+    gnome-software
+    gnome-tweaks
+    gnome-sound-recorder
+    gnome-maps
+    ghex
     gnome-graphs
     gnome-frog
     gnome-extension-manager
-    gnome.dconf-editor
-    gnome.zenity
+    dconf-editor
+    zenity
     gnome-podcasts
     gnome-decoder
-    gnome-latex
     gnomecast #chrome cast
 
     git
@@ -678,7 +678,7 @@
     pika-backup
     parabolic
     pcsx2
-    psensor
+    #psensor #deprecated due to lack of maintenence
     reaper
 
     pkgs.rocmPackages.clr
@@ -688,8 +688,8 @@
     inputs.secrets.packages.x86_64-linux.renoise
 
     ripgrep
-    rocm-opencl-icd
-    rocm-opencl-runtime
+    #rocm-opencl-icd doesnt exist anymore?
+    #rocm-opencl-runtime
     sbcl
     slurp
     scrcpy
