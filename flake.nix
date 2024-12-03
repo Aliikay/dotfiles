@@ -47,7 +47,7 @@
     # stylix to theme the entire system
     #stylix.url = "github:danth/stylix/release-24.05";
     #stylix.url = "github:danth/stylix";
-    stylix.url = "github:danth/stylix/d13ffb381c83b6139b9d67feff7addf18f8408fe";
+    stylix.url = "github:danth/stylix/release-24.11";
 
     # Framework specific tweaks
     nixos-hardware.url = "github:NixOS/nixos-hardware";
