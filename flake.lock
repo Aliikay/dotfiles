@@ -213,11 +213,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1733183541,
-        "narHash": "sha256-toqiNp6R22aDZHTiQLfLfyMfckFhUi5n2zN27kC1aOc=",
+        "lastModified": 1733210173,
+        "narHash": "sha256-brgDagZcBNegSKKvmPWOOOvVbV31EBWg2uU0ghcQ/j0=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "8fa04805409a5f97ba28b3750a6e82e545028ea2",
+        "rev": "30339626eb3cd466f771d73c8f78feeff23e7d34",
         "type": "github"
       },
       "original": {
@@ -700,11 +700,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1733139194,
-        "narHash": "sha256-PVQW9ovo0CJbhuhCsrhFJGGdD1euwUornspKpBIgdok=",
+        "lastModified": 1733217105,
+        "narHash": "sha256-fc6jTzIwCIVWTX50FtW6AZpuukuQWSEbPiyg6ZRGWFY=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "c6c90887f84c02ce9ebf33b95ca79ef45007bf88",
+        "rev": "cceee0a31d2f01bcc98b2fbd591327c06a4ea4f9",
         "type": "github"
       },
       "original": {
@@ -990,8 +990,8 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1733172755,
-        "narHash": "sha256-ifimOa6NE9zB4UkZ5gtjUL52G/XvFYalLZcBL308xEo=",
+        "lastModified": 1733216911,
+        "narHash": "sha256-lvlhuTbmfZWt8yESIw2TdxhqI5pQSe2c4s2OBz4fyTo=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },
@@ -1040,17 +1040,17 @@
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1732992689,
-        "narHash": "sha256-1hF1vbnLcSAxURVvATDwMfWOTzNgSGwa8mVL4YaCcd8=",
+        "lastModified": 1732993760,
+        "narHash": "sha256-t1J6wgzGjvvGNfdd0ei8HnZf9sTw+SpvCNAX0i6Qgwc=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "f3c2f5a1796cbba1e1685270cf0f5a66f118ea96",
+        "rev": "d13ffb381c83b6139b9d67feff7addf18f8408fe",
         "type": "github"
       },
       "original": {
         "owner": "danth",
         "repo": "stylix",
-        "rev": "f3c2f5a1796cbba1e1685270cf0f5a66f118ea96",
+        "rev": "d13ffb381c83b6139b9d67feff7addf18f8408fe",
         "type": "github"
       }
     },
