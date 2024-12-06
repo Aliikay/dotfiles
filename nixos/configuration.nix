@@ -428,7 +428,7 @@
     "com.gitfiend.GitFiend"
     "com.google.Chrome"
     #"com.nextcloud.desktopclient.nextcloud"
-    "org.prismlauncher.PrismLauncher"
+    #"org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
     #"io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
@@ -675,6 +675,7 @@
     paper-clip
     pciutils
     protonup-qt
+    prismlauncher
     popsicle
     plattenalbum
     pitivi
