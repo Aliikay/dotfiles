@@ -57,7 +57,10 @@
   '';
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 15;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-69f62bf0-92d5-426b-aa83-eebed3395eca".device = "/dev/disk/by-uuid/69f62bf0-92d5-426b-aa83-eebed3395eca";
