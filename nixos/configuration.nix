@@ -529,6 +529,7 @@
     ascii-draw
     atuin
     amberol
+    alpaca
     alejandra #nix file formatter
     apostrophe
     ardour
