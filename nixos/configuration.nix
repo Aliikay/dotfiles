@@ -645,6 +645,7 @@
 
     lazygit
     localsend
+    lmms
     lutris
     mangohud
     marker
