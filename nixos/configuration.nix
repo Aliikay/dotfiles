@@ -643,6 +643,7 @@
     qt6Packages.qt6ct
 
     lazygit
+    localsend
     lutris
     mangohud
     marker
