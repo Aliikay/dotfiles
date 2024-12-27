@@ -443,13 +443,11 @@
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
     "dev.gbstudio.gb-studio"
-    "xyz.ketok.Speedtest"
-    "io.github.RodZill4.Material-Maker"
     "io.github.zen_browser.zen"
-    "es.danirod.Cartero"
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
-    "ca.edestcroix.Recordbox" #not in nixpkgs yet
     "org.dust3d.dust3d" #not in nixpkgs yet
+    "de.hummdudel.Libellus" #not in nixpkgs yet
+    "nl.emphisia.icon" #not in nixpkgs yet
   ];
 
   # Flatpak auto updates
@@ -554,6 +552,7 @@
     clinfo
     celluloid
     cartridges
+    cartero
     cemu
     cubiomes-viewer
     davinci-resolve
@@ -627,6 +626,7 @@
     inkscape
     pkgs-last-stable.itch
     krita
+    keypunch
     komikku
     killall
     klystrack
@@ -649,6 +649,7 @@
     lmms
     lutris
     mangohud
+    material-maker
     marker
     menulibre
     melonDS
@@ -699,6 +700,7 @@
     inputs.secrets.packages.x86_64-linux.renoise
 
     ripgrep
+    recordbox
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
     sbcl
@@ -713,6 +715,7 @@
     superTuxKart
     sqlitebrowser
     sysprof
+    speedtest
     tangram
     textpieces
 
