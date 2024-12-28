@@ -33,9 +33,15 @@ git status
 git --no-pager diff
 
 askYesNo "Would you like to apply this configuration?" true
-DOIT=$ANSWER
+SWITCH_TO_CONFIG=$ANSWER
+BOOT_TO_CONFIG=false
 
-if [ "$DOIT" = true ]; then
+if [ ! "$SWITCH_TO_CONFIG" ]; then
+	askYesNo "Would you like to boot to this configuration instead?" true
+	BOOT_TO_CONFIG=$ANSWER
+fi
+
+if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 	askYesNo "Update the flake inputs as well?" true
 	DOIT=$ANSWER
 	
@@ -70,7 +76,14 @@ if [ "$DOIT" = true ]; then
 	echo "Copying in dotfiles to /etc/nixos"
 	sudo cp -r /home/alikay/dotfiles /etc/nixos
 	echo "Rebuilding the system..."
-	nh os switch /home/alikay/dotfiles --hostname alikay
+	
+	if [ "$BOOT_TO_CONFIG" = true ] ; then
+		echo "Not switching to config, only booting!"
+		nh os boot /home/alikay/dotfiles --hostname alikay
+	else
+		echo "Hotswapping into new config!"
+		nh os switch /home/alikay/dotfiles --hostname alikay
+	fi
 	
 	# Remove lock file
 	sudo rm "$LOCK_FILE"

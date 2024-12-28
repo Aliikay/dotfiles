@@ -28,7 +28,7 @@
   # ];
 
   # Kernel Package
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   boot.tmp.cleanOnBoot = true;
 
