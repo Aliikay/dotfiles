@@ -35,7 +35,7 @@
 
   # Configure GPU as main under boot_vga
   systemd.services."all-ways-egpu-boot-vga" = {
-    enable = true;
+    enable = false;
     description = "Configure eGPU as primary using boot_vga under Wayland desktops";
 
     path = with pkgs; [
@@ -57,7 +57,7 @@
 
   # Shutdown Process to cleanup boot_vga
   systemd.services."all-ways-egpu-shutdown" = {
-    enable = true;
+    enable = false;
     description = "Cleanup boot_vga eGPU configuration at shutdown";
 
     path = with pkgs; [
