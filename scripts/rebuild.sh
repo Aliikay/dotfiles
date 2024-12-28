@@ -36,7 +36,7 @@ askYesNo "Would you like to apply this configuration?" true
 SWITCH_TO_CONFIG=$ANSWER
 BOOT_TO_CONFIG=false
 
-if [ ! "$SWITCH_TO_CONFIG" ]; then
+if [ "$SWITCH_TO_CONFIG" = false ]; then
 	askYesNo "Would you like to boot to this configuration instead?" true
 	BOOT_TO_CONFIG=$ANSWER
 fi
