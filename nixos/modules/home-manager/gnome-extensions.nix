@@ -22,7 +22,7 @@
     window-title-is-back
     just-perfection
     #openweather
-    pano
+    #pano
     #cpufreq
     quick-web-search
     arcmenu

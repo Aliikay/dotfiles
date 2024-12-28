@@ -79,7 +79,7 @@
 
   # Configure GPU as main uusing compositor variables
   systemd.services."all-ways-egpu-set-compositor" = {
-    enable = false;
+    enable = true;
     description = "Configure eGPU as primary using compositor variables under Wayland desktops";
 
     path = with pkgs; [
