@@ -12,7 +12,7 @@
 
   # Main Service File
   systemd.services."all-ways-egpu" = {
-    enable = false;
+    enable = true;
     description = "Configure eGPU as primary under Wayland desktops";
 
     path = with pkgs; [
@@ -79,7 +79,7 @@
 
   # Configure GPU as main uusing compositor variables
   systemd.services."all-ways-egpu-set-compositor" = {
-    enable = true;
+    enable = false;
     description = "Configure eGPU as primary using compositor variables under Wayland desktops";
 
     path = with pkgs; [
