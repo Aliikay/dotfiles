@@ -789,6 +789,8 @@
 
     9943
     9944 # ALVR
+
+    53317 # Localsend
   ];
   networking.firewall.allowedTCPPortRanges = [
     {
@@ -803,6 +805,8 @@
 
     9943
     9944 # ALVR
+
+    53317 #Localsend
   ];
   networking.firewall.allowedUDPPortRanges = [
     {
