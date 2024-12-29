@@ -24,7 +24,7 @@
 
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = "/home/alikay/bin/all-ways-egpu boot";
+      ExecStart = "/home/alikay/dotfiles/scripts/start-all-ways-egpu-boot.sh";
     };
 
     wantedBy = ["graphical.target"];
