@@ -790,6 +790,8 @@
     9943
     9944 # ALVR
 
+    25565 #Minecraft
+
     53317 # Localsend
   ];
   networking.firewall.allowedTCPPortRanges = [
@@ -805,6 +807,8 @@
 
     9943
     9944 # ALVR
+
+    25565 #Minecraft
 
     53317 #Localsend
   ];
