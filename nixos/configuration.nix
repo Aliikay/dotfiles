@@ -550,6 +550,7 @@
     brightnessctl
     bustle
     clinfo
+    clisp
     celluloid
     cartridges
     cartero
@@ -701,6 +702,7 @@
 
     ripgrep
     recordbox
+    rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
     sbcl
