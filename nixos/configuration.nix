@@ -716,6 +716,7 @@
     schismtracker
     superTuxKart
     sqlitebrowser
+    sqlitestudio
     sysprof
     speedtest
     tangram
