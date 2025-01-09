@@ -249,6 +249,17 @@
     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
 
+  # Configure systemd limits for lutris esync
+  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  security.pam.loginLimits = [
+    {
+      domain = "alikay";
+      type = "hard";
+      item = "nofile";
+      value = "524288";
+    }
+  ];
+
   #systemd.tmpfiles.rules = [
   #  "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   #];
