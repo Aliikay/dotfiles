@@ -561,7 +561,7 @@
     brightnessctl
     bustle
     clinfo
-    clisp
+    #clisp
     celluloid
     cartridges
     cartero
