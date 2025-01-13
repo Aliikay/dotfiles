@@ -454,11 +454,12 @@
     "in.srev.guiscrcpy"
     "camp.nook.nookdesktop"
     "dev.gbstudio.gb-studio"
-    "io.github.zen_browser.zen"
+    "io.github.zen_browser.zen" #not in nixpkgs yet
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
     "org.dust3d.dust3d" #not in nixpkgs yet
     "de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
+    "org.twinery.Twine" #not in nixpkgs yet
   ];
 
   # Flatpak auto updates
@@ -570,6 +571,7 @@
     davinci-resolve
     dart-sass
     drawing
+    decker
     droidcam
     docker
     dialect
@@ -713,6 +715,7 @@
 
     ripgrep
     recordbox
+    renpy
     rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
@@ -726,6 +729,7 @@
     smile
     schismtracker
     superTuxKart
+    showtime
     sqlitebrowser
     sqlitestudio
     sysprof
