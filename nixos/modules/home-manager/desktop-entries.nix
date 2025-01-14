@@ -48,5 +48,13 @@
       icon = "/home/alikay/dotfiles/icons/renpy.png";
       categories = ["Development" "Game"];
     };
+
+    zed = {
+      name = "Zed";
+      genericName = "Programming";
+      exec = "fish -c zeditor";
+      terminal = false;
+      categories = ["Development"];
+    };
   };
 }
