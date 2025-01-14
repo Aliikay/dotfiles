@@ -39,5 +39,14 @@
       terminal = false;
       categories = ["System" "Utility"];
     };
+
+    renpy = {
+      name = "Renpy";
+      genericName = "Programming";
+      exec = "renpy";
+      terminal = false;
+      icon = "/home/alikay/dotfiles/icons/renpy.png";
+      categories = ["Development" "Game"];
+    };
   };
 }
