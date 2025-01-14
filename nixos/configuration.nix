@@ -717,6 +717,7 @@
     recordbox
     renpy
     rstudio
+    rlwrap #for use with sbcl to fix the arrow keys
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
     sbcl
