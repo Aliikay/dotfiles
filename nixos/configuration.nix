@@ -497,7 +497,8 @@
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/sandcastle.yaml";
     #image = ../wallpapers/gruvbox/kurapika-gruv.png;
     image = ../wallpapers/catppuccin/gradient-synth-cat.png;
 
