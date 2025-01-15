@@ -498,9 +498,10 @@
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/sandcastle.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/sandcastle.yaml";
     #image = ../wallpapers/gruvbox/kurapika-gruv.png;
-    image = ../wallpapers/catppuccin/gradient-synth-cat.png;
+    #image = ../wallpapers/catppuccin/gradient-synth-cat.png;
+    image = ../wallpapers/other/kurapika-3.jpg;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
