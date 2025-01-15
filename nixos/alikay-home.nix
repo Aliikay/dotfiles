@@ -188,6 +188,8 @@
   # Aliases
   home.shellAliases = {
     cat = "bat --pager=none";
+    nano = "micro";
+    sbcl = "rlwrap sbcl";
   };
 
   # This value determines the home Manager release that your
