@@ -23,7 +23,8 @@ function askYesNo {
 }
 
 cd /home/alikay/dotfiles
-gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+#gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+zeditor -n --foreground . nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
 
 # Format the dotfiles with alejandra
 alejandra .
@@ -44,7 +45,7 @@ fi
 if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 	askYesNo "Update the flake inputs as well?" true
 	DOIT=$ANSWER
-	
+
 	# Wait for lock to be released
 	while [ -f "$LOCK_FILE" ]
 	do
@@ -57,7 +58,7 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 
 	# Create lock file
 	sudo touch "$LOCK_FILE"
-	
+
 	if [ "$DOIT" = true ]; then
 		echo "Updating main flake..."
 		cd /home/alikay/dotfiles
@@ -76,7 +77,7 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 	echo "Copying in dotfiles to /etc/nixos"
 	sudo cp -r /home/alikay/dotfiles /etc/nixos
 	echo "Rebuilding the system..."
-	
+
 	if [ "$BOOT_TO_CONFIG" = true ] ; then
 		echo "Not switching to config, only booting!"
 		nh os boot /home/alikay/dotfiles --hostname alikay
@@ -84,10 +85,10 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 		echo "Hotswapping into new config!"
 		nh os switch /home/alikay/dotfiles --hostname alikay
 	fi
-	
+
 	# Remove lock file
 	sudo rm "$LOCK_FILE"
-	
+
 	if [ $? = 0 ]
 	then
 		askYesNo "Commit these changes?" true
@@ -102,5 +103,5 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 			git push
 		fi
 	fi
-	
+
 fi
