@@ -68,6 +68,11 @@
     musicDirectory = "${config.home.homeDirectory}/Music";
   };
 
+  # Link firejail to home, for itch launcher
+  home.file.".config/itch/prereqs/firejail-386/firejail" = {
+    source = "${pkgs.firejail}/bin/firejail";
+  };
+
   # BTOP
   #programs.btop = {
   #  enable = true;
