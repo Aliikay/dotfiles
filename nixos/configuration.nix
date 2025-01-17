@@ -409,6 +409,9 @@
   # Enable ADB
   programs.adb.enable = true;
 
+  # Enable Firejail
+  programs.firejail.enable = true;
+
   # Enable fish
   programs.fish.enable = true;
 
@@ -588,7 +591,6 @@
     fastfetch
     ffmpeg
     ffmpegthumbnailer
-    firejail
 
     foliate
     fragments
