@@ -575,6 +575,7 @@
     cubiomes-viewer
     davinci-resolve
     dart-sass
+    decibels
     drawing
     decker
     droidcam
