@@ -72,6 +72,9 @@
   home.file.".config/itch/prereqs/firejail-386/firejail" = {
     source = "${pkgs.firejail}/bin/firejail";
   };
+  home.file.".config/itch/prereqs/firejail-amd64/firejail" = {
+    source = "${pkgs.firejail}/bin/firejail";
+  };
 
   # BTOP
   #programs.btop = {
