@@ -74,5 +74,6 @@
     notification-counter
     do-not-disturb-while-screen-sharing-or-recording
     right-click-next
+    auto-adwaita-colors
   ];
 }
