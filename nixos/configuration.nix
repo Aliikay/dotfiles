@@ -557,6 +557,7 @@
     bat
     bear
     blanket
+    blockbench
     boxbuddy
     btop
     blackbox-terminal
