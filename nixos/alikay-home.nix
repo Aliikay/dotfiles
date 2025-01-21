@@ -178,6 +178,14 @@
     };
   };
 
+  # OBS Plugins
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-livesplit-one
+    ];
+  };
+
   # Stylix
   stylix = {
     enable = true;
