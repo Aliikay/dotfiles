@@ -567,6 +567,8 @@
     #blender
     brightnessctl
     bustle
+    cava
+    cavalier
     clinfo
     #clisp
     celluloid
@@ -630,6 +632,7 @@
     git
     github-desktop
     gh
+    ghostty
     heroic
     health
     helvum
