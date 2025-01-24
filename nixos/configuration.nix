@@ -702,6 +702,7 @@
     onlyoffice-bin
     #obsidian
     obs-studio
+    omnisharp-roslyn
     pavucontrol
     paperwork
     paper-clip
