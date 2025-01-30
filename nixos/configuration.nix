@@ -712,6 +712,7 @@
     popsicle
     plattenalbum
     pitivi
+    pipeline
     pika-backup
     parabolic
     pcsx2
