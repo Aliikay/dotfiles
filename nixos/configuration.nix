@@ -545,6 +545,7 @@
     pkgs-stable.aseprite
     ascii-draw
     atuin
+    aria2
     amberol
     alpaca
     alejandra #nix file formatter
