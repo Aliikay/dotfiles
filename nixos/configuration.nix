@@ -670,6 +670,7 @@
     qt6Packages.qt6ct
 
     lazygit
+    lazydocker
     localsend
     lmms
     lutris
