@@ -336,12 +336,13 @@
       }
     '';
 
-    network.listenAddress = "any";
-    #startWhenNeeded = true;
+    #network.listenAddress = "any"; # used for non-localhost connections
+    startWhenNeeded = true;
   };
-  #systemd.services.mpd.serviceConfig.SupplementaryGroups = [ "pipewire" ];
+
   systemd.services.mpd.environment = {
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}";
+    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}"; # User-id must match services.mpd.user. MPD will look inside this directory for the PipeWire socket.
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
