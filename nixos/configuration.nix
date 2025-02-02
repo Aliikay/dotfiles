@@ -528,8 +528,8 @@
 
     fonts = {
       sansSerif = {
-        package = pkgs.cantarell-fonts;
-        name = "Cantarell-VF";
+        package = pkgs.inter;
+        name = "Inter";
       };
     };
 
