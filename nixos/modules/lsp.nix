@@ -12,5 +12,6 @@
     rust-analyzer #Rust
     tailwindcss-language-server #CSS
     vscode-langservers-extracted #HTML, CSS, JSON, esLint
+    omnisharp-roslyn # CSharp
   ];
 }
