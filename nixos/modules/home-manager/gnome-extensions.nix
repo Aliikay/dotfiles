@@ -75,5 +75,8 @@
     do-not-disturb-while-screen-sharing-or-recording
     right-click-next
     auto-adwaita-colors
+    window-on-top
+    transparent-window-moving
+    application-tabs
   ];
 }
