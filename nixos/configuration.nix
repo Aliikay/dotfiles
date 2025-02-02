@@ -515,7 +515,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/horizon-dark.yaml";
     #image = ../wallpapers/gruvbox/kurapika-gruv.png;
     #image = ../wallpapers/catppuccin/gradient-synth-cat.png;
-    image = ../wallpapers/other/killua.png;
+    image = ../wallpapers/other/gon-and-killua.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
