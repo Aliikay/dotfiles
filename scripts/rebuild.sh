@@ -24,7 +24,7 @@ function askYesNo {
 
 cd /home/alikay/dotfiles
 #gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
-zeditor -n --foreground . nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+zeditor -n -w . nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
 
 # Format the dotfiles with alejandra
 alejandra .
