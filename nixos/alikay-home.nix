@@ -77,12 +77,12 @@
   };
 
   # BTOP
-  #programs.btop = {
-  #  enable = true;
-  #  settings = {
-  #    color_theme = "gruvbox_material_dark";
-  #  };
-  #};
+  programs.btop = {
+    enable = true;
+    settings = {
+      color_theme = "horizon";
+    };
+  };
 
   # Fish
   programs.fish = {
@@ -190,6 +190,8 @@
   stylix = {
     enable = true;
     autoEnable = true;
+
+    targets.btop.enable = false;
   };
 
   # PATH
