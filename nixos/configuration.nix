@@ -583,6 +583,7 @@
     cava
     cavalier
     clinfo
+    clang-tools
     #clisp
     celluloid
     cartridges
@@ -681,6 +682,7 @@
     qt6Packages.qt6ct
 
     lazygit
+    libclang
     lazydocker
     localsend
     lmms
