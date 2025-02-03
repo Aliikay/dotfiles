@@ -63,10 +63,10 @@
   };
 
   # MPD
-  services.mpd = {
-    enable = true;
-    musicDirectory = "${config.home.homeDirectory}/Music";
-  };
+  #services.mpd = {
+  #  enable = true;
+  #  musicDirectory = "${config.home.homeDirectory}/Music";
+  #};
 
   # Link firejail to home, for itch launcher
   home.file.".config/itch/prereqs/firejail-386/firejail" = {
