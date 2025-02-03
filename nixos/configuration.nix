@@ -473,6 +473,8 @@
     "de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
     "org.twinery.Twine" #not in nixpkgs yet
+    "org.vinegarhq.Vinegar" # not in nixpkgs yet
+    "com.voxdsp.TuxFishing" # what do you think
   ];
 
   # Flatpak auto updates
@@ -587,6 +589,7 @@
     #clisp
     celluloid
     cartridges
+    collision
     cartero
     cemu
     cubiomes-viewer
