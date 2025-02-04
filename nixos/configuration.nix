@@ -615,6 +615,7 @@
 
     foliate
     fragments
+    fractal
     fuzzel
     furnace
     gedit
@@ -698,6 +699,7 @@
     milkytracker
     micro
     monophony
+    mousam
     moonlight-qt
     mpv
     mpc-cli
