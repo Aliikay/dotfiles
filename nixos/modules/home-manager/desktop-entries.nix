@@ -48,5 +48,14 @@
       icon = "/home/alikay/dotfiles/icons/renpy.png";
       categories = ["Development" "Game"];
     };
+
+    material-maker = {
+      name = "Material Maker";
+      genericName = "Programming";
+      exec = "material-maker";
+      terminal = false;
+      icon = "/home/alikay/dotfiles/icons/material-maker.png";
+      categories = ["Development" "Game"];
+    };
   };
 }
