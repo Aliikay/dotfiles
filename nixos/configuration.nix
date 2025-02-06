@@ -616,6 +616,7 @@
     foliate
     fragments
     fractal
+    flips
     fuzzel
     furnace
     gedit
