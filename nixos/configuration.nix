@@ -725,6 +725,7 @@
     obs-studio
     pavucontrol
     paperwork
+    paleta
     paper-clip
     pciutils
     protonup-qt
