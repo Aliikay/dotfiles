@@ -600,6 +600,7 @@
     decker
     droidcam
     docker
+    dotnet-sdk
     dialect
     dolphin-emu
     distrobox
