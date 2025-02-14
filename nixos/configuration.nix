@@ -559,6 +559,7 @@
     ascii-draw
     atuin
     aria2
+    ani-cli
     amberol
     alpaca
     alejandra #nix file formatter
@@ -653,6 +654,7 @@
     github-desktop
     gh
     ghostty
+    halftone
     heroic
     health
     helvum
