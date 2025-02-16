@@ -772,6 +772,7 @@
     sqlitestudio
     sysprof
     speedtest
+    torzu
     tangram
     textpieces
 
