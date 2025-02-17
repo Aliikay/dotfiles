@@ -535,8 +535,8 @@
       };
 
       monospace = {
-        package = pkgs.inconsolata;
-        name = "Inconsolata";
+        package = pkgs.agave;
+        name = "Agave";
       };
     };
 
