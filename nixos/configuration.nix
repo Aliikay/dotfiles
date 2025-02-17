@@ -533,6 +533,11 @@
         package = pkgs.inter;
         name = "Inter";
       };
+
+      monospace = {
+        package = pkgs.inconsolata;
+        name = "Inconsolata";
+      };
     };
 
     polarity = "dark";
