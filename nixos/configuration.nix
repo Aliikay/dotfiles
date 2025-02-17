@@ -535,8 +535,8 @@
       };
 
       monospace = {
-        package = pkgs.agave;
-        name = "Agave";
+        package = pkgs.fira;
+        name = "FiraMono-Medium";
       };
     };
 
