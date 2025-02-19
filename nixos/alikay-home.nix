@@ -186,6 +186,17 @@
     ];
   };
 
+  # Ghostty
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      font-family = "SpaceMono Nerd Font";
+      window-decoration = "none";
+    };
+    enableFishIntegration = true;
+    installBatSyntax = true;
+  };
+
   # Stylix
   stylix = {
     enable = true;
