@@ -536,7 +536,7 @@
 
       monospace = {
         package = pkgs.nerdfonts;
-        name = "SpaceMonoNerdFont-Regular";
+        name = "SpaceMono Nerd Font";
       };
     };
 
