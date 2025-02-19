@@ -192,7 +192,7 @@
     settings = {
       font-family = "SpaceMono Nerd Font";
 
-      window-decoration = false;
+      window-decoration = "auto";
       window-padding-y = 5;
       window-padding-x = 5;
 

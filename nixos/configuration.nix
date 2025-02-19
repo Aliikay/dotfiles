@@ -796,7 +796,6 @@
     trenchbroom
     tldr
     turtle
-    tilix
     thunderbird
     tuba
     vlc
