@@ -195,6 +195,8 @@
       window-decoration = "auto";
       window-padding-y = 5;
       window-padding-x = 5;
+      window-height = 28;
+      window-width = 105;
 
       adw-toolbar-style = "flat";
     };
