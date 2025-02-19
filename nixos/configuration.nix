@@ -581,7 +581,7 @@
     blockbench
     boxbuddy
     btop
-    blackbox-terminal
+    #blackbox-terminal
     blueberry
     bibata-cursors
     blender-hip
@@ -589,7 +589,7 @@
     brightnessctl
     bustle
     cava
-    cavalier
+    #cavalier
     clinfo
     clang-tools
     #clisp
@@ -600,10 +600,10 @@
     cemu
     cubiomes-viewer
     davinci-resolve
-    dart-sass
+    #dart-sass
     decibels
     drawing
-    decker
+    #decker
     droidcam
     docker
     dotnet-sdk
@@ -611,8 +611,8 @@
     dolphin-emu
     distrobox
     eww
-    enter-tex
-    pkgs-unstable.exhibit
+    #enter-tex
+    exhibit
     easyeffects
     eyedropper
     f3d
@@ -626,7 +626,7 @@
     flips
     fuzzel
     furnace
-    gedit
+    #gedit
     geany
     (gimp-with-plugins.override {
       plugins = with gimpPlugins; [
@@ -802,7 +802,7 @@
     vscode.fhs
     video-trimmer
     wineWowPackages.stable
-    warp
+    #warp
     webp-pixbuf-loader
     waybar
     wike
