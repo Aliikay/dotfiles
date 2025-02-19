@@ -535,8 +535,8 @@
       };
 
       monospace = {
-        package = pkgs.fira;
-        name = "FiraMono-Medium";
+        package = pkgs.nerdfonts;
+        name = "SpaceMono";
       };
     };
 
