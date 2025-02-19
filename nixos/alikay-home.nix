@@ -191,7 +191,12 @@
     enable = true;
     settings = {
       font-family = "SpaceMono Nerd Font";
-      window-decoration = "none";
+
+      window-decoration = false;
+      window-padding-y = 5;
+      window-padding-x = 5;
+
+      adw-toolbar-style = "flat";
     };
     enableFishIntegration = true;
     installBatSyntax = true;
