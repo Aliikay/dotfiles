@@ -704,6 +704,7 @@
     material-maker
     marker
     menulibre
+    metronome
     melonDS
     milkytracker
     micro
