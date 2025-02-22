@@ -735,6 +735,7 @@
     pavucontrol
     paperwork
     paleta
+    papers
     paper-clip
     pciutils
     protonup-qt
