@@ -744,6 +744,7 @@
     popsicle
     plattenalbum
     pitivi
+    ptyxis
     pipeline
     pika-backup
     parabolic
