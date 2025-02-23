@@ -660,6 +660,7 @@
     gh
     ghostty
     halftone
+    handbrake
     heroic
     health
     helvum
