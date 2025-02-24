@@ -744,6 +744,7 @@
     popsicle
     plattenalbum
     pitivi
+    pixelorama
     ptyxis
     pipeline
     pika-backup
