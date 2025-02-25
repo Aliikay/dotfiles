@@ -469,12 +469,10 @@
     "dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" #not in nixpkgs yet
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
-    "org.dust3d.dust3d" #not in nixpkgs yet
     "de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
     "org.twinery.Twine" #not in nixpkgs yet
     "org.vinegarhq.Vinegar" # not in nixpkgs yet
-    "com.voxdsp.TuxFishing" # what do you think
   ];
 
   # Flatpak auto updates
