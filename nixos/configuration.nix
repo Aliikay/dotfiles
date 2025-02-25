@@ -778,7 +778,7 @@
     showtime
     sqlitebrowser
     sqlitestudio
-    swi-prolog-gui
+    swi-prolog
     sysprof
     speedtest
     torzu
