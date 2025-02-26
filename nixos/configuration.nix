@@ -473,6 +473,7 @@
     "nl.emphisia.icon" #not in nixpkgs yet
     "org.twinery.Twine" #not in nixpkgs yet
     "org.vinegarhq.Vinegar" # not in nixpkgs yet
+    "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
   ];
 
   # Flatpak auto updates
@@ -811,7 +812,6 @@
     webp-pixbuf-loader
     waybar
     wike
-    upscaler
     unityhub
     udiskie
     x2goclient
