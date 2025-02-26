@@ -230,11 +230,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1740449814,
-        "narHash": "sha256-DczmTY3IAw28U4HjTknbAHN35qHnI8yJYjbMzFptrAA=",
+        "lastModified": 1740502997,
+        "narHash": "sha256-M+e//9CO9akq/pzEDQ0S9Uz1sFEk8yl1ayKtNqBV0Sc=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "546937e2727a74027c76e6acce1f9492bdddf4a8",
+        "rev": "06bbfd83407a5a6d4de19560a0b18b2c3787f10c",
         "type": "github"
       },
       "original": {
@@ -895,11 +895,11 @@
     },
     "nixpkgs-stable_2": {
       "locked": {
-        "lastModified": 1740339700,
-        "narHash": "sha256-cbrw7EgQhcdFnu6iS3vane53bEagZQy/xyIkDWpCgVE=",
+        "lastModified": 1740463929,
+        "narHash": "sha256-4Xhu/3aUdCKeLfdteEHMegx5ooKQvwPHNkOgNCXQrvc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04ef94c4c1582fd485bbfdb8c4a8ba250e359195",
+        "rev": "5d7db4668d7a0c6cc5fc8cf6ef33b008b2b1ed8b",
         "type": "github"
       },
       "original": {
@@ -991,11 +991,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1740339700,
-        "narHash": "sha256-cbrw7EgQhcdFnu6iS3vane53bEagZQy/xyIkDWpCgVE=",
+        "lastModified": 1740463929,
+        "narHash": "sha256-4Xhu/3aUdCKeLfdteEHMegx5ooKQvwPHNkOgNCXQrvc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "04ef94c4c1582fd485bbfdb8c4a8ba250e359195",
+        "rev": "5d7db4668d7a0c6cc5fc8cf6ef33b008b2b1ed8b",
         "type": "github"
       },
       "original": {
@@ -1122,8 +1122,8 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1740452846,
-        "narHash": "sha256-BJg3BcWPDFCYgJg+uR411vL3t3Fp+BbqBB8ixCZpPww=",
+        "lastModified": 1740547441,
+        "narHash": "sha256-PLVBXHvnngP1goV8c+UngW5ZTy+Je153HYygNwb/cuA=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },
@@ -1174,11 +1174,11 @@
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1740419324,
-        "narHash": "sha256-7SEvP++jm4q9hP8+GXdzrETVi4yNO/3a6Ev1pEsw9cU=",
+        "lastModified": 1740520580,
+        "narHash": "sha256-QRlcA8rtfNdyKpBE+ptjiB9717Tzum4/sKBSbsyqL6k=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "9e30c63f10b8c4516f9b9c80988b8c68d9c53114",
+        "rev": "aaa2eb8956770c096f9c46fb163bb26602e20e56",
         "type": "github"
       },
       "original": {
