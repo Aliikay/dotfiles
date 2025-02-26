@@ -518,7 +518,8 @@
 
     #image = ../wallpapers/gruvbox/kurapika-gruv.png;
     #image = ../wallpapers/catppuccin/gradient-synth-cat.png;
-    image = ../wallpapers/other/gon-and-killua.png;
+    #image = ../wallpapers/other/gon-and-killua.png;
+    image = ../wallpapers/other/galaxy.jpg;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
