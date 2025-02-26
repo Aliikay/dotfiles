@@ -811,6 +811,7 @@
     webp-pixbuf-loader
     waybar
     wike
+    upscaler
     unityhub
     udiskie
     x2goclient
