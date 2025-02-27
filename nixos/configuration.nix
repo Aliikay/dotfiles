@@ -740,6 +740,7 @@
     papers
     paper-clip
     pciutils
+    pdfarranger
     protonup-qt
     prismlauncher
     popsicle
