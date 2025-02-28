@@ -465,15 +465,16 @@
     "ca.parallel_launcher.ParallelLauncher"
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
-    "camp.nook.nookdesktop"
-    "dev.gbstudio.gb-studio"
+    #"camp.nook.nookdesktop"
+    #"dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" #not in nixpkgs yet
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
-    "de.hummdudel.Libellus" #not in nixpkgs yet
+    #"de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
     "org.twinery.Twine" #not in nixpkgs yet
     "org.vinegarhq.Vinegar" # not in nixpkgs yet
     "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
+    "io.github.flattool.Warehouse"
   ];
 
   # Flatpak auto updates

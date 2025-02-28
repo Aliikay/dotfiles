@@ -15,4 +15,8 @@
   imports = [
     ./alikay-home.nix
   ];
+
+  stylix = {
+    image = ../wallpapers/other/n-festival.png;
+  };
 }

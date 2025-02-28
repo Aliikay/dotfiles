@@ -26,6 +26,13 @@
     enable = true;
   };
 
+  # Stylix
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    image = ../wallpapers/other/sunset-flowers.png;
+  };
+
   # PATH
   #home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
 
