@@ -624,6 +624,7 @@
     ffmpegthumbnailer
 
     foliate
+    footage
     fragments
     fractal
     flips
@@ -785,6 +786,7 @@
     sqlitebrowser
     sqlitestudio
     swi-prolog
+    switcheroo
     sysprof
     speedtest
     torzu
