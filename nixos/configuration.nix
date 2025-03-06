@@ -605,6 +605,7 @@
     davinci-resolve
     #dart-sass
     decibels
+    decker
     drawing
     #decker
     droidcam
