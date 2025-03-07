@@ -57,5 +57,14 @@
       icon = "/home/alikay/dotfiles/icons/material-maker.png";
       categories = ["Development" "Game"];
     };
+
+    decker = {
+      name = "Decker";
+      genericName = "Programming";
+      exec = "decker";
+      terminal = false;
+      icon = "/home/alikay/dotfiles/icons/decker.png";
+      categories = ["Development" "Game"];
+    };
   };
 }
