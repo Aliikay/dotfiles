@@ -775,6 +775,7 @@
     ryujinx
     sbcl
     slurp
+    sly
     scrcpy
     shortwave
     setzer
