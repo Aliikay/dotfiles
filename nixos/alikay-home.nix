@@ -206,8 +206,8 @@
 
     config = {
       profile = "high-quality";
-      ytdl-format = "bestvideo+bestaudio";
-      cache-default = 4000000;
+      #ytdl-format = "bestvideo+bestaudio";
+      #cache-default = 4000000;
     };
   };
 
