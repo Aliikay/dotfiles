@@ -819,7 +819,7 @@ in {
 
     texturepacker
     trenchbroom
-    trackma
+    #trackma
     trackma-gtk
     tldr
     turtle
