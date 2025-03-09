@@ -10,11 +10,22 @@
   pkgs-last-stable,
   inputs,
   ...
-}: {
+}: let
+  mpvScripts = with pkgs.mpvScripts; [
+    mpris
+    uosc
+  ];
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     modules/all-ways-egpu.nix
+  ];
+
+  # Overlays
+  nixpkgs.overlays = [
+    (final: prev: {mpv = prev.mpv.override {scripts = mpvScripts;};})
+    (final: prev: {ani-cli = prev.ani-cli.override {mpv = final.mpv;};})
   ];
 
   # Bootloader.
