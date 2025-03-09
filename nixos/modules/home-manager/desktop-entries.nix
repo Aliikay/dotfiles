@@ -73,7 +73,7 @@
       exec = "/home/alikay/dotfiles/scripts/watch-anime.sh";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/killua.png";
-      categories = ["AudioVideo" "Audio" "Video" "Network"];
+      categories = ["AudioVideo"];
     };
   };
 }
