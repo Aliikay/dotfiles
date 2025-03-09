@@ -808,6 +808,8 @@
 
     texturepacker
     trenchbroom
+    trackma
+    trackma-gtk
     tldr
     turtle
     thunderbird
