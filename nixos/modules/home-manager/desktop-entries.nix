@@ -66,5 +66,14 @@
       icon = "/home/alikay/dotfiles/icons/decker.png";
       categories = ["Development" "Game"];
     };
+
+    anime = {
+      name = "Anime";
+      genericName = "Media Player";
+      exec = "/home/alikay/dotfiles/scripts/watch-anime.sh";
+      terminal = false;
+      icon = "";
+      categories = ["AudioVideo" "Audio" "Video" "Network"];
+    };
   };
 }
