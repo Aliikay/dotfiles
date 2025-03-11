@@ -477,7 +477,7 @@ in {
     "com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     #"camp.nook.nookdesktop"
-    #"dev.gbstudio.gb-studio"
+    "dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" #not in nixpkgs yet
     "io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
     #"de.hummdudel.Libellus" #not in nixpkgs yet
