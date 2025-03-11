@@ -16,8 +16,8 @@
 
   # Edirot in repos
   editor = with pkgs; [
-    godot_4
-    #pkgs-unstable.godot_4
+    #godot_4
+    pkgs-unstable.godot_4
     #godot_4-mono
   ];
 
