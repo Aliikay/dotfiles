@@ -80,5 +80,8 @@
     application-tabs
     rounded-window-corners-reborn
     peek-top-bar-on-fullscreen
+    dnd-on-time
+    boost-volume
+    quick-lofi
   ];
 }
