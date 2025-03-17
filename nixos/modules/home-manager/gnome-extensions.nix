@@ -78,5 +78,7 @@
     window-on-top
     transparent-window-moving
     application-tabs
+    rounded-window-corners-reborn
+    peek-top-bar-on-fullscreen
   ];
 }
