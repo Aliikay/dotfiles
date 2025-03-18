@@ -665,6 +665,7 @@ in {
     gnome-graphs
     gnome-frog
     gnome-extension-manager
+    gnome-obfuscate
     dconf-editor
     zenity
     gnome-podcasts
