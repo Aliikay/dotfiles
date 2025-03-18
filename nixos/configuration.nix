@@ -487,6 +487,7 @@ in {
     "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
     "io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
+    "io.github.josephmawa.TextCompare" # not in nixpkgs
   ];
 
   # Flatpak auto updates
