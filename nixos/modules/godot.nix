@@ -19,6 +19,7 @@
     #godot_4
     pkgs-unstable.godot_4
     #godot_4-mono
+    pkgs-unstable.godot_4-mono
   ];
 
   # External Tools
