@@ -488,6 +488,7 @@ in {
     "io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
     "io.github.josephmawa.TextCompare" # not in nixpkgs
+    "org.godotengine.GodotSharp" # broken rn for some reason idk why
   ];
 
   # Flatpak auto updates
