@@ -134,7 +134,7 @@
         separator = "   ";
       };
       modules = [
-        "title"
+        #"title"
         {
           type = "datetime";
           key = "Date";
