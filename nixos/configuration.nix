@@ -20,6 +20,7 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     modules/all-ways-egpu.nix
+    modules/cmput-325.nix
   ];
 
   # Overlays
@@ -784,11 +785,9 @@ in {
     recordbox
     renpy
     rstudio
-    rlwrap #for use with sbcl to fix the arrow keys
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
     ryujinx
-    sbcl
     slurp
     sly
     scrcpy
@@ -802,7 +801,6 @@ in {
     showtime
     sqlitebrowser
     sqlitestudio
-    swi-prolog
     switcheroo
     sysprof
     speedtest
