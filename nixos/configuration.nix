@@ -878,10 +878,10 @@ in {
 
     8000 #Development
     8080
-    7770
     7777
 
     # Slipstresm
+    7770
     7779
 
     47777
@@ -905,10 +905,10 @@ in {
 
     8000 #Development
     8080
-    7770
     7777
 
     # Slipstresm
+    7770
     7779
 
     47777
