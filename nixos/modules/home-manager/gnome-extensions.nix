@@ -82,6 +82,12 @@
     peek-top-bar-on-fullscreen
     dnd-on-time
     boost-volume
+
     quick-lofi
+    pkgs.socat # needed for quick lofi to work
+
+    foresight
+    open-desktop-file-location
+    random-wallpaper
   ];
 }

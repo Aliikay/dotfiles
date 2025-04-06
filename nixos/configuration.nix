@@ -21,6 +21,7 @@ in {
     ./hardware-configuration.nix
     modules/all-ways-egpu.nix
     modules/cmput-325.nix
+    modules/gstreamer.nix
   ];
 
   # Overlays
