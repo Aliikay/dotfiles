@@ -471,11 +471,11 @@ in {
     #"org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
     #"io.github.spacingbat3.webcord"
-    "us.zoom.Zoom"
+    #"us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
     "ca.parallel_launcher.ParallelLauncher"
-    "com.github.muriloventuroso.easyssh"
+    #"com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     #"camp.nook.nookdesktop"
     "dev.gbstudio.gb-studio"
@@ -489,6 +489,7 @@ in {
     "io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
     "io.github.josephmawa.TextCompare" # not in nixpkgs
+    "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
   ];
 
@@ -725,7 +726,6 @@ in {
     mangohud
     material-maker
     marker
-    menulibre
     metronome
     melonDS
     milkytracker
