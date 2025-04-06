@@ -557,10 +557,10 @@ in {
         name = "Poppins";
       };
 
-      serif = {
-        package = pkgs.poppins;
-        name = "Poppins";
-      };
+      #serif = {
+      #  package = pkgs.poppins;
+      #  name = "Poppins";
+      #};
 
       monospace = {
         package = pkgs.nerdfonts;
