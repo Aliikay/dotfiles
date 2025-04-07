@@ -16,7 +16,7 @@
     dash-to-panel
     appindicator
     useless-gaps
-    somafm-internet-radio
+    #somafm-internet-radio #can't save favourites as a system extension :(
     user-avatar-in-quick-settings
     rectangle
     window-title-is-back
