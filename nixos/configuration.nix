@@ -472,7 +472,7 @@ in {
     #"org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
     #"io.github.spacingbat3.webcord"
-    #"us.zoom.Zoom"
+    "us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
     "ca.parallel_launcher.ParallelLauncher"
