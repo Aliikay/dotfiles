@@ -851,6 +851,7 @@ in {
     xwaylandvideobridge
     yabridge
     yabridgectl
+    yt-dlp
     uwuify
     pkgs-unstable.zed-editor
     zellij
