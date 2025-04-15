@@ -775,6 +775,7 @@ in {
     protonup-qt
     prismlauncher
     popsicle
+    pods
     plattenalbum
     pitivi
     pixelorama
