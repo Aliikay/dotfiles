@@ -621,6 +621,7 @@ in {
     #cavalier
     clinfo
     clang-tools
+    clapgrep
     #clisp
     celluloid
     cartridges
@@ -659,6 +660,7 @@ in {
     furnace
     #gedit
     geany
+    gearlever # appimage integrator
     (gimp-with-plugins.override {
       plugins = with gimpPlugins; [
         gmic
@@ -772,7 +774,8 @@ in {
     paper-clip
     pciutils
     pdfarranger
-    protonup-qt
+    #protonup-qt
+    protonplus
     prismlauncher
     popsicle
     pods
