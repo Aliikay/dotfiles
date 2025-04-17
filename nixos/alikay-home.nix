@@ -244,6 +244,7 @@
   home.sessionVariables = {
     #TERMINAL = "blackbox";
     EDITOR = "micro";
+    GIT_EDITOR = "re.sonny.Commit";
   };
 
   # Aliases
