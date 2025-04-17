@@ -627,6 +627,7 @@ in {
     cartridges
     collision
     cartero
+    commit
     cemu
     cubiomes-viewer
     davinci-resolve
