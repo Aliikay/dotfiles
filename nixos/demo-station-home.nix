@@ -31,6 +31,7 @@
     enable = true;
     autoEnable = true;
     image = ../wallpapers/other/slipstream-water.png;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-sea.yaml";
   };
 
   # PATH
