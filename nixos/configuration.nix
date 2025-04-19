@@ -386,6 +386,14 @@ in {
     ];
   };
 
+  users.users.demo-station = {
+    isNormalUser = true;
+    description = "Demo Station";
+    extraGroups = ["networkmanager" "audio" "video" "render" "input" "libvirtd" "media"];
+    packages = with pkgs; [
+    ];
+  };
+
   users.groups.media = {
     members = ["mpd"];
   };

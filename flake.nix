@@ -134,6 +134,7 @@
           home-manager.users.alikay = import ./nixos/alikay-home.nix;
           home-manager.users.alikay-alt = import ./nixos/alikay-alt-home.nix;
           home-manager.users.guest = import ./nixos/guest-home.nix;
+          home-manager.users.demo-station = import ./nixos/demo-station-home.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
         }
