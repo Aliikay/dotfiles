@@ -3,6 +3,7 @@
   pkgs,
   pkgs-stable,
   pkgs-unstable,
+  pkgs-pinned,
   inputs,
   ...
 }: let
@@ -17,7 +18,7 @@
   # Edirot in repos
   editor = with pkgs; [
     #godot_4
-    #pkgs-unstable.godot_4
+    pkgs-pinned.godot
     #godot_4-mono
     #pkgs-unstable.godot_4-mono
   ];

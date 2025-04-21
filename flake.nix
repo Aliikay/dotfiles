@@ -8,6 +8,9 @@
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Pinned version of the unstable branch, for when stuff breaks
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/8b3c65bb34f8758be725ce3216c73e6ca043d274";
+
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 24.05
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -72,6 +75,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nixpkgs-pinned,
     nixpkgs-stable,
     nixpkgs-last-stable,
     home-manager,
@@ -100,6 +104,12 @@
       pkgs-unstable = import nixpkgs-unstable {
         # Refer to the `system` parameter from
         # the outer scope recursively
+        inherit inputs;
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+
+      pkgs-pinned = import nixpkgs-pinned {
         inherit inputs;
         system = "x86_64-linux";
         config.allowUnfree = true;
