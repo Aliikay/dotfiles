@@ -13,7 +13,7 @@
     xdelta #to patch roms
 
     # 3ds
-    azahar
+    #pkgs-unstable.azahar
 
     # N64
     flips # patcher for roms

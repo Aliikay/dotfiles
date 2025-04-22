@@ -128,10 +128,11 @@
         #inputs.secrets.nixosModules.config
 
         ./nixos/configuration.nix
-        ./nixos/modules/hyprland.nix
+        #./nixos/modules/hyprland.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
         ./nixos/modules/lsp.nix
+        ./nixos/modules/emulation.nix
 
         inputs.flake-programs-sqlite.nixosModules.programs-sqlite
         inputs.stylix.nixosModules.stylix
