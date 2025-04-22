@@ -133,6 +133,7 @@
         ./nixos/modules/godot.nix
         ./nixos/modules/lsp.nix
         ./nixos/modules/emulation.nix
+        #./nixos/modules/cmput-325.nix
 
         inputs.flake-programs-sqlite.nixosModules.programs-sqlite
         inputs.stylix.nixosModules.stylix

@@ -20,7 +20,6 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     modules/all-ways-egpu.nix
-    modules/cmput-325.nix
     modules/gstreamer.nix
   ];
 
@@ -468,7 +467,7 @@ in {
     #"org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
     #"io.github.spacingbat3.webcord"
-    "us.zoom.Zoom"
+    #"us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
     "ca.parallel_launcher.ParallelLauncher"
@@ -570,7 +569,7 @@ in {
 
   # Making blackbox the default terminal
   programs.nautilus-open-any-terminal = {
-    enable = true;
+    enable = false;
     terminal = "blackbox";
   };
 
@@ -584,7 +583,7 @@ in {
   # List packages installed in unstable system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    foot
+    #foot
     pkgs-stable.aseprite
     ascii-draw
     atuin
@@ -659,7 +658,7 @@ in {
     })
 
     gowall # cli to convert images and icons to color themes
-    gradience
+    #gradience
     #glaxnimate
 
     sushi
@@ -688,7 +687,7 @@ in {
     halftone
     handbrake
     heroic
-    health
+    #health
     helvum
     hyfetch
 
@@ -702,16 +701,15 @@ in {
     killall
     klystrack
 
-    kdePackages.kate
+    #kdePackages.kate
     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
     #kdePackages.kdenlive
     kdenlive
-    kdePackages.kfind
+    #kdePackages.kfind
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
 
     libreoffice
-    #pkgs-unstable.lime3ds #was broken at the time, uncomment when needed
     libsForQt5.qt5ct
     qt6Packages.qt6ct
 
@@ -827,7 +825,6 @@ in {
     wineWowPackages.stable
     #warp
     webp-pixbuf-loader
-    waybar
     wike
     unityhub
     x2goclient

@@ -36,5 +36,6 @@
     pyprland
     slurp
     udiskie
+    waybar
   ];
 }
