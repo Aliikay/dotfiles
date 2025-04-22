@@ -128,6 +128,7 @@
         #inputs.secrets.nixosModules.config
 
         ./nixos/configuration.nix
+        ./nixos/modules/auto-update.nix
         #./nixos/modules/hyprland.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix

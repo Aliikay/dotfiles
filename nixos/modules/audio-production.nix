@@ -22,6 +22,7 @@
     audacity
     reaper
     schismtracker
+    lmms
     inputs.secrets.packages.x86_64-linux.renoise
 
     # Tooling

@@ -37,5 +37,7 @@
     slurp
     udiskie
     waybar
+    nwg-displays
+    pavucontrol
   ];
 }
