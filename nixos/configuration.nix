@@ -388,12 +388,6 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Music Production tweaks
-  musnix = {
-    enable = true;
-    # kernel.realtime = true;
-  };
-
   # Setup steam
   programs.steam = {
     enable = true;
@@ -699,7 +693,6 @@ in {
     keypunch
     komikku
     killall
-    klystrack
 
     #kdePackages.kate
     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
@@ -723,7 +716,6 @@ in {
     material-maker
     marker
     metronome
-    milkytracker
     micro
     monophony
     mousam
@@ -731,7 +723,6 @@ in {
     mpv
     mpc-cli
     mousai
-    musescore
     mission-center
     nautilus-open-any-terminal
     ncdu
@@ -768,18 +759,15 @@ in {
     pika-backup
     parabolic
     #psensor #deprecated due to lack of maintenence
-    reaper
 
     pkgs.rocmPackages.clr
     pkgs.rocmPackages.rocblas
     pkgs.rocmPackages.hipblas
 
-    inputs.secrets.packages.x86_64-linux.renoise
-
     ripgrep
     recordbox
     renpy
-    rstudio
+    #rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
     sly
@@ -789,7 +777,6 @@ in {
     share-preview
     sidequest
     smile
-    schismtracker
     superTuxKart
     showtime
     sqlitebrowser
@@ -829,8 +816,6 @@ in {
     unityhub
     x2goclient
     xwaylandvideobridge
-    yabridge
-    yabridgectl
     yt-dlp
     uwuify
     pkgs-unstable.zed-editor
@@ -840,8 +825,6 @@ in {
     inputs.nix-software-center.packages.${system}.nix-software-center
 
     inputs.pip2nix.defaultPackage.${system}
-
-    audacity
   ];
 
   fonts.packages = with pkgs; [
