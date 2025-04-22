@@ -128,7 +128,7 @@
         #inputs.secrets.nixosModules.config
 
         ./nixos/configuration.nix
-        #./nixos/illogical-impulse-dependancies.nix
+        ./nixos/modules/hyprland.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
         ./nixos/modules/lsp.nix

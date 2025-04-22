@@ -230,11 +230,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1745182340,
-        "narHash": "sha256-POB8KTnA0aNO0vwqJBmn3RrhbInvgB9JNPeEtagNUiY=",
+        "lastModified": 1745249846,
+        "narHash": "sha256-9ukqr9ltSJ6J5Qs+L1jjnnn4l3Nd1K7stBbREwOmwvE=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "6c7badafbe00098672a39dc4d634028f424fc3e0",
+        "rev": "912f9566121003c3ecf7b88833b3d8967640a232",
         "type": "github"
       },
       "original": {
@@ -1165,8 +1165,8 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1745202781,
-        "narHash": "sha256-wX7crKwSe1c6JJAIfFXMDCFMDOVZfPXDJIIV7eUaMV8=",
+        "lastModified": 1745344281,
+        "narHash": "sha256-CVvNAFx2E46H8eviD9ac+wBr3fRc0R4Fxgwq2rQe518=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },

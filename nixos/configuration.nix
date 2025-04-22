@@ -116,12 +116,6 @@ in {
   # Enable flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Enable cachix for hyprland flake caching
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   # Allow for broken packages
   nixpkgs.config.allowBroken = false;
 
@@ -285,12 +279,6 @@ in {
   #  "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   #];
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  };
   xdg.portal.enable = true;
   # Removed since GNOME already adds this, add back if getting rid of GNOME
   #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -606,7 +594,7 @@ in {
     alpaca
     alejandra #nix file formatter
     apostrophe
-    ardour
+    #ardour
     alvr
     appimage-run
     audio-sharing
@@ -619,7 +607,6 @@ in {
     boxbuddy
     btop
     #blackbox-terminal
-    blueberry
     bibata-cursors
     blender-hip
     #blender
@@ -636,7 +623,6 @@ in {
     collision
     cartero
     commit
-    cemu
     cubiomes-viewer
     davinci-resolve
     #dart-sass
@@ -644,13 +630,11 @@ in {
     decker
     drawing
     #decker
-    droidcam
+    #droidcam
     docker
     dotnet-sdk
     dialect
-    dolphin-emu
     distrobox
-    eww
     #enter-tex
     exhibit
     easyeffects
@@ -664,8 +648,6 @@ in {
     footage
     fragments
     fractal
-    flips
-    fuzzel
     furnace
     #gedit
     geany
@@ -675,10 +657,10 @@ in {
         gmic
       ];
     })
-    grim
+
     gowall # cli to convert images and icons to color themes
     gradience
-    glaxnimate
+    #glaxnimate
 
     sushi
     totem
@@ -709,12 +691,6 @@ in {
     health
     helvum
     hyfetch
-
-    hyprpaper
-    hyprpicker
-    hyprlock
-    hypridle
-    pyprland
 
     identity
     impression
@@ -749,7 +725,6 @@ in {
     material-maker
     marker
     metronome
-    melonDS
     milkytracker
     micro
     monophony
@@ -758,7 +733,6 @@ in {
     mpv
     mpc-cli
     mousai
-    mupen64plus
     musescore
     mission-center
     nautilus-open-any-terminal
@@ -795,7 +769,6 @@ in {
     pipeline
     pika-backup
     parabolic
-    pcsx2
     #psensor #deprecated due to lack of maintenence
     reaper
 
@@ -811,8 +784,6 @@ in {
     rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
-    ryujinx
-    slurp
     sly
     scrcpy
     shortwave
@@ -824,11 +795,10 @@ in {
     superTuxKart
     showtime
     sqlitebrowser
-    sqlitestudio
+    #sqlitestudio
     switcheroo
     sysprof
     speedtest
-    torzu
     tangram
     textpieces
 
@@ -860,7 +830,6 @@ in {
     waybar
     wike
     unityhub
-    udiskie
     x2goclient
     xwaylandvideobridge
     yabridge
