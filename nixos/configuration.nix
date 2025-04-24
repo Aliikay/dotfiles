@@ -248,7 +248,17 @@ in {
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [gutenprint hplip splix brlaser brgenml1lpr brgenml1cupswrapper];
+  };
+
+  # Enable AVAHI for printing
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
