@@ -128,6 +128,8 @@
         #inputs.secrets.nixosModules.config
 
         ./nixos/configuration.nix
+        ./nixos/modules/packages.nix
+        ./nixos/modules/stylix.nix
         ./nixos/modules/auto-update.nix
         #./nixos/modules/hyprland.nix
         ./nixos/modules/nix-ld.nix
