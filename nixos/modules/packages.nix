@@ -159,7 +159,7 @@
     mission-center
     nautilus-open-any-terminal
     ncdu
-    neofetch
+    #neofetch
     neovim
     nextcloud-client
     newsflash
@@ -174,14 +174,14 @@
     paperwork
     paleta
     papers
-    paper-clip
-    pciutils
+    #paper-clip
+    #pciutils
     pdfarranger
     #protonup-qt
     protonplus
     prismlauncher
     popsicle
-    pods
+    #pods
     plattenalbum
     pitivi
     #pixelorama
@@ -215,7 +215,7 @@
     switcheroo
     sysprof
     speedtest
-    tangram
+    #tangram
     textpieces
 
     (pkgs.texlive.combine {
@@ -230,7 +230,7 @@
     })
 
     texturepacker
-    trenchbroom
+    #trenchbroom
     #trackma
     trackma-gtk
     tldr
@@ -245,12 +245,12 @@
     webp-pixbuf-loader
     wike
     unityhub
-    x2goclient
+    #x2goclient
     xwaylandvideobridge
     yt-dlp
     uwuify
     pkgs-unstable.zed-editor
-    zellij
+    #zellij
 
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     inputs.nix-software-center.packages.${system}.nix-software-center
