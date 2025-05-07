@@ -184,6 +184,7 @@
     #pods
     plattenalbum
     pitivi
+    pinta
     #pixelorama
     ptyxis
     pipeline
