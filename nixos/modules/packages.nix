@@ -40,7 +40,7 @@
     brightnessctl
     bustle
     cava
-    cargo
+    pkgs-unstable.cargo
     #cavalier
     clinfo
     clang-tools
@@ -203,7 +203,7 @@
     #rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
-    rustc
+    pkgs-unstable.rustc
     sly
     scrcpy
     shortwave
