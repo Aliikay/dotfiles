@@ -508,8 +508,6 @@ in {
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
-    2056 # Bubble Jam
-
     8000 #Development
     8080
     7777
@@ -535,8 +533,6 @@ in {
   ];
 
   networking.firewall.allowedUDPPorts = [
-    2056 # Bubble Jam
-
     8000 #Development
     8080
     7777
