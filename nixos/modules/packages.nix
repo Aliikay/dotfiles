@@ -40,31 +40,6 @@
     brightnessctl
     bustle
     cava
-    pkgs-unstable.cargo
-    #cavalier
-    clinfo
-    clang-tools
-    clapgrep
-    #clisp
-    celluloid
-    cartridges
-    collision
-    cartero
-    commit
-    cubiomes-viewer
-    davinci-resolve
-    #dart-sass
-    decibels
-    decker
-    drawing
-    #decker
-    #droidcam
-    docker
-    dotnet-sdk
-    dialect
-    distrobox
-    #enter-tex
-    exhibit
     easyeffects
     eyedropper
     f3d
@@ -203,7 +178,6 @@
     #rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
-    pkgs-unstable.rustc
     sly
     scrcpy
     shortwave
