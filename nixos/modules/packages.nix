@@ -40,6 +40,31 @@
     brightnessctl
     bustle
     cava
+    cavalier
+    clapgrep
+    #clisp
+    celluloid
+    cartridges
+    collision
+    cartero
+    commit
+    cubiomes-viewer
+    davinci-resolve
+    #dart-sass
+    decibels
+    decker
+    drawing
+    #decker
+    #droidcam
+    docker
+    dotnet-sdk
+    dialect
+    distrobox
+    #enter-tex
+    exhibit
+    clinfo
+    clang-tools
+
     easyeffects
     eyedropper
     f3d
