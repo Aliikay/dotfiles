@@ -115,7 +115,7 @@
     ghostty
     halftone
     handbrake
-    heroic
+    pkgs-unstable.heroic
     #health
     helvum
     hyfetch
