@@ -41,7 +41,7 @@
     logo-widget
     logo-menu
     quick-settings-tweaker
-    quick-settings-audio-panel
+    #pkgs.gnomeExtensions.quick-settings-audio-panel
     ddterm
     miniview
     top-bar-organizer
