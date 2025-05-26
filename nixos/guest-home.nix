@@ -18,7 +18,7 @@
     ./modules/home-manager/gnome-extensions.nix
     ./modules/home-manager/dconf.nix
     ./modules/home-manager/update-notifier.nix
-    ./modules/home-manager/hyprland.nix
+    #./modules/home-manager/hyprland.nix
   ];
 
   # Fish
