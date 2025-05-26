@@ -96,7 +96,7 @@ in {
 
   # Environment Variables
   environment.sessionVariables = rec {
-    #QT_QPA_PLATFORMTHEME = "qt6ct";
+    #QT_QPA_PLATFORMTHEME = "qtct";
     NIXOS_OZONE_WL = "1";
     #NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
@@ -264,7 +264,7 @@ in {
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

@@ -60,5 +60,7 @@
     };
 
     polarity = "dark";
+
+    targets.qt.platform = lib.mkForce "qtct";
   };
 }
