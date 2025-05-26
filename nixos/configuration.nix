@@ -96,7 +96,7 @@ in {
 
   # Environment Variables
   environment.sessionVariables = rec {
-    QT_QPA_PLATFORMTHEME = "qt6ct";
+    #QT_QPA_PLATFORMTHEME = "qt6ct";
     NIXOS_OZONE_WL = "1";
     #NAUTILUS_4_EXTENSION_DIR = "${pkgs.gnome.nautilus-python}/lib/nautilus/extensions-4";
   };
@@ -487,11 +487,12 @@ in {
     dev.enable = true;
   };
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-    corefonts
-    vistafonts
-  ];
+  fonts.packages = with pkgs;
+    [
+      corefonts
+      vistafonts
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); # include all nerdfonts! maybe i can trim this down later
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

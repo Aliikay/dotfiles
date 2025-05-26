@@ -32,6 +32,7 @@
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
+    cursor.size = 32;
 
     targets.grub.useImage = true;
 
@@ -53,7 +54,7 @@
       #};
 
       monospace = {
-        package = pkgs.nerdfonts;
+        package = pkgs.nerd-fonts.space-mono;
         name = "SpaceMono Nerd Font";
       };
     };

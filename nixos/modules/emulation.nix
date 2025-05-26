@@ -30,6 +30,6 @@
 
     # Switch
     ryujinx
-    torzu
+    #torzu # got DMCA'd >n<
   ];
 }

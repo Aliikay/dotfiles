@@ -16,7 +16,7 @@
   environment.systemPackages = with pkgs; [
     # DAWs
     #ardour
-    klystrack
+    #klystrack
     milkytracker
     musescore
     audacity

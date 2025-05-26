@@ -132,7 +132,8 @@
     #kdePackages.kate
     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
     #kdePackages.kdenlive
-    kdenlive
+    kdePackages.kdenlive
+    kdePackages.xwaylandvideobridge
     #kdePackages.kfind
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
@@ -248,7 +249,6 @@
     wike
     unityhub
     #x2goclient
-    xwaylandvideobridge
     yt-dlp
     uwuify
     pkgs-unstable.zed-editor
