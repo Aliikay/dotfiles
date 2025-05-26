@@ -94,6 +94,9 @@ in {
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # Don't make errors on file conflicts and just save a backup instead
+  home-manager.backupFileExtension = "backup";
+
   # Environment Variables
   environment.sessionVariables = rec {
     #QT_QPA_PLATFORMTHEME = "qtct";
