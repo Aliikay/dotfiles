@@ -450,6 +450,7 @@ in {
     "io.github.josephmawa.TextCompare" # not in nixpkgs
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
+    "org.kde.kdenlive"
   ];
 
   # Flatpak auto updates
