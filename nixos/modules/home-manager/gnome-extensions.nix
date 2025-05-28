@@ -80,6 +80,7 @@
     application-tabs
     rounded-window-corners-reborn
     peek-top-bar-on-fullscreen
+    launch-new-instance
     dnd-on-time
     boost-volume
 
