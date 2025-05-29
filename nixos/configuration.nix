@@ -146,21 +146,21 @@ in {
 
   # Enable TLP
   services.tlp = {
-    enable = true;
+    enable = false;
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      #CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_SCALING_GOVERNOR_ON_BAT = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      #CPU_SCALING_GOVERNOR_ON_BAT = "performance";
 
       CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      #CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      #CPU_ENERGY_PERF_POLICY_ON_BAT = "performance";
 
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      #CPU_MAX_PERF_ON_BAT = 50;
-      CPU_MAX_PERF_ON_BAT = 100;
+      CPU_MAX_PERF_ON_BAT = 50;
+      #CPU_MAX_PERF_ON_BAT = 100;
 
       CPU_BOOST_ON_AC = 1;
       CPU_BOOST_ON_BAT = 1;
@@ -170,7 +170,7 @@ in {
       STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
     };
   };
-  services.power-profiles-daemon.enable = false;
+  services.power-profiles-daemon.enable = true;
 
   # Make nix follow the input in flake: helps nixd make correct suggestions
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
