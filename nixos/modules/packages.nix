@@ -29,7 +29,7 @@
     base16-universal-manager
     bat
     bear
-    blanket
+    #blanket
     blockbench
     boxbuddy
     btop
@@ -46,14 +46,14 @@
     celluloid
     cartridges
     collision
-    cartero
+    #cartero
     commit
     cubiomes-viewer
-    davinci-resolve
+    #davinci-resolve
     #dart-sass
     decibels
     decker
-    drawing
+    #drawing
     #decker
     #droidcam
     docker
@@ -65,7 +65,7 @@
     clinfo
     clang-tools
 
-    easyeffects
+    #easyeffects
     eyedropper
     f3d
     fastfetch
@@ -76,9 +76,8 @@
     footage
     fragments
     fractal
-    furnace
     #gedit
-    geany
+    #geany
     gearlever # appimage integrator
     (pkgs-unstable.gimp3-with-plugins.override {
       plugins = with pkgs-unstable.gimp3Plugins; [
@@ -110,7 +109,7 @@
     gnomecast #chrome cast
 
     git
-    github-desktop
+    #github-desktop
     gh
     ghostty
     halftone
@@ -154,7 +153,7 @@
     micro
     monophony
     mousam
-    moonlight-qt
+    #moonlight-qt
     mpv
     mpc-cli
     mousai
