@@ -206,6 +206,7 @@
 
     config = {
       profile = "high-quality";
+      hwdec = "auto";
       #ytdl-format = "bestvideo+bestaudio";
       #cache-default = 4000000;
     };
