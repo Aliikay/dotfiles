@@ -132,6 +132,7 @@
         ./nixos/modules/stylix.nix
         ./nixos/modules/auto-update.nix
         #./nixos/modules/hyprland.nix
+        ./nixos/modules/niri.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
         ./nixos/modules/lsp.nix
