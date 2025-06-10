@@ -42,7 +42,7 @@
       users = ["alikay" "alikay-alt"];
       commands = [
         {
-          command = "${pkgs.systemd}/bin/systemctl start battery-charge-limit";
+          command = "/run/current-system/sw/bin/systemctl start battery-charge-limit";
           options = ["SETENV" "NOPASSWD"];
         }
       ];
