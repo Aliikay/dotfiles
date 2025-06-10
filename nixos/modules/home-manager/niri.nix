@@ -10,12 +10,28 @@
   # Wpaperd
   services.wpaperd = {
     enable = true;
-    settings = {
-      default = {
-        path = "${config.home.homeDirectory}/dotfiles/wallpapers";
-        duration = "24h";
-        sorting = "random";
-      };
-    };
+    #settings = {
+    #  default = {
+    #    path = "${config.home.homeDirectory}/dotfiles/wallpapers";
+    #    duration = "24h";
+    #    sorting = "random";
+    #  };
+    #};
+  };
+
+  services.mako = {
+    enable = true;
+  };
+
+  programs.fuzzel = {
+    enable = true;
+  };
+
+  programs.swaylock = {
+    enable = true;
+  };
+
+  services.swayidle = {
+    enable = true;
   };
 }

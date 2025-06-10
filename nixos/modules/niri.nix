@@ -14,12 +14,12 @@
 
   environment.systemPackages = with pkgs; [
     waybar
-    fuzzel
-    mako
-    swaybg
-    swayidle
-    swaylock
-    wpaperd
+    #fuzzel
+    #mako
+    #swaybg
+    #swayidle
+    #swaylock
+    #wpaperd
     xwayland-satellite
   ];
 }
