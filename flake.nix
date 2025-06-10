@@ -133,6 +133,7 @@
         ./nixos/modules/auto-update.nix
         #./nixos/modules/hyprland.nix
         ./nixos/modules/niri.nix
+        ./nixos/modules/battery-charge-limit.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
         ./nixos/modules/lsp.nix
