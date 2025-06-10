@@ -35,4 +35,17 @@
       User = "root";
     };
   };
+
+  # Allow non root users to set the battery charge threshold!
+  security.sudo.extraRules = [
+    {
+      users = ["alikay" "alikay-alt"];
+      commands = [
+        {
+          command = "${pkgs.systemd}/bin/systemctl start battery-charge-limit";
+          options = ["SETENV" "NOPASSWD"];
+        }
+      ];
+    }
+  ];
 }
