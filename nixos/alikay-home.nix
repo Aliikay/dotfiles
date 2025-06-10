@@ -19,6 +19,7 @@
     ./modules/home-manager/dconf.nix
     ./modules/home-manager/update-notifier.nix
     #./modules/home-manager/hyprland.nix
+    ./modules/home-manager/niri.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
