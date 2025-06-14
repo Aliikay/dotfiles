@@ -21,5 +21,9 @@
     #swaylock
     #wpaperd
     xwayland-satellite
+    brightnessctl
+    swayosd
+    udiskie
+    pavucontrol
   ];
 }
