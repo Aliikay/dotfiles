@@ -80,10 +80,10 @@
   # BTOP
   programs.btop = {
     enable = true;
-    settings = {
-      color_theme = "horizon";
-      theme_background = false;
-    };
+    #settings = {
+    #  color_theme = "horizon";
+    #  theme_background = false;
+    #};
   };
 
   # Fish
@@ -193,6 +193,11 @@
     enable = true;
   };
 
+  # Micro
+  programs.micro = {
+    enable = true;
+  };
+
   # MPV Scripts
   programs.mpv = {
     enable = true;
@@ -240,8 +245,11 @@
   stylix = {
     enable = true;
     autoEnable = true;
+  };
 
-    targets.btop.enable = false;
+  # Helix
+  programs.helix = {
+    enable = true;
   };
 
   # PATH
