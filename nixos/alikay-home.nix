@@ -188,6 +188,11 @@
     ];
   };
 
+  # Zeditor
+  programs.zed-editor = {
+    enable = true;
+  };
+
   # MPV Scripts
   programs.mpv = {
     enable = true;

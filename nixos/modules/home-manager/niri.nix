@@ -34,4 +34,8 @@
   services.swayidle = {
     enable = true;
   };
+
+  programs.waybar = {
+    enable = true;
+  };
 }
