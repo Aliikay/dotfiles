@@ -27,5 +27,7 @@
     pavucontrol
     inotify-tools
     killall
+    networkmanagerapplet
+    blueman
   ];
 }
