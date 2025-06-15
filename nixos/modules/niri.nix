@@ -25,5 +25,7 @@
     swayosd
     udiskie
     pavucontrol
+    inotify-tools
+    killall
   ];
 }
