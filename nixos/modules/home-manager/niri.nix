@@ -19,7 +19,11 @@
     #};
   };
 
-  services.mako = {
+  #services.mako = {
+  #  enable = true;
+  #};
+
+  services.dunst = {
     enable = true;
   };
 

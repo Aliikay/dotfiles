@@ -37,5 +37,6 @@
   environment.systemPackages = with pkgs; [
     mpdris2
     plattenalbum
+    playerctl
   ];
 }
