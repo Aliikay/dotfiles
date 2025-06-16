@@ -155,7 +155,6 @@
     mousam
     #moonlight-qt
     mpv
-    mpc-cli
     mousai
     mission-center
     nautilus-open-any-terminal

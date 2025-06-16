@@ -38,5 +38,6 @@
     mpdris2
     plattenalbum
     playerctl
+    mpc-cli
   ];
 }
