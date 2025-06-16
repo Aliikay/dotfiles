@@ -28,6 +28,7 @@
     inotify-tools
     killall
     networkmanagerapplet
-    blueman
+    #blueman
+    blueberry
   ];
 }
