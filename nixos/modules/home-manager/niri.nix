@@ -23,7 +23,11 @@
   #  enable = true;
   #};
 
-  services.dunst = {
+  #services.dunst = {
+  #  enable = true;
+  #};
+
+  services.swaync = {
     enable = true;
   };
 
