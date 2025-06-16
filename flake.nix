@@ -136,6 +136,7 @@
         ./nixos/modules/battery-charge-limit.nix
         ./nixos/modules/nix-ld.nix
         ./nixos/modules/godot.nix
+        ./nixos/modules/mpd.nix
         ./nixos/modules/lsp.nix
         ./nixos/modules/emulation.nix
         ./nixos/modules/audio-production.nix

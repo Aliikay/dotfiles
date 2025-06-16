@@ -183,7 +183,6 @@
     prismlauncher
     popsicle
     #pods
-    plattenalbum
     pitivi
     pinta
     #pixelorama

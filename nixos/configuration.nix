@@ -293,27 +293,6 @@ in {
     "dotnet-sdk-6.0.428" #Required for godot_4-mono
   ];
 
-  # MPD daemon
-  services.mpd = {
-    enable = true;
-    musicDirectory = "${config.users.users.alikay.home}/Music";
-    user = "alikay";
-    extraConfig = ''
-      audio_output {
-      	type "pipewire"
-      	name "MPD Pipewire Output"
-      }
-    '';
-
-    #network.listenAddress = "any"; # used for non-localhost connections
-    startWhenNeeded = true;
-  };
-
-  systemd.services.mpd.environment = {
-    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.alikay.uid}"; # User-id must match services.mpd.user. MPD will look inside this directory for the PipeWire socket.
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -348,10 +327,6 @@ in {
     extraGroups = ["networkmanager" "audio" "video" "render" "input" "libvirtd" "media"];
     packages = with pkgs; [
     ];
-  };
-
-  users.groups.media = {
-    members = ["mpd"];
   };
 
   # Allow unfree packages
