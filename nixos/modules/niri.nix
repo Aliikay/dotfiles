@@ -30,5 +30,6 @@
     networkmanagerapplet
     #blueman
     blueberry
+    wev
   ];
 }
