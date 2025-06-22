@@ -218,18 +218,19 @@
     #tangram
     textpieces
 
-    (pkgs.texlive.combine {
-      inherit
-        (pkgs.texlive)
-        scheme-tetex
-        enumitem
-        sourcesanspro
-        tcolorbox
-        synctex
-        xstring
-        fontawesome5
-        ;
-    })
+    #(pkgs.texlive.combine {
+    #  inherit
+    #    (pkgs.texlive)
+    #    scheme-tetex
+    #    enumitem
+    #    sourcesanspro
+    #    tcolorbox
+    #    synctex
+    #    xstring
+    #    fontawesome5
+    #    ;
+    #})
+    texliveFull
 
     texturepacker
     #trenchbroom
