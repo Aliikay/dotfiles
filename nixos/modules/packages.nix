@@ -227,6 +227,7 @@
         tcolorbox
         synctex
         xstring
+        fontawesome5
         ;
     })
 
