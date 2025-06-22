@@ -226,6 +226,7 @@
         sourcesanspro
         tcolorbox
         synctex
+        xstring
         ;
     })
 
