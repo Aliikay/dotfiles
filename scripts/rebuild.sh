@@ -24,7 +24,7 @@ function askYesNo {
 
 cd /home/alikay/dotfiles
 #gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
-zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix nixos/modules/stylix.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
 
 # Format the dotfiles with alejandra
 alejandra .
@@ -109,5 +109,8 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 
 	# Remove lock file
 	sudo rm "$LOCK_FILE"
+
+	# Press any key to continue
+	read -p "Press enter to continue"
 
 fi

@@ -51,4 +51,10 @@
 
     targets.qt.platform = lib.mkForce "qtct";
   };
+
+  environment.systemPackages = with pkgs; [
+    wofi
+    eww
+    waybar
+  ];
 }
