@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Reload/Open eww
 eww kill

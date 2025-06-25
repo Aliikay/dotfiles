@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Get the day of the month.
 day_of_month=$(date +"%d")

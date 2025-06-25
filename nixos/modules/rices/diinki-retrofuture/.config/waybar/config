@@ -8,8 +8,9 @@
   "margin-right": 500,
   "margin-left": 500,
   "modules-left": [
-    "hyprland/workspaces",
-    "sway/workspaces"
+    "niri/workspaces",
+    "sway/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "custom/applauncher"
@@ -33,7 +34,7 @@
   },
   "custom/applauncher": {
     "format": "〇",
-    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    "on-click": "pgrep .wofi-wrapped >/dev/null 2>&1 && killall .wofi-wrapped || wofi --show drun --location=top -y 15",
     "tooltip": false
   },
   "tray": {
@@ -45,9 +46,9 @@
     "tooltip": false
   },
   "network": {
-    "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
+    "format-wifi": "  {bandwidthDownBits}",
+    "format-ethernet": "  {bandwidthDownBits}",
+    "format-disconnected": "󰤮  No Network",
     "interval": 5,
     "tooltip": false
   },
