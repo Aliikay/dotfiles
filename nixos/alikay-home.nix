@@ -22,7 +22,8 @@
     ./modules/home-manager/niri.nix
 
     # Current rice
-    ./modules/rices/original/home.nix
+    #./modules/rices/original/home.nix
+    ./modules/rices/diinki-retrofuture/home.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory

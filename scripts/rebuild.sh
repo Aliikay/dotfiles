@@ -86,9 +86,6 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 		nh os switch /home/alikay/dotfiles --hostname alikay
 	fi
 
-	# Remove lock file
-	sudo rm "$LOCK_FILE"
-
 	if [ $? = 0 ]
 	then
 		askYesNo "Commit these changes?" true
@@ -103,5 +100,8 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 			git push
 		fi
 	fi
+
+	# Remove lock file
+	sudo rm "$LOCK_FILE"
 
 fi
