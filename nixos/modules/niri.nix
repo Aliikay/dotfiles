@@ -31,5 +31,6 @@
     #blueman
     blueberry
     wev
+    cliphist
   ];
 }

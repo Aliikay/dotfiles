@@ -5,18 +5,24 @@
   "margin-bottom": 0,
   "margin-top": 15,
   "position": "top",
-  "margin-right": 500,
-  "margin-left": 500,
+  "margin-right": 200,
+  "margin-left": 200,
+  //"output": ["eDP-1", "DP-5"],
   "modules-left": [
     "niri/workspaces",
-    "sway/workspaces",
-    "hyprland/workspaces"
+    //"sway/workspaces",
+    //"hyprland/workspaces",
+
+    "niri/window"
   ],
   "modules-center": [
     "custom/applauncher"
   ],
   "modules-right": [
-    "network",
+    "group/monitors",
+    //"network",
+    "cpu",
+    "memory",
     "battery",
     "pulseaudio",
     "tray",
@@ -32,9 +38,16 @@
     "all-outputs": false,
     "tooltip": false
   },
+  "niri/workspaces": {
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+  },
+  "niri/window": {
+
+  },
   "custom/applauncher": {
     "format": "〇",
-    "on-click": "pgrep .wofi-wrapped >/dev/null 2>&1 && killall .wofi-wrapped || wofi --show drun --location=top -y 15",
+    "on-click": "~/dotfiles/scripts/toggle-wofi.sh",
     "tooltip": false
   },
   "tray": {
@@ -42,7 +55,8 @@
     "tooltip": false
   },
   "clock": {
-    "format": "󰅐 {:%H:%M}",
+    //"format": "󰅐 {:%H:%M}",
+    "format": "󰅐 {:%OI:%M %p}",
     "tooltip": false
   },
   "network": {
@@ -51,6 +65,13 @@
     "format-disconnected": "󰤮  No Network",
     "interval": 5,
     "tooltip": false
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}%  "
   },
   "pulseaudio": {
     "scroll-step": 5,

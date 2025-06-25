@@ -1,18 +1,18 @@
 * {
-  /* General taskbar font, I like maple mono ^-^*/
-  font-family: Maple Mono;
-  border-radius: 8;
-  font-size: 14px;
-  padding: 0px;
-  background: transparent;
+    /* General taskbar font, I like maple mono ^-^*/
+    font-family: Maple Mono;
+    border-radius: 8;
+    font-size: 14px;
+    padding: 0px;
+    background: transparent;
 }
 
 window#waybar {
-  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-  background-image: linear-gradient(to bottom, #141216 100%);
-  border-radius: 14px;
-  padding: 0px;
-  border-style: none;
+    /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
+    background-image: linear-gradient(to bottom, #141216 100%);
+    border-radius: 14px;
+    padding: 0px;
+    border-style: none;
 }
 
 #battery,
@@ -21,92 +21,114 @@ window#waybar {
 #custom-applauncher,
 #tray,
 #workspaces,
-#pulseaudio {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+#window,
+#pulseaudio,
+#cpu,
+#memory,
+tooltip {
+    background-image: linear-gradient(to bottom, #27232b 100%);
 
-  margin: 6px;
-  margin-right: 0px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  color: #d8cab8;
+    margin: 6px;
+    margin-right: 0px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: #d8cab8;
 
-  border-style: none;
-  transition-duration: 120ms;
+    border-style: none;
+    transition-duration: 120ms;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    padding: 0px;
+}
+
+tooltip label {
+    color: #d8cab8;
 }
 
 #clock {
-  margin-right: 6px;
+    margin-right: 6px;
 }
 
 #pulseaudio:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
-  transition-duration: 120ms;
+    background-image: linear-gradient(to bottom, #ac82e9 100%);
+    color: #141216;
+    transition-duration: 120ms;
 }
 
 #custom-applauncher {
-  font-weight: bold;
-  transition-duration: 120ms;
+    font-weight: bold;
+    transition-duration: 120ms;
 }
 #custom-applauncher:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
-  transition-duration: 120ms;
+    background-image: linear-gradient(to bottom, #ac82e9 100%);
+    color: #141216;
+    transition-duration: 120ms;
 }
 
 #tray menu {
-  background-color: #141216;
-  color: #d8cab8;
-  padding: 4px;
+    background-color: #141216;
+    color: #d8cab8;
+    padding: 4px;
 }
 #tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
+    background-image: linear-gradient(to bottom, #27232b 100%);
 
-  margin: 3px;
-  color: #d8cab8;
-  border-radius: 4px;
-  border-style: solid;
-  border-color: #27232b;
+    margin-top: -3px;
+    margin-bottom: -2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #d8cab8;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #27232b;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 #tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-  color: #ac82e9;
-  font-weight: bold;
+    background-image: linear-gradient(to bottom, #27232b 100%);
+    color: #ac82e9;
+    font-weight: bold;
 }
 
 #workspaces button {
-  transition-duration: 100ms;
-  all: initial;
-  min-width: 0;
-  font-weight: bold;
-  color: #d8cab8;
-  margin-right: 0.2cm;
-  margin-left: 0.2cm;
+    transition-duration: 100ms;
+    all: initial;
+    min-width: 0;
+    font-weight: bold;
+    color: #d8cab8;
+    margin-right: 0.2cm;
+    margin-left: 0.2cm;
 }
 
 #workspaces button:hover {
-  transition-duration: 120ms;
-  color: #8f56e1;
+    transition-duration: 120ms;
+    color: #8f56e1;
 }
 #workspaces button.focused {
-  color: #ac82e9;
-  font-weight: bold;
+    color: #ac82e9;
+    font-weight: bold;
 }
 #workspaces button.active {
-  color: #ac82e9;
-  font-weight: bold;
+    color: #ac82e9;
+    font-weight: bold;
 }
 #workspaces button.urgent {
-  color: #fcb167;
+    color: #fcb167;
 }
-
 #battery {
-  background-color: #222222;
-  color: #1d2021;
+    background-color: #222222;
+    color: #d8cab8;
 }
-#battery.warning,
 #battery.critical,
 #battery.urgent {
-  color: #1d2021;
-  background-color: #fc4649;
+    color: #fc4649;
+    background-color: #fc4649;
+}
+
+#battery.warning {
+    color: #f3fc7b;
 }
