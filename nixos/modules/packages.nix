@@ -13,7 +13,7 @@
   environment.systemPackages = with pkgs; [
     #foot
     pkgs-stable.aseprite
-    ascii-draw
+    #ascii-draw
     atuin
     aria2
     ani-cli
@@ -22,15 +22,15 @@
     alejandra #nix file formatter
     apostrophe
     #ardour
-    alvr
+    #alvr
     appimage-run
-    audio-sharing
+    #audio-sharing
     base16-shell-preview
     base16-universal-manager
     bat
-    bear
+    #bear
     #blanket
-    blockbench
+    #blockbench
     boxbuddy
     btop
     #blackbox-terminal
@@ -38,9 +38,9 @@
     blender-hip
     #blender
     brightnessctl
-    bustle
+    #bustle
     cava
-    cavalier
+    #cavalier
     clapgrep
     #clisp
     celluloid
@@ -48,17 +48,17 @@
     collision
     #cartero
     commit
-    cubiomes-viewer
+    #cubiomes-viewer
     #davinci-resolve
     #dart-sass
     decibels
-    decker
+    #decker
     #drawing
     #decker
     #droidcam
     docker
     dotnet-sdk
-    dialect
+    #dialect
     distrobox
     dysk
     #enter-tex
@@ -97,16 +97,16 @@
     gnome-software
     gnome-tweaks
     gnome-sound-recorder
-    gnome-maps
+    #gnome-maps
     ghex
     gnome-graphs
-    gnome-frog
+    #gnome-frog
     gnome-extension-manager
-    gnome-obfuscate
+    #gnome-obfuscate
     dconf-editor
     zenity
-    gnome-podcasts
-    gnome-decoder
+    #gnome-podcasts
+    #gnome-decoder
     gnomecast #chrome cast
 
     git
@@ -114,7 +114,7 @@
     gh
     ghostty
     halftone
-    handbrake
+    #handbrake
     pkgs-unstable.heroic
     #health
     helvum
@@ -123,7 +123,7 @@
     identity
     impression
     inkscape
-    pkgs-last-stable.itch
+    itch
     krita
     keypunch
     komikku
@@ -149,8 +149,8 @@
     lutris
     mangohud
     material-maker
-    marker
-    metronome
+    #marker
+    #metronome
     micro
     monophony
     mousam
@@ -163,7 +163,7 @@
     #neofetch
     neovim
     nextcloud-client
-    newsflash
+    #newsflash
     nil
     nh
     nvtopPackages.full
@@ -181,7 +181,7 @@
     #protonup-qt
     protonplus
     prismlauncher
-    popsicle
+    #popsicle
     #pods
     pitivi
     pinta
@@ -214,7 +214,7 @@
     sqlitebrowser
     #sqlitestudio
     switcheroo
-    sysprof
+    #sysprof
     speedtest
     #tangram
     textpieces
@@ -247,7 +247,7 @@
     wineWowPackages.stable
     #warp
     webp-pixbuf-loader
-    wike
+    #wike
     unityhub
     #x2goclient
     yt-dlp
