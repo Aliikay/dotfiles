@@ -20,6 +20,9 @@
     ./modules/home-manager/update-notifier.nix
     #./modules/home-manager/hyprland.nix
     ./modules/home-manager/niri.nix
+
+    # Current rice
+    ./modules/rices/original/home.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -242,14 +245,6 @@
     };
     enableFishIntegration = true;
     installBatSyntax = true;
-  };
-
-  # Stylix
-  stylix = {
-    enable = true;
-    autoEnable = true;
-
-    targets.waybar.enable = false;
   };
 
   # Helix

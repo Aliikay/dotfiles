@@ -129,7 +129,6 @@
 
         ./nixos/configuration.nix
         ./nixos/modules/packages.nix
-        ./nixos/modules/stylix.nix
         ./nixos/modules/auto-update.nix
         #./nixos/modules/hyprland.nix
         ./nixos/modules/niri.nix
@@ -141,6 +140,9 @@
         ./nixos/modules/emulation.nix
         ./nixos/modules/audio-production.nix
         #./nixos/modules/cmput-325.nix
+
+        # Current rice
+        ./nixos/modules/rices/original/system.nix
 
         inputs.flake-programs-sqlite.nixosModules.programs-sqlite
         inputs.stylix.nixosModules.stylix

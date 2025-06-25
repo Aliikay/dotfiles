@@ -23,12 +23,12 @@
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
 
-    #image = ../../wallpapers/gruvbox/kurapika-gruv.png;
-    #image = ../../wallpapers/catppuccin/gradient-synth-cat.png;
-    #image = ../../wallpapers/other/gon-and-killua.png;
-    #image = ../../wallpapers/other/galaxy.jpg;
-    #image = ../../wallpapers/other/illex-forest-night.png;
-    image = ../../wallpapers/xenoblade/cauldros-distance.png;
+    #image = ../../../../wallpapers/gruvbox/kurapika-gruv.png;
+    #image = ../../../../wallpapers/catppuccin/gradient-synth-cat.png;
+    #image = ../../../../wallpapers/other/gon-and-killua.png;
+    #image = ../../../../wallpapers/other/galaxy.jpg;
+    #image = ../../../../wallpapers/other/illex-forest-night.png;
+    image = ./cauldros-distance.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
