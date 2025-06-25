@@ -46,4 +46,9 @@
   programs.waybar = {
     enable = true;
   };
+
+  services.cliphist = {
+    enable = true;
+    allowImages = true;
+  };
 }
