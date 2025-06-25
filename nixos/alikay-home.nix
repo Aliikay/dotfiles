@@ -86,6 +86,9 @@
     #};
   };
 
+  # Atuin
+  programs.atuin.enable = true;
+
   # Fish
   programs.fish = {
     enable = true;
