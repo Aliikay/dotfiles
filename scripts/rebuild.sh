@@ -101,6 +101,11 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 		fi
 	fi
 
+	# Fix permissions on the hm-config directory
+	echo "Fixing permissions on the .hm-config directory"
+	cp -rL /home/alikay/.hm-config /home/alikay/.rice-config
+	chmod --recursive +rw /home/alikay/.rice-config
+
 	# Remove lock file
 	sudo rm "$LOCK_FILE"
 
