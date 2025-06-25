@@ -60,6 +60,7 @@
     dotnet-sdk
     dialect
     distrobox
+    dysk
     #enter-tex
     exhibit
     clinfo

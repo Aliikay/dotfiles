@@ -1,0 +1,337 @@
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "position": "right",
+    // "position": "left",
+    "output": ["eDP-1", "DP-5"],
+    "height": 32, // Waybar height (to be removed for auto height)
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    //"width": 1920, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["niri/workspaces", "custom/focus-left", "custom/focus-right", "group/window-taskbar"],
+    "modules-center": ["clock", "privacy"],
+    "modules-right": ["group/media", "custom/spacer", "group/tray", "cpu", "memory", "group/quick-settings", "group/battery", "group/power"],
+    // "modules-right": ["privacy", "cpu", "memory", "battery", "network", "tray"],
+    // Modules configuration
+    "custom/spacer": {
+        "format": " "
+    },
+    "custom/focus-left": {
+        "format": "←",
+        "on-click": "niri msg action focus-column-left"
+    },
+    "custom/focus-right": {
+        "format": "→",
+        "on-click": "niri msg action focus-column-right"
+    },
+    "group/window-taskbar": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": true,
+        },
+        "modules": [
+            "niri/window",
+            "wlr/taskbar"
+        ]
+    },
+    "group/battery": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ]
+    },
+    "group/quick-settings": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+          "pulseaudio",
+          "bluetooth",
+          "network",
+          "temperature"
+        ]
+    },
+    "group/tray": {
+      "orientation": "inherit",
+      "drawer": {
+          "transition-duration": 500,
+          "children-class": "not-power",
+          "transition-left-to-right": false,
+      },
+      "modules": [
+        "custom/tray-icon",
+        "tray",
+        "custom/spacer"
+      ]
+    },
+    "group/media": {
+      "orientation": "inherit",
+      "drawer": {
+          "transition-duration": 500,
+          "children-class": "not-power",
+          "transition-left-to-right": false,
+      },
+      "modules": [
+        "mpd"
+        //"cava" // triggers the mic privacy indicator so i cant have it
+      ]
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/quit",
+            "custom/lock",
+            "custom/sleep",
+            "custom/reboot",
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼 ",
+        "tooltip": "Logout",
+        "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s"
+    },
+    "custom/lock": {
+        "format": "󰍁 ",
+        "tooltip": "Lock",
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉 ",
+        "tooltip": "Reboot",
+        "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot"
+    },
+    "custom/power": {
+        "format": "⏻  ",
+        "tooltip": "Shutdown",
+        "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now"
+    },
+    "custom/sleep": {
+        "format": "⏾ ",
+        "tooltip": "Sleep",
+        "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep"
+    },
+    "custom/tray-icon": {
+      "format": "| Tray"
+    },
+    "custom/logout": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "niri msg action quit"
+    },
+    "wlr/taskbar": {
+        "all-outputs": true,
+        //"format": "{icon} {title} {short_state}",
+        "format": "{icon}",
+        "tooltip-format": "{title} | {app_id}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "fullscreen"
+    },
+    "niri/window": {
+        "icon": true,
+        "on-click": "niri msg action toggle-overview",
+        "on-click-right": "fuzzel --terminal=\"ghostty -e\"",
+        "format": "{title} |"
+    },
+    "niri/workspaces": {
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down"
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "mpd": {
+        "format": "{stateIcon} {title} ⸨{songPosition}|{queueLength}⸩ {volume}%",
+        "format-disconnected": "",//"Disconnected ",
+        "format-stopped": "",//"{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+        "on-scroll-up": "mpc volume +5",
+        "on-scroll-down": "mpc volume -5",
+        "on-click": "mpc toggle"
+    },
+    "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 5,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                    "on-click-right": "mode"
+                    }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
+        //"format": "{:%e %B %OI:%M %p}"
+        "format": "{:%OI:%M %p}",
+        "on-click": "swaync-client -t -sw"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "bluetooth": {
+      "format": "",
+     	"format-disabled": "", // an empty format will hide the module
+     	"format-connected": " {num_connections} connected",
+     	"tooltip-format": "{controller_alias}\t{controller_address}",
+     	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+     	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "on-click": "blueberry"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            //"good": 75,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}%  ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 2, // %, can be a float
+        "format": "| {volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "max-volume": 150,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
