@@ -32,5 +32,6 @@
     blueberry
     wev
     cliphist
+    wl-clipboard-rs
   ];
 }
