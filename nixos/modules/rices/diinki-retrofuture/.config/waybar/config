@@ -16,7 +16,8 @@
     "niri/window"
   ],
   "modules-center": [
-    "custom/applauncher"
+    "custom/applauncher",
+    "privacy"
   ],
   "modules-right": [
     "group/monitors",
@@ -24,7 +25,9 @@
     "cpu",
     "memory",
     "battery",
+    "power-profiles-daemon",
     "pulseaudio",
+    "custom/clipboard",
     "tray",
     "clock"
   ],
@@ -57,7 +60,7 @@
   "clock": {
     //"format": "󰅐 {:%H:%M}",
     "format": "󰅐 {:%OI:%M %p}",
-    "tooltip": false
+    "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
   },
   "network": {
     "format-wifi": "  {bandwidthDownBits}",
@@ -68,10 +71,12 @@
   },
   "cpu": {
     "format": "{usage}%  ",
-    "tooltip": false
+    "tooltip": false,
+    "on-click": "ghostty -e btop"
   },
   "memory": {
-    "format": "{}%  "
+    "format": "{}%  ",
+    "on-click": "ghostty -e btop"
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -88,6 +93,10 @@
     "on-click": "pavucontrol",
     "tooltip": false
   },
+  "custom/clipboard": {
+    "format": "",
+    "on-click": "cliphist list | wofi --height 1200 --dmenu | cliphist decode | wl-copy"
+  },
   "battery": {
     "states": {
       "warning": 30,
@@ -95,7 +104,7 @@
     },
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄{capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
     "format-icons": [
@@ -103,5 +112,16 @@
       "󱊢",
       "󱊣"
     ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
   }
 }

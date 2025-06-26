@@ -75,5 +75,14 @@
       icon = "/home/alikay/dotfiles/icons/killua.png";
       categories = ["AudioVideo"];
     };
+
+    game-dev-tools = {
+      name = "Game Dev Tools";
+      genericName = "Programming";
+      exec = "/home/alikay/dotfiles/scripts/game-dev-tools.sh";
+      terminal = false;
+      icon = "/home/alikay/dotfiles/icons/game-dev.png";
+      categories = ["AudioVideo"];
+    };
   };
 }

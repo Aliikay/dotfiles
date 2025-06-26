@@ -25,6 +25,9 @@ window#waybar {
 #pulseaudio,
 #cpu,
 #memory,
+#privacy,
+#power-profiles-daemon,
+#custom-clipboard,
 tooltip {
     background-image: linear-gradient(to bottom, #27232b 100%);
 
@@ -36,6 +39,10 @@ tooltip {
 
     border-style: none;
     transition-duration: 120ms;
+}
+
+#custom-clipboard {
+    padding-right: 10px;
 }
 
 window#waybar.empty #window {
@@ -51,7 +58,9 @@ tooltip label {
     margin-right: 6px;
 }
 
-#pulseaudio:hover {
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover {
     background-image: linear-gradient(to bottom, #ac82e9 100%);
     color: #141216;
     transition-duration: 120ms;
