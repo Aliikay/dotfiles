@@ -471,6 +471,7 @@ in {
     [
       corefonts
       vistafonts
+      google-fonts
       maple-mono.truetype
     ]
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); # include all nerdfonts! maybe i can trim this down later
