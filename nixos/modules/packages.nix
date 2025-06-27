@@ -106,7 +106,7 @@
     dconf-editor
     zenity
     #gnome-podcasts
-    #gnome-decoder
+    gnome-decoder
     gnomecast #chrome cast
 
     git
