@@ -25,9 +25,14 @@ window#waybar {
 #pulseaudio,
 #cpu,
 #memory,
-#privacy,
 #power-profiles-daemon,
 #custom-clipboard,
+#custom-notification,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power,
+#custom-sleep,
 tooltip {
     background-image: linear-gradient(to bottom, #27232b 100%);
 
@@ -41,8 +46,26 @@ tooltip {
     transition-duration: 120ms;
 }
 
-#custom-clipboard {
+#custom-clipboard,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power,
+#custom-sleep {
     padding-right: 10px;
+}
+
+#privacy {
+    background-image: linear-gradient(to bottom, #fc4649 100%);
+
+    margin: 6px;
+    margin-right: 0px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    color: #d8cab8;
+
+    border-style: none;
+    transition-duration: 120ms;
 }
 
 window#waybar.empty #window {
@@ -60,7 +83,10 @@ tooltip label {
 
 #pulseaudio:hover,
 #cpu:hover,
-#memory:hover {
+#memory:hover,
+#power-profiles-daemon:hover,
+#custom-notification:hover,
+#custom-clipboard:hover {
     background-image: linear-gradient(to bottom, #ac82e9 100%);
     color: #141216;
     transition-duration: 120ms;

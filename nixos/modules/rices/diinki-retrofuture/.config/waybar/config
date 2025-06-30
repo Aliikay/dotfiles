@@ -17,6 +17,7 @@
   ],
   "modules-center": [
     "custom/applauncher",
+    "custom/notification",
     "privacy"
   ],
   "modules-right": [
@@ -29,7 +30,7 @@
     "pulseaudio",
     "custom/clipboard",
     "tray",
-    "clock"
+    "group/power"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -52,6 +53,26 @@
     "format": "〇",
     "on-click": "~/dotfiles/scripts/toggle-wofi.sh",
     "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+        "notification": "󱅫",
+        "none": "",
+        "dnd-notification": " ",
+        "dnd-none": "󰂛",
+        "inhibited-notification": " ",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": " ",
+        "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
   },
   "tray": {
     "spacing": 10,
@@ -123,5 +144,46 @@
       "balanced": " ",
       "power-saver": " "
     }
-  }
+  },
+  "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "clock",
+            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/quit",
+            "custom/lock",
+            "custom/sleep",
+            "custom/reboot",
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": "Logout",
+        "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": "Lock",
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": "Reboot",
+        "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": "Shutdown",
+        "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now"
+    },
+    "custom/sleep": {
+        "format": "⏾",
+        "tooltip": "Sleep",
+        "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep"
+    },
 }
