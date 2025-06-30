@@ -15,7 +15,7 @@
 
     # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rebecca.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
     image = ./rainworld.png;
 
