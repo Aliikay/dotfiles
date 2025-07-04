@@ -63,6 +63,7 @@
     dysk
     #enter-tex
     exhibit
+    pkgs-unstable.euphonica
     clinfo
     clang-tools
 
