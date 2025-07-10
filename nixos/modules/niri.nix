@@ -33,5 +33,6 @@
     wev
     cliphist
     wl-clipboard-rs
+    swayidle
   ];
 }
