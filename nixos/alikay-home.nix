@@ -205,6 +205,11 @@
     enable = true;
   };
 
+  # Mangohud
+  programs.mangohud = {
+    enable = true;
+  };
+
   # MPV Scripts
   programs.mpv = {
     enable = true;
@@ -246,6 +251,16 @@
     };
     enableFishIntegration = true;
     installBatSyntax = true;
+  };
+
+  # Kitty
+  programs.kitty = {
+    enable = true;
+  };
+
+  # Alacritty
+  programs.alacritty = {
+    enable = true;
   };
 
   # Helix
