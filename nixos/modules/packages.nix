@@ -83,7 +83,7 @@
     gearlever # appimage integrator
     (pkgs-unstable.gimp3-with-plugins.override {
       plugins = with pkgs-unstable.gimp3Plugins; [
-        gmic
+        #gmic
       ];
     })
 

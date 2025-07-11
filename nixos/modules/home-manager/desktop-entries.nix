@@ -84,5 +84,14 @@
       icon = "/home/alikay/dotfiles/icons/game-dev.png";
       categories = ["AudioVideo"];
     };
+
+    zen-profile-manager = {
+      name = "Zen Profiles";
+      genericName = "Internet Browser";
+      exec = "flatpak run app.zen_browser.zen --ProfileManagger";
+      terminal = false;
+      icon = "";
+      categories = ["Network"];
+    };
   };
 }
