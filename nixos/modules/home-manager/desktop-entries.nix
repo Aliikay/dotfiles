@@ -88,7 +88,7 @@
     zen-profile-manager = {
       name = "Zen Profiles";
       genericName = "Internet Browser";
-      exec = "flatpak run app.zen_browser.zen --ProfileManagger";
+      exec = "flatpak run app.zen_browser.zen --ProfileManager";
       terminal = false;
       icon = ./../../../icons/zen-profiles.png;
       categories = ["Network"];
