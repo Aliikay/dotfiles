@@ -265,8 +265,8 @@
       window = {
         decorations = "None";
         padding = {
-          x = "5";
-          y = "5";
+          x = 5;
+          y = 5;
         };
         dimensions = {
           columns = 105;
