@@ -90,7 +90,7 @@
       genericName = "Internet Browser";
       exec = "flatpak run app.zen_browser.zen --ProfileManagger";
       terminal = false;
-      icon = "";
+      icon = ./../../../icons/zen-profiles.png;
       categories = ["Network"];
     };
   };
