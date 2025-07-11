@@ -266,7 +266,10 @@
         decoratrions = "None";
       };
 
-      cursor.style = ["Beam" "On"];
+      cursor.style = {
+        shape = "Beam";
+        blinking = "On";
+      };
     };
   };
 
