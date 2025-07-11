@@ -263,7 +263,15 @@
     enable = true;
     settings = {
       window = {
-        decoratrions = "None";
+        decorations = "None";
+        padding = {
+          x = "5";
+          y = "5";
+        };
+        dimensions = {
+          columns = 105;
+          lines = 28;
+        };
       };
 
       cursor.style = {
