@@ -261,6 +261,13 @@
   # Alacritty
   programs.alacritty = {
     enable = true;
+    settings = {
+      window = {
+        decoratrions = "None";
+      };
+
+      cursor.style = ["Beam" "On"];
+    };
   };
 
   # Helix
