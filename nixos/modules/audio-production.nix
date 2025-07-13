@@ -8,10 +8,10 @@
   ...
 }: {
   # Music Production tweaks
-  musnix = {
-    enable = true;
-    # kernel.realtime = true;
-  };
+  #musnix = {
+  #  enable = true;
+  # kernel.realtime = true;
+  #};
 
   environment.systemPackages = with pkgs; [
     # DAWs

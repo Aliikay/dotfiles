@@ -20,10 +20,10 @@
     #nixpkgs-last-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Makes various tweaks for audio production
-    musnix = {
-      url = "github:musnix/musnix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #musnix = {
+    #  url = "github:musnix/musnix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
@@ -137,7 +137,7 @@
       modules = [
         inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
         #inputs.nixos-hardware.nixosModules.common-gpu-amd
-        inputs.musnix.nixosModules.musnix
+        #inputs.musnix.nixosModules.musnix
         inputs.nix-flatpak.nixosModules.nix-flatpak
         #hyprland.nixosModules.default
         #inputs.secrets.nixosModules.config
