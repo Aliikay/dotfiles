@@ -29,10 +29,10 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
 
     # Ags
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #ags = {
+    #  url = "github:Aylur/ags";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     # Flake version for command-not-found
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";

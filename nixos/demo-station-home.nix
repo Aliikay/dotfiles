@@ -13,8 +13,8 @@
   home.homeDirectory = "/home/demo-station";
 
   imports = [
-    inputs.ags.homeManagerModules.default
-    #./modules/home-manager/desktop-entries.nix
+    #inputs.ags.homeManagerModules.default
+    ./modules/home-manager/desktop-entries.nix
     ./modules/home-manager/gnome-extensions.nix
     ./modules/home-manager/dconf.nix
     ./modules/home-manager/update-notifier.nix
