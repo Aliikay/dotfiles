@@ -20,13 +20,19 @@
     #nixpkgs-last-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Makes various tweaks for audio production
-    musnix = {url = "github:musnix/musnix";};
+    musnix = {
+      url = "github:musnix/musnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Flatpaks
     nix-flatpak.url = "github:gmodena/nix-flatpak"; # unstable branch. Use github:gmodena/nix-flatpak/?ref=<tag> to pin releases.
 
     # Ags
-    ags.url = "github:Aylur/ags";
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Flake version for command-not-found
     flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
@@ -41,11 +47,20 @@
     #};
 
     # NixOS Conf Manager
-    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
-    nix-software-center.url = "github:snowfallorg/nix-software-center";
+    #nixos-conf-editor = {
+    #  url = "github:snowfallorg/nixos-conf-editor";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #nix-software-center = {
+    #  url = "github:snowfallorg/nix-software-center";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     # pip2nix, autogenerate nix packages based on pip files
-    pip2nix.url = "github:nix-community/pip2nix";
+    #pip2nix = {
+    #  url = "github:nix-community/pip2nix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     # stylix to theme the entire system
     stylix.url = "github:danth/stylix/release-25.05";

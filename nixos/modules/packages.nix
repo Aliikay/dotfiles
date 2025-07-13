@@ -257,9 +257,9 @@
     pkgs-unstable.zed-editor
     #zellij
 
-    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
-    inputs.nix-software-center.packages.${system}.nix-software-center
+    #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    #inputs.nix-software-center.packages.${system}.nix-software-center
 
-    inputs.pip2nix.defaultPackage.${system}
+    #inputs.pip2nix.defaultPackage.${system}
   ];
 }
