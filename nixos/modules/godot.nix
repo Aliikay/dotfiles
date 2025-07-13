@@ -26,7 +26,7 @@
   # External Tools
   tools = with pkgs; [
     blender-hip
-    pkgs-stable.aseprite
+    aseprite
   ];
 in {
   environment.systemPackages = with pkgs;

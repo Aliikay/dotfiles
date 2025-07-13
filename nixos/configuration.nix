@@ -6,8 +6,8 @@
   lib,
   pkgs,
   pkgs-unstable,
-  pkgs-stable,
-  pkgs-last-stable,
+  #pkgs-stable,
+  #pkgs-last-stable,
   inputs,
   ...
 }: let

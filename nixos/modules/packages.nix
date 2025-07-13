@@ -3,8 +3,8 @@
   lib,
   pkgs,
   pkgs-unstable,
-  pkgs-stable,
-  pkgs-last-stable,
+  #pkgs-stable,
+  #pkgs-last-stable,
   inputs,
   ...
 }: {
@@ -12,7 +12,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #foot
-    pkgs-stable.aseprite
+    aseprite
     #ascii-draw
     atuin
     aria2

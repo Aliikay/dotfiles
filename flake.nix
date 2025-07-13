@@ -10,14 +10,14 @@
 
     # Pinned version of the unstable branch, for when stuff breaks
     #nixpkgs-pinned.url = "github:nixos/nixpkgs/8b3c65bb34f8758be725ce3216c73e6ca043d274";
-    nixpkgs-pinned.url = "github:nixos/nixpkgs/nixos-25.05";
+    #nixpkgs-pinned.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Latest stable branch of nixpkgs, used for version rollback
     # The current latest version is 24.05
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # Last stable branch of nixpkgs, used for version rollback
-    nixpkgs-last-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    #nixpkgs-last-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Makes various tweaks for audio production
     musnix = {url = "github:musnix/musnix";};
@@ -75,9 +75,9 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    nixpkgs-pinned,
-    nixpkgs-stable,
-    nixpkgs-last-stable,
+    #nixpkgs-pinned,
+    #nixpkgs-stable,
+    #nixpkgs-last-stable,
     home-manager,
     ...
   }: let
@@ -85,21 +85,21 @@
       inherit inputs;
       # To use packages from nixpkgs-unstable,
       # we configure some parameters for it first
-      pkgs-stable = import nixpkgs-stable {
-        # Refer to the `system` parameter from
-        # the outer scope recursively
-        inherit inputs;
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
+      #pkgs-stable = import nixpkgs-stable {
+      # Refer to the `system` parameter from
+      # the outer scope recursively
+      #  inherit inputs;
+      #  system = "x86_64-linux";
+      #  config.allowUnfree = true;
+      #};
 
-      pkgs-last-stable = import nixpkgs-last-stable {
-        # Refer to the `system` parameter from
-        # the outer scope recursively
-        inherit inputs;
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
+      #pkgs-last-stable = import nixpkgs-last-stable {
+      # Refer to the `system` parameter from
+      # the outer scope recursively
+      #  inherit inputs;
+      #  system = "x86_64-linux";
+      #  config.allowUnfree = true;
+      #};
 
       pkgs-unstable = import nixpkgs-unstable {
         # Refer to the `system` parameter from
@@ -109,11 +109,11 @@
         config.allowUnfree = true;
       };
 
-      pkgs-pinned = import nixpkgs-pinned {
-        inherit inputs;
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
+      #pkgs-pinned = import nixpkgs-pinned {
+      #  inherit inputs;
+      #  system = "x86_64-linux";
+      #  config.allowUnfree = true;
+      #};
     };
 
     generic-system = nixpkgs.lib.nixosSystem {
