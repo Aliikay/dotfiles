@@ -14,6 +14,7 @@
 
     # 3ds
     #pkgs-unstable.azahar
+    azahar
 
     # N64
     flips # patcher for roms
