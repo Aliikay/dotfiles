@@ -154,7 +154,7 @@
         ./nixos/modules/lsp.nix
         ./nixos/modules/emulation.nix
         ./nixos/modules/audio-production.nix
-        ./nixos/modules/samba.nix
+        #./nixos/modules/samba.nix
         #./nixos/modules/cmput-325.nix
 
         # Current rice
