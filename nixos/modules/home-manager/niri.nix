@@ -36,7 +36,7 @@
     layout = [
       {
         label = "lock";
-        action = "swaylock";
+        action = "niri msg action power-off-monitors && swaylock";
         text = "lock";
         keybind = "l";
       }
