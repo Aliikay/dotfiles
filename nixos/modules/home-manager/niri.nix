@@ -33,6 +33,38 @@
 
   programs.wlogout = {
     enable = true;
+    layout = [
+      {
+        label = "lock";
+        action = "swaylock";
+        text = "lock";
+        keybind = "l";
+      }
+      {
+        label = "sleep";
+        action = "systemctl sleep";
+        text = "Sleep";
+        keybind = "s";
+      }
+      {
+        label = "shutdown";
+        action = "systemctl poweroff";
+        text = "Shutdown";
+        keybind = "s";
+      }
+      {
+        label = "reboot";
+        action = "systemctl reboot";
+        text = "Reboot";
+        keybind = "r";
+      }
+      {
+        label = "logout";
+        action = "niri msg action quit -s";
+        text = "Logout";
+        keybind = "e";
+      }
+    ];
   };
 
   services.swaync = {
