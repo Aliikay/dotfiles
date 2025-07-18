@@ -419,7 +419,7 @@ in {
     #"de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
     "org.twinery.Twine" #not in nixpkgs yet
-    "org.vinegarhq.Vinegar" # not in nixpkgs yet
+    #"org.vinegarhq.Vinegar" # not in nixpkgs yet
     "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
     "io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
