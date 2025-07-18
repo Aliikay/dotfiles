@@ -16,7 +16,7 @@
       # See https://github.com/NixOS/nixpkgs/blob/592047fc9e4f7b74a4dc85d1b9f5243dfe4899e3/pkgs/top-level/all-packages.nix#L27268
       enable = true;
       openFirewall = true;
-      shares.Public = {
+      settings.Public = {
         path = "/home/alikay/Public";
         writable = "true";
         comment = "Alikay's Public Folder";
