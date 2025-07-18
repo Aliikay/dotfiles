@@ -37,7 +37,7 @@
       {
         label = "lock";
         action = "niri msg action power-off-monitors && swaylock";
-        text = "lock";
+        text = "Lock";
         keybind = "l";
       }
       {
