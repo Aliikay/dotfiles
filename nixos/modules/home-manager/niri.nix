@@ -31,6 +31,10 @@
     enable = true;
   };
 
+  programs.onagre = {
+    enable = true;
+  };
+
   programs.wlogout = {
     enable = true;
     layout = [
