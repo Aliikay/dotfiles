@@ -27,6 +27,10 @@
   #  enable = true;
   #};
 
+  programs.tofi = {
+    enable = true;
+  };
+
   services.swaync = {
     enable = true;
   };
