@@ -31,6 +31,10 @@
     enable = true;
   };
 
+  programs.wlogout = {
+    enable = true;
+  };
+
   services.swaync = {
     enable = true;
   };
