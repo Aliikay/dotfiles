@@ -129,6 +129,7 @@
     krita
     keypunch
     komikku
+    kooha
     killall
 
     #kdePackages.kate
