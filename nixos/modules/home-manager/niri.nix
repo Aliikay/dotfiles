@@ -7,6 +7,19 @@
   inputs,
   ...
 }: {
+  # Fix XWayland app scaling
+  services.xsettingsd = {
+    enable = true;
+    settings = {
+      # Wayland dosen't seem to use the real
+      # dpi but (scaleFactor * 96), so do
+      # the same to match
+      "Xft/DPI" = 1 * 96 * 1024;
+      "Gdk/WindowScalingFactor" = 1;
+      "Gdk/UnscaledDPI" = 96 / 1024;
+    };
+  };
+
   # Wpaperd
   services.wpaperd = {
     enable = true;
