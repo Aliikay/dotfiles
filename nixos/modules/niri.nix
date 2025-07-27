@@ -21,6 +21,7 @@
     #swaylock
     #wpaperd
     xwayland-satellite
+    xsettingsd
     brightnessctl
     swayosd
     udiskie
