@@ -456,8 +456,8 @@ in {
 
   # Making blackbox the default terminal
   programs.nautilus-open-any-terminal = {
-    enable = false;
-    terminal = "blackbox";
+    enable = true;
+    terminal = "alacritty";
   };
 
   # Enable man pages
