@@ -135,7 +135,7 @@
       system = "x86_64-linux";
       specialArgs = mySpecialArgs;
       modules = [
-        inputs.nixos-hardware.nixosModules.framework-11th-gen-intel
+        inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
         #inputs.nixos-hardware.nixosModules.common-gpu-amd
         #inputs.musnix.nixosModules.musnix
         inputs.nix-flatpak.nixosModules.nix-flatpak

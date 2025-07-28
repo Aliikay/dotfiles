@@ -112,11 +112,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1753433875,
-        "narHash": "sha256-kwrggwH9zeiLVonO9aA2Wngl/ZAL/1VbJxbBKgyfbXo=",
+        "lastModified": 1753646662,
+        "narHash": "sha256-1MHSMpHXTg7z1Au56WH9c+mY7NzBeKg5I9nPI22dcrU=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "79677d017c844fec0511558ee4f96291c85a946e",
+        "rev": "2f935a38964f40f160d65427d484f0bbb33af310",
         "type": "github"
       },
       "original": {
@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753479839,
-        "narHash": "sha256-E/rPVh7vyPMJUFl2NAew+zibNGfVbANr8BP8nLRbLkQ=",
+        "lastModified": 1753592768,
+        "narHash": "sha256-oV695RvbAE4+R9pcsT9shmp6zE/+IZe6evHWX63f2Qg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0b9bf983db4d064764084cd6748efb1ab8297d1e",
+        "rev": "fc3add429f21450359369af74c2375cb34a2d204",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1753250450,
-        "narHash": "sha256-i+CQV2rPmP8wHxj0aq4siYyohHwVlsh40kV89f3nw1s=",
+        "lastModified": 1753429684,
+        "narHash": "sha256-9h7+4/53cSfQ/uA3pSvCaBepmZaz/dLlLVJnbQ+SJjk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fc02ee70efb805d3b2865908a13ddd4474557ecf",
+        "rev": "7fd36ee82c0275fb545775cc5e4d30542899511d",
         "type": "github"
       },
       "original": {
@@ -243,11 +243,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1752480373,
-        "narHash": "sha256-JHQbm+OcGp32wAsXTE/FLYGNpb+4GLi5oTvCxwSoBOA=",
+        "lastModified": 1753250450,
+        "narHash": "sha256-i+CQV2rPmP8wHxj0aq4siYyohHwVlsh40kV89f3nw1s=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "62e0f05ede1da0d54515d4ea8ce9c733f12d9f08",
+        "rev": "fc02ee70efb805d3b2865908a13ddd4474557ecf",
         "type": "github"
       },
       "original": {
@@ -316,8 +316,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1753502913,
-        "narHash": "sha256-q0eKSc3tIcMQIjOcRCphjy5JJEfk89X6rw5IjENjnjw=",
+        "lastModified": 1753671276,
+        "narHash": "sha256-iVnaYWqqf/FkNFuDRDf3XejPmNr7W7f2GCO5WixPwc8=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },
@@ -345,11 +345,11 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1753492290,
-        "narHash": "sha256-VIWpCsB/jz21pyLC2xeWCLofceUhBjaTYKCEiVdFzcA=",
+        "lastModified": 1753643114,
+        "narHash": "sha256-aAYijorNQnqmA+hAraOkGNFvy5UPsZUrMLwdYAbRDXk=",
         "owner": "danth",
         "repo": "stylix",
-        "rev": "5d35f95a6637600256237c7d95666306fb02920e",
+        "rev": "c71d1743fee04ad8aa547aa3708bd2bcc0312e42",
         "type": "github"
       },
       "original": {
