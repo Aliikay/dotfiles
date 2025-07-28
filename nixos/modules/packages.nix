@@ -179,7 +179,7 @@
     paleta
     papers
     #paper-clip
-    #pciutils
+    pciutils
     pdfarranger
     #protonup-qt
     protonplus
