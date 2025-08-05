@@ -112,11 +112,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1754124996,
-        "narHash": "sha256-9HTe9McSVChsa5sb70oG1D79DglvroU2KwJRw+V5V2M=",
+        "lastModified": 1754333480,
+        "narHash": "sha256-X/hhypBuj2SIQrO17mhEcxMEiXuVY0W3TNFTfO/vLuo=",
         "owner": "wamserma",
         "repo": "flake-programs-sqlite",
-        "rev": "671e6869fc5f40e201436a3a45049576131cbf64",
+        "rev": "e4883a9b0ea07ff3fa225f26adc36a92088abfcc",
         "type": "github"
       },
       "original": {
@@ -196,11 +196,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1753122741,
-        "narHash": "sha256-nFxE8lk9JvGelxClCmwuJYftbHqwnc01dRN4DVLUroM=",
+        "lastModified": 1754316476,
+        "narHash": "sha256-Ry1gd1BQrNVJJfT11cpVP0FY8XFMx4DJV2IDp01CH9w=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
+        "rev": "9368056b73efb46eb14fd4667b99e0f81b805f28",
         "type": "github"
       },
       "original": {
@@ -211,11 +211,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1754028485,
-        "narHash": "sha256-IiiXB3BDTi6UqzAZcf2S797hWEPCRZOwyNThJIYhUfk=",
+        "lastModified": 1754292888,
+        "narHash": "sha256-1ziydHSiDuSnaiPzCQh1mRFBsM2d2yRX9I+5OPGEmIE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "59e69648d345d6e8fef86158c555730fa12af9de",
+        "rev": "ce01daebf8489ba97bd1609d185ea276efdeb121",
         "type": "github"
       },
       "original": {
@@ -227,11 +227,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1753939845,
-        "narHash": "sha256-K2ViRJfdVGE8tpJejs8Qpvvejks1+A4GQej/lBk5y7I=",
+        "lastModified": 1754214453,
+        "narHash": "sha256-Q/I2xJn/j1wpkGhWkQnm20nShYnG7TI99foDBpXm1SY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "94def634a20494ee057c76998843c015909d6311",
+        "rev": "5b09dc45f24cf32316283e62aec81ffee3c3e376",
         "type": "github"
       },
       "original": {
@@ -316,8 +316,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-umE9Rge35R9FaiPgBqUTic3tv3q7BohLlaPNPlNSBy8=",
+        "lastModified": 1754346427,
+        "narHash": "sha256-n7KOE2vDaYc39lUWCrvLptfyoimjiMYR3pt+Kbv2+Pc=",
         "path": "/home/alikay/dotfile-secrets",
         "type": "path"
       },

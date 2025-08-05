@@ -81,11 +81,12 @@
     #gedit
     #geany
     gearlever # appimage integrator
-    (pkgs-unstable.gimp3-with-plugins.override {
-      plugins = with pkgs-unstable.gimp3Plugins; [
-        #gmic
-      ];
-    })
+    #(pkgs-unstable.gimp3-with-plugins.override {
+    #  plugins = with pkgs-unstable.gimp3Plugins; [
+    #gmic
+    #  ];
+    #})
+    gimp3
 
     gowall # cli to convert images and icons to color themes
     #gradience
