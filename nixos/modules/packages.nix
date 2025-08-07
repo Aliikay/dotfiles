@@ -127,7 +127,6 @@
     impression
     inkscape
     itch
-    jetbrains.rider
     krita
     keypunch
     komikku
