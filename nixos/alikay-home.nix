@@ -198,6 +198,9 @@
   # Zeditor
   programs.zed-editor = {
     enable = true;
+    userSettings = {
+      soft_wrap = "editor_width";
+    };
   };
 
   # Micro
