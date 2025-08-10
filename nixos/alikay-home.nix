@@ -200,6 +200,11 @@
     enable = true;
     userSettings = {
       soft_wrap = "editor_width";
+      diagnostics = {
+        inline = {
+          enabled = true;
+        };
+      };
     };
   };
 
