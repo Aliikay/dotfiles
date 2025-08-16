@@ -36,6 +36,11 @@ if [ $? -gt 0 ] || [ $capacity -gt 75 ] || [ $status = "Charging" ]; then
 	echo "Updating flake..."
 	nix flake update --include /etc/nixos
 
+	# Update the secrets as well
+	cd /home/alikay/dotfile-secrets
+	nix flake update
+	chown alikay:users flake.lock
+
 	cd /home/alikay/dotfiles
 	rm flake.lock
 	cp /etc/nixos/flake.lock flake.lock

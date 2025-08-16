@@ -16,6 +16,7 @@
     #ascii-draw
     atuin
     aria2
+    archipelago
     ani-cli
     amberol
     alpaca
