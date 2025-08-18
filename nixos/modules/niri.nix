@@ -35,6 +35,8 @@
     cliphist
     wl-clipboard-rs
     swayidle
+    xwayland
+    openbox # For running xwayland rootful
   ];
 
   # Polkit
