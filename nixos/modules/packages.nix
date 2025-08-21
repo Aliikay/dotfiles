@@ -12,7 +12,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #foot
-    aseprite
     #ascii-draw
     atuin
     aria2
@@ -36,7 +35,6 @@
     btop
     #blackbox-terminal
     bibata-cursors
-    blender-hip
     #blender
     brightnessctl
     #bustle
@@ -126,7 +124,6 @@
     inputs.secrets.packages.x86_64-linux.i-would-never
     identity
     impression
-    inkscape
     itch
     krita
     keypunch
@@ -153,7 +150,6 @@
     localsend
     lutris
     mangohud
-    material-maker
     #marker
     #metronome
     micro
