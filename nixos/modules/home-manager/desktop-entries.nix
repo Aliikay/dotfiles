@@ -9,8 +9,8 @@
     rebuild = {
       name = "Rebuild";
       genericName = "System Utility";
-      exec = "/home/alikay/dotfiles/scripts/rebuild.sh";
-      terminal = true;
+      exec = "alacritty -e /home/alikay/dotfiles/scripts/rebuild.sh";
+      terminal = false;
       icon = "/home/alikay/dotfiles/icons/nixos-rebuild.png";
       categories = ["System" "Utility"];
     };
