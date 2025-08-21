@@ -20,6 +20,7 @@
       sudo
       gzip
       libnotify
+      gawk
       gitMinimal
       config.nix.package.out
       config.programs.ssh.package
