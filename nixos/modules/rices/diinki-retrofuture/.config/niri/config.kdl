@@ -92,6 +92,7 @@ output "DP-6" {
 output "eDP-1" {
     mode "2256x1504"
     scale 1.3
+    position x=-1736 y=680
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -251,6 +252,10 @@ cursor {
     xcursor-size 36
 }
 
+hotkey-overlay {
+    skip-at-startup
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -259,10 +264,13 @@ cursor {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "~/dotfiles/scripts/launch-waybar.sh"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xsettingsd"
 spawn-at-startup "udiskie"
 spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "mullvad-gui"
 // spawn-at-startup "blueman-applet"
 spawn-at-startup "swayosd-server"
+spawn-at-startup "swayidle" "-w" "before-sleep" "swaylock"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "mpDris2" "--music-dir=~/Music/Collection"
@@ -323,20 +331,11 @@ window-rule {
     open-floating true
 }
 
-// Open pavucontrol as floating
+// Open windows as floating
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
-    open-floating true
-}
-
-// Open blueberry as floating
-window-rule {
+    match app-id="com.github.finefindus.eyedropper"
     match app-id="blueberry.py"
-    open-floating true
-}
-
-// Open smile as floating
-window-rule {
     match app-id="it.mijorus.smile"
     open-floating true
 }
@@ -361,6 +360,44 @@ window-rule {
     }
 }
 
+// Open unity builds as floating
+window-rule {
+    match app-id="Slipstream.x86_64"
+    open-floating true
+}
+
+// Open unity script compilation popup as floating
+window-rule {
+    match app-id="Unity" title="Unity"
+    open-focused false
+}
+
+// Open godot popups as floating
+window-rule {
+    match app-id="Godot" title="Create New Node"
+    match app-id="Godot" title=r#"Select *"#
+    match app-id="Godot" title="Export"
+
+    open-floating true
+}
+
+// Open bevy games as maximized
+window-rule {
+    match app-id="cosmurier-pc"
+
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Scrcpy
+window-rule {
+    match app-id="scrcpy" title="SM-S901W"
+    open-maximized true
+    open-on-output "HDMI-A-1"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
 // Steam notifs
 window-rule {
     match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
@@ -370,6 +407,31 @@ window-rule {
     focus-ring {
         off
     }
+}
+
+// Open vesktop on vertical monitor
+window-rule {
+    match app-id="vesktop" title=r#".*Discord.*"#
+    open-maximized true
+    open-on-output "DP-6"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Open thunderbird on main monitor
+window-rule {
+    match app-id="thunderbird"
+    open-maximized true
+    open-on-output "DP-5"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Hide Async Twilight Imperium Games from screencasts lol
+window-rule {
+    match title=r#".*Async TI.*"#
+    match title=r#".*Discord.*AsyncTI4.*"#
+    block-out-from "screencast"
 }
 
 // Hide notifications from screencasts
@@ -668,16 +730,16 @@ binds {
 
     // === Application Hotkeys ===
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T repeat=false hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+P repeat=false { spawn "plattenalbum"; }
+    Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "alacritty"; }
+    Mod+P repeat=false { spawn "euphonica"; }
     Mod+S repeat=false { spawn "pavucontrol"; }
     Mod+Period repeat=false { spawn "smile"; }
-    Mod+G repeat=false { spawn "ghostty" "-e" "lazygit"; }
+    Mod+G repeat=false { spawn "alacritty" "-e" "lazygit"; }
 
-    // Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel" "--terminal=ghostty -e"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel" "--terminal=alacritty -e"; }
     Mod+Space hotkey-overlay-title="Run an Application" { spawn "~/dotfiles/scripts/toggle-wofi.sh"; }
     // Mod+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Mod+L hotkey-overlay-title="Lock the Screen" { spawn "bash" "-c" "niri msg action power-off-monitors && swaylock"; }
+    Mod+L hotkey-overlay-title="Lock the Screen" { spawn "bash" "-c" "wlogout"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -685,5 +747,5 @@ binds {
 
     Mod+B repeat=false hotkey-overlay-title="Open a Browser" { spawn "flatpak" "run" "app.zen_browser.zen"; }
     Mod+E repeat=false hotkey-overlay-title="Open File Browser" { spawn "nautilus" "--new-window";}
-    Ctrl+Shift+Escape repeat=false { spawn "ghostty" "-e" "btop"; }
+    Ctrl+Shift+Escape repeat=false { spawn "alacritty" "-e" "btop"; }
 }

@@ -25,9 +25,8 @@
     //"network",
     "cpu",
     "memory",
-    "battery",
-    "power-profiles-daemon",
-    "pulseaudio",
+    "group/batterygroup",
+    "group/audio",
     "custom/clipboard",
     "tray",
     "group/power"
@@ -82,6 +81,7 @@
     //"format": "󰅐 {:%H:%M}",
     "format": "󰅐 {:%OI:%M %p}",
     "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "wlogout",
   },
   "network": {
     "format-wifi": "  {bandwidthDownBits}",
@@ -93,11 +93,23 @@
   "cpu": {
     "format": "{usage}%  ",
     "tooltip": false,
-    "on-click": "ghostty -e btop"
+    "on-click": "alacritty -e btop"
   },
   "memory": {
     "format": "{}%  ",
-    "on-click": "ghostty -e btop"
+    "on-click": "alacritty -e btop"
+  },
+  "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "pulseaudio",
+            "mpd"
+        ]
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -114,9 +126,51 @@
     "on-click": "pavucontrol",
     "tooltip": false
   },
+  "mpd": {
+    "format": "{stateIcon} {title} ⸨{songPosition}|{queueLength}⸩ {volume}%",
+    "format-disconnected": "",//"Disconnected ",
+    "format-stopped": "",//"{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+        "on": " "
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ",
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-scroll-up": "mpc volume +5",
+    "on-scroll-down": "mpc volume -5",
+    "on-click": "mpc toggle"
+  },
   "custom/clipboard": {
     "format": "",
-    "on-click": "cliphist list | wofi --height 1200 --dmenu | cliphist decode | wl-copy"
+    "on-click": "cliphist list | wofi --height 1200 --dmenu | cliphist decode | wl-copy",
+    "on-click-right": "zenity --question --title=\"Clear history?\" --text=\"Clear all of the clipboard history?\" && cliphist wipe"
+  },
+  "group/batterygroup": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "battery",
+        "power-profiles-daemon"
+    ]
   },
   "battery": {
     "states": {
@@ -153,12 +207,12 @@
             "transition-left-to-right": false,
         },
         "modules": [
-            "clock",
-            "custom/power", // First element is the "group leader" and won't ever be hidden
-            "custom/quit",
-            "custom/lock",
-            "custom/sleep",
-            "custom/reboot",
+            "clock"
+            //"custom/power", // First element is the "group leader" and won't ever be hidden
+            //"custom/quit",
+            //"custom/lock",
+            //"custom/sleep",
+            //"custom/reboot",
         ]
     },
     "custom/quit": {

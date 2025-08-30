@@ -33,6 +33,7 @@ window#waybar {
 #custom-reboot,
 #custom-power,
 #custom-sleep,
+#mpd,
 tooltip {
     background-image: linear-gradient(to bottom, #27232b 100%);
 
@@ -86,7 +87,9 @@ tooltip label {
 #memory:hover,
 #power-profiles-daemon:hover,
 #custom-notification:hover,
-#custom-clipboard:hover {
+#custom-clipboard:hover,
+#clock:hover,
+#mpd:hover {
     background-image: linear-gradient(to bottom, #ac82e9 100%);
     color: #141216;
     transition-duration: 120ms;

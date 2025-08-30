@@ -516,6 +516,12 @@ in {
       from = 1714;
       to = 1764;
     } # KDE Connect
+
+    {
+      # Unity Remote Profiler
+      from = 54998;
+      to = 55511;
+    }
   ];
 
   networking.firewall.allowedUDPPorts = [
@@ -544,6 +550,12 @@ in {
       from = 1714;
       to = 1764;
     } # KDE Connect
+
+    {
+      # Unity Remote Profiler
+      from = 54998;
+      to = 55511;
+    }
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
