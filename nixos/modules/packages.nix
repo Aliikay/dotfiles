@@ -174,6 +174,7 @@
     #obsidian
     obs-studio
     paperwork
+    parsec-bin
     paleta
     papers
     #paper-clip
