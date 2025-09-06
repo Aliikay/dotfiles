@@ -263,7 +263,7 @@
 
   # Kitty
   programs.kitty = {
-    enable = true;
+    enable = false;
   };
 
   # Alacritty
