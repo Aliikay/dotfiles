@@ -19,11 +19,12 @@
     ./modules/home-manager/dconf.nix
     ./modules/home-manager/update-notifier.nix
     #./modules/home-manager/hyprland.nix
-    ./modules/home-manager/niri.nix
+    #./modules/home-manager/niri.nix
 
     # Current rice
     #./modules/rices/original/home.nix
-    ./modules/rices/diinki-retrofuture/home.nix
+    #./modules/rices/diinki-retrofuture/home.nix
+    ./modules/rices/gruvbox/home.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory

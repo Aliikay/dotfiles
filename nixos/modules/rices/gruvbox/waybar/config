@@ -1,0 +1,243 @@
+{
+  "layer": "bot",
+  "spacing": 0,
+  "height": 0,
+  "margin-bottom": 0,
+  "margin-top": 15,
+  "position": "top",
+  "margin-right": 200,
+  "margin-left": 200,
+  //"output": ["eDP-1", "DP-5"],
+  "modules-left": [
+    "niri/workspaces",
+    //"sway/workspaces",
+    //"hyprland/workspaces",
+
+    "niri/window"
+  ],
+  "modules-center": [
+    "custom/applauncher",
+    "custom/notification",
+    "privacy"
+  ],
+  "modules-right": [
+    "group/monitors",
+    //"network",
+    "cpu",
+    "memory",
+    "group/batterygroup",
+    "group/audio",
+    "custom/clipboard",
+    "tray",
+    "group/power"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "niri/workspaces": {
+    "on-scroll-up": "niri msg action focus-workspace-up",
+    "on-scroll-down": "niri msg action focus-workspace-down"
+  },
+  "niri/window": {
+
+  },
+  "custom/applauncher": {
+    "format": "〇",
+    "on-click": "~/dotfiles/scripts/toggle-wofi.sh",
+    "tooltip": false
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+        "notification": "󱅫",
+        "none": "",
+        "dnd-notification": " ",
+        "dnd-none": "󰂛",
+        "inhibited-notification": " ",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": " ",
+        "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    //"format": "󰅐 {:%H:%M}",
+    "format": "󰅐 {:%OI:%M %p}",
+    "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "wlogout",
+  },
+  "network": {
+    "format-wifi": "  {bandwidthDownBits}",
+    "format-ethernet": "  {bandwidthDownBits}",
+    "format-disconnected": "󰤮  No Network",
+    "interval": 5,
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false,
+    "on-click": "alacritty -e btop"
+  },
+  "memory": {
+    "format": "{}%  ",
+    "on-click": "alacritty -e btop"
+  },
+  "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "pulseaudio",
+            "mpd"
+        ]
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-icons": [
+      "",
+      "",
+      " "
+    ],
+    "nospacing": 1,
+    "format-muted": " ",
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+  "mpd": {
+    "format": "{stateIcon} {title} ⸨{songPosition}|{queueLength}⸩ {volume}%",
+    "format-disconnected": "",//"Disconnected ",
+    "format-stopped": "",//"{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+        "on": " "
+    },
+    "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ",
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-scroll-up": "mpc volume +5",
+    "on-scroll-down": "mpc volume -5",
+    "on-click": "mpc toggle"
+  },
+  "custom/clipboard": {
+    "format": "",
+    "on-click": "cliphist list | wofi --height 1200 --dmenu | cliphist decode | wl-copy",
+    "on-click-right": "zenity --question --title=\"Clear history?\" --text=\"Clear all of the clipboard history?\" && cliphist wipe"
+  },
+  "group/batterygroup": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+        "battery",
+        "power-profiles-daemon"
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "󱈑 {capacity}%",
+    "format-icons": [
+      "󱊡",
+      "󱊢",
+      "󱊣"
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  },
+  "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "clock"
+            //"custom/power", // First element is the "group leader" and won't ever be hidden
+            //"custom/quit",
+            //"custom/lock",
+            //"custom/sleep",
+            //"custom/reboot",
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": "Logout",
+        "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": "Lock",
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": "Reboot",
+        "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": "Shutdown",
+        "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now"
+    },
+    "custom/sleep": {
+        "format": "⏾",
+        "tooltip": "Sleep",
+        "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep"
+    },
+}

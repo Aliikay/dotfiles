@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   pkgs-unstable,
   pkgs-stable,
@@ -7,6 +8,36 @@
   inputs,
   ...
 }: {
+  # Stylix
+  stylix = {
+    enable = true;
+    autoEnable = true;
+
+    targets.waybar.enable = false;
+  };
+
+  # .config linking
+  #home.file.".hm-config" = {
+  home.file.".config/eww" = {
+    source = ./eww;
+    recursive = true; # link recursively
+  };
+
+  home.file.".config/niri" = {
+    source = ./niri;
+    recursive = true; # link recursively
+  };
+
+  home.file.".config/waybar" = {
+    source = ./waybar;
+    recursive = true; # link recursively
+  };
+
+  home.file.".config/wofi" = {
+    source = ./wofi;
+    recursive = true; # link recursively
+  };
+
   # Wpaperd
   services.wpaperd = {
     enable = true;
@@ -26,10 +57,6 @@
   #services.dunst = {
   #  enable = true;
   #};
-
-  programs.tofi = {
-    enable = true;
-  };
 
   programs.onagre = {
     enable = true;
