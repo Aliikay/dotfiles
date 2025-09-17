@@ -55,6 +55,12 @@
     recursive = true; # link recursively
   };
 
+  # .icons
+  home.file.".icons" = {
+    source = ../home-folders/alikay/.icons;
+    recursive = true; # link recursively
+  };
+
   # templates
   home.file."Templates" = {
     source = ../home-folders/alikay/Templates;
