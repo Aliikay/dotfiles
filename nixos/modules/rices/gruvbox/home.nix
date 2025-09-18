@@ -18,11 +18,6 @@
 
   # .config linking
   #home.file.".hm-config" = {
-  home.file.".config/eww" = {
-    source = ./eww;
-    recursive = true; # link recursively
-  };
-
   home.file.".config/niri" = {
     source = ./niri;
     recursive = true; # link recursively
