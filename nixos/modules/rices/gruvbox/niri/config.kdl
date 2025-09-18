@@ -156,10 +156,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#AC82E9"
+        active-color "#fabd2f"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#27232B"
+        inactive-color "#928374"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
