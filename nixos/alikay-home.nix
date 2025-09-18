@@ -107,6 +107,7 @@
       set fish_greeting # Disable greeting
       # fastfetch -l "None"
       fish_config prompt choose scales
+      bind up _atuin_bind_up
       eval "$(atuin init fish)"
     '';
 
