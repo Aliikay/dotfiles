@@ -93,5 +93,13 @@
       icon = ./../../../icons/zen-profiles.png;
       categories = ["Network"];
     };
+
+    work-tools = {
+      name = "Work Tools";
+      genericName = "System Utility";
+      exec = "/home/alikay/dotfiles/scripts/work-tools.sh";
+      terminal = false;
+      categories = ["Network"];
+    };
   };
 }
