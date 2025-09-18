@@ -184,8 +184,9 @@ layout {
         off
 
         width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        // active-color "#ffc87f"
+        active-color "#fabd2f"
+        inactive-color "#928374"
 
         // Color of the border around windows that request your attention.
         urgent-color "#9b0000"
