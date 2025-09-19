@@ -108,6 +108,7 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 	#chmod --recursive +rw /home/alikay/.rice-config
 
 	# Remove lock file
+	echo "Removing lock file"
 	sudo rm "$LOCK_FILE"
 
 	# Press any key to continue
