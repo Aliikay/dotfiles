@@ -17,7 +17,9 @@
 
     iconTheme = {
       enable = true;
-      package = pkgs.gruvbox-plus-icons;
+      package = pkgs.gruvbox-plus-icons.override {
+        folder-color = "highland";
+      };
       dark = "Gruvbox-Plus-Dark";
       light = "Gruvbox-Plus-Light";
     };
