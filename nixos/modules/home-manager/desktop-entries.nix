@@ -24,14 +24,6 @@
       categories = ["System" "Utility"];
     };
 
-    convert-videos-to-webm = {
-      name = "Convert To Webm";
-      genericName = "System Utility";
-      exec = "python /home/alikay/dotfiles/scripts/convert-videos-to-webm.py";
-      terminal = true;
-      categories = ["System" "Utility"];
-    };
-
     stream-utilities = {
       name = "Stream Utilities";
       genericName = "System Utility";
@@ -99,6 +91,7 @@
       genericName = "System Utility";
       exec = "/home/alikay/dotfiles/scripts/work-tools.sh";
       terminal = false;
+      icon = ./../../../icons/work.png;
       categories = ["Network"];
     };
   };
