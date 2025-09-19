@@ -30,10 +30,10 @@
     recursive = true; # link recursively
   };
 
-  home.file.".config/waybar" = {
-    source = ./waybar;
-    recursive = true; # link recursively
-  };
+  #home.file.".config/waybar" = {
+  #  source = ./waybar;
+  #  recursive = true; # link recursively
+  #};
 
   home.file.".config/wofi" = {
     source = ./wofi;
