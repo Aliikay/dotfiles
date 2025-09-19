@@ -1,172 +1,212 @@
 * {
-    /* General taskbar font, I like maple mono ^-^*/
-    font-family: Maple Mono;
-    border-radius: 8;
-    font-size: 14px;
-    padding: 0px;
-    background: transparent;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "Roboto Mono Regular";
+  font-size: 10pt;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
+* {
+    border: none;
+    opacity: 0.99;
+    border-radius: 16px;
+    min-height: 0;
+    margin: 0.2em 0.0em 0.2em 0.0em;
+    padding-left: 5px;
+    padding-right: 5px;
+
+} 
+/* The whole bar */
 window#waybar {
-    /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-    background-image: linear-gradient(to bottom, #141216 100%);
-    border-radius: 14px;
-    padding: 0px;
-    border-style: none;
+  opacity: 0.99;
+  background-color: #1e2327; 
+  color: #1d2021;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-bottom-width: 3px;
+  border-bottom-color: #151520;
+  border-bottom-style: solid; 
 }
 
-#battery,
-#network,
-#clock,
-#custom-applauncher,
-#tray,
-#workspaces,
-#window,
-#pulseaudio,
-#cpu,
-#memory,
-#power-profiles-daemon,
-#custom-clipboard,
-#custom-notification,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
-#custom-power,
-#custom-sleep,
-#mpd,
-tooltip {
-    background-image: linear-gradient(to bottom, #27232b 100%);
-
-    margin: 6px;
-    margin-right: 0px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    color: #d8cab8;
-
-    border-style: none;
-    transition-duration: 120ms;
-}
-
-#custom-clipboard,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
-#custom-power,
-#custom-sleep {
-    padding-right: 10px;
-}
-
-#privacy {
-    background-image: linear-gradient(to bottom, #fc4649 100%);
-
-    margin: 6px;
-    margin-right: 0px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    color: #d8cab8;
-
-    border-style: none;
-    transition-duration: 120ms;
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
-    padding: 0px;
-}
-
-tooltip label {
-    color: #d8cab8;
-}
-
-#clock {
-    margin-right: 6px;
-}
-
-#pulseaudio:hover,
-#cpu:hover,
-#memory:hover,
-#power-profiles-daemon:hover,
-#custom-notification:hover,
-#custom-clipboard:hover,
-#clock:hover,
-#mpd:hover {
-    background-image: linear-gradient(to bottom, #ac82e9 100%);
-    color: #141216;
-    transition-duration: 120ms;
-}
-
-#custom-applauncher {
-    font-weight: bold;
-    transition-duration: 120ms;
-}
-#custom-applauncher:hover {
-    background-image: linear-gradient(to bottom, #ac82e9 100%);
-    color: #141216;
-    transition-duration: 120ms;
-}
-
-#tray menu {
-    background-color: #141216;
-    color: #d8cab8;
-    padding: 4px;
-}
-#tray menu menuitem {
-    background-image: linear-gradient(to bottom, #27232b 100%);
-
-    margin-top: -3px;
-    margin-bottom: -2px;
-    margin-left: 4px;
-    margin-right: 4px;
-    color: #d8cab8;
-    border-radius: 4px;
-    border-style: solid;
-    border-color: #27232b;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 3px;
-    padding-right: 3px;
-}
-#tray menu menuitem:hover {
-    background-image: linear-gradient(to bottom, #27232b 100%);
-    color: #ac82e9;
-    font-weight: bold;
+window#waybar.hidden {
+  opacity: 0.1;
 }
 
 #workspaces button {
-    transition-duration: 100ms;
-    all: initial;
-    min-width: 0;
-    font-weight: bold;
-    color: #d8cab8;
-    margin-right: 0.2cm;
-    margin-left: 0.2cm;
+  padding: 0 0px;
+  color: #0c0e0f;
+  background-color: #ebdbb2;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each workspace name */
+  border: none;
+  border-radius: 0;
 }
 
-#workspaces button:hover {
-    transition-duration: 120ms;
-    color: #8f56e1;
-}
 #workspaces button.focused {
-    color: #ac82e9;
-    font-weight: bold;
+  background-color: transparent;
+}
+#workspace button.hover {
+  background-color: transparent;
+}
+
+#workspace button.hover {
+  color: #1d2021;
 }
 #workspaces button.active {
-    color: #ac82e9;
-    font-weight: bold;
-}
-#workspaces button.urgent {
-    color: #fcb167;
-}
-#battery {
-    background-color: #222222;
-    color: #d8cab8;
-}
-#battery.critical,
-#battery.urgent {
-    color: #fc4649;
-    background-color: #fc4649;
+  color: #1d2021;
 }
 
-#battery.warning {
-    color: #f3fc7b;
+#workspaces button.urgent {
+  background-color: #ebdbb2;
+}
+
+#workspaces button  {
+  color: #d65d0e;
+}
+
+#workspaces button.empty {
+  color: #1d2021;
+}
+
+/* Each module */
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#custom-screenshot_t,
+#tray,
+#taskbar,
+#mode,
+#idle_inhibitor,
+#mpd,
+#bluetooth,
+#custom-hyprPicker,
+#custom-power,
+#custom-spotify,
+#custom-weather,
+#language,
+#window,
+#workspaces,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-menu,
+#custom-weather.default {
+  background-color: #ebdbb2; 
+  padding-left: 16px;
+  padding-right: 18px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  color: #1d2021;
+  /* color: #bf616a; */
+  border-radius: 3px;
+  border-bottom-width: 3px;
+  border-bottom-color: #969286;
+  border-bottom-style: solid; 
+
+}
+
+#tray {
+border-radius: 10 10 10 10
+}
+
+#temperature {
+border-radius: 3 10 10 3
+}
+
+#cpu {
+border-radius: 10 3 3 10
+}
+
+#window {
+  border-radius: 3 10 10 3
+}
+
+#custom-menu {
+background-color: #B8BB26;
+border-bottom-width: 3px;
+  border-bottom-color: #94A07A;
+  border-bottom-style: solid; 
+  border-radius: 10 3 3 10 
+}
+
+#custom-power {
+  background-color: #fb4934;
+  color: #FDF6E3;
+  border-bottom-width: 3px;
+  border-bottom-color: #972023;
+  border-bottom-style: solid; 
+  border-radius: 3 10 10 3
+}
+
+#custom-launcher {
+  background-color: #1b242b;
+  color: #6a92d7;
+  border-radius: 7.5px;
+}
+
+#pulseaudio {
+  color: #1d2021;
+  border-radius: 10 3 3 10
+}
+
+
+#clock {
+  color: #1d2021;
+  font-size: 12pt;
+  font-weight: 900;
+  border-radius: 10px;
+  /* background-color: #14141e; */
+}
+
+#language {
+  color: #1d2021;
+  font-size: 12pt;
+  font-weight: 900;
+}  
+  
+#network {
+  color: #1d2021;
+  border-radius: 3 10 10 3
+}
+
+#network.disconnected {
+  color: #f53c3c;
+}
+
+
+
+#tray > .passive {
+color: #1d2021;
+}
+
+#tray > .needs-attention {
+
+  color: #1d2021;
+
+}
+
+#tray .active image {
+    color: #1d2021;
+}
+
+#tray menu {
+color: #1d2021;
 }

@@ -14,6 +14,13 @@
     autoEnable = true;
 
     targets.waybar.enable = false;
+
+    iconTheme = {
+      enable = true;
+      package = pkgs.gruvbox-plus-icons;
+      dark = "Gruvbox-Plus-Dark";
+      light = "Gruvbox-Plus-Light";
+    };
   };
 
   # .config linking
