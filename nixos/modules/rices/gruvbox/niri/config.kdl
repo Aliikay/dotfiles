@@ -467,6 +467,34 @@ layer-rule {
     block-out-from "screencast"
 }
 
+// Fix Waybar rounded corners
+layer-rule {
+    match namespace="waybar"
+
+    // We want it to apply even when waybar restarts
+    match at-startup=false
+
+    // Properties that apply continuously.
+    // opacity 0.5
+    // block-out-from "screencast"
+    // block-out-from "screen-capture"
+
+    shadow {
+        // on
+        off
+        softness 40
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "#00000064"
+        // inactive-color "#00000064"
+    }
+
+    geometry-corner-radius 16
+    place-within-backdrop true
+    // baba-is-float true
+}
+
 // Example: block out from screen capture
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
