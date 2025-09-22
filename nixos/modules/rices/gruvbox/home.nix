@@ -126,4 +126,9 @@
     enable = true;
     allowImages = true;
   };
+
+  # Enable and remove system package once 25.11 releases
+  #programs.niriswitcher = {
+  #  enable = true;
+  #};
 }

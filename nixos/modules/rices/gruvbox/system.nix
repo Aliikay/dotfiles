@@ -58,5 +58,6 @@
     wofi
     eww
     waybar
+    pkgs-unstable.niriswitcher
   ];
 }

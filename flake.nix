@@ -81,6 +81,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Unstable home manager
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Secrets - comment out if you want to use this system yourself
     # This flake contains a bunch of stuff that I can't include in the main repo (blobs, keys, etc...)
     secrets.url = "/home/alikay/dotfile-secrets";
