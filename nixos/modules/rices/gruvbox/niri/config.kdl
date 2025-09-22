@@ -269,6 +269,7 @@ spawn-at-startup "xsettingsd"
 spawn-at-startup "udiskie"
 spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "mullvad-gui"
+spawn-at-startup "niriswitcher"
 // spawn-at-startup "blueman-applet"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "swayidle" "-w" "before-sleep" "swaylock"
@@ -276,7 +277,7 @@ spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "mpDris2" "--music-dir=~/Music/Collection"
 // spawn-at-startup "~/.config/eww/scripts/start.sh" // launch eww
-// Limit battery charge to 80%. This works because this command is allowed for normal users in the sudoers file. Not a normal systemd service on boot because i *DONT* want this to run in the GNOME session (I use an extension instead)
+// Limit battery charge to 80%. This works because this command is allowed for normal users in the sudoers file. Not a normal systemd service on boot because I *DONT* want this to run in the GNOME session (I use an extension instead)
 spawn-at-startup "sudo" "/run/current-system/sw/bin/systemctl" "start" "battery-charge-limit"
 
 environment {
