@@ -497,6 +497,29 @@ layer-rule {
     // baba-is-float true
 }
 
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#fb4934"
+        inactive-color "#cc241d"
+    }
+
+    border {
+        inactive-color "#cc241d"
+    }
+
+    shadow {
+        color "#cc241d"
+    }
+
+    tab-indicator {
+        active-color "#fb4934"
+        inactive-color "#cc241d"
+    }
+}
+
 // Example: block out from screen capture
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
