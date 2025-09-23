@@ -253,6 +253,7 @@
     unityhub
     #x2goclient
     yt-dlp
+    yazi
     uwuify
     pkgs-unstable.zed-editor
     #zellij
