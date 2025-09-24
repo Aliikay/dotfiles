@@ -427,6 +427,7 @@ in {
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
+    "space.gaiasky.GaiaSky"
   ];
 
   # Flatpak auto updates
