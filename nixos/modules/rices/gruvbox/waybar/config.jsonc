@@ -1,47 +1,52 @@
 {
   "layer": "bot",
-  "spacing": 3,
+  "spacing": 2,
   "height": 0,
   "margin-bottom": 0,
   "margin-top": 8,
   "position": "top",
-  "margin-right": 200,
-  "margin-left": 200,
+  "margin-right": 50,
+  "margin-left": 50,
   //"output": ["eDP-1", "DP-5"],
   "modules-left": [
+    "custom/systemmenu",
     "niri/workspaces",
     //"sway/workspaces",
     //"hyprland/workspaces",
 
     "niri/window"
   ],
-  "modules-center": ["custom/applauncher", "custom/notification", "privacy"],
+  "modules-center": [
+    "custom/applauncher",
+    "custom/clipboard",
+    "privacy",
+    "custom/notification"
+  ],
   "modules-right": [
+    "tray",
     "group/monitors",
     //"network",
     "cpu",
     "memory",
     "group/batterygroup",
     "group/audio",
-    "custom/clipboard",
-    "tray",
     "group/power"
   ],
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
-  },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": false,
-    "tooltip": false
+  "custom/systemmenu": {
+    "format": "󱄅",
+    "on-click": "alacritty -e rebuild.sh"
   },
   "niri/workspaces": {
     "on-scroll-up": "niri msg action focus-workspace-up",
-    "on-scroll-down": "niri msg action focus-workspace-down"
+    "on-scroll-down": "niri msg action focus-workspace-down",
+    "format": ""
   },
-  "niri/window": {},
+  "niri/window": {
+    "rewrite": {
+      "(.*) — Zen Browser": "$1"
+    },
+    "on-click": "niri msg action toggle-overview"
+  },
   "custom/applauncher": {
     "format": "〇",
     "on-click": "~/dotfiles/scripts/toggle-wofi.sh",
@@ -68,12 +73,12 @@
     "escape": true
   },
   "tray": {
-    "spacing": 10,
+    "spacing": 5,
     "tooltip": false
   },
   "clock": {
     //"format": "󰅐 {:%H:%M}",
-    "format": "󰅐 {:%OI:%M %p}",
+    "format": "󰅐   {:%OI:%M %p}",
     "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "wlogout"
   },
@@ -96,8 +101,8 @@
   "group/audio": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 500,
-      "children-class": "not-power",
+      "transition-duration": 300,
+      "children-class": "group-audio-children",
       "transition-left-to-right": false
     },
     "modules": ["pulseaudio", "mpd"]
@@ -150,8 +155,8 @@
   "group/batterygroup": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-duration": 500,
-      "children-class": "not-power",
+      "transition-duration": 300,
+      "children-class": "group-battery-children",
       "transition-left-to-right": false
     },
     "modules": ["battery", "power-profiles-daemon"]
@@ -182,17 +187,17 @@
   "group/power": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 500,
-      "children-class": "not-power",
+      "transition-duration": 300,
+      "children-class": "group-power-children",
       "transition-left-to-right": false
     },
     "modules": [
-      "clock"
-      //"custom/power", // First element is the "group leader" and won't ever be hidden
-      //"custom/quit",
-      //"custom/lock",
-      //"custom/sleep",
-      //"custom/reboot",
+      "clock",
+      "custom/power", // First element is the "group leader" and won't ever be hidden
+      "custom/quit",
+      "custom/lock",
+      "custom/sleep",
+      "custom/reboot"
     ]
   },
   "custom/quit": {
@@ -203,7 +208,7 @@
   "custom/lock": {
     "format": "󰍁",
     "tooltip": "Lock",
-    "on-click": "swaylock"
+    "on-click": "niri msg action power-off-monitors && swaylock"
   },
   "custom/reboot": {
     "format": "󰜉",

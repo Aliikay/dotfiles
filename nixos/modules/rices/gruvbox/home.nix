@@ -32,10 +32,10 @@
     recursive = true; # link recursively
   };
 
-  #home.file.".config/waybar" = {
-  #  source = ./waybar;
-  #  recursive = true; # link recursively
-  #};
+  home.file.".config/waybar" = {
+    source = ./waybar;
+    recursive = true; # link recursively
+  };
 
   home.file.".config/wofi" = {
     source = ./wofi;
@@ -100,6 +100,14 @@
         keybind = "e";
       }
     ];
+    style = "
+        window{
+            background: #282828;
+        }
+
+        button{
+            color: #fabd2f;
+        }";
   };
 
   services.swaync = {
