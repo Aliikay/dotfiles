@@ -428,6 +428,7 @@ in {
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
     "space.gaiasky.GaiaSky"
+    "net.krafting.HexColordle"
   ];
 
   # Flatpak auto updates
