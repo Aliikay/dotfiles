@@ -102,7 +102,7 @@
     ];
     style = "
         window{
-            background: #282828;
+            background: #28282840;
         }
 
         button{
