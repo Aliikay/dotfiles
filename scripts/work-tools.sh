@@ -11,3 +11,6 @@ flatpak run md.obsidian.Obsidian & disown
 
 # Open file browser
 nautilus /home/alikay/Documents/Notes/Personal\ Notes/Work & disown
+
+# Open resume
+setzer & disown
