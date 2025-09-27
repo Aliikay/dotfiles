@@ -36,6 +36,7 @@
     wl-clipboard-rs
     swayidle
     xwayland
+    wl-mirror
     openbox # For running xwayland rootful
   ];
 
