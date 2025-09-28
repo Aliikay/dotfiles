@@ -37,6 +37,7 @@
     swayidle
     xwayland
     wl-mirror
+    wdisplays
     openbox # For running xwayland rootful
   ];
 
