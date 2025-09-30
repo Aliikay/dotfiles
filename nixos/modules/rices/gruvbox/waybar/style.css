@@ -42,7 +42,7 @@ window#waybar.hidden {
 
 #workspaces button {
     padding: 0 0px;
-    color: #0c0e0f;
+    color: #1d2021;
     /* color: #fbf1c7; */
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -52,10 +52,10 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 #workspace button.hover {
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 #workspace button.hover {
@@ -72,7 +72,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    /* color: #d65d0e; */
+    color: #1d2021;
 }
 
 #workspaces button.empty {
