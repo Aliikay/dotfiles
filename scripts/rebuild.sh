@@ -88,6 +88,7 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 
 	if [ $? = 0 ]
 	then
+	    notify-send --icon=/home/alikay/dotfiles/icons/nixos-rebuild.png "Rebuild Finished" "Updates were applied succesfully"
 		askYesNo "Commit these changes?" true
 		DOIT=$ANSWER
 		if [ "$DOIT" = true ]; then
@@ -99,6 +100,8 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 			echo "Pushing..."
 			git push
 		fi
+	else
+	    notify-send --icon=/home/alikay/dotfiles/icons/nixos-rebuild.png "Rebuild Finished With Errors" "Check the log for info."
 	fi
 
 	# Fix permissions on the hm-config directory
