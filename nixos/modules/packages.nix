@@ -182,6 +182,7 @@
     pdfarranger
     #protonup-qt
     protonplus
+    protontricks
     prismlauncher
     #popsicle
     #pods
