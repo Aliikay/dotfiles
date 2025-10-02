@@ -198,6 +198,7 @@
     pkgs.rocmPackages.rocblas
     pkgs.rocmPackages.hipblas
 
+    r2modman
     ripgrep
     recordbox
     renpy
