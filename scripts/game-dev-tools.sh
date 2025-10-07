@@ -15,3 +15,6 @@ code & disown
 
 flatpak run com.gitfiend.GitFiend & disown
 #mullvad split-tunnel add $!
+
+# Open obsidian
+flatpak run md.obsidian.Obsidian & disown
