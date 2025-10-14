@@ -17,7 +17,7 @@
     aria2
     archipelago
     ani-cli
-    amberol
+    #amberol
     alpaca
     alejandra #nix file formatter
     apostrophe
@@ -100,7 +100,7 @@
     gnome-sound-recorder
     #gnome-maps
     ghex
-    gnome-graphs
+    #gnome-graphs
     #gnome-frog
     gnome-extension-manager
     #gnome-obfuscate
