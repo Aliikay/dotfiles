@@ -7,6 +7,7 @@
   inputs,
   ...
 }: {
+  # System Packages
   environment.systemPackages = with pkgs; [
     # NDS
     melonDS
@@ -19,6 +20,7 @@
     # N64
     flips # patcher for roms
     mupen64plus #idk tbh
+    #pkgs-unstable.parallel-launcher # won't build, has an insecure dependancy last i checked
 
     #PS2
     pcsx2
@@ -32,5 +34,10 @@
     # Switch
     ryujinx
     #torzu # got DMCA'd >n<
+  ];
+
+  # Flatpaks
+  services.flatpak.packages = [
+    "ca.parallel_launcher.ParallelLauncher"
   ];
 }

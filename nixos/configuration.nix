@@ -409,7 +409,6 @@ in {
     "us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
-    "ca.parallel_launcher.ParallelLauncher"
     #"com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     #"camp.nook.nookdesktop"
