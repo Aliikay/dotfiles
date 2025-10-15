@@ -59,5 +59,6 @@
     eww
     waybar
     pkgs-unstable.niriswitcher
+    walker
   ];
 }
