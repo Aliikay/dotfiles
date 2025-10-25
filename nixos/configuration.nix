@@ -291,6 +291,7 @@ in {
   nixpkgs.config.permittedInsecurePackages = [
     "freeimage-unstable-2021-11-01" #Allow for trenchbroom to be installed
     "dotnet-sdk-6.0.428" #Required for godot_4-mono
+    "mbedtls-2.28.10"
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -492,9 +493,9 @@ in {
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
-    8000 #Development
-    8080
-    7777
+    #8000 #Development
+    #8080
+    #7777
 
     # Slipstresm
     7760
@@ -503,12 +504,12 @@ in {
     7779
     7781
 
-    47777
+    #47777
 
-    9943
-    9944 # ALVR
+    #9943
+    #9944 # ALVR
 
-    25565 #Minecraft
+    #25565 #Minecraft
 
     53317 # Localsend
   ];
@@ -526,9 +527,9 @@ in {
   ];
 
   networking.firewall.allowedUDPPorts = [
-    8000 #Development
-    8080
-    7777
+    #8000 #Development
+    #8080
+    #7777
 
     # Slipstresm
     7760
@@ -537,12 +538,12 @@ in {
     7779
     7781
 
-    47777
+    #47777
 
-    9943
-    9944 # ALVR
+    #9943
+    #9944 # ALVR
 
-    25565 #Minecraft
+    #25565 #Minecraft
 
     53317 #Localsend
   ];
