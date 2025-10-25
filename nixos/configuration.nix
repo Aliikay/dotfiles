@@ -289,8 +289,8 @@ in {
   security.apparmor.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "freeimage-unstable-2021-11-01" #Allow for trenchbroom to be installed
-    "dotnet-sdk-6.0.428" #Required for godot_4-mono
+    #"freeimage-unstable-2021-11-01" #Allow for trenchbroom to be installed
+    #"dotnet-sdk-6.0.428" #Required for godot_4-mono
     "mbedtls-2.28.10"
   ];
 
