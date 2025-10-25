@@ -495,7 +495,7 @@ in {
   networking.firewall.allowedTCPPorts = [
     #8000 #Development
     #8080
-    #7777
+    7777
 
     # Slipstresm
     7760
@@ -529,7 +529,7 @@ in {
   networking.firewall.allowedUDPPorts = [
     #8000 #Development
     #8080
-    #7777
+    7777
 
     # Slipstresm
     7760
