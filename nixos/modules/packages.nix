@@ -202,7 +202,7 @@
     r2modman
     ripgrep
     recordbox
-    renpy
+    #pkgs-unstable.renpy
     #rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
