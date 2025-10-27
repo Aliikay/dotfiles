@@ -15,18 +15,21 @@
     pkg-config
   ];
 
-  # Edirot in repos
+  # Editor in repos
   editor = with pkgs; [
     #godot_4
     pkgs-unstable.godot
     #godot_4-mono
     pkgs-unstable.godot_4-mono
+
+    pkgs-unstable.godot-export-templates-bin
   ];
 
   # External Tools
   tools = with pkgs; [
     blender-hip
     aseprite
+    pkgs-unstable.gdtoolkit_4
   ];
 in {
   environment.systemPackages = with pkgs;
