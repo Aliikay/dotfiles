@@ -79,8 +79,12 @@
   };
 
   # Godot Export templates for current stable and unstable versions
-  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}".source = pkgs.godot_4-export-templates-bin;
-  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version}".source = pkgs-unstable.godot_4-export-templates-bin;
+  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}" = {
+    source = "${pkgs.godot_4-export-templates-bin}/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}";
+  };
+  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version}" = {
+    source = "${pkgs-unstable.godot_4-export-templates-bin}/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version}";
+  };
 
   # BTOP
   programs.btop = {
