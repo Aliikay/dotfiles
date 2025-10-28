@@ -21,8 +21,6 @@
     pkgs-unstable.godot
     #godot_4-mono
     pkgs-unstable.godot_4-mono
-
-    pkgs-unstable.godot-export-templates-bin
   ];
 
   # External Tools

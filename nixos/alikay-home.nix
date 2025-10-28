@@ -78,6 +78,10 @@
     source = "${pkgs.firejail}/bin/firejail";
   };
 
+  # Godot Export templates for current stable and unstable versions
+  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates.version}".source = pkgs.godot_4-export-templates;
+  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates.version}".source = pkgs-unstable.godot_4-export-templates;
+
   # BTOP
   programs.btop = {
     enable = true;
