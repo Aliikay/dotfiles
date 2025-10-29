@@ -89,6 +89,19 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 	if [ $? = 0 ]
 	then
 	    notify-send --icon=/home/alikay/dotfiles/icons/nixos-rebuild.png "Rebuild Finished" "Updates were applied succesfully"
+
+		echo "Checking home manager activation status"
+		services=("home-manager-alikay.service" "home-manager-alikay\\x2dalt.service" "home-manager-guest.service" "home-manager-demo-station.service")
+		for element in "${services[@]}"
+        do
+            systemctl is-failed "$element" > /dev/null
+            if [ $? = 0 ]; then
+                echo "Failed to activate home manager:"
+                systemctl status "$element" --no-pager
+                notify-send --icon=/home/alikay/dotfiles/icons/nixos-rebuild.png "Error Activating Home Manager" "Failed to activate a home manager environment! Check log for details"
+            fi
+        done
+
 		askYesNo "Commit these changes?" true
 		DOIT=$ANSWER
 		if [ "$DOIT" = true ]; then
