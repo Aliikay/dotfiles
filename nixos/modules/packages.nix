@@ -54,7 +54,6 @@
     #decker
     #drawing
     #decker
-    #droidcam
     docker
     dotnet-sdk
     #dialect
