@@ -42,6 +42,14 @@ in {
   # Kernel Package
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  # Kernel Modules
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    v4l2loopback
+  ];
+  boot.kernelModules = [
+    "v4l2loopback"
+  ];
+
   boot.tmp.cleanOnBoot = true;
 
   # Disable boot messages to not interrupt the boot splash
