@@ -350,6 +350,18 @@ in {
     enable = true;
   };
 
+  # Enable OBS
+  programs.obs-studio = {
+    enable = true;
+
+    plugins = with pkgs.obs-studio-plugins; [
+      droidcam-obs
+      obs-vaapi
+      obs-pipewire-audio-capture
+      obs-livesplit-one
+    ];
+  };
+
   # Virtual Machines
   virtualisation.libvirtd.enable = true;
   virtualisation.waydroid.enable = true;
@@ -368,6 +380,9 @@ in {
 
   # Enable ADB
   programs.adb.enable = true;
+
+  # Enable Droidcam
+  programs.droidcam.enable = true;
 
   # Enable Firejail
   programs.firejail.enable = true;

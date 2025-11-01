@@ -172,7 +172,7 @@
     nix-tree
     onlyoffice-bin
     #obsidian
-    obs-studio
+    #obs-studio
     paperwork
     parsec-bin
     paleta
