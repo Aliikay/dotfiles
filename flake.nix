@@ -89,7 +89,10 @@
 
     # Secrets - comment out if you want to use this system yourself
     # This flake contains a bunch of stuff that I can't include in the main repo (blobs, keys, etc...)
-    secrets.url = "/home/alikay/dotfile-secrets";
+    #secrets = {
+    #  url = "/home/alikay/dotfile-secrets";
+    #  inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #};
   };
 
   outputs = inputs @ {
@@ -163,6 +166,8 @@
         ./nixos/modules/audio-production.nix
         ./nixos/modules/samba.nix
         #./nixos/modules/cmput-325.nix
+
+        #./nixos/modules/secrets.nix
 
         # Current rice
         #./nixos/modules/rices/original/system.nix
