@@ -120,7 +120,6 @@
     helvum
     hyfetch
 
-    inputs.secrets.packages.x86_64-linux.i-would-never
     identity
     impression
     itch
@@ -244,6 +243,7 @@
     turtle
     thunderbird
     tuba
+    valent
     vlc
     vscode.fhs
     video-trimmer
