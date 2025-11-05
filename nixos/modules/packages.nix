@@ -250,6 +250,7 @@
     wineWowPackages.stable
     #warp
     webp-pixbuf-loader
+    pkgs-unstable.winboat
     #wike
     unityhub
     #x2goclient
