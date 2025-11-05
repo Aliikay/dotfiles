@@ -380,6 +380,7 @@ in {
     enable = true;
     setSocketVariable = true;
   };
+
   programs.virt-manager.enable = true;
 
   # Enable Podman
