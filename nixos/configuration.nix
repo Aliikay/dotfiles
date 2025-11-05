@@ -429,7 +429,7 @@ in {
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     "com.gitfiend.GitFiend"
-    "com.google.Chrome"
+    #"com.google.Chrome"
     #"com.nextcloud.desktopclient.nextcloud"
     #"org.prismlauncher.PrismLauncher"
     "com.spotify.Client"
@@ -440,12 +440,12 @@ in {
     #"com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
     #"camp.nook.nookdesktop"
-    "dev.gbstudio.gb-studio"
+    #"dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" #not in nixpkgs yet
     #"io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
     #"de.hummdudel.Libellus" #not in nixpkgs yet
     "nl.emphisia.icon" #not in nixpkgs yet
-    "org.twinery.Twine" #not in nixpkgs yet
+    #"org.twinery.Twine" #not in nixpkgs yet
     #"org.vinegarhq.Vinegar" # not in nixpkgs yet
     "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
     #"io.github.flattool.Warehouse"
@@ -454,8 +454,8 @@ in {
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
-    "space.gaiasky.GaiaSky"
-    "net.krafting.HexColordle"
+    #"space.gaiasky.GaiaSky"
+    #"net.krafting.HexColordle"
   ];
 
   # Flatpak auto updates
