@@ -94,5 +94,14 @@
       icon = ./../../../icons/work.png;
       categories = ["Network"];
     };
+
+    picocad = {
+      name = "PicoCAD";
+      genericName = "3D Modelling";
+      exec = "/home/alikay/dotfiles/scripts/launch-picocad.sh";
+      terminal = false;
+      icon = ./../../../icons/picocad.png;
+      categories = ["AudioVideo"];
+    };
   };
 }
