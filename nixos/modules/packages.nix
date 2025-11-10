@@ -254,6 +254,7 @@
     #wike
     unityhub
     #x2goclient
+    xfce.thunar
     yt-dlp
     yazi
     uwuify
