@@ -393,7 +393,7 @@ window-rule {
 
 // Open Godot Games as floating
 window-rule {
-    match app-id="FoodPoisoning"
+    match app-id="Godot" title=r#".*\(DEBUG\)"#
 
     open-floating true
 }
