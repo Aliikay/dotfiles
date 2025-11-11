@@ -391,16 +391,22 @@ window-rule {
     open-floating true
 }
 
-// Open Godot Games as floating
+// Open Godot embedded popup as floating
 window-rule {
     // Godot embedded controls
     match app-id="Godot" title=r#".*\(DEBUG\)"#
 
+    open-floating true
+    default-floating-position x=0 y=250 relative-to="bottom"
+}
+
+// Open godot games as floating
+window-rule {
     // Games
     match app-id="HibernationJam"
 
     open-floating true
-    default-floating-position x=0 y=250 relative-to="bottom"
+    default-floating-position x=0 y=240 relative-to="bottom"
 }
 
 // Open bevy games as maximized
