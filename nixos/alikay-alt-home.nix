@@ -19,4 +19,14 @@
   stylix = {
     image = ../wallpapers/other/n-festival.png;
   };
+
+  home.file."dotfiles/scripts" = {
+    source = ../scripts;
+    recursive = true; # link recursively
+  };
+
+  home.file."dotfiles/icons" = {
+    source = ../icons;
+    recursive = true; # link recursively
+  };
 }
