@@ -250,7 +250,7 @@
     wineWowPackages.stable
     #warp
     webp-pixbuf-loader
-    pkgs-unstable.winboat
+    (pkgs-unstable.winboat.override {nodejs_24 = pkgs.nodejs_24;})
     #wike
     unityhub
     #x2goclient

@@ -38,12 +38,11 @@
     pip-on-top
     fuzzy-app-search
     twitchlive-panel
-    logo-widget
     logo-menu
     quick-settings-tweaker
     #quick-settings-audio-panel
     ddterm
-    miniview
+    #miniview
     top-bar-organizer
     burn-my-windows
     caffeine
@@ -69,7 +68,7 @@
     inhibition-indicator
     smile-complementary-extension
     yakuake
-    sleep-through-notifications
+    #sleep-through-notifications
     window-state-manager
     notification-counter
     do-not-disturb-while-screen-sharing-or-recording
