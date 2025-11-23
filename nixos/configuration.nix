@@ -350,6 +350,7 @@ in {
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;
   };
+  hardware.steam-hardware.enable = true;
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
 
