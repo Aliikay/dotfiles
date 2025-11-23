@@ -166,6 +166,7 @@
         ./nixos/modules/emulation.nix
         ./nixos/modules/audio-production.nix
         ./nixos/modules/samba.nix
+        ./nixos/modules/vr.nix
         #./nixos/modules/cmput-325.nix
 
         # Disable this too to avoid errors without the secrets flake
