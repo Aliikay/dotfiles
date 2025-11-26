@@ -377,10 +377,10 @@ in {
   virtualisation.waydroid.enable = true;
   #virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  #virtualisation.docker.rootless = {
+  #  enable = true;
+  #  setSocketVariable = true;
+  #};
 
   programs.virt-manager.enable = true;
 
