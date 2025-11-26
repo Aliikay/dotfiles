@@ -311,7 +311,7 @@ in {
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media"];
+    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" "docker"];
     packages = with pkgs; [
     ];
   };
