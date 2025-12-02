@@ -32,7 +32,7 @@
     cemu
 
     # Switch
-    ryujinx
+    ryubing
     #torzu # got DMCA'd >n<
   ];
 

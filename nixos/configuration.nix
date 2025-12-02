@@ -231,7 +231,9 @@ in {
   ];
 
   # Configure systemd limits for lutris esync
-  systemd.extraConfig = "DefaultLimitNOFILE=524288";
+  systemd.settings.Manager = {
+    DefaultLimitNOFILE = 524288;
+  };
   security.pam.loginLimits = [
     {
       domain = "alikay";
@@ -306,6 +308,9 @@ in {
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  # Enable command not found messages
+  programs.command-not-found.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alikay = {
@@ -500,7 +505,7 @@ in {
   fonts.packages = with pkgs;
     [
       corefonts
-      vistafonts
+      vista-fonts
       google-fonts
       maple-mono.truetype
     ]

@@ -133,7 +133,7 @@
     #kdePackages.dolphin #removed because it caused firefox to ignore default file manager and open dolphin instead
     #kdePackages.kdenlive
     #kdePackages.kdenlive
-    kdePackages.xwaylandvideobridge
+    #kdePackages.xwaylandvideobridge
     #kdePackages.kfind
     kdePackages.qtstyleplugin-kvantum
     libsForQt5.qtstyleplugin-kvantum
@@ -168,11 +168,11 @@
     nvtopPackages.full
     libnotify
     nix-tree
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     #obsidian
     #obs-studio
     paperwork
-    parsec-bin
+    #parsec-bin
     paleta
     papers
     #paper-clip
