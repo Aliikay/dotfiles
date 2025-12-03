@@ -1,0 +1,244 @@
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen_browser"# title="^Picture-in-Picture$"
+
+    open-floating true
+}
+
+// Open windows as floating
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    match app-id="com.github.finefindus.eyedropper"
+    match app-id="blueberry.py"
+    match app-id="it.mijorus.smile"
+    open-floating true
+}
+
+// Open OBS Windowed projector as floating
+window-rule {
+    // match app-id="com.obsproject.Studio" title="Windowed Projector (Preview)"
+    // match title="Windowed Projector (Preview)"
+    match app-id="com.obsproject.Studio"
+    open-floating true
+    default-column-width { fixed 1280; }
+    default-window-height { fixed 720; }
+}
+
+// Open unity popups as floating
+window-rule {
+    match title=r#"UnityEditor.*"#
+    match title="Color" app-id="Unity"
+    open-floating true
+    focus-ring {
+        off
+    }
+}
+
+// Open unity builds as floating
+window-rule {
+    match app-id="Slipstream.x86_64"
+    open-floating true
+}
+
+// Open unity script compilation popup as floating
+window-rule {
+    match app-id="Unity" title="Unity"
+    open-focused false
+}
+
+// Open godot popups as floating
+window-rule {
+    match app-id="Godot" title="Create New Node"
+    match app-id="Godot" title=r#"Select *"#
+    match app-id="Godot" title="Export"
+
+    open-floating true
+}
+
+// Open Godot embedded popup as floating
+window-rule {
+    // Godot embedded controls
+    match app-id="Godot" title=r#".*\(DEBUG\)"#
+
+    open-floating true
+    default-floating-position x=0 y=250 relative-to="bottom"
+}
+
+// Open godot games as floating
+window-rule {
+    // Games
+    match app-id="HibernationJam"
+
+    open-floating true
+    default-floating-position x=0 y=240 relative-to="bottom"
+}
+
+// Open bevy games as maximized
+window-rule {
+    match app-id="cosmurier-pc"
+
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Scrcpy
+window-rule {
+    match app-id="scrcpy" title="SM-S901W"
+    open-maximized true
+    open-on-output "HDMI-A-1"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Steam notifs
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+
+    open-on-output "DP-5"
+
+    open-focused false
+    focus-ring {
+        off
+    }
+}
+
+// Open vesktop on vertical monitor
+window-rule {
+    match app-id="vesktop" title=r#".*Discord.*"#
+    open-maximized true
+    open-on-output "DP-6"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Open thunderbird on main monitor
+window-rule {
+    match app-id="thunderbird"
+    open-maximized true
+    open-on-output "DP-5"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Always open browsers maximized
+window-rule {
+    match app-id="zen"
+
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+// Hide Async Twilight Imperium Games from screencasts lol
+window-rule {
+    match title=r#".*Async TI.*"# app-id="zen"
+    match title=r#".*Twilight Imperium 4.*"# app-id="zen"
+    match title=r#".*Discord.*AsyncTI4.*"# app-id="vesktop"
+    match title=r#".*TI4 Plans.*"# app-id="obsidian"
+
+    block-out-from "screencast"
+}
+
+// Hide notifications from screencasts
+layer-rule {
+    match namespace="swaync-notification-window"
+    match namespace="swaync-control-center"
+    block-out-from "screencast"
+}
+
+// Fix Waybar rounded corners
+layer-rule {
+    match namespace="waybar"
+
+    // We want it to apply even when waybar restarts
+    match at-startup=false
+
+    // Properties that apply continuously.
+    // opacity 0.5
+    // block-out-from "screencast"
+    // block-out-from "screen-capture"
+
+    shadow {
+        // on
+        off
+        softness 40
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "#00000064"
+        // inactive-color "#00000064"
+    }
+
+    geometry-corner-radius 16
+    // place-within-backdrop true
+    // baba-is-float true
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#fb4934"
+        inactive-color "#cc241d"
+    }
+
+    border {
+        inactive-color "#cc241d"
+    }
+
+    shadow {
+        color "#cc241d"
+    }
+
+    tab-indicator {
+        active-color "#fb4934"
+        inactive-color "#cc241d"
+    }
+}
+
+// Example: block out from screen capture
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    match title=r#"Mys.*wU"# app-id="org.gnome.Nautilus"
+    match title=r#"Desk.*pl.*ad"# app-id="org.gnome.Nautilus"
+
+    block-out-from "screencast"
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Example: enable rounded corners for all windows.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
