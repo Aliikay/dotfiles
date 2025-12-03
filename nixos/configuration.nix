@@ -116,15 +116,20 @@ in {
   ];
 
   # Fix missing gstreamer plugins for nautilus (audio / video file properties)
-  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" [
-    pkgs.gst_all_1.gst-plugins-good
-    pkgs.gst_all_1.gst-plugins-bad
-    pkgs.gst_all_1.gst-plugins-ugly
-    pkgs.gst_all_1.gst-libav
-  ];
+  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
+    lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0"
+    [
+      pkgs.gst_all_1.gst-plugins-good
+      pkgs.gst_all_1.gst-plugins-bad
+      pkgs.gst_all_1.gst-plugins-ugly
+      pkgs.gst_all_1.gst-libav
+    ];
 
   # Enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow for broken packages
   nixpkgs.config.allowBroken = false;
@@ -266,7 +271,14 @@ in {
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [gutenprint hplip splix brlaser brgenml1lpr brgenml1cupswrapper];
+    drivers = with pkgs; [
+      gutenprint
+      hplip
+      splix
+      brlaser
+      brgenml1lpr
+      brgenml1cupswrapper
+    ];
   };
 
   # Enable AVAHI for printing
@@ -316,7 +328,17 @@ in {
   users.users.alikay = {
     isNormalUser = true;
     description = "alikay";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "render"
+      "input"
+      "libvirtd"
+      "media"
+      "docker"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -324,7 +346,16 @@ in {
   users.users.alikay-alt = {
     isNormalUser = true;
     description = "alikay-alt";
-    extraGroups = ["networkmanager" "wheel" "audio" "video" "render" "input" "libvirtd" "media"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "video"
+      "render"
+      "input"
+      "libvirtd"
+      "media"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -332,7 +363,15 @@ in {
   users.users.guest = {
     isNormalUser = true;
     description = "Guest Account";
-    extraGroups = ["networkmanager" "audio" "video" "render" "input" "libvirtd" "media"];
+    extraGroups = [
+      "networkmanager"
+      "audio"
+      "video"
+      "render"
+      "input"
+      "libvirtd"
+      "media"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -340,7 +379,15 @@ in {
   users.users.demo-station = {
     isNormalUser = true;
     description = "Demo Station";
-    extraGroups = ["networkmanager" "audio" "video" "render" "input" "libvirtd" "media"];
+    extraGroups = [
+      "networkmanager"
+      "audio"
+      "video"
+      "render"
+      "input"
+      "libvirtd"
+      "media"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -447,16 +494,16 @@ in {
     "in.srev.guiscrcpy"
     #"camp.nook.nookdesktop"
     #"dev.gbstudio.gb-studio"
-    "io.github.zen_browser.zen" #not in nixpkgs yet
+    "io.github.zen_browser.zen" # not in nixpkgs yet
     #"io.github.ec_.Quake3e.OpenArena" #version in the repos doesnt work
     #"de.hummdudel.Libellus" #not in nixpkgs yet
-    "nl.emphisia.icon" #not in nixpkgs yet
+    #"nl.emphisia.icon" #not in nixpkgs yet
     #"org.twinery.Twine" #not in nixpkgs yet
     #"org.vinegarhq.Vinegar" # not in nixpkgs yet
-    "io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
+    #"io.gitlab.theevilskeleton.Upscaler" # version in nixpkgs is broken
     #"io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
-    "io.github.josephmawa.TextCompare" # not in nixpkgs
+    #"io.github.josephmawa.TextCompare" # not in nixpkgs
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
@@ -578,7 +625,7 @@ in {
 
     #25565 #Minecraft
 
-    53317 #Localsend
+    53317 # Localsend
   ];
   networking.firewall.allowedUDPPortRanges = [
     {

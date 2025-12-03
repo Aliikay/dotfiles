@@ -19,7 +19,7 @@
     ani-cli
     #amberol
     alpaca
-    alejandra #nix file formatter
+    alejandra # nix file formatter
     apostrophe
     #ardour
     #alvr
@@ -61,7 +61,7 @@
     dysk
     #enter-tex
     exhibit
-    pkgs-unstable.euphonica
+    euphonica
     clinfo
     clang-tools
 
@@ -107,7 +107,7 @@
     zenity
     #gnome-podcasts
     gnome-decoder
-    gnomecast #chrome cast
+    gnomecast # chrome cast
 
     git
     #github-desktop
@@ -120,6 +120,7 @@
     helvum
     hyfetch
 
+    iconic
     identity
     impression
     itch
@@ -236,6 +237,7 @@
     texliveFull
 
     texturepacker
+    textcompare
     #trenchbroom
     #trackma
     trackma-gtk
@@ -243,6 +245,7 @@
     turtle
     thunderbird
     tuba
+    upscaler
     valent
     vlc
     vscode.fhs
@@ -250,7 +253,9 @@
     wineWowPackages.stable
     #warp
     webp-pixbuf-loader
-    (pkgs-unstable.winboat.override {nodejs_24 = pkgs.nodejs_24;})
+    #(pkgs-unstable.winboat.override { nodejs_24 = pkgs.nodejs_24; })
+    pkgs-unstable.winboat
+    #winboat
     #wike
     unityhub
     #x2goclient
