@@ -17,6 +17,8 @@
     aria2
     archipelago
     ani-cli
+    aspell
+    aspellDicts.en
     #amberol
     alpaca
     alejandra # nix file formatter
