@@ -32,6 +32,7 @@
     libuuid
     libxkbcommon
     libxml2
+    libxml2_13
     mesa
     nspr
     nss
