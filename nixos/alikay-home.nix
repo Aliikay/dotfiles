@@ -83,8 +83,12 @@
   #  source = "${pkgs.godot_4-export-templates-bin}/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}";
   #};
 
-  home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version}" = {
-    source = "${pkgs-unstable.godot_4-export-templates-bin}/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version}";
+  home.file.".local/share/godot/export_templates/${
+    builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
+  }" = {
+    source = "${pkgs-unstable.godot_4-export-templates-bin}/share/godot/export_templates/${
+      builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
+    }";
   };
 
   # BTOP
@@ -290,6 +294,7 @@
   # Alacritty
   programs.alacritty = {
     enable = true;
+    package = pkgs.alacritty-graphics;
     settings = {
       window = {
         decorations = "None";
@@ -316,7 +321,11 @@
   };
 
   # PATH
-  home.sessionPath = ["$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/dotfiles/scripts"
+    "$HOME/bin"
+  ];
 
   # Variables
   home.sessionVariables = {
