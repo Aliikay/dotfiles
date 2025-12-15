@@ -24,7 +24,7 @@
     cursor.name = "Bibata-Modern-Classic";
     cursor.size = 32;
 
-    targets.grub.useImage = true;
+    targets.grub.useWallpaper = true;
 
     targets.plymouth.enable = true;
     targets.plymouth.logoAnimated = false;

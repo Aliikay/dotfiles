@@ -60,8 +60,11 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Alikay";
-    userEmail = "1401288@gmail.com";
+    extraConfig = {
+      user.name = "Alikay";
+      user.email = "1401288@gmail.com";
+      init.defaultBranch = "main";
+    };
   };
 
   # MPD
