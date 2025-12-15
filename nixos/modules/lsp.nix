@@ -9,9 +9,10 @@
   environment.systemPackages = with pkgs; [
     nixd # nix
     nodePackages.typescript-language-server # JS and Typescript
-    pkgs-unstable.rust-analyzer #Rust
-    tailwindcss-language-server #CSS
-    vscode-langservers-extracted #HTML, CSS, JSON, esLint
+    pkgs-unstable.rust-analyzer # Rust
+    pkgs-unstable.rustfmt
+    tailwindcss-language-server # CSS
+    vscode-langservers-extracted # HTML, CSS, JSON, esLint
     omnisharp-roslyn # CSharp
   ];
 }
