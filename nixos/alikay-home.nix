@@ -60,7 +60,7 @@
   # Git
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       user.name = "Alikay";
       user.email = "1401288@gmail.com";
       init.defaultBranch = "main";

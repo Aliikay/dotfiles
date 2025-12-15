@@ -263,6 +263,7 @@
     #x2goclient
     xfce.thunar
     yt-dlp
+    youtube-tui
     yazi
     uwuify
     pkgs-unstable.zed-editor
