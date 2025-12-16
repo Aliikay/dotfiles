@@ -256,6 +256,11 @@
     enable = true;
   };
 
+  # RMPC
+  programs.rmpc = {
+    enable = true;
+  };
+
   # Mangohud
   programs.mangohud = {
     enable = true;
