@@ -130,6 +130,16 @@ window-rule {
     default-window-height { proportion 1.0; }
 }
 
+// Open Music players on the laptop screen
+window-rule {
+    match app-id="Alacritty" title="rmpd - mpd client"
+    match app-id="io.github.htkhiem.Euphonica"
+
+    open-on-output "eDP-1"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
 // Open thunderbird on main monitor
 window-rule {
     match app-id="thunderbird"
