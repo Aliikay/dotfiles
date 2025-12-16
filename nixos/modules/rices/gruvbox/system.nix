@@ -58,6 +58,7 @@
     wofi
     eww
     waybar
+    jq
     #pkgs-unstable.niriswitcher
     walker
   ];
