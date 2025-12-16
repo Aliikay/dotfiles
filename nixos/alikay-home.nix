@@ -261,6 +261,11 @@
     enable = true;
   };
 
+  # Ncspot (NCurses Spotify Client)
+  programs.ncspot = {
+    enable = true;
+  };
+
   # Mangohud
   programs.mangohud = {
     enable = true;

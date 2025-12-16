@@ -133,9 +133,12 @@ window-rule {
 // Open Music players on the laptop screen
 window-rule {
     match app-id="Alacritty" title="rmpc - mpd client"
+    match app-id="Alacritty" title="ncspot - spotify client"
     match app-id="io.github.htkhiem.Euphonica"
+    match app-id="Spotify"
 
     open-on-output "eDP-1"
+    open-maximized true;
     default-column-width { proportion 1.0; }
     default-window-height { proportion 1.0; }
 }

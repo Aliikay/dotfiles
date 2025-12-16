@@ -275,13 +275,14 @@ binds {
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    // Mod+Shift+P { power-off-monitors; }
 
     // === Application Hotkeys ===
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "alacritty"; }
     // Mod+P repeat=false { spawn "euphonica"; }
     Mod+P repeat=false { spawn "alacritty" "-T" "rmpc - mpd client" "-e" "rmpc"; }
+    Mod+Shift+P repeat=false { spawn "alacritty" "-T" "ncspot - spotify client" "-e" "ncspot"; }
     Mod+S repeat=false { spawn "pavucontrol"; }
     Mod+Period repeat=false { spawn "smile"; }
     Mod+G repeat=false { spawn "alacritty" "-e" "lazygit"; }
