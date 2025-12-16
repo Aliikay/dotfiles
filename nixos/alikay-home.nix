@@ -219,10 +219,13 @@
     enableFishIntegration = true;
     settings = {
       mgr = {
-        show_hidden = true;
-        sort_by = "mtime";
+        show_hidden = false;
         sort_dir_first = true;
-        sort_reverse = true;
+
+        #sort_by = "mtime";
+        #sort_reverse = true;
+        sort_by = "alphabetical";
+        sort_reverse = false;
       };
     };
   };
