@@ -132,7 +132,7 @@ window-rule {
 
 // Open Music players on the laptop screen
 window-rule {
-    match app-id="Alacritty" title="rmpd - mpd client"
+    match app-id="Alacritty" title="rmpc - mpd client"
     match app-id="io.github.htkhiem.Euphonica"
 
     open-on-output "eDP-1"
