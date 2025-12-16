@@ -251,10 +251,10 @@ binds {
     Alt+Print { screenshot-window; }
 
     // Dynamic Screencast
-    Mod+Semicolon repeat=false { spawn "niri" "msg" "action" "set-dynamic-cast-window" "--id" "$(niri msg --json pick-window | jq .id)" } // Pick interactivly
-    Mod+Shift+Semicolon repeat=false { set-dynamic-cast-window }
-    Mod+Ctrl+Semicolon repeat=false { set-dynamic-cast-monitor }
-    Mod+Shift+Ctrl+Semicolon repeat=false { clear-dynamic-cast-target }
+    Mod+Semicolon repeat=false { spawn "~/dotfiles/scripts/pick-dynamic-cast-target.sh"; } // Pick interactivly
+    Mod+Shift+Semicolon repeat=false { set-dynamic-cast-window; }
+    Mod+Ctrl+Semicolon repeat=false { set-dynamic-cast-monitor; }
+    Mod+Shift+Ctrl+Semicolon repeat=false { clear-dynamic-cast-target; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
