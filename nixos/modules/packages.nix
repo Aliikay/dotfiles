@@ -69,6 +69,7 @@
 
     #easyeffects
     eyedropper
+    eza
     f3d
     fastfetch
     ffmpeg

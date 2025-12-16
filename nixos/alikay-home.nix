@@ -357,6 +357,7 @@
     cat = "bat --pager=none";
     nano = "micro";
     sbcl = "rlwrap sbcl";
+    ls = "eza";
   };
 
   # This value determines the home Manager release that your
