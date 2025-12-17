@@ -76,6 +76,7 @@
     ffmpegthumbnailer
 
     foliate
+    file-roller
     footage
     fragments
     fractal
