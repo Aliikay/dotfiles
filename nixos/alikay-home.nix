@@ -249,6 +249,7 @@
         };
       };
       disable_ai = true;
+      helix_mode = false;
     };
   };
 
