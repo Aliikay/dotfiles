@@ -112,6 +112,7 @@
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
       # fastfetch -l "None"
+      hyfetch
       fish_config prompt choose scales
       bind up _atuin_bind_up
       eval "$(atuin init fish)"
@@ -138,6 +139,17 @@
         		builtin cd -- \"$cwd\"
        	end
        	rm -f -- \"$tmp\"
+      end";
+
+      # Nix shell alias
+      ns = "function ns
+        if test \"$argv\" = \"\"
+          echo \"Missing argument\"
+          return
+        end
+        echo \"Entering nix shell with $argv\"
+        nix shell nixpkgs#$argv
+        echo \"Exiting nix shell with $argv\"
       end";
     };
   };
