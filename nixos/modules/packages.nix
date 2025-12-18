@@ -153,6 +153,7 @@
     localsend
     lutris
     mangohud
+    macchina
     #marker
     #metronome
     micro
