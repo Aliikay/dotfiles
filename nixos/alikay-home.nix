@@ -248,6 +248,7 @@
           enabled = true;
         };
       };
+      disable_ai = true;
     };
   };
 
