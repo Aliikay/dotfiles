@@ -111,8 +111,12 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
-      # fastfetch -l "None"
-      hyfetch
+
+      # Only show fetch on top level shells
+      if test "$SHLVL" = 2
+        # fastfetch -l "None"
+        hyfetch
+      end
       # fish_config prompt choose scales
       bind up _atuin_bind_up
       eval "$(atuin init fish)"
