@@ -115,7 +115,7 @@
       # Only show fetch on top level shells
       if test "$SHLVL" = 2
         # fastfetch -l "None"
-        hyfetch
+        # hyfetch
       end
       # fish_config prompt choose scales
       bind up _atuin_bind_up
