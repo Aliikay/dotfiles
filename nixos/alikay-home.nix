@@ -120,6 +120,10 @@
       # fish_config prompt choose scales
       bind up _atuin_bind_up
       eval "$(atuin init fish)"
+
+      # Load my user functions
+      y
+      ns
     '';
 
     plugins = [
