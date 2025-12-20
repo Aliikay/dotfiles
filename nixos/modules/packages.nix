@@ -53,6 +53,7 @@
     #davinci-resolve
     #dart-sass
     decibels
+    delta
     #decker
     #drawing
     #decker
