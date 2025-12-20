@@ -61,6 +61,7 @@
     dotnet-sdk
     #dialect
     distrobox
+    dust
     dysk
     #enter-tex
     exhibit
