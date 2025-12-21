@@ -49,7 +49,7 @@
   },
   "custom/applauncher": {
     "format": "〇",
-    "on-click": "~/dotfiles/scripts/toggle-wofi.sh",
+    "on-click": "~/dotfiles/scripts/toggle-launcher.sh",
     "tooltip": false
   },
   "custom/notification": {
