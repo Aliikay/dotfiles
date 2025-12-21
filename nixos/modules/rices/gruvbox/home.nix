@@ -116,6 +116,14 @@
 
   programs.fuzzel = {
     enable = true;
+    settings = {
+      main = {
+        terminal = "alacritty -T '{cmd}' -e '{cmd}'";
+        font = lib.mkForce "Space Mono:size=16";
+        width = 45;
+        lines = 20;
+      };
+    };
   };
 
   programs.swaylock = {

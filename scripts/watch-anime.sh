@@ -1,3 +1,3 @@
 #!/bin/sh
 trackma-gtk & disown
-alacritty -e "ani-cli --help ; fish"
+alacritty -e fish -C "ani-cli --help"
