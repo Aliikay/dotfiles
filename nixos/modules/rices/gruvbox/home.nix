@@ -119,8 +119,8 @@
     settings = {
       main = {
         terminal = "alacritty -T '{cmd}' -e '{cmd}'";
-        font = lib.mkForce "Space Mono:size=16";
-        width = 45;
+        font = lib.mkForce "Space Mono:size=14";
+        width = 50;
         lines = 20;
       };
     };
