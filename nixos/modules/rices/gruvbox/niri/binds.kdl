@@ -300,5 +300,7 @@ binds {
 
     Mod+E repeat=false hotkey-overlay-title="Open File Browser" { spawn "nautilus" "--new-window"; }
     Mod+Shift+E repeat=false { spawn "alacritty" "-e" "fish" "-C" "yy"; }
+
     Ctrl+Shift+Escape repeat=false { spawn "alacritty" "-e" "btop"; }
+    Ctrl+Shift+Tilde repeat=false { spawn "alacritty" "-e" "nvtop"; }
 }
