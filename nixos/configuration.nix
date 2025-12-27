@@ -281,6 +281,9 @@ in {
     ];
   };
 
+  # Enable OpenRGB to control rgb lighting for peripherals
+  services.hardware.openrgb.enable = true;
+
   # Enable AVAHI for printing
   services.avahi = {
     enable = true;
