@@ -302,5 +302,5 @@ binds {
     Mod+Shift+E repeat=false { spawn "alacritty" "-e" "fish" "-C" "yy"; }
 
     Ctrl+Shift+Escape repeat=false { spawn "alacritty" "-e" "btop"; }
-    Ctrl+Shift+Tilde repeat=false { spawn "alacritty" "-e" "nvtop"; }
+    Ctrl+Shift+Grave repeat=false { spawn "alacritty" "-e" "nvtop"; }
 }
