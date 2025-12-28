@@ -70,6 +70,7 @@ in {
     "rd.systemd.show_status=false"
     "rd.udev.log_level=3"
     "udev.log_priority=3"
+    "mem_sleep_default=deep"
   ];
 
   boot.extraModprobeConfig = ''
