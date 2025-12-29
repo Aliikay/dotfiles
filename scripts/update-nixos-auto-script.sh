@@ -49,7 +49,7 @@ if [ $? -gt 0 ] || [ $capacity -gt 75 ] || [ $status = "Charging" ]; then
 	then
 		echo "Rebuilding the system..." > "$OUTPUTPIPE"
 		echo "Rebuilding the system"
-		$REBUILD boot --flake /etc/nixos#alikay
+		$REBUILD boot --flake /etc/nixos#alikay --impure
 
 		if [ $? -eq 0 ]; then
 			echo "Finding current NixOS Generation"

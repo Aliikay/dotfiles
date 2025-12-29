@@ -31,4 +31,4 @@ echo "Rebuilding & updating the system with substituters enabled"
 sudo nixos-rebuild switch --upgrade
 
 echo "Building the new system..."
-nix-shell -I nixpkgs=channel:nixos-unstable -p nh git --command "~/dotfiles/scripts/rebuild.sh"
+nix-shell -p nh git notify-send --command "~/dotfiles/scripts/rebuild.sh"

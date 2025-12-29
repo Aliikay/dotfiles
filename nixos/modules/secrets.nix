@@ -7,9 +7,11 @@
   pkgs-pinned,
   inputs,
   ...
-}: {
+}: let
+  secrets = builtins.getFlake "/home/alikay/dotfile-secrets";
+in {
   environment.systemPackages = [
-    inputs.secrets.packages.x86_64-linux.i-would-never
-    inputs.secrets.packages.x86_64-linux.renoise
+    secrets.packages.x86_64-linux.i-would-never
+    secrets.packages.x86_64-linux.renoise
   ];
 }

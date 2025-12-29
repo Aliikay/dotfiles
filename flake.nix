@@ -86,14 +86,6 @@
       url = "github:nix-community/home-manager";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Secrets - comment out if you want to use this system yourself
-    # This flake contains a bunch of stuff that I can't include in the main repo (blobs, keys, etc...)
-    # Also comment out the module below
-    secrets = {
-      url = "/home/alikay/dotfile-secrets";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs = inputs @ {
@@ -144,55 +136,55 @@
     generic-system = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = mySpecialArgs;
-      modules = [
-        inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
-        #inputs.nixos-hardware.nixosModules.common-gpu-amd
-        #inputs.musnix.nixosModules.musnix
-        inputs.nix-flatpak.nixosModules.nix-flatpak
-        #hyprland.nixosModules.default
-        #inputs.secrets.nixosModules.config
+      modules =
+        [
+          inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
+          #inputs.nixos-hardware.nixosModules.common-gpu-amd
+          #inputs.musnix.nixosModules.musnix
+          inputs.nix-flatpak.nixosModules.nix-flatpak
+          #hyprland.nixosModules.default
+          #inputs.secrets.nixosModules.config
 
-        ./nixos/configuration.nix
-        ./nixos/modules/packages.nix
-        ./nixos/modules/auto-update.nix
-        #./nixos/modules/hyprland.nix
-        ./nixos/modules/niri.nix
-        ./nixos/modules/battery-charge-limit.nix
-        ./nixos/modules/nix-ld.nix
-        ./nixos/modules/godot.nix
-        ./nixos/modules/game-dev.nix
-        ./nixos/modules/mpd.nix
-        ./nixos/modules/lsp.nix
-        ./nixos/modules/emulation.nix
-        ./nixos/modules/audio-production.nix
-        ./nixos/modules/samba.nix
-        #./nixos/modules/vr.nix
-        #./nixos/modules/cmput-325.nix
+          ./nixos/configuration.nix
+          ./nixos/modules/packages.nix
+          ./nixos/modules/auto-update.nix
+          #./nixos/modules/hyprland.nix
+          ./nixos/modules/niri.nix
+          ./nixos/modules/battery-charge-limit.nix
+          ./nixos/modules/nix-ld.nix
+          ./nixos/modules/godot.nix
+          ./nixos/modules/game-dev.nix
+          ./nixos/modules/mpd.nix
+          ./nixos/modules/lsp.nix
+          ./nixos/modules/emulation.nix
+          ./nixos/modules/audio-production.nix
+          ./nixos/modules/samba.nix
+          #./nixos/modules/vr.nix
+          #./nixos/modules/cmput-325.nix
 
-        # Disable this too to avoid errors without the secrets flake
-        ./nixos/modules/secrets.nix
+          # Current rice
+          #./nixos/modules/rices/original/system.nix
+          #./nixos/modules/rices/diinki-retrofuture/system.nix
+          ./nixos/modules/rices/gruvbox/system.nix
 
-        # Current rice
-        #./nixos/modules/rices/original/system.nix
-        #./nixos/modules/rices/diinki-retrofuture/system.nix
-        ./nixos/modules/rices/gruvbox/system.nix
+          inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+          inputs.stylix.nixosModules.stylix
 
-        inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-        inputs.stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = mySpecialArgs;
+            home-manager.users.alikay = import ./nixos/alikay-home.nix;
+            home-manager.users.alikay-alt = import ./nixos/alikay-alt-home.nix;
+            home-manager.users.guest = import ./nixos/guest-home.nix;
+            home-manager.users.demo-station = import ./nixos/demo-station-home.nix;
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = mySpecialArgs;
-          home-manager.users.alikay = import ./nixos/alikay-home.nix;
-          home-manager.users.alikay-alt = import ./nixos/alikay-alt-home.nix;
-          home-manager.users.guest = import ./nixos/guest-home.nix;
-          home-manager.users.demo-station = import ./nixos/demo-station-home.nix;
-
-          # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-        }
-      ];
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+          }
+        ]
+        # This unfourtanatly makes the flake impure :( but there isn't a better way to have it only import if you have the secrets flake on disk.
+        ++ nixpkgs.lib.optional (builtins.pathExists /home/alikay/dotfile-secrets) ./nixos/modules/secrets.nix;
     };
   in {
     #, hyprland, ... }: {

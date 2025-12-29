@@ -80,10 +80,10 @@ if [ "$SWITCH_TO_CONFIG" = true ] || [ "$BOOT_TO_CONFIG" = true ] ; then
 
 	if [ "$BOOT_TO_CONFIG" = true ] ; then
 		echo "Not switching to config, only booting!"
-		nh os boot /home/alikay/dotfiles --hostname alikay
+		nh os boot /home/alikay/dotfiles --hostname alikay --show-trace  --impure
 	else
 		echo "Hotswapping into new config!"
-		nh os switch /home/alikay/dotfiles --hostname alikay
+		nh os switch /home/alikay/dotfiles --hostname alikay --show-trace --impure
 	fi
 
 	if [ $? = 0 ]

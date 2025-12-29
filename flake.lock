@@ -328,25 +328,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "secrets": "secrets",
         "stylix": "stylix"
-      }
-    },
-    "secrets": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1766533123,
-        "narHash": "sha256-f2r7cONzmjH1UtnwJ/V0nrKJQ6V19uqyl6qZai1GJbo=",
-        "path": "/home/alikay/dotfile-secrets",
-        "type": "path"
-      },
-      "original": {
-        "path": "/home/alikay/dotfile-secrets",
-        "type": "path"
       }
     },
     "stylix": {

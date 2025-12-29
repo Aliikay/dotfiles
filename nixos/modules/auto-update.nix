@@ -37,7 +37,7 @@
     script = let
       nixos-rebuild = "${config.system.build.nixos-rebuild}/bin/nixos-rebuild";
     in ''
-      REBUILD=${nixos-rebuild} /etc/nixos/nixos/update-nixos-auto-script.sh
+      REBUILD=${nixos-rebuild} /etc/nixos/scripts/update-nixos-auto-script.sh
     '';
     serviceConfig = {
       Type = "oneshot";
