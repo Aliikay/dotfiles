@@ -33,7 +33,7 @@
     #bear
     #blanket
     #blockbench
-    boxbuddy
+    #boxbuddy
     btop
     #blackbox-terminal
     bibata-cursors
@@ -61,6 +61,7 @@
     dotnet-sdk
     #dialect
     distrobox
+    distroshelf
     dust
     dysk
     #enter-tex
