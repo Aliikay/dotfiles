@@ -7,8 +7,7 @@
   #pkgs-last-stable,
   inputs,
   ...
-}:
-{
+}: {
   # Flatpaks
   services.flatpak.enable = true;
   services.flatpak.remotes = [
