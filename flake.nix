@@ -147,6 +147,7 @@
 
           ./nixos/configuration.nix
           ./nixos/modules/packages.nix
+          ./nixos/modules/flatpak.nix
           ./nixos/modules/auto-update.nix
           #./nixos/modules/hyprland.nix
           ./nixos/modules/niri.nix
