@@ -122,6 +122,8 @@
         font = lib.mkForce "Space Mono:size=14";
         width = 50;
         lines = 20;
+        fields = lib.mkForce "filename,name,generic,categories,keywords";
+        show-actions = true;
       };
     };
   };
