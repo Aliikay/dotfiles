@@ -21,7 +21,7 @@
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     "com.gitfiend.GitFiend"
-    "com.google.Chrome"
+    #"com.google.Chrome"
     #"com.nextcloud.desktopclient.nextcloud"
     #"org.prismlauncher.PrismLauncher"
     #"com.spotify.Client"
