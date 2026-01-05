@@ -276,6 +276,7 @@
       };
       disable_ai = true;
       helix_mode = false;
+      colorize_brackets = true;
     };
   };
 
