@@ -21,7 +21,7 @@
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     "com.gitfiend.GitFiend"
-    "com.google.Chrome"
+    #"com.google.Chrome"
     #"com.nextcloud.desktopclient.nextcloud"
     #"org.prismlauncher.PrismLauncher"
     #"com.spotify.Client"
@@ -46,7 +46,7 @@
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
-    #"space.gaiasky.GaiaSky"
+    "space.gaiasky.GaiaSky"
     #"net.krafting.HexColordle"
     "io.github.mfat.sshpilot" # not in nixpkgs
     "as.may.moat" # not in nixpkgs
