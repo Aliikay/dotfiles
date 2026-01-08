@@ -149,7 +149,7 @@
   },
   "custom/clipboard": {
     "format": "",
-    "on-click": "cliphist list | wofi --height 1200 --dmenu | cliphist decode | wl-copy",
+    "on-click": "cliphist list | fuzzel --dmenu --lines 32 --anchor top | cliphist decode | wl-copy",
     "on-click-right": "zenity --question --title=\"Clear history?\" --text=\"Clear all of the clipboard history?\" && cliphist wipe"
   },
   "group/batterygroup": {
