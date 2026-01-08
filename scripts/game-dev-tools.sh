@@ -1,10 +1,10 @@
 #!/bin/sh
 
-~/Unity/Hub/Editor/6000.0.37f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream -force-vulkan -force-gfx-mt & disown
+~/Unity/Hub/Editor/6000.0.65f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream -force-vulkan -force-gfx-mt & disown
 mullvad split-tunnel add $!
 
 # The clone
-~/Unity/Hub/Editor/6000.0.37f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream_clone_0 -force-vulkan -force-gfx-mt & disown
+~/Unity/Hub/Editor/6000.0.65f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream_clone_0 -force-vulkan -force-gfx-mt & disown
 mullvad split-tunnel add $!
 
 steam %U -nochatui -nofriendsui -silent & disown
