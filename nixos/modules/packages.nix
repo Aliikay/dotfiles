@@ -66,6 +66,7 @@
     dysk
     #enter-tex
     exhibit
+    eloquent
     euphonica
     clinfo
     clang-tools
