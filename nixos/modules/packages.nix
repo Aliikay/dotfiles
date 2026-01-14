@@ -58,7 +58,7 @@
     #drawing
     #decker
     docker
-    dotnet-sdk
+    dotnet-sdk_9
     #dialect
     distrobox
     distroshelf
