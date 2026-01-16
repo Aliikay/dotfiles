@@ -29,6 +29,8 @@ window-rule {
     match app-id="com.github.finefindus.eyedropper"
     match app-id="blueberry.py"
     match app-id="it.mijorus.smile"
+    match app-id="org.gnome.Calculator"
+
     open-floating true
 }
 
