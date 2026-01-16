@@ -157,6 +157,7 @@
     localsend
     lutris
     mangohud
+    mangojuice
     macchina
     #marker
     #metronome
