@@ -298,6 +298,10 @@
   # Mangohud
   programs.mangohud = {
     enable = true;
+    settings = {
+      cpu_temp = true;
+      graphs = "cpu_temp";
+    };
   };
 
   # MPV Scripts

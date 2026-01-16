@@ -157,7 +157,7 @@
     localsend
     lutris
     mangohud
-    mangojuice
+    #mangojuice # mangohud is declarative so this doesnt work
     macchina
     #marker
     #metronome
