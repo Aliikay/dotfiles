@@ -429,7 +429,10 @@ in {
   };
 
   # Virtual Machines
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.vhostUserPackages = with pkgs; [virtiofsd];
+  };
   virtualisation.waydroid.enable = true;
   #virtualisation.virtualbox.host.enable = true;
   virtualisation.docker.enable = true;
