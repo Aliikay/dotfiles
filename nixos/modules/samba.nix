@@ -17,17 +17,17 @@
       enable = true;
       openFirewall = true;
       settings = {
-        global = {
-          "allow insecure wide links" = "yes";
-        };
+        # global = {
+        #   "allow insecure wide links" = "yes";
+        # };
 
         Public = {
           path = "/home/alikay/Public";
           writable = "true";
           comment = "Alikay's Public Folder";
 
-          "follow symlinks" = "yes";
-          "wide links" = "yes";
+          # "follow symlinks" = "yes";
+          # "wide links" = "yes";
         };
       };
       #settings = ''
