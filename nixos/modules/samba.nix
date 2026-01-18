@@ -21,15 +21,13 @@
           "allow insecure wide links" = "yes";
         };
 
-        share = {
-          "follow symlinks" = "yes";
-          "wide links" = "yes";
-        };
-
         Public = {
           path = "/home/alikay/Public";
           writable = "true";
           comment = "Alikay's Public Folder";
+
+          "follow symlinks" = "yes";
+          "wide links" = "yes";
         };
       };
       #settings = ''
