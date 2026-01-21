@@ -222,7 +222,7 @@ in {
     };
 
     # Razer device control
-    openrazer.enable = true;
+    # openrazer.enable = true;
   };
 
   # Allow programs to find the HIP binary
