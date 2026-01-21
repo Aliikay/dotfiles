@@ -220,6 +220,9 @@ in {
     amdgpu = {
       opencl.enable = true;
     };
+
+    # Razer device control
+    openrazer.enable = true;
   };
 
   # Allow programs to find the HIP binary

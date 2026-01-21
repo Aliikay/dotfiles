@@ -209,6 +209,7 @@
     pkgs.rocmPackages.hipblas
 
     r2modman
+    razergenie
     ripgrep
     recordbox
     #pkgs-unstable.renpy
