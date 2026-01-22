@@ -42,6 +42,7 @@
     #bustle
     cava
     #cavalier
+    cartero
     clapgrep
     #clisp
     celluloid
