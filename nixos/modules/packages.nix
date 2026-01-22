@@ -94,6 +94,7 @@
     #  ];
     #})
     gimp3
+    gradia
 
     gowall # cli to convert images and icons to color themes
     #gradience
