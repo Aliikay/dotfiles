@@ -17,6 +17,7 @@
     aria2
     archipelago
     ani-cli
+    android-tools
     aspell
     aspellDicts.en
     #amberol
