@@ -49,6 +49,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    bs-manager
     sidequest
   ];
 }
