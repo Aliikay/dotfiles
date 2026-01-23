@@ -13,6 +13,11 @@
     defaultRuntime = true; # Register as default OpenXR runtime
   };
 
+  services.wivrn = {
+    enable = true;
+    openFirewall = true;
+  };
+
   programs.alvr = {
     enable = true;
     openFirewall = true;
