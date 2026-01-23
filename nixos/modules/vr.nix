@@ -42,4 +42,8 @@
     STEAMVR_LH_ENABLE = "1";
     XRT_COMPOSITOR_COMPUTE = "1";
   };
+
+  environment.systemPackages = with pkgs; [
+    sidequest
+  ];
 }

@@ -224,7 +224,6 @@
     shortwave
     setzer
     share-preview
-    sidequest
     smile
     #superTuxKart
     showtime
