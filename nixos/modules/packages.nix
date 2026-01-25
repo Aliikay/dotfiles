@@ -211,6 +211,8 @@
     pkgs.rocmPackages.rocblas
     pkgs.rocmPackages.hipblas
 
+    qtscrcpy
+
     r2modman
     # razergenie
     ripgrep
