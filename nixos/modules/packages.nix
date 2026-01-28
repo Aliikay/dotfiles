@@ -83,6 +83,7 @@
 
     foliate
     file-roller
+    filezilla
     footage
     fragments
     fractal
