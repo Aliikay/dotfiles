@@ -14,7 +14,6 @@
 
   environment.systemPackages = with pkgs; [
     waybar
-    alsa-utils
     #fuzzel
     #mako
     #swaybg
@@ -35,6 +34,7 @@
     wev
     cliphist
     slurp
+    sox
     wl-clipboard-rs
     swayidle
     xwayland
