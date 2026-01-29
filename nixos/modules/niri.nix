@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     waybar
+    alsa-utils
     #fuzzel
     #mako
     #swaybg
@@ -33,10 +34,12 @@
     blueberry
     wev
     cliphist
+    slurp
     wl-clipboard-rs
     swayidle
     xwayland
     wl-mirror
+    wl-screenrec
     wdisplays
     openbox # For running xwayland rootful
   ];

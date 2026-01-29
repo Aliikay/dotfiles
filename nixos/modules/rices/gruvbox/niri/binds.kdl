@@ -250,6 +250,8 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
+    Mod+Shift+Alt+S { spawn "sh" "-c" "~/dotfiles/scripts/screen-record.sh"; }
+
     // Dynamic Screencast
     Mod+Semicolon repeat=false { spawn "~/dotfiles/scripts/pick-dynamic-cast-target.sh"; } // Pick interactivly
     Mod+Shift+Semicolon repeat=false { set-dynamic-cast-window; }

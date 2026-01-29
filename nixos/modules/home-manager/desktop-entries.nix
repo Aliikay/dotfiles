@@ -12,7 +12,10 @@
       exec = "alacritty -e /home/alikay/dotfiles/scripts/rebuild.sh";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/nixos-rebuild.png";
-      categories = ["System" "Utility"];
+      categories = [
+        "System"
+        "Utility"
+      ];
     };
 
     splittunnel = {
@@ -21,7 +24,10 @@
       exec = "/home/alikay/dotfiles/scripts/run-apps-with-split-tunnel.sh";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/run-apps-split-tunnel.png";
-      categories = ["System" "Utility"];
+      categories = [
+        "System"
+        "Utility"
+      ];
     };
 
     stream-utilities = {
@@ -29,7 +35,10 @@
       genericName = "System Utility";
       exec = "/home/alikay/dotfiles/scripts/start-stream-utilities.sh";
       terminal = false;
-      categories = ["System" "Utility"];
+      categories = [
+        "System"
+        "Utility"
+      ];
     };
 
     renpy = {
@@ -38,7 +47,10 @@
       exec = "renpy";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/renpy.png";
-      categories = ["Development" "Game"];
+      categories = [
+        "Development"
+        "Game"
+      ];
     };
 
     material-maker = {
@@ -47,7 +59,10 @@
       exec = "material-maker";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/material-maker.png";
-      categories = ["Development" "Game"];
+      categories = [
+        "Development"
+        "Game"
+      ];
     };
 
     decker = {
@@ -56,7 +71,10 @@
       exec = "decker";
       terminal = false;
       icon = "/home/alikay/dotfiles/icons/decker.png";
-      categories = ["Development" "Game"];
+      categories = [
+        "Development"
+        "Game"
+      ];
     };
 
     anime = {
@@ -101,6 +119,15 @@
       exec = "/home/alikay/dotfiles/scripts/launch-picocad.sh";
       terminal = false;
       icon = ./../../../icons/picocad.png;
+      categories = ["AudioVideo"];
+    };
+
+    toggle-screen-record = {
+      name = "Toggle Screen Record";
+      genericName = "System Utility";
+      exec = "/home/alikay/dotfiles/scripts/screen-record.sh";
+      terminal = false;
+      icon = ./../../../icons/screen-record.png;
       categories = ["AudioVideo"];
     };
   };
