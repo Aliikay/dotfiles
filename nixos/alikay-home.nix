@@ -57,6 +57,11 @@
     recursive = true;
   };
 
+  home.file."Music" = {
+    source = ../home-folders/alikay/Music;
+    recursive = true;
+  };
+
   # Git
   programs.git = {
     enable = true;
