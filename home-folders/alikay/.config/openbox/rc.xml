@@ -798,7 +798,7 @@
     </position>
     <size>
       <!-- go in height & width only 50%, one quarter of the screen -->
-      <width>50%</width>
+      <width>70%</width>
       <height>100%</height>
     </size>
     <focus>yes</focus>
@@ -813,13 +813,13 @@
     <shade>no</shade>
     <position force="yes">
       <!-- start pos at (0,0), top-left corner -->
-      <x>50%</x>
+      <x>70%</x>
       <y>0</y>
       <monitor>1</monitor>
     </position>
     <size>
       <!-- go in height & width only 50%, one quarter of the screen -->
-      <width>50%</width>
+      <width>30%</width>
       <height>100%</height>
     </size>
     <focus>no</focus>
