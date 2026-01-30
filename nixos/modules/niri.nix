@@ -41,8 +41,10 @@
     wl-mirror
     wl-screenrec
     wdisplays
-    openbox # For running xwayland rootful
   ];
+
+  # Enable openbox to run with xwayland rootful
+  services.xserver.windowManager.openbox.enable = true;
 
   # Polkit
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
