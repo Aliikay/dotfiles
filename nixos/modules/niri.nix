@@ -33,6 +33,7 @@
     blueberry
     wev
     cliphist
+    obconf
     slurp
     sox
     wl-clipboard-rs
