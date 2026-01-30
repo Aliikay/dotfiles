@@ -101,6 +101,14 @@ window-rule {
     default-window-height { proportion 1.0; }
 }
 
+// Open rootful xwayland sessions max width
+window-rule {
+    match title=r#"Xwayland on .*"# app-id="org.freedesktop.Xwayland"
+
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
 // Scrcpy
 window-rule {
     match app-id="scrcpy" title="SM-S901W"
