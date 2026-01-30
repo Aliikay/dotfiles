@@ -808,7 +808,7 @@
   </application>
 
   <!-- Thunar -->
-  <application name="Thunar">
+  <application name="thunar">
     <decor>yes</decor>
     <shade>no</shade>
     <position force="yes">
