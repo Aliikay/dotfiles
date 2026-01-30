@@ -78,6 +78,7 @@
     eza
     f3d
     fastfetch
+    famistudio
     ffmpeg
     ffmpegthumbnailer
 
