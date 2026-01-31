@@ -87,9 +87,13 @@
   };
 
   # Godot Export templates for current stable and unstable versions
-  #home.file.".local/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}" = {
-  #  source = "${pkgs.godot_4-export-templates-bin}/share/godot/export_templates/${builtins.replaceStrings ["-"] ["."] pkgs.godot_4-export-templates-bin.version}";
-  #};
+  home.file.".local/share/godot/export_templates/${
+    builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-bin.version
+  }" = {
+    source = "${pkgs.godotPackages_4_6.export-templates-bin}/share/godot/export_templates/${
+      builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-bin.version
+    }";
+  };
 
   home.file.".local/share/godot/export_templates/${
     builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
