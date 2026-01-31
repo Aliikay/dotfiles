@@ -87,10 +87,8 @@
   };
 
   # Godot Export templates for current stable and unstable versions
-  home.file.".local/share/godot/export_templates/${
-    builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-mono-bin.version
-  }" = {
-    source = pkgs.godotPackages_4_6.export-templates-mono-bin;
+  home.file.".local/share/godot/export_templates/4.6.stable.mono" = {
+    source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/4.6.stable.mono";
   };
 
   home.file.".local/share/godot/export_templates/${
