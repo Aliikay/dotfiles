@@ -88,6 +88,7 @@ window-rule {
 window-rule {
     // Games
     match app-id="HibernationJam"
+    match app-id="MaskGame"
 
     open-floating true
     default-floating-position x=0 y=240 relative-to="bottom"
