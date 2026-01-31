@@ -90,9 +90,7 @@
   home.file.".local/share/godot/export_templates/${
     builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-mono-bin.version
   }" = {
-    source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/${
-      builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-mono-bin.version
-    }";
+    source = pkgs.godotPackages_4_6.export-templates-mono-bin;
   };
 
   home.file.".local/share/godot/export_templates/${
