@@ -88,10 +88,10 @@
 
   # Godot Export templates for current stable and unstable versions
   home.file.".local/share/godot/export_templates/${
-    builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-bin.version
+    builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-mono-bin.version
   }" = {
-    source = "${pkgs.godotPackages_4_6.export-templates-bin}/share/godot/export_templates/${
-      builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-bin.version
+    source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/${
+      builtins.replaceStrings ["-"] ["."] pkgs.godotPackages_4_6.export-templates-mono-bin.version
     }";
   };
 
