@@ -122,7 +122,6 @@
     gnome-decoder
     gnomecast # chrome cast
 
-    git
     #github-desktop
     gh
     ghostty

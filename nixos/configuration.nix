@@ -149,6 +149,12 @@ in {
   # Filesystem trim
   services.fstrim.enable = true;
 
+  # Git
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+
   # Enable power management
   powerManagement = {
     enable = true;
