@@ -204,6 +204,7 @@
     #pixelorama
     ptyxis
     pipeline
+    pgadmin4
     #pika-backup
     parabolic
     #psensor #deprecated due to lack of maintenence
