@@ -257,6 +257,7 @@
     #trenchbroom
     #trackma
     trackma-gtk
+    tic-80
     tldr
     turtle
     thunderbird
