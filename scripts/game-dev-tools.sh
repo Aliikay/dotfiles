@@ -13,7 +13,8 @@ mullvad split-tunnel add $!
 code & disown
 #mullvad split-tunnel add $!
 
-flatpak run com.gitfiend.GitFiend & disown
+#flatpak run com.gitfiend.GitFiend & disown
+alacritty --working-directory ~/Documents/Unity/UntitledBubbleGame/ -T lazygit -e lazygit
 #mullvad split-tunnel add $!
 
 # Open obsidian
