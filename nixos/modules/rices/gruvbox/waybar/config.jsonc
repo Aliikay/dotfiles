@@ -91,12 +91,12 @@
     "tooltip": false
   },
   "cpu": {
-    "format": "  {usage}%",
+    "format": "   {usage}%",
     "tooltip": false,
     "on-click": "alacritty -e btop"
   },
   "memory": {
-    "format": "  {}%",
+    "format": "   {}%",
     "on-click": "alacritty -e btop"
   },
   "temperature": {
