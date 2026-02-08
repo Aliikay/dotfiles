@@ -148,6 +148,7 @@ window#waybar.hidden {
 #window:hover,
 #pulseaudio:hover,
 #cpu:hover,
+#temperature:hover,
 #memory:hover,
 #power-profiles-daemon:hover,
 #custom-applauncher:hover,
@@ -210,6 +211,13 @@ window#waybar.hidden {
 
 #battery.critical,
 #battery.urgent {
+    color: #1d2021;
+    background-color: #fb4934;
+    border-bottom-color: #cc241d;
+}
+
+#temperature.critical,
+#temperature.urgent {
     color: #1d2021;
     background-color: #fb4934;
     border-bottom-color: #cc241d;

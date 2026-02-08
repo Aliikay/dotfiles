@@ -28,6 +28,7 @@
     //"network",
     "cpu",
     "memory",
+    "temperature",
     "group/batterygroup",
     "group/audio",
     "group/power"
@@ -90,13 +91,18 @@
     "tooltip": false
   },
   "cpu": {
-    "format": "{usage}%  ",
+    "format": " {usage}%",
     "tooltip": false,
     "on-click": "alacritty -e btop"
   },
   "memory": {
-    "format": "{}%  ",
+    "format": " {}%",
     "on-click": "alacritty -e btop"
+  },
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon9/temp1_input",
+    "critical-threshold": 80
   },
   "group/audio": {
     "orientation": "inherit",
