@@ -285,7 +285,7 @@
 
       lsp = {
         nil = {
-          autoArchive = true;
+          nix.flake.autoArchive = true;
         };
       };
     };
