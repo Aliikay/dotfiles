@@ -284,7 +284,7 @@
       colorize_brackets = true;
 
       lsp = {
-        nil = {
+        nil.settings = {
           nix.flake.autoArchive = true;
         };
       };
