@@ -170,6 +170,7 @@
   },
   "battery": {
     "states": {
+      "full": 79,
       "warning": 30,
       "critical": 15
     },
@@ -178,7 +179,9 @@
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
-    "format-icons": ["󱊡", "󱊢", "󱊣"]
+    "format-icons": ["󱊡", "󱊢", "󱊣"],
+
+    "full-at": 79
   },
   "power-profiles-daemon": {
     "format": "{icon}",
