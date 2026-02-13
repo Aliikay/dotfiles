@@ -179,9 +179,7 @@
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
-    "format-icons": ["󱊡", "󱊢", "󱊣"],
-
-    "full-at": 79
+    "format-icons": ["󱊡", "󱊢", "󱊣"]
   },
   "power-profiles-daemon": {
     "format": "{icon}",
