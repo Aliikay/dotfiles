@@ -326,7 +326,8 @@ in {
   nixpkgs.config.permittedInsecurePackages = [
     #"freeimage-unstable-2021-11-01" #Allow for trenchbroom to be installed
     #"dotnet-sdk-6.0.428" #Required for godot_4-mono
-    "mbedtls-2.28.10"
+    #"mbedtls-2.28.10"
+    "quickjs-2025-09-13-2"
     #"python3.12-ecdsa-0.19.1"
     #"python312Packages.ecdsa-0.19.1"
   ];
