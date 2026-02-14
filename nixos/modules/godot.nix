@@ -18,10 +18,11 @@
   # Editor in repos
   editor = with pkgs; [
     #godot_4
-    pkgs-unstable.godot
+    # pkgs-unstable.godot
     #godot_4-mono
-    pkgs-unstable.godot_4-mono
+    # pkgs-unstable.godot_4-mono
     godotPackages_4_6.godot-mono
+    godotPackages_4_6.godot
   ];
 
   # External Tools

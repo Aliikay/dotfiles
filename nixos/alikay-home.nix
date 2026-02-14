@@ -91,13 +91,17 @@
     source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/4.6.stable.mono";
   };
 
-  home.file.".local/share/godot/export_templates/${
-    builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
-  }" = {
-    source = "${pkgs-unstable.godot_4-export-templates-bin}/share/godot/export_templates/${
-      builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
-    }";
+  home.file.".local/share/godot/export_templates/4.6.stable" = {
+    source = "${pkgs.godotPackages_4_6.export-templates-bin}/share/godot/export_templates/4.6.stable";
   };
+
+  # home.file.".local/share/godot/export_templates/${
+  #   builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
+  # }" = {
+  #   source = "${pkgs-unstable.godot_4-export-templates-bin}/share/godot/export_templates/${
+  #     builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
+  #   }";
+  # };
 
   # BTOP
   programs.btop = {
