@@ -29,7 +29,7 @@
     dolphin-emu
 
     # Saturn
-    yabause
+    mednafen
 
     # Wii U
     cemu
