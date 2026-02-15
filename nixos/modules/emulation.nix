@@ -11,7 +11,7 @@
   environment.systemPackages = with pkgs; [
     # NDS
     melonDS
-    xdelta #to patch roms
+    xdelta # to patch roms
 
     # 3ds
     #pkgs-unstable.azahar
@@ -19,7 +19,7 @@
 
     # N64
     flips # patcher for roms
-    mupen64plus #idk tbh
+    mupen64plus # idk tbh
     #pkgs-unstable.parallel-launcher # won't build, has an insecure dependancy last i checked
 
     #PS2
@@ -27,6 +27,9 @@
 
     # Wii/GCN
     dolphin-emu
+
+    # Saturn
+    yabause
 
     # Wii U
     cemu
