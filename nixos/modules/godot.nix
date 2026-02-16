@@ -21,6 +21,9 @@
     # pkgs-unstable.godot
     #godot_4-mono
     # pkgs-unstable.godot_4-mono
+
+    godotPackages_4_5.godot
+
     godotPackages_4_6.godot-mono
     godotPackages_4_6.godot
   ];
