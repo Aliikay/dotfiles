@@ -179,7 +179,8 @@
     "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
-    "format-icons": ["󱊡", "󱊢", "󱊣"]
+    "format-icons": ["󱊡", "󱊢", "󱊣"],
+    "on-click": "alacritty -e batmon"
   },
   "power-profiles-daemon": {
     "format": "{icon}",

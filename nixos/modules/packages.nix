@@ -31,6 +31,7 @@
     base16-shell-preview
     base16-universal-manager
     bat
+    batmon
     #bear
     #blanket
     #blockbench
