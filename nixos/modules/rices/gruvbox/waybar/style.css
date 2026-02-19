@@ -148,6 +148,7 @@ window#waybar.hidden {
 #window:hover,
 #pulseaudio:hover,
 #cpu:hover,
+#battery:hover,
 #temperature:hover,
 #memory:hover,
 #power-profiles-daemon:hover,
