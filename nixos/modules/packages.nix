@@ -21,7 +21,7 @@
     aspell
     aspellDicts.en
     #amberol
-    alpaca
+    #alpaca
     alejandra # nix file formatter
     apostrophe
     #ardour
@@ -177,7 +177,6 @@
     ncdu
     #neofetch
     neovim
-    newelle
     nextcloud-client
     #newsflash
     nil
