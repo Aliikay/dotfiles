@@ -31,6 +31,7 @@
     "dev.vencord.Vesktop"
     #"com.github.muriloventuroso.easyssh"
     "in.srev.guiscrcpy"
+    "com.kristianduske.TrenchBroom"
     #"camp.nook.nookdesktop"
     #"dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" # not in nixpkgs yet
