@@ -177,6 +177,7 @@
     ncdu
     #neofetch
     neovim
+    newsflash
     nextcloud-client
     #newsflash
     nil
