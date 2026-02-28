@@ -1,6 +1,6 @@
 #!/bin/sh
 
-~/Unity/Hub/Editor/6000.0.65f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream -force-vulkan -force-gfx-mt & disown
+xwayland-run.sh ~/Unity/Hub/Editor/6000.0.65f1/Editor/Unity -projectPath ~/Documents/Unity/UntitledBubbleGame/Slipstream -force-vulkan -force-gfx-mt & disown
 mullvad split-tunnel add $!
 
 # The clone
