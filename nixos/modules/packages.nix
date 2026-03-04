@@ -18,6 +18,7 @@
     archipelago
     ani-cli
     android-tools
+    android-studio
     aspell
     aspellDicts.en
     #amberol
