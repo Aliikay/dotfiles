@@ -15,13 +15,13 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-autostart.sh" "--output-volume" "raise" "--max-volume" "150"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-autostart.sh" "--output-volume" "lower" "--max-volume" "150"; }
-    XF86AudioMute        allow-when-locked=true { spawn "swayosd-autostart.sh" "--output-volume" "mute-toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-autostart.sh" "--input-volume" "mute-toggle"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-autostart.sh" "--brightness" "lower"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-autostart.sh" "--brightness" "raise"; }
-    Caps_Lock { spawn "swayosd-autostart.sh" "--caps-lock"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--output-volume" "raise" "--max-volume" "150"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--output-volume" "lower" "--max-volume" "150"; }
+    XF86AudioMute        allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--output-volume" "mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--input-volume" "mute-toggle"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--brightness" "lower"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--brightness" "raise"; }
+    Caps_Lock { spawn "~/dotfiles/scripts/swayosd-autostart.sh" "--caps-lock"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
