@@ -63,6 +63,8 @@
     #decker
     docker
     dotnet-sdk_9
+    dotnet-sdk_10
+    dotnet-sdk_11
     #dialect
     distrobox
     distroshelf
