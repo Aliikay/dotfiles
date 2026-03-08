@@ -28,17 +28,17 @@
   # .config linking
   #home.file.".hm-config" = {
   home.file.".config/niri" = {
-    source = ./niri;
+    source = config.lib.file.mkOutOfStoreSymlink ./niri;
     recursive = true; # link recursively
   };
 
   home.file.".config/waybar" = {
-    source = ./waybar;
+    source = config.lib.file.mkOutOfStoreSymlink ./waybar;
     recursive = true; # link recursively
   };
 
   home.file.".config/wofi" = {
-    source = ./wofi;
+    source = config.lib.file.mkOutOfStoreSymlink ./wofi;
     recursive = true; # link recursively
   };
 
