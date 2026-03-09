@@ -248,7 +248,7 @@ window-rule {
     match title=r#"Mys.*wU"# app-id="org.gnome.Nautilus"
     match title=r#"Desk.*pl.*ad"# app-id="org.gnome.Nautilus"
 
-    block-out-from "screencast"
+    block-out-from "screen-capture"
 }
 
 // Example: block out two password managers from screen capture.
