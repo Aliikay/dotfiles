@@ -198,21 +198,37 @@ in {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable gdm
+  # services.displayManager.gdm = {
+  #   enable = true;
+  #   wayland = true;
+  # };
+
+  # Enable LY
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      bigclock = "en";
+      default_input = "password";
+      clock = "%c";
+      initial_info_text = "core login";
+    };
+  };
+
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.wayland = true;
   services.gnome.gnome-user-share.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
 
   # Enable autologin
-  services.displayManager = {
-    defaultSession = "niri";
-    autoLogin = {
-      enable = true;
-      user = "alikay";
-    };
-  };
+  #   Doesn't work for me since it doesn't unlock the keyring which prevents discord from starting at startup correctly :(
+  # services.displayManager = {
+  #   defaultSession = "niri";
+  #   autoLogin = {
+  #     enable = true;
+  #     user = "alikay";
+  #   };
+  # };
 
   # Hardware
   hardware = {
