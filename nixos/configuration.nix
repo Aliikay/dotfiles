@@ -205,6 +205,15 @@ in {
   services.gnome.gnome-user-share.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
 
+  # Enable autologin
+  services.displayManager = {
+    defaultSession = "niri";
+    autoLogin = {
+      enable = true;
+      user = "alikay";
+    };
+  };
+
   # Hardware
   hardware = {
     graphics = {
