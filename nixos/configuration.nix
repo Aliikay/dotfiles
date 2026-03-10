@@ -486,7 +486,7 @@ in {
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
-  # Making blackbox the default terminal
+  # Making alacritty the default terminal
   programs.nautilus-open-any-terminal = {
     enable = true;
     terminal = "alacritty";

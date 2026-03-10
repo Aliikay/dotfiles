@@ -29,8 +29,8 @@
     #alvr
     appimage-run
     #audio-sharing
-    base16-shell-preview
-    base16-universal-manager
+    #base16-shell-preview
+    #base16-universal-manager
     bat
     batmon
     #bear
@@ -48,8 +48,8 @@
     cartero
     clapgrep
     #clisp
-    celluloid
-    cartridges
+    #celluloid
+    #cartridges
     collision
     #cartero
     commit
@@ -82,14 +82,13 @@
     eza
     f3d
     fastfetch
-    famistudio
     ffmpeg
     ffmpegthumbnailer
 
     foliate
     file-roller
     filezilla
-    footage
+    #footage
     fragments
     fractal
     #gedit
@@ -113,10 +112,10 @@
     nautilus-python
     gnome-software
     gnome-tweaks
-    gnome-sound-recorder
+    #gnome-sound-recorder
     #gnome-maps
     ghex
-    #gnome-graphs
+    gnome-graphs
     #gnome-frog
     gnome-extension-manager
     #gnome-obfuscate
@@ -124,11 +123,10 @@
     zenity
     #gnome-podcasts
     gnome-decoder
-    gnomecast # chrome cast
+    #gnomecast # chrome cast
 
     #github-desktop
     gh
-    ghostty
     halftone
     handbrake
     pkgs-unstable.heroic
@@ -136,14 +134,14 @@
     helvum
     hyfetch
 
-    iconic
+    #iconic
     identity
     impression
     itch
     krita
     keypunch
     komikku
-    kooha
+    #kooha
     killall
 
     #kdePackages.kate
@@ -169,9 +167,9 @@
     macchina
     #marker
     #metronome
-    micro
+    # micro
     monophony
-    mousam
+    #mousam
     #moonlight-qt
     mpv
     mousai
@@ -204,10 +202,10 @@
     prismlauncher
     #popsicle
     #pods
-    pitivi
+    #pitivi
     pinta
     #pixelorama
-    ptyxis
+    #ptyxis
     pipeline
     #pgadmin4-desktopmode
     #pika-backup
@@ -220,10 +218,10 @@
 
     qtscrcpy
 
-    r2modman
+    #r2modman
     # razergenie
     ripgrep
-    recordbox
+    #recordbox
     #pkgs-unstable.renpy
     #rstudio
     #rocm-opencl-icd doesnt exist anymore?
@@ -235,7 +233,7 @@
     share-preview
     smile
     #superTuxKart
-    showtime
+    #showtime
     sqlitebrowser
     #sqlitestudio
     switcheroo
@@ -280,7 +278,6 @@
     pkgs-unstable.winboat
     #winboat
     #wike
-    unityhub
     #x2goclient
     xfce.thunar
     yt-dlp

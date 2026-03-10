@@ -15,7 +15,7 @@
   imports = [
     #inputs.ags.homeManagerModules.default
     ./modules/home-manager/desktop-entries.nix
-    ./modules/home-manager/gnome-extensions.nix
+    #./modules/home-manager/gnome-extensions.nix
     ./modules/home-manager/dconf.nix
     ./modules/home-manager/update-notifier.nix
     #./modules/home-manager/hyprland.nix
@@ -296,9 +296,9 @@
   };
 
   # Micro
-  programs.micro = {
-    enable = true;
-  };
+  # programs.micro = {
+  #   enable = true;
+  # };
 
   # RMPC
   programs.rmpc = {
@@ -345,22 +345,22 @@
   };
 
   # Ghostty
-  programs.ghostty = {
-    enable = true;
-    settings = {
-      font-family = "SpaceMono Nerd Font";
+  # programs.ghostty = {
+  #   enable = true;
+  #   settings = {
+  #     font-family = "SpaceMono Nerd Font";
 
-      window-decoration = "auto";
-      window-padding-y = 5;
-      window-padding-x = 5;
-      window-height = 28;
-      window-width = 105;
+  #     window-decoration = "auto";
+  #     window-padding-y = 5;
+  #     window-padding-x = 5;
+  #     window-height = 28;
+  #     window-width = 105;
 
-      adw-toolbar-style = "flat";
-    };
-    enableFishIntegration = true;
-    installBatSyntax = true;
-  };
+  #     adw-toolbar-style = "flat";
+  #   };
+  #   enableFishIntegration = true;
+  #   installBatSyntax = true;
+  # };
 
   # Kitty
   programs.kitty = {
@@ -406,7 +406,7 @@
   # Variables
   home.sessionVariables = {
     #TERMINAL = "blackbox";
-    EDITOR = "micro";
+    EDITOR = "nvim";
     GIT_EDITOR = "re.sonny.Commit";
   };
 
@@ -416,6 +416,8 @@
     nano = "micro";
     sbcl = "rlwrap sbcl";
     ls = "eza";
+    nivm = "nvim";
+    nv = "nvim";
   };
 
   # This value determines the home Manager release that your

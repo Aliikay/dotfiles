@@ -18,6 +18,7 @@
     #ardour
     #klystrack
     milkytracker
+    famistudio
     musescore
     audacity
     reaper
