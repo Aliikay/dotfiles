@@ -135,8 +135,10 @@ window-rule {
 
 // Open vesktop on vertical monitor
 window-rule {
-    match app-id="vesktop" title=r#".*Discord.*"#
+    match app-id="vesktop" title=r#".*Discord.*"# // Main Window
+    match app-id="vesktop" title="vesktop" // Startup Splash
     open-maximized true
+    open-focused false
     open-on-output "DP-6"
     default-column-width { proportion 1.0; }
     default-window-height { proportion 1.0; }
@@ -159,6 +161,7 @@ window-rule {
 window-rule {
     match app-id="thunderbird"
     open-maximized true
+    open-focused false
     open-on-output "DP-5"
     default-column-width { proportion 1.0; }
     default-window-height { proportion 1.0; }
