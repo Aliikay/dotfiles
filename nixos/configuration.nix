@@ -529,6 +529,14 @@ in {
     enable = true;
     terminal = "alacritty";
   };
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [
+        "alacritty.desktop"
+      ];
+    };
+  };
 
   # Enable man pages
   documentation = {
