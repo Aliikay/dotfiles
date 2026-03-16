@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     # NDS
     melonDS
+    desmume
     xdelta # to patch roms
 
     # 3ds
