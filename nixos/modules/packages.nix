@@ -136,6 +136,7 @@
 
     #iconic
     identity
+    iotop-c
     impression
     itch
     krita
