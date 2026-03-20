@@ -22,7 +22,7 @@
       };
 
       general = {
-        #debug = false;
+        debug = false;
       };
     };
   };
