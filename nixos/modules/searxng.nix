@@ -30,6 +30,10 @@
         query_in_title = true;
       };
 
+      search = {
+        favicon_resolver = "duckduckgo";
+      };
+
       engines = lib.mapAttrsToList (name: value: {inherit name;} // value) {
         "google".disabled = true;
       };
