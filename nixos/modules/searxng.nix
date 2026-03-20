@@ -28,6 +28,7 @@
 
       ui = {
         query_in_title = true;
+        theme_args.simple_style = "black";
       };
 
       search = {
