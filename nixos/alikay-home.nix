@@ -7,8 +7,7 @@
   pkgs-last-stable,
   inputs,
   ...
-}:
-{
+}: {
   # TODO please change the username & home directory to your own
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
