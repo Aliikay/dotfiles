@@ -7,7 +7,8 @@
   pkgs-last-stable,
   inputs,
   ...
-}: {
+}:
+{
   # TODO please change the username & home directory to your own
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
@@ -118,7 +119,7 @@
   # Television
   programs.television = {
     enable = true;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
   };
 
   programs.nix-search-tv = {

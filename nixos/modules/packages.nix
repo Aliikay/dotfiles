@@ -37,7 +37,7 @@
     #blanket
     #blockbench
     #boxbuddy
-    btop
+    btop-rocm
     #blackbox-terminal
     bibata-cursors
     #blender
