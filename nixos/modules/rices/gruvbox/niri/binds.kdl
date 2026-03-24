@@ -297,8 +297,10 @@ binds {
     // Note: the entire command goes as a single argument in the end.
     // Mod+T repeat=false { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    Mod+B repeat=false hotkey-overlay-title="Open a Browser" { spawn "flatpak" "run" "app.zen_browser.zen" "-P" "Default"; }
-    Mod+Shift+B repeat=false { spawn "flatpak" "run" "app.zen_browser.zen" "--ProfileManager"; }
+    // Mod+B repeat=false hotkey-overlay-title="Open a Browser" { spawn "flatpak" "run" "app.zen_browser.zen" "-P" "Default"; }
+    // Mod+Shift+B repeat=false { spawn "flatpak" "run" "app.zen_browser.zen" "--ProfileManager"; }
+    Mod+B repeat=false hotkey-overlay-title="Open a Browser" { spawn "firefox" "-P" "Default"; }
+    Mod+Shift+B repeat=false { spawn "firefox" "--ProfileManager"; }
 
     Mod+E repeat=false hotkey-overlay-title="Open File Browser" { spawn "nautilus" "--new-window"; }
     Mod+Shift+E repeat=false { spawn "alacritty" "-e" "fish" "-C" "yy"; }
