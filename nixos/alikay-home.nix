@@ -115,6 +115,9 @@
   # Atuin
   programs.atuin.enable = true;
 
+  # Nix search
+  programs.nix-search-tv.enableTelevisionIntegration = true;
+
   # Fish
   programs.fish = {
     enable = true;

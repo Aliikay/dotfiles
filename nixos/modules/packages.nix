@@ -259,6 +259,7 @@
 
     texturepacker
     textcompare
+    television
     #trenchbroom
     #trackma
     trackma-gtk
