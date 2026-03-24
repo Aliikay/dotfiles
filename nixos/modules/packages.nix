@@ -86,6 +86,7 @@
     ffmpegthumbnailer
 
     foliate
+    fd
     file-roller
     filezilla
     #footage
