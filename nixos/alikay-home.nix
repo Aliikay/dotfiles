@@ -120,7 +120,11 @@
     enable = true;
     enableFishIntegration = true;
   };
-  programs.nix-search-tv.enableTelevisionIntegration = true;
+
+  programs.nix-search-tv = {
+    enable = true;
+    enableTelevisionIntegration = true;
+  };
 
   # Fish
   programs.fish = {
