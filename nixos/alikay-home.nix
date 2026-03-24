@@ -115,7 +115,11 @@
   # Atuin
   programs.atuin.enable = true;
 
-  # Nix search
+  # Television
+  programs.television = {
+    enable = true;
+    enableFishIntegration = true;
+  };
   programs.nix-search-tv.enableTelevisionIntegration = true;
 
   # Fish
