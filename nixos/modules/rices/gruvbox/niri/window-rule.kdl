@@ -170,6 +170,7 @@ window-rule {
 // Always open browsers maximized
 window-rule {
     match app-id="zen"
+    match app-id="firefox"
 
     default-column-width { proportion 1.0; }
     default-window-height { proportion 1.0; }
@@ -179,6 +180,8 @@ window-rule {
 window-rule {
     match title=r#".*Async TI.*"# app-id="zen"
     match title=r#".*Twilight Imperium 4.*"# app-id="zen"
+    match title=r#".*Async TI.*"# app-id="firefox"
+    match title=r#".*Twilight Imperium 4.*"# app-id="firefox"
     match title=r#".*Discord.*AsyncTI4.*"# app-id="vesktop"
     match title=r#".*TI4 Plans.*"# app-id="obsidian"
 
