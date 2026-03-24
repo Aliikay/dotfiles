@@ -24,7 +24,14 @@ function askYesNo {
 
 cd /home/alikay/dotfiles
 #gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
-zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
+zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix &
+EDITOR_PID=$!
+tv nix-search-tv &
+SEARCH_PID=$!
+
+wait $EDITOR_PID
+kill -2 $SEARCH_PID
+sleep 0.5
 
 # Format the dotfiles with alejandra
 alejandra .
