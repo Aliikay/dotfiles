@@ -17,7 +17,7 @@ nautilus /home/alikay/Documents/Notes/Personal\ Notes/Work & disown
 nautilus /home/alikay/Documents/CV & disown
 
 # Open git
-alacritty --working-directory ~/Documents/CV -c lazygit
+alacritty --working-directory ~/Documents/CV -e lazygit & disown
 
 # Open resume
 setzer & disown
