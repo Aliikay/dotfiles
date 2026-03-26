@@ -106,6 +106,7 @@
   # BTOP
   programs.btop = {
     enable = true;
+    package = pkgs.btop-rocm;
     #settings = {
     #  color_theme = "horizon";
     #  theme_background = false;
