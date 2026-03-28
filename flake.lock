@@ -442,11 +442,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1773112119,
-        "narHash": "sha256-PVGvzM9ZQA5OjeWUVe7sCoCuZ+JNMWGUjlRjv+vAqjc=",
+        "lastModified": 1774691448,
+        "narHash": "sha256-JWofb+tUp7eJ3J6ulX17okAvha52/pMa3Pqm5YEwzw8=",
         "owner": "Aliikay",
         "repo": "nvim",
-        "rev": "a047ee72118ea1c703e8e57377fe312f7972b5fd",
+        "rev": "ada7fc4c83c8dd386751da8c6b8ad63c5fddaf42",
         "type": "github"
       },
       "original": {
