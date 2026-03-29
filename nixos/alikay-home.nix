@@ -72,10 +72,9 @@
     };
   };
 
-  # Mednafen
-  home.file.".mednafen" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/alikay/.mednafen";
-    recursive = true; # link recursively
+  # Mednafen Config
+  home.file.".mednafen/mednafen.cfg" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/alikay/.mednafen/mednafen.cfg";
   };
 
   # MPD
