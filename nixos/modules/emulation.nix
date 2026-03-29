@@ -23,6 +23,9 @@
     mupen64plus # idk tbh
     #pkgs-unstable.parallel-launcher # won't build, has an insecure dependancy last i checked
 
+    #PS1
+    duckstation
+
     #PS2
     pcsx2
 
