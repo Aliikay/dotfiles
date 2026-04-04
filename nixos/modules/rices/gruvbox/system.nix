@@ -18,7 +18,8 @@
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 
-    image = ./desk-gruvbox-material.jpg;
+    #image = ./desk-gruvbox-material.jpg;
+    image = ./e33-painting.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
