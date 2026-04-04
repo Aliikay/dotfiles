@@ -24,13 +24,15 @@ window#waybar {
     opacity: 0.99;
     background: transparent;
     /* background-color: #1e2327; */
-    background-color: rgba(30, 35, 39, 0.99);
+    /*background-color: rgba(30, 35, 39, 0.99);*/
+    background-color: rgba(30, 35, 39, 0);
     /* background-color: rgba(00, 00, 00, 00); */
     /* background-color: #282828; */
     color: #1d2021;
     transition-property: background-color;
     transition-duration: 0.5s;
-    border-bottom-width: 3px;
+    /*border-bottom-width: 3px;*/
+    border-bottom-width: 0;
     border-bottom-color: #151520;
     border-bottom-style: solid;
     border-radius: 16;
