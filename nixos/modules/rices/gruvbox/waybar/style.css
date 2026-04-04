@@ -23,9 +23,9 @@
 window#waybar {
     opacity: 0.99;
     background: transparent;
-    /* background-color: #1e2327; */
+    background-color: rgba(29, 32, 33, 0.99);
     /*background-color: rgba(30, 35, 39, 0.99);*/
-    background-color: rgba(30, 35, 39, 0);
+    /*background-color: rgba(30, 35, 39, 0);*/
     /* background-color: rgba(00, 00, 00, 00); */
     /* background-color: #282828; */
     color: #1d2021;
