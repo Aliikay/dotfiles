@@ -51,6 +51,7 @@
     #celluloid
     #cartridges
     collision
+    ckan # KSP Mod Manager
     #cartero
     commit
     #cubiomes-viewer
