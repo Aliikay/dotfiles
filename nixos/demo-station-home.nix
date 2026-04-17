@@ -29,7 +29,8 @@
 
   # Custom waybar css
   home.file.".config/waybar" = lib.mkForce {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/demo-station/.config/waybar/style.css";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/demo-station/.config/waybar";
+    recursive = true;
   };
 
   # This value determines the home Manager release that your
