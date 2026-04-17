@@ -9,27 +9,15 @@
   ...
 }: {
   # TODO please change the username & home directory to your own
-  home.username = "demo-station";
-  home.homeDirectory = "/home/demo-station";
+  home.username = lib.mkForce "demo-station";
+  home.homeDirectory = lib.mkForce "/home/demo-station";
 
   imports = [
-    #inputs.ags.homeManagerModules.default
-    ./modules/home-manager/desktop-entries.nix
-    #./modules/home-manager/gnome-extensions.nix
-    ./modules/home-manager/dconf.nix
-    ./modules/home-manager/update-notifier.nix
-    #./modules/home-manager/hyprland.nix
+    ./alikay-home.nix
   ];
-
-  # Fish
-  programs.fish = {
-    enable = true;
-  };
 
   # Stylix
   stylix = {
-    enable = true;
-    autoEnable = true;
     image = ../wallpapers/other/slipstream-water.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-sea.yaml";
   };
