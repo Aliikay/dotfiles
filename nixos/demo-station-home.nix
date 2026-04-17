@@ -29,7 +29,7 @@
 
   # Custom waybar css
   home.file.".config/waybar" = lib.mkForce {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/demo-station/.config/waybar";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/alikay/dotfiles/home-folders/demo-station/.config/waybar";
     recursive = true;
   };
 
