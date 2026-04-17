@@ -22,12 +22,9 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-sea.yaml";
   };
 
-  # PATH
-  #home.sessionPath = [ "$HOME/.local/bin" "$HOME/dotfiles/scripts" "$HOME/bin"];
-
-  # Variables
-  home.sessionVariables = {
-    #TERMINAL = "blackbox";
+  home.file."dotfiles" = {
+    source = ../.;
+    recursive = true; # link recursively
   };
 
   # This value determines the home Manager release that your
