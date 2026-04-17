@@ -27,6 +27,11 @@
     recursive = true; # link recursively
   };
 
+  # Custom waybar css
+  home.file.".config/waybar" = lib.mkForce {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/demo-station/.config/waybar/style.css";
+  };
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
