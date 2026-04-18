@@ -14,13 +14,13 @@
     //"sway/workspaces",
     //"hyprland/workspaces",
 
-    "niri/window"
+    "niri/window",
   ],
   "modules-center": [
     "custom/applauncher",
     "custom/clipboard",
     "privacy",
-    "custom/notification"
+    "custom/notification",
   ],
   "modules-right": [
     "tray",
@@ -31,27 +31,27 @@
     "temperature",
     "group/batterygroup",
     "group/audio",
-    "group/power"
+    "group/power",
   ],
   "custom/systemmenu": {
     "format": "󱄅",
-    "on-click": "alacritty -e rebuild.sh"
+    "on-click": "alacritty -e rebuild.sh",
   },
   "niri/workspaces": {
     "on-scroll-up": "niri msg action focus-workspace-up",
     "on-scroll-down": "niri msg action focus-workspace-down",
-    "format": ""
+    "format": "",
   },
   "niri/window": {
     "rewrite": {
-      "(.*) — Zen Browser": "$1"
+      "(.*) — Zen Browser": "$1",
     },
-    "on-click": "niri msg action toggle-overview"
+    "on-click": "niri msg action toggle-overview",
   },
   "custom/applauncher": {
     "format": "〇",
     "on-click": "~/dotfiles/scripts/toggle-launcher.sh",
-    "tooltip": false
+    "tooltip": false,
   },
   "custom/notification": {
     "tooltip": false,
@@ -64,55 +64,55 @@
       "inhibited-notification": " ",
       "inhibited-none": "",
       "dnd-inhibited-notification": " ",
-      "dnd-inhibited-none": " "
+      "dnd-inhibited-none": " ",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "on-click-right": "sleep 0.1 && swaync-client -d -sw",
-    "escape": true
+    "escape": true,
   },
   "tray": {
     "spacing": 5,
-    "tooltip": false
+    "tooltip": false,
   },
   "clock": {
     //"format": "󰅐 {:%H:%M}",
     "format": "󰅐   {:%OI:%M %p}",
     "tooltip-format": "<big>{:%Y %B %e}</big>\n<tt><small>{calendar}</small></tt>",
-    "on-click": "wlogout"
+    "on-click": "wlogout",
   },
   "network": {
     "format-wifi": "  {bandwidthDownBits}",
     "format-ethernet": "  {bandwidthDownBits}",
     "format-disconnected": "󰤮  No Network",
     "interval": 5,
-    "tooltip": false
+    "tooltip": false,
   },
   "cpu": {
     "format": "   {usage}%",
     "tooltip": false,
-    "on-click": "alacritty -e btop"
+    "on-click": "alacritty -e btop",
   },
   "memory": {
     "format": "   {}%",
-    "on-click": "alacritty -e btop"
+    "on-click": "alacritty -e btop",
   },
   "temperature": {
     "format": " {temperatureC}°C",
     "hwmon-path": "/sys/devices/pci0000:00/0000:00:1c.0/0000:ab:00.0/nvme/nvme0/hwmon0/temp1_input",
     "critical-threshold": 70,
-    "on-click": "alacritty -e bash -c 'sudo iotop'"
+    "on-click": "alacritty -e bash -c 'sudo iotop'",
   },
   "group/audio": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 300,
       "children-class": "group-audio-children",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": ["pulseaudio", "mpd"]
+    "modules": ["pulseaudio", "mpd"],
   },
   "pulseaudio": {
     "scroll-step": 5,
@@ -123,7 +123,7 @@
     "nospacing": 1,
     "format-muted": " ",
     "on-click": "pavucontrol",
-    "tooltip": false
+    "tooltip": false,
   },
   "mpd": {
     "format": "{stateIcon} {title} ⸨{songPosition}|{queueLength}⸩ {volume}%",
@@ -132,47 +132,47 @@
     "unknown-tag": "N/A",
     "interval": 2,
     "consume-icons": {
-      "on": " "
+      "on": " ",
     },
     "random-icons": {
       "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
+      "on": " ",
     },
     "repeat-icons": {
-      "on": " "
+      "on": " ",
     },
     "single-icons": {
-      "on": "1 "
+      "on": "1 ",
     },
     "state-icons": {
       "paused": "",
-      "playing": ""
+      "playing": "",
     },
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
     "on-scroll-up": "mpc volume +5",
     "on-scroll-down": "mpc volume -5",
-    "on-click": "mpc toggle"
+    "on-click": "mpc toggle",
   },
   "custom/clipboard": {
     "format": "",
     "on-click": "cliphist list | fuzzel --dmenu --lines 32 --anchor top | cliphist decode | wl-copy",
-    "on-click-right": "zenity --question --title=\"Clear history?\" --text=\"Clear all of the clipboard history?\" && cliphist wipe"
+    "on-click-right": "zenity --question --title=\"Clear history?\" --text=\"Clear all of the clipboard history?\" && cliphist wipe",
   },
   "group/batterygroup": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 300,
       "children-class": "group-battery-children",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": ["battery", "power-profiles-daemon"]
+    "modules": ["battery", "power-profiles-daemon"],
   },
   "battery": {
     "states": {
       "full": 79,
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
@@ -180,7 +180,7 @@
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
     "format-icons": ["󱊡", "󱊢", "󱊣"],
-    "on-click": "alacritty -e batmon"
+    "on-click": "alacritty -e batmon",
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -190,15 +190,15 @@
       "default": " ",
       "performance": " ",
       "balanced": " ",
-      "power-saver": " "
-    }
+      "power-saver": " ",
+    },
   },
   "group/power": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 300,
       "children-class": "group-power-children",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
     "modules": [
       "clock",
@@ -206,32 +206,32 @@
       "custom/quit",
       "custom/lock",
       "custom/sleep",
-      "custom/reboot"
-    ]
+      "custom/reboot",
+    ],
   },
   "custom/quit": {
     "format": "󰗼",
     "tooltip": "Logout",
-    "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s"
+    "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s",
   },
   "custom/lock": {
     "format": "󰍁",
     "tooltip": "Lock",
-    "on-click": "niri msg action power-off-monitors && swaylock"
+    "on-click": "niri msg action power-off-monitors && swaylock",
   },
   "custom/reboot": {
     "format": "󰜉",
     "tooltip": "Reboot",
-    "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot"
+    "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot",
   },
   "custom/power": {
     "format": "⏻",
     "tooltip": "Shutdown",
-    "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now"
+    "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now",
   },
   "custom/sleep": {
     "format": "⏾",
     "tooltip": "Sleep",
-    "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep"
-  }
+    "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep",
+  },
 }
