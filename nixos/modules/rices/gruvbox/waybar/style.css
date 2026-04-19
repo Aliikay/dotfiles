@@ -51,18 +51,20 @@ window#waybar.hidden {
     /* Avoid rounded borders under each workspace name */
     border: none;
     border-radius: 0;
+    transition-property: color;
+    transition-duration: 120ms;
 }
 
 #workspaces button.focused {
-    /* background-color: transparent; */
-}
-#workspace button.hover {
-    /* background-color: transparent; */
+    background-color: transparent;
 }
 
-#workspace button.hover {
+#workspaces button:hover {
     /* color: #1d2021; */
-    color: #d65d0e;
+    /*color: #d65d0e;*/
+    /*color: #ffffff;*/
+    color: #458588;
+    background-color: transparent;
 }
 #workspaces button.active {
     /* color: #1d2021; */
@@ -71,10 +73,6 @@ window#waybar.hidden {
 
 #workspaces button.urgent {
     /* background-color: #ebdbb2; */
-}
-
-#workspaces button {
-    color: #1d2021;
 }
 
 #workspaces button.empty {
