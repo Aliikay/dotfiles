@@ -314,6 +314,10 @@
         HTML = {
           format_on_save = "off";
         };
+
+        CSS = {
+          format_on_save = "off";
+        };
       };
     };
   };
