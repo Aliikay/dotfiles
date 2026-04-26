@@ -318,6 +318,10 @@
         CSS = {
           format_on_save = "off";
         };
+
+        SCSS = {
+          format_on_save = "off";
+        };
       };
     };
   };
