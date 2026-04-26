@@ -309,6 +309,12 @@
           nix.flake.autoArchive = true;
         };
       };
+
+      languages = {
+        HTML = {
+          format_on_save = false;
+        };
+      };
     };
   };
 
