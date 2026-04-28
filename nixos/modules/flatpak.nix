@@ -30,7 +30,7 @@
     "io.github.Foldex.AdwSteamGtk"
     "dev.vencord.Vesktop"
     #"com.github.muriloventuroso.easyssh"
-    "in.srev.guiscrcpy"
+    #"in.srev.guiscrcpy"
     "com.kristianduske.TrenchBroom"
     #"camp.nook.nookdesktop"
     #"dev.gbstudio.gb-studio"
@@ -47,10 +47,10 @@
     "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
-    "space.gaiasky.GaiaSky"
+    #"space.gaiasky.GaiaSky"
     #"net.krafting.HexColordle"
     "io.github.mfat.sshpilot" # not in nixpkgs
-    "as.may.moat" # not in nixpkgs
+    #"as.may.moat" # not in nixpkgs
     "io.github.wartybix.Constrict" # not in nixpkgs
     "com.google.AndroidStudio"
   ];
