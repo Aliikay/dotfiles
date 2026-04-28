@@ -2,7 +2,8 @@
 
 sleep 5
 
-flatpak run dev.vencord.Vesktop --disable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder & disown
+#flatpak run dev.vencord.Vesktop --disable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder & disown
+vesktop --disable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder & disown
 mullvad split-tunnel add $!
 
 steam %U -nochatui -nofriendsui -silent & disown

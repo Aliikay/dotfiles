@@ -272,6 +272,7 @@
     tuba
     upscaler
     valent
+    vesktop
     vlc
     vscode.fhs
     video-trimmer
