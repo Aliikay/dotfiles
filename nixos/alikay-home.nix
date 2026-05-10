@@ -301,6 +301,9 @@
         };
       };
       disable_ai = true;
+      title_bar = {
+        show_sign_in = false;
+      };
       helix_mode = false;
       colorize_brackets = true;
 
