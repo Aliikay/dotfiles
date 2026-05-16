@@ -11,6 +11,7 @@
   # SearXNG is a meta search engine
   services.searx = {
     enable = true;
+    package = pkgs-unstable.searxng;
     #redisCreateLocally = true;
     environmentFile = "/home/alikay/.searxng.env";
     settings = {
