@@ -157,6 +157,15 @@ window-rule {
     default-window-height { proportion 1.0; }
 }
 
+// Open RSS Reader on the laptop screen
+window-rule {
+    match app-id="io.gitlab.news_flash.NewsFlash"
+
+    open-on-output "eDP-1"
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
 // Open thunderbird on main monitor
 window-rule {
     match app-id="thunderbird"
