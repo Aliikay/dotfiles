@@ -150,6 +150,7 @@
       # Load my user functions
       y
       ns
+      nsu
     '';
 
     plugins = [
@@ -184,6 +185,17 @@
         echo \"Entering nix shell with $argv\"
         nix shell nixpkgs#$argv
         echo \"Exiting nix shell with $argv\"
+      end";
+
+      # Nix shell alias
+      nsu = "function nsu
+        if test \"$argv\" = \"\"
+          echo \"Missing argument\"
+          return
+        end
+        echo \"Entering unstable nix shell with $argv\"
+        nix shell nixpkgs/nixos-unstable#$argv
+        echo \"Exiting unstable nix shell with $argv\"
       end";
     };
   };
