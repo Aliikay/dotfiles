@@ -27,6 +27,13 @@ in {
   nixpkgs.overlays = [
     (final: prev: {mpv = prev.mpv.override {scripts = mpvScripts;};})
     (final: prev: {ani-cli = prev.ani-cli.override {mpv = final.mpv;};})
+
+    # Fix steam black screen in xwayland-satellite by disabling gpu compositing
+    (final: prev: {
+      steam = prev.steam.override {
+        extraArgs = "-cef-disable-gpu-compositing";
+      };
+    })
   ];
 
   # Bootloader.
