@@ -29,8 +29,8 @@
     inotify-tools
     killall
     networkmanagerapplet
-    #blueman
-    blueberry
+    blueman
+    #blueberry
     wev
     cliphist
     obconf
@@ -43,6 +43,8 @@
     wl-screenrec
     wdisplays
   ];
+
+  services.blueman.enable = true;
 
   # Enable openbox to run with xwayland rootful
   services.xserver.windowManager.openbox.enable = true;

@@ -8,7 +8,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     nixd # nix
-    nodePackages.typescript-language-server # JS and Typescript
+    typescript-language-server # JS and Typescript
     pkgs-unstable.rust-analyzer # Rust
     pkgs-unstable.rustfmt
     tailwindcss-language-server # CSS

@@ -30,7 +30,7 @@
 
   # External Tools
   tools = with pkgs; [
-    blender-hip
+    blender
     aseprite
     pkgs-unstable.gdtoolkit_4
   ];

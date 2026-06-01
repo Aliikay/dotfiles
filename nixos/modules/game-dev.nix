@@ -10,9 +10,9 @@
 }: {
   environment.systemPackages = with pkgs; [
     unityhub
+    blender
     renderdoc
     aseprite
-    blender-hip
     inkscape
     material-maker
   ];

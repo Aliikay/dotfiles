@@ -133,7 +133,7 @@
     handbrake
     pkgs-unstable.heroic
     #health
-    helvum
+    crosspipe
     hyfetch
 
     #iconic

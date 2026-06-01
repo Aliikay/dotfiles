@@ -1,4 +1,4 @@
 #!/bin/sh
 obs & disown
-helvum & disown
+crosspipe & disown
 shortwave & disown

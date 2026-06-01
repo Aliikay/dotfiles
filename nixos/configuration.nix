@@ -231,7 +231,6 @@ in {
   # Enable gdm
   services.displayManager.gdm = {
     enable = true;
-    wayland = true;
   };
 
   # Enable LY
@@ -289,6 +288,8 @@ in {
   in [
     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
   ];
+
+  nixpkgs.config.rocmSupport = true;
 
   # Configure systemd limits for lutris esync
   systemd.settings.Manager = {
@@ -502,9 +503,6 @@ in {
   virtualisation.podman = {
     enable = true;
   };
-
-  # Enable ADB
-  programs.adb.enable = true;
 
   # Enable Droidcam
   programs.droidcam.enable = true;

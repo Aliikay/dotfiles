@@ -51,7 +51,7 @@
   #  recursive = true; # link recursively
   #};
 
-  # templates
+  # templates use
   home.file."Templates" = {
     source = ../home-folders/alikay/Templates;
     recursive = true;
@@ -369,18 +369,15 @@
   programs.mpv = {
     enable = true;
 
-    package = (
-      pkgs.mpv-unwrapped.wrapper {
-        scripts = with pkgs.mpvScripts; [
-          uosc
-          mpris
-        ];
+    package = pkgs.mpv.override {
+      scripts = with pkgs.mpvScripts; [
+        uosc
+        mpris
+        sponsorblock
+      ];
 
-        mpv = pkgs.mpv-unwrapped.override {
-          waylandSupport = true;
-        };
-      }
-    );
+      # waylandSupport = true;
+    };
 
     config = {
       profile = "high-quality";

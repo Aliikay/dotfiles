@@ -13,12 +13,14 @@
     enable = true;
     musicDirectory = "${config.users.users.alikay.home}/Music/Collection";
     user = "alikay";
-    extraConfig = ''
-      audio_output {
-      	type "pipewire"
-      	name "Pipewire Output"
-      }
-    '';
+    settings = {
+      audio_output = [
+        {
+          type = "pipewire";
+          name = "Pipewire Output";
+        }
+      ];
+    };
 
     #network.listenAddress = "any"; # used for non-localhost connections
     #startWhenNeeded = true;

@@ -2,8 +2,8 @@
   description = "Alikay's System";
 
   inputs = {
-    # Default to the June 2025 branch
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    # Default to the May 2026 branch
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # Latest unstable branch of nixos
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -79,7 +79,7 @@
     # Home-manager, used for managing user configuration
     home-manager = {
       #url = "github:nix-community/home-manager";
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,
