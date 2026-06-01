@@ -59,6 +59,7 @@
     #dart-sass
     decibels
     delta
+    discord
     #decker
     #drawing
     #decker
