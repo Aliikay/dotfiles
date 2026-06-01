@@ -61,6 +61,5 @@
     waybar
     jq
     #pkgs-unstable.niriswitcher
-    walker
   ];
 }

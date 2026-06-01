@@ -140,6 +140,10 @@
     enable = true;
   };
 
+  services.walker = {
+    enable = true;
+  };
+
   services.cliphist = {
     enable = true;
     allowImages = true;
