@@ -10,7 +10,7 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     # NDS
-    melonDS
+    melonds
     desmume
     xdelta # to patch roms
 

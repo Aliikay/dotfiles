@@ -198,7 +198,7 @@
     #pkgs.libwacom
     pkgs.font-awesome
 
-    pkgs.xorg.setxkbmap
+    pkgs.setxkbmap
     pkgs.xkb-switch
     pkgs.xkblayout-state
     pkgs.perl538Packages.FileMimeInfo

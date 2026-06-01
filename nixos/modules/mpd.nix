@@ -11,9 +11,9 @@
   # MPD daemon
   services.mpd = {
     enable = true;
-    musicDirectory = "${config.users.users.alikay.home}/Music/Collection";
     user = "alikay";
     settings = {
+      music_directory = "${config.users.users.alikay.home}/Music/Collection";
       audio_output = [
         {
           type = "pipewire";

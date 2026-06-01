@@ -284,7 +284,7 @@
     #winboat
     #wike
     #x2goclient
-    xfce.thunar
+    thunar
     yt-dlp
     youtube-tui
     yazi
