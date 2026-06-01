@@ -28,7 +28,7 @@
     #"io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
     "io.github.Foldex.AdwSteamGtk"
-    #"dev.vencord.Vesktop"
+    "dev.vencord.Vesktop"
     #"com.github.muriloventuroso.easyssh"
     #"in.srev.guiscrcpy"
     "com.kristianduske.TrenchBroom"
