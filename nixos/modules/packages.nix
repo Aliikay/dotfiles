@@ -276,7 +276,7 @@
     vlc
     vscode.fhs
     video-trimmer
-    wineWowPackages.stable
+    wineWow64Packages.stable
     #warp
     webp-pixbuf-loader
     #(pkgs-unstable.winboat.override { nodejs_24 = pkgs.nodejs_24; })
