@@ -30,7 +30,6 @@
 
   # External Tools
   tools = with pkgs; [
-    blender
     aseprite
     pkgs-unstable.gdtoolkit_4
   ];

@@ -47,7 +47,7 @@
   services.blueman.enable = true;
 
   # Needed for walker
-  services.elephant.enable = true;
+  # services.elephant.enable = true;
 
   # Enable openbox to run with xwayland rootful
   services.xserver.windowManager.openbox.enable = true;

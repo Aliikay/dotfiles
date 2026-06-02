@@ -10,7 +10,7 @@
 }: {
   environment.systemPackages = with pkgs; [
     unityhub
-    blender
+    pkgsRocm.blender
     renderdoc
     aseprite
     inkscape
