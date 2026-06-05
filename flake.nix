@@ -63,7 +63,7 @@
     #};
 
     # stylix to theme the entire system
-    stylix.url = "github:danth/stylix/release-25.11";
+    stylix.url = "github:danth/stylix/release-26.05";
     #stylix.url = "github:danth/stylix";
     #stylix.url = "github:danth/stylix/ffba1f1bab63ea49541f812c72a4fcf305461d67";
 
