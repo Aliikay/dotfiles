@@ -286,6 +286,7 @@
     #wike
     #x2goclient
     thunar
+    varia
     yt-dlp
     youtube-tui
     yazi
