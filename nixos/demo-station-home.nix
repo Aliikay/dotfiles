@@ -18,7 +18,7 @@
 
   # Stylix
   stylix = {
-    image = ../wallpapers/other/slipstream-water.png;
+    image = ../wallpapers/other/slipstream-water-dark.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-sea.yaml";
   };
 
