@@ -1,0 +1,322 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "Roboto Mono Regular";
+    /* font-family: "Space Mono"; */
+    font-size: 10pt;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+* {
+    border: none;
+    opacity: 0.99;
+    border-radius: 16px;
+    min-height: 0;
+    margin: 0.2em 0em 0.2em 0em;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+/* The whole bar */
+window#waybar {
+    opacity: 0.99;
+    background: transparent;
+    background-color: rgba(29, 32, 33, 0.99);
+    /*background-color: rgba(30, 35, 39, 0.99);*/
+    /*background-color: rgba(30, 35, 39, 0);*/
+    /* background-color: rgba(00, 00, 00, 00); */
+    /* background-color: #282828; */
+    color: #1d2021;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    /*border-bottom-width: 3px;*/
+    border-bottom-width: 0;
+    border-bottom-color: #151520;
+    border-bottom-style: solid;
+    border-radius: 16;
+}
+
+window#waybar.hidden {
+    opacity: 0.1;
+}
+
+#workspaces button {
+    padding: 0 0px;
+    color: #1d2021;
+    /* color: #fbf1c7; */
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each workspace name */
+    border: none;
+    border-radius: 0;
+    transition-property: color;
+    transition-duration: 120ms;
+}
+
+#workspaces button.focused {
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    /* color: #1d2021; */
+    /*color: #d65d0e;*/
+    /*color: #ffffff;*/
+    color: #458588;
+    background-color: transparent;
+}
+#workspaces button.active {
+    /* color: #1d2021; */
+    color: #d65d0e;
+}
+
+#workspaces button.urgent {
+    /* background-color: #ebdbb2; */
+}
+
+#workspaces button.empty {
+    /* color: #1d2021; */
+}
+
+/* Each module */
+#custom-systemmenu,
+#clock,
+#battery,
+#power-profiles-daemon,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#custom-screenshot_t,
+#tray,
+#taskbar,
+#privacy,
+#mode,
+#idle_inhibitor,
+#mpd,
+#bluetooth,
+#custom-hyprPicker,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-sleep,
+#custom-power,
+#custom-spotify,
+#custom-weather,
+#language,
+#window,
+#workspaces,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-applauncher,
+#custom-notification,
+#custom-clipboard,
+#custom-menu,
+#custom-weather.default {
+    background-color: #ebdbb2;
+    padding-left: 16px;
+    padding-right: 18px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    color: #1d2021;
+    /* color: #bf616a; */
+    border-radius: 3px;
+    border-bottom-width: 3px;
+    border-bottom-color: #969286;
+    border-bottom-style: solid;
+
+    /* color: #fbf1c7; */
+    /* background-color: #32302f; */
+    /* border-color: #282828; */
+}
+
+/* Hover color */
+#custom-systemmenu:hover,
+#window:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#battery:hover,
+#temperature:hover,
+#memory:hover,
+#power-profiles-daemon:hover,
+#custom-applauncher:hover,
+#custom-notification:hover,
+#custom-clipboard:hover,
+#custom-reboot:hover,
+#custom-quit:hover,
+#custom-lock:hover,
+#custom-sleep:hover,
+#custom-power:hover,
+#clock:hover,
+#mpd:hover {
+    background-color: #98971a;
+    border-color: #b8bb26;
+    color: #fbf1c7;
+    transition-duration: 120ms;
+}
+
+#custom-systemmenu {
+    border-radius: 10 3 3 10;
+    background-color: #83a598;
+    border-color: #458588;
+    color: #fbf1c7;
+}
+
+#workspaces {
+    border-radius: 3 3 3 3;
+}
+
+#privacy {
+    background-color: #fb4934;
+    border-bottom-color: #972023;
+    color: #fdf6e3;
+    padding: 0;
+}
+
+#tray {
+    border-radius: 10 10 10 10;
+}
+
+/* Groups */
+#audio,
+#batterygroup,
+#power {
+    margin: 0;
+    padding: 0;
+}
+
+#temperature {
+    border-radius: 3 3 3 3;
+}
+
+#cpu {
+    border-radius: 10 3 3 10;
+}
+
+#battery {
+    border-radius: 3 3 3 3;
+}
+
+#battery.critical,
+#battery.urgent {
+    color: #1d2021;
+    background-color: #fb4934;
+    border-bottom-color: #cc241d;
+}
+
+#temperature.critical,
+#temperature.urgent {
+    color: #1d2021;
+    background-color: #fb4934;
+    border-bottom-color: #cc241d;
+}
+
+#battery.warning {
+    color: #1d2021;
+    background-color: #fabd2f;
+    border-bottom-color: #d79921;
+}
+
+#group-battery-children {
+    margin: 0;
+    padding: 0;
+}
+
+#window {
+    border-radius: 3 10 10 3;
+}
+
+#custom-menu {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-radius: 10 3 3 10;
+}
+
+#custom-power {
+    background-color: #fb4934;
+    color: #fdf6e3;
+    border-bottom-width: 3px;
+    border-bottom-color: #972023;
+    border-bottom-style: solid;
+    border-radius: 10 0 0 10;
+}
+
+#custom-reboot,
+#custom-lock,
+#custom-sleep,
+#custom-quit {
+    border-radius: 0;
+}
+
+#custom-reboot {
+    border-radius: 0 10 10 0;
+}
+
+#custom-applauncher {
+    border-radius: 10 3 3 10;
+}
+
+#custom-notification {
+    border-radius: 3 10 10 3;
+}
+
+#pulseaudio {
+    border-radius: 3 10 10 3;
+    margin-right: 2;
+}
+
+#clock {
+    font-size: 12pt;
+    font-weight: 800;
+    border-radius: 10px;
+    /* background-color: #14141e; */
+}
+
+#language {
+    color: #1d2021;
+    font-size: 12pt;
+    font-weight: 900;
+}
+
+#network {
+    color: #1d2021;
+    border-radius: 3 10 10 3;
+}
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+#tray {
+    background-color: #282828;
+    border-color: #1d2021;
+}
+
+#tray > .passive {
+    color: #1d2021;
+}
+
+#tray > .needs-attention {
+    color: #1d2021;
+}
+
+#tray .active image {
+    color: #1d2021;
+}
+
+#tray menu {
+    /* color: #1d2021;  */
+}
