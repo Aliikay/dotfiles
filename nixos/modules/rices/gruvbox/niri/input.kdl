@@ -13,7 +13,7 @@ input {
         }
 
         repeat-delay 275
-        repeat-rate 40
+        repeat-rate 50
         // track-layout "global"
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -52,6 +52,10 @@ input {
         // scroll-method "on-button-down"
         // scroll-button 273
         // middle-emulation
+    }
+
+    tablet {
+        map-to-output "DP-5"
     }
 
     // Uncomment this to make the mouse warp to the center of newly focused windows.

@@ -35,6 +35,7 @@ binds {
     // Alt+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
 
     Mod+Q { close-window; }
+    Mod+MouseMiddle { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-or-workspace-down; }

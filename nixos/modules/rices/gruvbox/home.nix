@@ -37,11 +37,6 @@
     recursive = true; # link recursively
   };
 
-  home.file.".config/wofi" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixos/modules/rices/gruvbox/wofi";
-    recursive = true; # link recursively
-  };
-
   # Wpaperd
   services.wpaperd = {
     enable = true;
