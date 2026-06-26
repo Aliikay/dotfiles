@@ -8,22 +8,23 @@
   "position": "left",
   "margin-right": 0,
   "margin-left": 0,
-  //"output": ["eDP-1", "DP-5"],
+  "output": ["eDP-1", "DP-5"],
   "modules-left": [
     "custom/systemmenu",
     "niri/workspaces",
+    "privacy",
+    "niri/window"
     // //"sway/workspaces",
     // //"hyprland/workspaces",
-    "niri/window"
+    // "niri/window"
   ],
-  "modules-center": [
-    "custom/applauncher",
-    "custom/clipboard",
-    "privacy",
-    "custom/notification"
-  ],
+  // "modules-center": [
+  //   // "custom/applauncher",
+  // ],
   "modules-right": [
     "tray",
+    "custom/clipboard",
+    "custom/notification",
     "group/monitors",
     // //"network",
     "cpu",
@@ -35,7 +36,8 @@
   ],
   "custom/systemmenu": {
     "format": "󱄅",
-    "on-click": "alacritty -e rebuild.sh"
+    // "on-click": "alacritty -e rebuild.sh"
+    "on-click": "~/dotfiles/scripts/toggle-launcher.sh"
     // "rotate": 270
   },
   "niri/workspaces": {
@@ -101,47 +103,29 @@
   "cpu": {
     // "format": " {usage}",
     // "tooltip": false,
-    "format": "\n{icon}",
-    "format-icons": [
-      "<span color='#69ff94'>▁</span>", // green
-      "<span color='#2aa9ff'>▂</span>", // blue
-      "<span color='#f8f8f2'>▃</span>", // white
-      "<span color='#f8f8f2'>▄</span>", // white
-      "<span color='#ffffa5'>▅</span>", // yellow
-      "<span color='#ffffa5'>▆</span>", // yellow
-      "<span color='#ff9977'>▇</span>", // orange
-      "<span color='#dd532e'>█</span>" // red
-    ],
+    "format": "",
+    "states": {
+      "critical": 80,
+      "high": 30,
+      "medium": 5,
+      "low": 0
+    },
     "on-click": "alacritty -e btop"
   },
   "memory": {
-    "format": "\n{icon}",
-    "format-icons": [
-      "<span color='#69ff94'>▁</span>", // green
-      "<span color='#2aa9ff'>▂</span>", // blue
-      "<span color='#f8f8f2'>▃</span>", // white
-      "<span color='#f8f8f2'>▄</span>", // white
-      "<span color='#ffffa5'>▅</span>", // yellow
-      "<span color='#ffffa5'>▆</span>", // yellow
-      "<span color='#ff9977'>▇</span>", // orange
-      "<span color='#dd532e'>█</span>" // red
-    ],
+    "format": "",
+    "states": {
+      "critical": 80,
+      "high": 70,
+      "medium": 50,
+      "low": 0
+    },
     "on-click": "alacritty -e btop"
   },
   "temperature": {
-    "format": "\n{icon}",
+    "format": "",
     "hwmon-path": "/sys/devices/pci0000:00/0000:00:1c.0/0000:ab:00.0/nvme/nvme0/hwmon0/temp1_input",
     "critical-threshold": 70,
-    "format-icons": [
-      "<span color='#69ff94'>▁</span>", // green
-      "<span color='#2aa9ff'>▂</span>", // blue
-      "<span color='#f8f8f2'>▃</span>", // white
-      "<span color='#f8f8f2'>▄</span>", // white
-      "<span color='#ffffa5'>▅</span>", // yellow
-      "<span color='#ffffa5'>▆</span>", // yellow
-      "<span color='#ff9977'>▇</span>", // orange
-      "<span color='#dd532e'>█</span>" // red
-    ],
     "on-click": "alacritty -e bash -c 'sudo iotop'"
   },
   "group/audio": {
@@ -164,6 +148,8 @@
     "format-muted": " ",
     "on-click": "pavucontrol",
     "on-click-right": "~/dotfiles/scripts/swayosd-autostart.sh --output-volume mute-toggle",
+    "on-scroll-up": "~/dotfiles/scripts/swayosd-autostart.sh --output-volume raise --max-volume 150",
+    "on-scroll-down": "~/dotfiles/scripts/swayosd-autostart.sh --output-volume lower --max-volume 150",
     "tooltip": false
   },
   "mpd": {
@@ -237,8 +223,8 @@
       "performance": " ",
       "balanced": " ",
       "power-saver": " "
-    },
-    "rotate": 270
+    }
+    // "rotate": 270
   },
   "group/power": {
     "orientation": "inherit",
@@ -260,31 +246,31 @@
   "custom/quit": {
     "format": "󰗼",
     "tooltip": "Logout",
-    "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s",
-    "rotate": 270
+    "on-click": "zenity --question --title=\"Logout?\" --text=\"Logout of the computer?\" && niri msg action quit -s"
+    // "rotate": 270
   },
   "custom/lock": {
     "format": "󰍁",
     "tooltip": "Lock",
-    "on-click": "niri msg action power-off-monitors && swaylock",
-    "rotate": 270
+    "on-click": "niri msg action power-off-monitors && swaylock"
+    // "rotate": 270
   },
   "custom/reboot": {
     "format": "󰜉",
     "tooltip": "Reboot",
-    "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot",
-    "rotate": 270
+    "on-click": "zenity --question --title=\"Reboot?\" --text=\"Reboot the computer?\" && reboot"
+    // "rotate": 270
   },
   "custom/power": {
     "format": "⏻",
     "tooltip": "Shutdown",
-    "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now",
-    "rotate": 270
+    "on-click": "zenity --question --title=\"Shutdown?\" --text=\"Shutdown the computer?\" && shutdown now"
+    // "rotate": 270
   },
   "custom/sleep": {
     "format": "⏾",
     "tooltip": "Sleep",
-    "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep",
-    "rotate": 270
+    "on-click": "zenity --question --title=\"Sleep?\" --text=\"Sleep the computer?\" && systemctl sleep"
+    // "rotate": 270
   }
 }

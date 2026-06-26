@@ -122,8 +122,8 @@ window#waybar box {
 #workspaces button.active {
     /* color: #1d2021; */
     background-color: #d65d0e;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
 
 #workspaces button.urgent {
@@ -139,20 +139,25 @@ window#waybar box {
 }
 
 #battery.critical,
-#battery.urgent {
+#battery.urgent,
+#temperature.critical,
+#temperature.urgent,
+#cpu.critical,
+#memory.critical{
     border-width: 3px;
     border-color: #fb4934;
 }
 
-#temperature.critical,
-#temperature.urgent {
-    border-color: #fb4934;
-}
-
-#battery.warning {
+#battery.warning,
+#cpu.high,
+#memory.high {
     border-color: #fabd2f;
 }
 
+#cpu.medium,
+#memory.medium {
+    border-color: #458588;
+}
 
 #custom-power {
     border-color: #fb4934;
