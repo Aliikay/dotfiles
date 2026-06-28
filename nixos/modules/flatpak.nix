@@ -20,18 +20,18 @@
     "md.obsidian.Obsidian"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
-    "com.gitfiend.GitFiend"
-    "com.google.Chrome"
+    # "com.gitfiend.GitFiend"
+    # "com.google.Chrome"
     #"com.nextcloud.desktopclient.nextcloud"
     #"org.prismlauncher.PrismLauncher"
     #"com.spotify.Client"
     #"io.github.spacingbat3.webcord"
     "us.zoom.Zoom"
-    "io.github.Foldex.AdwSteamGtk"
+    # "io.github.Foldex.AdwSteamGtk"
     #"dev.vencord.Vesktop"
     #"com.github.muriloventuroso.easyssh"
     #"in.srev.guiscrcpy"
-    "com.kristianduske.TrenchBroom"
+    # "com.kristianduske.TrenchBroom"
     #"camp.nook.nookdesktop"
     #"dev.gbstudio.gb-studio"
     "io.github.zen_browser.zen" # not in nixpkgs yet
@@ -44,14 +44,14 @@
     #"io.github.flattool.Warehouse"
     "net.codelogistics.webapps" # not in nixpkgs
     #"io.github.josephmawa.TextCompare" # not in nixpkgs
-    "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
+    # "page.codeberg.libre_menu_editor.LibreMenuEditor" # not in nixpkgs
     #"org.godotengine.GodotSharp" # broken rn for some reason idk why
     "org.kde.kdenlive"
     #"space.gaiasky.GaiaSky"
     #"net.krafting.HexColordle"
     "io.github.mfat.sshpilot" # not in nixpkgs
     #"as.may.moat" # not in nixpkgs
-    "io.github.wartybix.Constrict" # not in nixpkgs
+    # "io.github.wartybix.Constrict" # not in nixpkgs
     "com.google.AndroidStudio"
   ];
 

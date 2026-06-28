@@ -46,6 +46,7 @@
     cava
     #cavalier
     cartero
+    constrict
     clapgrep
     #clisp
     #celluloid
@@ -172,7 +173,7 @@
     #marker
     #metronome
     # micro
-    monophony
+    # monophony
     #mousam
     #moonlight-qt
     mpv
@@ -207,10 +208,10 @@
     #popsicle
     #pods
     #pitivi
-    pinta
+    # pinta
     #pixelorama
     #ptyxis
-    pipeline
+    # pipeline
     #pgadmin4-desktopmode
     #pika-backup
     parabolic
@@ -234,7 +235,7 @@
     scrcpy
     shortwave
     setzer
-    share-preview
+    # share-preview
     smile
     #superTuxKart
     #showtime
@@ -242,7 +243,7 @@
     #sqlitestudio
     switcheroo
     #sysprof
-    speedtest
+    # speedtest
     #tangram
     textpieces
 
@@ -271,7 +272,7 @@
     turtle
     thunderbird
     tuba
-    upscaler
+    # upscaler
     valent
     vesktop
     vlc
