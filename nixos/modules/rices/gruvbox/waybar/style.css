@@ -150,12 +150,13 @@ window#waybar box {
 
 #battery.warning,
 #cpu.high,
-#memory.high {
+#memory.high,
+#temperature.warning{
     border-color: #fabd2f;
 }
 
 #cpu.medium,
-#memory.medium {
+#memory.medium{
     border-color: #458588;
 }
 
