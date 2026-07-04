@@ -284,7 +284,7 @@ binds {
     Mod+T repeat=false hotkey-overlay-title="Open a Terminal" { spawn "alacritty"; }
     // Mod+P repeat=false { spawn "euphonica"; }
     Mod+P repeat=false { spawn "alacritty" "-T" "rmpc - mpd client" "-e" "rmpc"; }
-    Mod+Shift+P repeat=false { spawn "alacritty" "-T" "ncspot - spotify client" "-e" "ncspot"; }
+    Mod+Shift+P repeat=false { spawn "mpc" "toggle"; }
     Mod+S repeat=false { spawn "pavucontrol"; }
     Mod+Period repeat=false { spawn "smile"; }
     Mod+G repeat=false { spawn "alacritty" "-e" "lazygit"; }
