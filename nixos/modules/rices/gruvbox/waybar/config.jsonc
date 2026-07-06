@@ -213,7 +213,7 @@
     "format-charging": "󰂄",
     "format-plugged": "󰂄",
     // "format-alt": "{icon} {time}",
-    "format-full": "󱈑 {capacity}%",
+    "format-full": "󱈑",
     "format-icons": ["󱊡", "󱊢", "󱊣"],
     "on-click": "alacritty -e batmon"
   },
