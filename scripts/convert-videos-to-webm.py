@@ -15,6 +15,7 @@ gtk_enabled = True
 
 
 def main():
+    extra_args = input("Extra ffmpeg args: ")
     print("Select videos folder to convert...")
     paths = get_files()
     paths.reverse()
@@ -59,7 +60,15 @@ def main():
                     continue
 
                 # Output with ffmpeg
-                command = "ffmpeg -i '" + path + "' '" + newPath + "'"
+                command = (
+                    "ffmpeg -i '"
+                    + path
+                    + "' -crf 35 -row-mt 1 -c:a libopus "  # Make the filesizes smaller
+                    + extra_args
+                    + "'"
+                    + newPath
+                    + "'"
+                )
                 print(command)
                 os.system(command)
 
