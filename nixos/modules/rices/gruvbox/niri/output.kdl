@@ -7,6 +7,7 @@
 // Main Monitor
 output "DP-5" {
     mode "2560x1440@169.831"
+    variable-refresh-rate
     position x=0 y=0
 }
 
