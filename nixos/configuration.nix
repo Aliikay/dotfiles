@@ -374,6 +374,7 @@ in {
     #"dotnet-sdk-6.0.428" #Required for godot_4-mono
     #"mbedtls-2.28.10"
     "quickjs-2025-09-13-2"
+    "electron-40.10.5"
     #"python3.12-ecdsa-0.19.1"
     #"python312Packages.ecdsa-0.19.1"
   ];
