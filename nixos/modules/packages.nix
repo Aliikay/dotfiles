@@ -283,7 +283,7 @@
     #warp
     webp-pixbuf-loader
     #(pkgs-unstable.winboat.override { nodejs_24 = pkgs.nodejs_24; })
-    pkgs-unstable.winboat
+    winboat
     #winboat
     #wike
     #x2goclient
