@@ -436,7 +436,13 @@
 
   # Helix
   programs.helix = {
-    enable = true;
+    enable = false; # Don't want home manager to control this in Nix, use the config file instead
+  };
+
+  # Helix config
+  home.file.".config/helix" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/alikay/helix";
+    recursive = true; # link recursively
   };
 
   # PATH
