@@ -137,6 +137,7 @@
     pkgs-unstable.heroic
     #health
     crosspipe
+    helix
     hyfetch
 
     #iconic
