@@ -19,7 +19,7 @@
     #klystrack
     milkytracker
     famistudio
-    musescore
+    #musescore
     audacity
     reaper
     schismtracker

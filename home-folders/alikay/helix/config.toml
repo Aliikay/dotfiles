@@ -1,2 +1,22 @@
-theme = "stylix"
+theme = "gruvbox"
 
+# Editor
+[editor]
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+# Keyboard Shortcuts
+[keys.normal]
+C-s = ":w"
+C-p = "file_picker_in_current_directory"
+C-c = "yank_to_clipboard"
+C-x = ["yank_to_clipboard", "delete_selection"]
+C-v = "paste_clipboard_after"
+"C-/" = ["toggle_comments", "move_line_down", "goto_first_nonwhitespace"]

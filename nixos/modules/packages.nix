@@ -193,7 +193,7 @@
     nvtopPackages.full
     libnotify
     nix-tree
-    onlyoffice-desktopeditors
+    #onlyoffice-desktopeditors
     #obsidian
     #obs-studio
     paperwork
