@@ -445,6 +445,12 @@
     recursive = true; # link recursively
   };
 
+  # Emacs Config
+  home.file.".config/emacs" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/alikay/emacs";
+    recursive = true;
+  };
+
   # PATH
   home.sessionPath = [
     "$HOME/.local/bin"
