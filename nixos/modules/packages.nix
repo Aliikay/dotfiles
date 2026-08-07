@@ -75,7 +75,7 @@
     dust
     dysk
     #enter-tex
-    emacs-gtk
+    emacs-pgtk
     exhibit
     eloquent
     euphonica

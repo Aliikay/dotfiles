@@ -1,0 +1,6 @@
+# Makes this gitignore a whitelist, only files included here will be committed!
+*
+
+!.gitignore
+!init.el
+!early-init.el

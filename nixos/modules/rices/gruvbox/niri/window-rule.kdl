@@ -133,6 +133,13 @@ window-rule {
     }
 }
 
+// emacs
+window-rule {
+    match app-id="Emacs"
+
+    default-window-height { proportion 1.0; }
+}
+
 // Open vesktop on vertical monitor
 window-rule {
     match app-id="vesktop" title=r#".*Discord.*"# // Main Window
