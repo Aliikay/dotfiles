@@ -445,6 +445,33 @@
     recursive = true; # link recursively
   };
 
+  # Emacs
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+    extraPackages = epkgs: [
+      (epkgs.treesit-grammars.with-grammars (
+        grammars:
+          with grammars; [
+            tree-sitter-python
+            tree-sitter-typescript
+            tree-sitter-dockerfile
+            tree-sitter-nix
+            tree-sitter-bash
+            tree-sitter-css
+            tree-sitter-elisp
+            tree-sitter-html
+            tree-sitter-javascript
+            tree-sitter-json
+            tree-sitter-rust
+            tree-sitter-toml
+            tree-sitter-tsx
+            tree-sitter-yaml
+          ]
+      ))
+    ];
+  };
+
   # Emacs Config
   home.file.".config/emacs" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home-folders/alikay/emacs";

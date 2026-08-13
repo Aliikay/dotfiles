@@ -162,6 +162,7 @@
           ./nixos/modules/godot.nix
           ./nixos/modules/game-dev.nix
           ./nixos/modules/mpd.nix
+          ./nixos/modules/emacs.nix
           ./nixos/modules/lsp.nix
           ./nixos/modules/emulation.nix
           ./nixos/modules/audio-production.nix
