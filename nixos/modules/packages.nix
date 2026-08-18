@@ -207,6 +207,7 @@
     protonplus
     protontricks
     prismlauncher
+    powertop # This *DOESN'T* enable the service (that's separate) but it does allow the powertop to be run in the terminal
     #popsicle
     #pods
     #pitivi

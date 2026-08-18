@@ -166,6 +166,12 @@ in {
   powerManagement = {
     enable = true;
     powertop.enable = true;
+    powertop.postStart = ''
+      KEYBOARD="/sys/bus/usb/devices/3-5.4.4.4/power/control";
+      if [ -f "$KEYBOARD" ]; then
+          echo "on" > "/sys/bus/usb/devices/3-5.4.4.4/power/control";
+      fi
+    '';
   };
 
   # Enable ThermalD
