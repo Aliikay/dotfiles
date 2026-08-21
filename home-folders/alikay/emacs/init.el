@@ -26,6 +26,8 @@
 (setq-default cursor-in-non-selected-windows nil) ; Don't draw cursors in non selected windows
 (setq highlight-nonselected-windows nil) ; Don't do selection highlighting in non focused windows
 (global-goto-address-mode) ; Make URL's links
+(setq word-wrap t)
+(setq wrap-prefix (make-string 30 ?\s))
 
 ;   Line Numbers
 (column-number-mode)
