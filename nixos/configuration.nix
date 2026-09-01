@@ -105,8 +105,8 @@ in {
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  # time.timeZone = "America/Edmonton";
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Edmonton";
+  # time.timeZone = "Europe/Amsterdam";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
