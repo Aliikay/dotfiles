@@ -488,7 +488,7 @@
   # Variables
   home.sessionVariables = {
     #TERMINAL = "blackbox";
-    EDITOR = "nvim";
+    EDITOR = "emacs -nw";
     GIT_EDITOR = "re.sonny.Commit";
   };
 
@@ -500,6 +500,7 @@
     ls = "eza";
     nivm = "nvim";
     nv = "nvim";
+    em = "emacs -nw";
   };
 
   # This value determines the home Manager release that your

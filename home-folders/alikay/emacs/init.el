@@ -32,12 +32,13 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
 ;   Line Numbers
-(column-number-mode)
+; (column-number-mode)
 (global-display-line-numbers-mode 1)
 (dolist (mode '(org-mode-hook ; Don't display line numbers in the following modes
 		term-mode-hook
 		shell-mode-hook
-		eshell-mode-hook))
+		eshell-mode-hook
+		help-mode-hook))
   (add-hook mode (lambda() (display-line-numbers-mode 0))))
 
 ; Prevent filesystem clutter
@@ -88,25 +89,6 @@
   :config
   (setq which-key-idle-delay 2))
 
-; Ivy completion
-(use-package ivy
-  :diminish
-  :bind (("C-s" . swiper)
-	 :map ivy-minibuffer-map
-	 ("TAB" . ivy-alt-done)
-	 ("C-l" . ivy-alt-done)
-	 ("C-j" . ivy-next-line)
-	 ("C-k" . ivy-previous-line)
-	 :map ivy-switch-buffer-map
-	 ("C-k" . ivy-previous-line)
-	 ("C-l" . ivy-done)
-	 ("C-d" . ivy-switch-buffer-kill)
-	 :map ivy-reverse-i-search-map
-	 ("C-k" . ivy-previous-line)
-	 ("C-d" . ivy-reverse-i-search-kill))
-  :config
-  (ivy-mode 1))
-
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
 
@@ -135,6 +117,25 @@
 (use-package doom-modeline ; Fancy modeline
   :ensure t
   :init (doom-modeline-mode 1))
+
+; Ivy completion
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+	 :map ivy-minibuffer-map
+	 ("TAB" . ivy-alt-done)
+	 ("C-l" . ivy-alt-done)
+	 ("C-j" . ivy-next-line)
+	 ("C-k" . ivy-previous-line)
+	 :map ivy-switch-buffer-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-l" . ivy-done)
+	 ("C-d" . ivy-switch-buffer-kill)
+	 :map ivy-reverse-i-search-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-d" . ivy-reverse-i-search-kill))
+  :config
+  (ivy-mode 1))
 
 ;; -- Custom --
 (custom-set-variables
