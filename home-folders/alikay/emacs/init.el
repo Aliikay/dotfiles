@@ -29,6 +29,8 @@
 (setq word-wrap t)
 (setq wrap-prefix (make-string 30 ?\s))
 
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
+
 ;   Line Numbers
 (column-number-mode)
 (global-display-line-numbers-mode 1)
@@ -86,6 +88,25 @@
   :config
   (setq which-key-idle-delay 2))
 
+; Ivy completion
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+	 :map ivy-minibuffer-map
+	 ("TAB" . ivy-alt-done)
+	 ("C-l" . ivy-alt-done)
+	 ("C-j" . ivy-next-line)
+	 ("C-k" . ivy-previous-line)
+	 :map ivy-switch-buffer-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-l" . ivy-done)
+	 ("C-d" . ivy-switch-buffer-kill)
+	 :map ivy-reverse-i-search-map
+	 ("C-k" . ivy-previous-line)
+	 ("C-d" . ivy-reverse-i-search-kill))
+  :config
+  (ivy-mode 1))
+
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
 
@@ -125,7 +146,9 @@
    '("f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
      default))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(base16-theme doom-modeline doom-themes gruvbox-theme ivy lsp-ui
+		  magit-section nix-ts-mode rainbow-delimiters)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -14,6 +14,7 @@
     autoEnable = true;
 
     targets.waybar.enable = false;
+    targets.emacs.enable = false;
 
     iconTheme = {
       enable = true;
