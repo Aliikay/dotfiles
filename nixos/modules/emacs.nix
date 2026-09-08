@@ -8,4 +8,7 @@
   inputs,
   ...
 }: {
+  environment.systemPackages = with pkgs; [
+    discount # Markdown support
+  ];
 }
