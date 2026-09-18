@@ -7,7 +7,8 @@
   pkgs-last-stable,
   inputs,
   ...
-}: {
+}:
+{
   # TODO please change the username & home directory to your own
   home.username = "alikay";
   home.homeDirectory = "/home/alikay";
@@ -84,21 +85,21 @@
   #};
 
   # Link firejail to home, for itch launcher
-  home.file.".config/itch/prereqs/firejail-386/firejail" = {
-    source = "${pkgs.firejail}/bin/firejail";
-  };
-  home.file.".config/itch/prereqs/firejail-amd64/firejail" = {
-    source = "${pkgs.firejail}/bin/firejail";
-  };
+  # home.file.".config/itch/prereqs/firejail-386/firejail" = {
+  #   source = "${pkgs.firejail}/bin/firejail";
+  # };
+  # home.file.".config/itch/prereqs/firejail-amd64/firejail" = {
+  #   source = "${pkgs.firejail}/bin/firejail";
+  # };
 
-  # Godot Export templates for current stable and unstable versions
-  home.file.".local/share/godot/export_templates/4.6.stable.mono" = {
-    source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/4.6.stable.mono";
-  };
+  # # Godot Export templates for current stable and unstable versions
+  # home.file.".local/share/godot/export_templates/4.6.stable.mono" = {
+  #   source = "${pkgs.godotPackages_4_6.export-templates-mono-bin}/share/godot/export_templates/4.6.stable.mono";
+  # };
 
-  home.file.".local/share/godot/export_templates/4.6.stable" = {
-    source = "${pkgs.godotPackages_4_6.export-templates-bin}/share/godot/export_templates/4.6.stable";
-  };
+  # home.file.".local/share/godot/export_templates/4.6.stable" = {
+  #   source = "${pkgs.godotPackages_4_6.export-templates-bin}/share/godot/export_templates/4.6.stable";
+  # };
 
   # home.file.".local/share/godot/export_templates/${
   #   builtins.replaceStrings ["-"] ["."] pkgs-unstable.godot_4-export-templates-bin.version
@@ -451,23 +452,22 @@
     package = pkgs.emacs-pgtk;
     extraPackages = epkgs: [
       (epkgs.treesit-grammars.with-grammars (
-        grammars:
-          with grammars; [
-            tree-sitter-python
-            tree-sitter-typescript
-            tree-sitter-dockerfile
-            tree-sitter-nix
-            tree-sitter-bash
-            tree-sitter-css
-            tree-sitter-elisp
-            tree-sitter-html
-            tree-sitter-javascript
-            tree-sitter-json
-            tree-sitter-rust
-            tree-sitter-toml
-            tree-sitter-tsx
-            tree-sitter-yaml
-          ]
+        grammars: with grammars; [
+          tree-sitter-python
+          tree-sitter-typescript
+          tree-sitter-dockerfile
+          tree-sitter-nix
+          tree-sitter-bash
+          tree-sitter-css
+          tree-sitter-elisp
+          tree-sitter-html
+          tree-sitter-javascript
+          tree-sitter-json
+          tree-sitter-rust
+          tree-sitter-toml
+          tree-sitter-tsx
+          tree-sitter-yaml
+        ]
       ))
     ];
   };

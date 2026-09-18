@@ -111,7 +111,8 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 (use-package lsp-ui :commands lsp-ui-mode)
-(setq read-process-output-max (* 1024 1024)) ; Allow LSP to read a sensible amount of data
+(setq read-process-output-max (* 4 1024 1024)) ; Allow LSP to read a sensible amount of data
+(setq gc-cons-threshold 100000000)
 
 (use-package doom-modeline ; Fancy modeline
   :ensure t
@@ -121,6 +122,16 @@
 (use-package magit
    :ensure t
    :bind ("C-x g" . magit))
+
+; Counsel
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history))
+  :config
+  (setq ivy-initial-inputs-alist nil))
 
 ; Ivy completion
 (use-package ivy
@@ -142,16 +153,6 @@
 
 (use-package ivy-rich
   :init (ivy-rich-mode 1))
-
-; Counsel
-(use-package counsel
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history))
-  :config
-  (setq ivy-initial-inputs-alist nil))
 
 ; Swiper search
 (use-package swiper
