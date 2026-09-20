@@ -460,6 +460,25 @@ in {
     ];
   };
 
+  # Allow normal users to run iotop without a sudo password
+  security.sudo.extraRules = [
+    {
+      users = [
+        "alikay"
+        "alikay-alt"
+      ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/iotop";
+          options = [
+            "SETENV"
+            "NOPASSWD"
+          ];
+        }
+      ];
+    }
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
