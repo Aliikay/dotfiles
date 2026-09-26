@@ -2,7 +2,8 @@
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
+			 ("elpa" . "https://elpa.gnu.org/packages/")
+			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -37,6 +38,7 @@
 		term-mode-hook
 		shell-mode-hook
 		eshell-mode-hook
+		eat-mode-hook
 		help-mode-hook))
   (add-hook mode (lambda() (display-line-numbers-mode 0))))
 
@@ -91,6 +93,14 @@
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
 
+; eat for using TUI's in eshell
+(use-package eat
+  :ensure t
+  :config
+  (eat-eshell-mode)
+  (setq eshell-visual-commands '()))
+
+; LSP Support
 (use-package lsp-mode
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
@@ -170,9 +180,7 @@
    '("f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
      default))
- '(package-selected-packages
-   '(counsel doom-modeline doom-themes gruvbox-theme ivy-rich lsp-ui
-	     magit magit-section nix-ts-mode rainbow-delimiters)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
