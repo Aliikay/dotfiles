@@ -174,7 +174,8 @@
           # Current rice
           #./nixos/modules/rices/original/system.nix
           #./nixos/modules/rices/diinki-retrofuture/system.nix
-          ./nixos/modules/rices/gruvbox/system.nix
+          #./nixos/modules/rices/gruvbox/system.nix
+          ./nixos/modules/rices/frutiger-aero/system.nix
 
           inputs.flake-programs-sqlite.nixosModules.programs-sqlite
           inputs.stylix.nixosModules.stylix

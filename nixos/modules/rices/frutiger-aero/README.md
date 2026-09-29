@@ -1,0 +1,2 @@
+Gruvbox theme, made for Niri
+Waybar config is based on the setup at https://github.com/q9063077988-cmd/Niri

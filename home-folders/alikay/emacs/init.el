@@ -14,7 +14,7 @@
 ;; -- Basic Setup --
 (tool-bar-mode -1) ; Hide the toolbar
 (menu-bar-mode 1) ; Show the menubar (File, Edit, etc...)
-;(tab-bar-mode 1) ; Show tabs bar at the top
+; (tab-bar-mode 1) ; Show tabs bar at the top
 ;(setq tab-bar-show 1) ; Only show tabs when > 1 tab is open
 (setq inhibit-startup-message t) ; Hide the splash screen
 (setq visible-bell t) ; Flash the top and bottom of the screen when the bell would ring
@@ -22,7 +22,7 @@
 (setq-default cursor-type 'bar) ; Make the cursor a bar instead of a block
 (setq sentence-end-double-space nil) ; Prevent adding two spaces after periods
 (setq delete-by-moving-to-trash t) ; Delete moves to trash instead of deleting
-;(pixel-scroll-mode 1) ; Make scrolling pixel based instead of character based
+;(pixel-scroll-precision-mode 1) ; Make scrolling pixel based instead of character based
 (setq-default cursor-in-non-selected-windows nil) ; Don't draw cursors in non selected windows
 (setq highlight-nonselected-windows nil) ; Don't do selection highlighting in non focused windows
 (global-goto-address-mode) ; Make URL's links
@@ -31,7 +31,7 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
-;   Line Numbers
+; Line Numbers
 ; (column-number-mode)
 (global-display-line-numbers-mode 1)
 (dolist (mode '(org-mode-hook ; Don't display line numbers in the following modes
@@ -128,10 +128,24 @@
   :ensure t
   :init (doom-modeline-mode 1))
 
+; Projectile
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  ;(when (file-directory-p "~/Projects/Code")
+  ;  (setq projectile-project-search-path '("~/Projects/Code")))
+  (setq projectile-switch-project-action #'projectile-dired))
+(use-package counsel-projectile
+  :config (counsel-projectile-mode))
+
 ; Magit
 (use-package magit
    :ensure t
-   :bind ("C-x g" . magit))
+   :bind (("C-x g" . magit)))
 
 ; Counsel
 (use-package counsel
@@ -168,7 +182,32 @@
 (use-package swiper
   :ensure
   :config
-  (global-set-key (kbd "C-s") 'swiper)) 
+  (global-set-key (kbd "C-s") 'swiper))
+
+; Fancy startup screen
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  :init
+  (setq dashboard-startupify-list '(;dashboard-insert-banner
+                                  dashboard-insert-newline
+                                  ;dashboard-insert-banner-title
+                                  dashboard-insert-newline
+                                  dashboard-insert-navigator
+                                  dashboard-insert-newline
+                                  dashboard-insert-init-info
+                                  dashboard-insert-items
+                                  dashboard-insert-newline))
+                                  ;dashboard-insert-footer))
+  (setq dashboard-items '((recents   . 5)
+                          ;(bookmarks . 5)
+                          (projects  . 5)
+                          (agenda    . 5)))
+                          ;(registers . 5)))
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-center-content t)
+  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard"))
 
 ;; -- Custom --
 (custom-set-variables
@@ -180,6 +219,10 @@
    '("f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
      "d80952c58cf1b06d936b1392c38230b74ae1a2a6729594770762dc0779ac66b7"
      default))
+ '(mouse-wheel-progressive-speed nil)
+ '(mouse-wheel-scroll-amount
+   '(5 ((shift) . hscroll) ((meta)) ((control meta) . global-text-scale)
+       ((control) . text-scale)))
  '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
