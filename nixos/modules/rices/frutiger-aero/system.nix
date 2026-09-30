@@ -20,7 +20,8 @@
 
     #image = ./desk-gruvbox-material.jpg;
     #image = ./e33-painting.png;
-    image = ./retro-pc-wallpaper.png;
+    #image = ./retro-pc-wallpaper.png;
+    image = ./perfect_hue_66.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
