@@ -24,7 +24,8 @@ function askYesNo {
 
 cd /home/alikay/dotfiles
 #gnome-text-editor -s nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix
-zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix &
+#zeditor -n -w . nixos/modules/packages.nix nixos/configuration.nix flake.nix nixos/alikay-home.nix nixos/guest-home.nix &
+emacs --maximized flake.nix nixos/configuration.nix nixos/alikay-home.nix nixos/modules/packages.nix &
 EDITOR_PID=$!
 tv nix-search-tv &
 SEARCH_PID=$!

@@ -115,7 +115,7 @@
 	 (js-mode . lsp)
 	 (python-mode . lsp)
 	 (rust-ts-mode . lsp)
-	 (nix-ts-mode . lsp)
+	 ; (nix-ts-mode . lsp) ; Disabled because nix eval uses 10gb of memory and then coredumps
 	 
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
@@ -135,6 +135,9 @@
   :custom ((projectile-completion-system 'ivy))
   :bind-keymap
   ("C-c p" . projectile-command-map)
+  :bind (("C-p" . 'projectile-find-file) ; Make C-p find files (i will never use this for moving lines lol)
+         ("C-S-f" . 'projectile-search-regexp-review)
+	 ("C-S-s" . 'projectile-search-regexp-review))
   :init
   ;(when (file-directory-p "~/Projects/Code")
   ;  (setq projectile-project-search-path '("~/Projects/Code")))

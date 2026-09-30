@@ -29,12 +29,12 @@
   # .config linking
   #home.file.".hm-config" = {
   home.file.".config/niri" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixos/modules/rices/gruvbox/niri";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixos/modules/rices/frutiger-aero/niri";
     recursive = true; # link recursively
   };
 
   home.file.".config/waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixos/modules/rices/gruvbox/waybar";
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nixos/modules/rices/frutiger-aero/waybar";
     recursive = true; # link recursively
   };
 
