@@ -135,9 +135,9 @@ window-rule {
 
 // emacs
 window-rule {
-    match app-id="Emacs"
+    match app-id="emacs"
 
-    default-window-height { proportion 1.0; }
+        default-window-height { proportion 1.0; }
 }
 
 // Open vesktop on vertical monitor
@@ -290,4 +290,12 @@ window-rule {
 window-rule {
     geometry-corner-radius 0
     clip-to-geometry true
+}
+
+// Make all transparent windows have blurred backgrounds
+window-rule {
+    background-effect {
+         xray true
+         blur true
+    }
 }

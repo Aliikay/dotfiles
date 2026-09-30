@@ -417,7 +417,7 @@
     package = pkgs.alacritty-graphics;
     settings = {
       window = {
-        opacity = lib.mkForce 0.4;
+        opacity = lib.mkForce 0.7;
         blur = true;
         decorations = "None";
         padding = {
@@ -470,6 +470,8 @@
             tree-sitter-toml
             tree-sitter-tsx
             tree-sitter-yaml
+            tree-sitter-kdl
+            tree-sitter-c-sharp
           ]
       ))
     ];

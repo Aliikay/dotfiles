@@ -19,7 +19,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
 
     #image = ./desk-gruvbox-material.jpg;
-    image = ./e33-painting.png;
+    #image = ./e33-painting.png;
+    image = ./retro-pc-wallpaper.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";

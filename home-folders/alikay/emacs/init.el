@@ -31,6 +31,10 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
+; Make frames have transparent backgrounds - pretty!
+(set-frame-parameter (selected-frame) 'alpha-background 85)
+(add-to-list 'default-frame-alist '(alpha-background 85 85))
+
 ; Line Numbers
 ; (column-number-mode)
 (global-display-line-numbers-mode 1)
@@ -92,6 +96,9 @@
 
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
+
+(use-package kdl-mode ; Major mode for editing .kdl files
+  :mode "\\.kdl\\'")
 
 ; eat for using TUI's in eshell
 (use-package eat
