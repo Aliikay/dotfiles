@@ -1,3 +1,6 @@
+/* Variables */
+@define-color hello #000000;
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Space Mono";
@@ -6,8 +9,13 @@
     font-weight: 800;
 }
 
+window#waybar {
+    opacity: 0.5;
+}
+
 window#waybar box {
     padding-right: 1px;
+    background-color: @hello;
 }
 
 /* Each module */
@@ -117,7 +125,7 @@ window#waybar box {
     /* color: #1d2021; */
     /*color: #d65d0e;*/
     /*color: #ffffff;*/
-    background-color: #000000;
+    background-color: #ffffff;
 }
 #workspaces button.active {
     /* color: #1d2021; */

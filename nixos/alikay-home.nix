@@ -417,6 +417,8 @@
     package = pkgs.alacritty-graphics;
     settings = {
       window = {
+        opacity = lib.mkForce 0.4;
+        blur = true;
         decorations = "None";
         padding = {
           x = 10;
