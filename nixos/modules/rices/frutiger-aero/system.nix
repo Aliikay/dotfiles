@@ -16,12 +16,13 @@
     # Theme colors can also be declared manually, and themes can be found with nix build nixpkgs#base16-schemes -> cd result -> nix run nixpkgs#eza -- --tree
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/uwunicorn.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-ocean.yaml";
 
     #image = ./desk-gruvbox-material.jpg;
     #image = ./e33-painting.png;
     #image = ./retro-pc-wallpaper.png;
-    image = ./perfect_hue_66.png;
+    image = ./perfect_hue_92.png;
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";

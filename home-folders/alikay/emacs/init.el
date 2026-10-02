@@ -13,7 +13,8 @@
 (setq use-package-always-ensure t)
 ;; -- Basic Setup --
 (tool-bar-mode -1) ; Hide the toolbar
-(menu-bar-mode 1) ; Show the menubar (File, Edit, etc...)
+(menu-bar-mode -1) ; Show the menubar (File, Edit, etc...)
+(scroll-bar-mode -1)
 ; (tab-bar-mode 1) ; Show tabs bar at the top
 ;(setq tab-bar-show 1) ; Only show tabs when > 1 tab is open
 (setq inhibit-startup-message t) ; Hide the splash screen
@@ -56,8 +57,7 @@
 (setq
  dired-create-destination-dirs 'ask
  dired-kill-when-opening-new-dired-buffer t ; Don't open each directory in a new buffer
- dired-do-revert-buffer t
- )
+ dired-do-revert-buffer t)
 
 ; Set font
 (set-face-attribute 'default nil
@@ -74,7 +74,7 @@
 
 (use-package doom-themes
   :config
-  (let ((chosen-theme 'doom-gruvbox))
+  (let ((chosen-theme 'doom-moonlight))
     (doom-themes-visual-bell-config)
     (doom-themes-org-config)
     (setq doom-challenger-deep-brighter-comments t
@@ -87,6 +87,9 @@
 
 (use-package rainbow-delimiters ; Rainbow brackets
   :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package auto-dim-other-buffers
+  :config (auto-dim-other-buffers-mode t))
 
 (use-package which-key ; Show kbd shortcuts when in the middle of a shortcut
   :init (which-key-mode)

@@ -211,6 +211,11 @@ layer-rule {
 
     block-out-from "screencast"
     opacity 1.0
+
+    background-effect {
+        blur false
+        xray true
+    }
 }
 
 // Fix Waybar rounded corners
@@ -288,7 +293,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 0
+    geometry-corner-radius 8
     clip-to-geometry true
 }
 
@@ -297,5 +302,19 @@ window-rule {
     background-effect {
          xray true
          blur true
+    }
+}
+
+// Make waybar have a blurred background
+// Fix Waybar rounded corners
+layer-rule {
+    match namespace="waybar"
+
+    // We want it to apply even when waybar restarts
+    match at-startup=false
+
+    background-effect {
+            xray true
+            blur true
     }
 }

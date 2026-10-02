@@ -18,11 +18,20 @@
 
     iconTheme = {
       enable = true;
-      package = pkgs.gruvbox-plus-icons.override {
-        folder-color = "highland";
-      };
-      dark = "Gruvbox-Plus-Dark";
-      light = "Gruvbox-Plus-Light";
+
+      # package = pkgs.gruvbox-plus-icons.override {
+      #   folder-color = "highland";
+      # };
+      # dark = "Gruvbox-Plus-Dark";
+      # light = "Gruvbox-Plus-Light";
+
+      # package = pkgs.xfce4-icon-theme;
+      # dark = "elementary-xfce";
+      # light = "elementary-xfce";
+
+      package = pkgs.iconpack-obsidian;
+      dark = "Obsidian-Gray";
+      light = "Obsidian-Gray-Light";
     };
   };
 
