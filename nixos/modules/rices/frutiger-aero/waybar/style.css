@@ -1,5 +1,18 @@
 /* Variables */
-@define-color hello #000000;
+@define-color main-darkest #171726;
+@define-color main-dark #22273d;
+@define-color main-medium #525866;
+@define-color main-light #878d96;
+@define-color main-lighter #c8c8c8;
+@define-color main-lightest #ffffff;
+@define-color accent-red #fa7883;
+@define-color accent-yellow #ffc387;
+@define-color accent-orange #ff9470;
+@define-color accent-green #98c379;
+@define-color accent-teal #8af5ff;
+@define-color accent-blue #6bb8ff;
+@define-color accent-pink #e799ff;
+@define-color accent-brown #b3684f;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -23,15 +36,14 @@ window#waybar box {
 .modules-left,
 /* .modules-center, */
 .modules-right {
-    background: rgba(0, 0, 0, 255);
     background: linear-gradient(180deg, rgba(233, 217, 239, 0.2) 3%, rgba(255, 255, 255, 0.3) 5%, rgba(200, 178, 223, 0.2) 100%);
 
     box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
 
     border-radius: 4px;
 
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 
     padding: 4px;
 }
@@ -89,9 +101,27 @@ window#waybar box {
     margin-top: 0px;
     margin-bottom: 0px;
 
+    margin-left: 3px;
+    margin-right: 3px;
+
     padding-left: 2px;
 
+    border-radius: 4px;
+
+    animation-name: hoverOut;
+    animation-duration: 0.3s;
+
     /*border-left: 1px solid #8ec07c;*/
+}
+
+@keyframes hoverIn{
+    to {box-shadow: inset 0px 3px 3px -3px rgba(255, 255, 255, 0.5);}
+    from {box-shadow: inset 0px 3px 3px -3px rgba(255, 255, 255, 0.0);}
+}
+
+@keyframes hoverOut{
+    to{box-shadow: inset 0px 3px 3px -3px rgba(255, 255, 255, 0.0);}
+    from{box-shadow: inset 0px 3px 3px -3px rgba(255, 255, 255, 0.5);}
 }
 
 #custom-systemmenu:hover,
@@ -100,8 +130,8 @@ window#waybar box {
 #cpu:hover,
 #battery:hover,
 #temperature:hover,
-#tray:hover,
-#workspaces:hover,
+/*#tray:hover,*/
+/*#workspaces:hover,*/
 #memory:hover,
 #power-profiles-daemon:hover,
 #custom-applauncher:hover,
@@ -114,18 +144,19 @@ window#waybar box {
 #custom-power:hover,
 #clock:hover,
 #mpd:hover {
-    border-width: 3px;
-    padding-left: 0px;
+    box-shadow: inset 0px 3px 3px -3px rgba(255, 255, 255, 0.5);
+    animation-name: hoverIn;
+    animation-duration: 0.3s;
 }
 
 /* Specific Modules */
 
 #custom-systemmenu {
-    background-color: #1d2021;
-    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
+    /*background-color: #1d2021;
+    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);*/
 
     margin-top: 2px;
-    margin-left: 2px;
+    margin-left: -2px;
     margin-right: 2px;
 
     border-radius: 4px;
@@ -133,7 +164,7 @@ window#waybar box {
 
 #workspaces button {
     /*background-color: #ebdbb2;*/
-    background-color: #1d2021;
+    background-color: @main-dark;
     padding: 0 0px;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -157,11 +188,11 @@ window#waybar box {
     /* color: #1d2021; */
     /*color: #d65d0e;*/
     /*color: #ffffff;*/
-    background-color: #ffffff;
+    background-color: @main-darkest;
 }
 #workspaces button.active {
     /* color: #1d2021; */
-    background-color: #d65d0e;
+    background-color: @accent-pink;
     padding-top: 7px;
     padding-bottom: 7px;
 }
@@ -175,7 +206,8 @@ window#waybar box {
 }
 
 #privacy {
-    border-color: #fb4934;
+    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
+    background-color: @accent-red;
 }
 
 #battery.critical,
@@ -184,22 +216,20 @@ window#waybar box {
 #temperature.urgent,
 #cpu.critical,
 #memory.critical{
-    border-width: 3px;
-    border-color: #fb4934;
+    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
+    background-color: @accent-red;
 }
 
 #battery.warning,
 #cpu.high,
 #memory.high,
 #temperature.warning{
-    border-color: #fabd2f;
+    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
+    background-color: @accent-yellow;
 }
 
 #cpu.medium,
 #memory.medium{
-    border-color: #458588;
-}
-
-#custom-power {
-    border-color: #fb4934;
+    box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
+    background-color: @accent-blue;
 }

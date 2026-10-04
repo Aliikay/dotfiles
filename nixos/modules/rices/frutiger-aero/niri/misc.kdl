@@ -71,7 +71,7 @@ animations {
 // Make the backdrop light.
 overview {
     //backdrop-color "#282828"
-    backdrop-color "#1d2021"
+    backdrop-color "#171726"
 }
 
 blur {

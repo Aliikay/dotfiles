@@ -24,7 +24,7 @@
     # Current rice
     #./modules/rices/original/home.nix
     #./modules/rices/diinki-retrofuture/home.nix
-    # ./modules/rices/gruvbox/home.nix
+    #./modules/rices/gruvbox/home.nix
     ./modules/rices/frutiger-aero/home.nix
   ];
 
