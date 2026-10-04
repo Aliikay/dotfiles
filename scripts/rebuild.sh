@@ -32,7 +32,7 @@ SEARCH_PID=$!
 
 wait $EDITOR_PID
 kill -2 $SEARCH_PID
-sleep 0.5
+sleep 1
 
 # Format the dotfiles with alejandra
 alejandra .

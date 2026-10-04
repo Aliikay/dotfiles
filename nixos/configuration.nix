@@ -345,7 +345,7 @@ in {
   };
 
   # Enable OpenRGB to control rgb lighting for peripherals
-  services.hardware.openrgb.enable = true;
+  # services.hardware.openrgb.enable = true;
 
   # Enable AVAHI for printing
   services.avahi = {
@@ -532,7 +532,7 @@ in {
   };
 
   # Enable Droidcam
-  programs.droidcam.enable = true;
+  #programs.droidcam.enable = true;
 
   # Enable Firejail
   programs.firejail.enable = true;
@@ -575,11 +575,11 @@ in {
   };
 
   # Enable man pages
-  documentation = {
-    enable = true;
-    man.enable = true;
-    dev.enable = true;
-  };
+  #documentation = {
+  #  enable = true;
+  #  man.enable = true;
+  #  dev.enable = true;
+  #};
 
   fonts.packages = with pkgs;
     [
