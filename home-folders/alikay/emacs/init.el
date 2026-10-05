@@ -97,6 +97,10 @@
   :config
   (setq which-key-idle-delay 2))
 
+(use-package multiple-cursors)
+(global-unset-key (kbd "M-<down-mouse-1>"))
+(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
+
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
 
@@ -191,6 +195,11 @@
 (use-package ivy-rich
   :init (ivy-rich-mode 1))
 
+; Delete selections when typing instead of just unselecting
+(use-package delsel
+  :config
+  (delete-selection-mode 1))
+
 ; Swiper search
 (use-package swiper
   :ensure
@@ -236,7 +245,12 @@
  '(mouse-wheel-scroll-amount
    '(5 ((shift) . hscroll) ((meta)) ((control meta) . global-text-scale)
        ((control) . text-scale)))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(auto-dim-other-buffers company counsel-projectile dashboard
+			    doom-modeline doom-themes eat flycheck
+			    ivy-rich kdl-mode lsp-ui magit
+			    multiple-cursors nix-ts-mode orderless
+			    rainbow-delimiters)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

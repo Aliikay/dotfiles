@@ -71,10 +71,10 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
     # Neovim Config
-    nvf-config = {
-      url = "github:Aliikay/nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nvf-config = {
+    #  url = "github:Aliikay/nvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     # Home-manager, used for managing user configuration
     home-manager = {

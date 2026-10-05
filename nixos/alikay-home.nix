@@ -164,6 +164,14 @@
         name = "pisces";
         src = pkgs.fishPlugins.pisces.src;
       }
+      {
+        name = "done";
+        src = pkgs.fishPlugins.done.src;
+      }
+      {
+        name = "tide";
+        src = pkgs.fishPlugins.tide.src;
+      }
     ];
 
     functions = {
@@ -290,10 +298,10 @@
   };
 
   # Starship
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  #programs.starship = {
+  #  enable = true;
+  #  enableFishIntegration = true;
+  #};
 
   # OBS Plugins
   programs.obs-studio = {
@@ -500,11 +508,8 @@
   # Aliases
   home.shellAliases = {
     cat = "bat --pager=none";
-    nano = "micro";
     sbcl = "rlwrap sbcl";
     ls = "eza";
-    nivm = "nvim";
-    nv = "nvim";
     em = "emacs -nw";
   };
 

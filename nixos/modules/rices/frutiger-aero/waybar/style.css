@@ -13,7 +13,7 @@
 @define-color accent-blue #6bb8ff;
 @define-color accent-pink #e799ff;
 @define-color accent-brown #b3684f;
-
+ 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "Space Mono";
@@ -29,7 +29,7 @@ window#waybar {
 window#waybar box {
     padding-left: 1px;
     padding-right: 1px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
     min-width: 32px;
 }
 

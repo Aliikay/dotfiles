@@ -217,7 +217,7 @@ layer-rule {
     match namespace="waybar"
 
     // We want it to apply even when waybar restarts
-    match at-startup=false
+    match at-startup=true
 
     // Properties that apply continuously.
     // opacity 0.5
@@ -236,7 +236,7 @@ layer-rule {
 
     background-effect {
         blur true
-        xray true
+        xray false
     }
 
     geometry-corner-radius 16

@@ -114,6 +114,7 @@
     foliate
     fd
     file-roller
+    #fishPlugins.tide
     filezilla
     #footage
     fragments
@@ -211,7 +212,7 @@
     #newsflash
     nil
     nh
-    inputs.nvf-config.packages.${pkgs.stdenv.system}.default
+    #inputs.nvf-config.packages.${pkgs.stdenv.system}.default
     nvtopPackages.full
     libnotify
     nix-tree
