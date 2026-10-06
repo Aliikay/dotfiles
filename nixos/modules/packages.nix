@@ -40,7 +40,7 @@
     archipelago
     ani-cli
     android-tools
-    #android-studio
+    android-studio
     aspell
     aspellDicts.en
     #amberol

@@ -32,6 +32,23 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
+; I don't want to view these buffers when switching left and right!
+(setq skippable-buffers '("*Messages*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*"))
+(defun change-buffer-with-skips (change-buffer)
+  (interactive)
+  (funcall change-buffer)
+  (while (member (buffer-name) skippable-buffers)
+    (funcall change-buffer)))
+(defun next-buffer-with-skips ()
+  (interactive)
+  (change-buffer-with-skips 'next-buffer))
+(defun previous-buffer-with-skips ()
+  (interactive)
+  (change-buffer-with-skips 'previous-buffer))
+
+(global-set-key (kbd "C-;") 'previous-buffer-with-skips)
+(global-set-key (kbd "C-'") 'next-buffer-with-skips)
+
 ; Make frames have transparent backgrounds - pretty!
 (set-frame-parameter (selected-frame) 'alpha-background 85)
 (add-to-list 'default-frame-alist '(alpha-background 85 85))

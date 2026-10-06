@@ -52,7 +52,7 @@
     "io.github.mfat.sshpilot" # not in nixpkgs
     #"as.may.moat" # not in nixpkgs
     # "io.github.wartybix.Constrict" # not in nixpkgs
-    "com.google.AndroidStudio"
+    #"com.google.AndroidStudio"
     "net.waterfox.waterfox"
   ];
 
