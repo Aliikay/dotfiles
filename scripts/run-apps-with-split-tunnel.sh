@@ -9,5 +9,5 @@ mullvad-exclude vesktop --disable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDec
 mullvad-exclude steam %U -nochatui -nofriendsui -silent & disown
 # mullvad split-tunnel add $!
 
-heroic & disown
-mullvad split-tunnel add $!
+# heroic & disown
+# mullvad split-tunnel add $!
