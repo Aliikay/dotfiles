@@ -16,7 +16,7 @@
     targets.waybar.enable = false;
     targets.emacs.enable = false;
 
-    iconTheme = {
+    icons = {
       enable = true;
 
       # package = pkgs.gruvbox-plus-icons.override {
@@ -29,9 +29,21 @@
       # dark = "elementary-xfce";
       # light = "elementary-xfce";
 
-      package = pkgs.iconpack-obsidian;
-      dark = "Obsidian-Gray";
-      light = "Obsidian-Gray-Light";
+      # package = pkgs.iconpack-obsidian;
+      # dark = "Obsidian-Gray";
+      # light = "Obsidian-Gray-Light";
+
+      # package = pkgs.callPackage ./iconpack-crystal-remix.nix {};
+      # dark = "Crystal-Remix";
+      # light = "Crystal-Remix";
+
+      # package = pkgs.callPackage ./iconpack-delft.nix {};
+      # dark = "Delft-Aqua";
+      # light = "Delft-Aqua";
+
+      package = pkgs.kdePackages.oxygen-icons;
+      dark = "oxygen";
+      light = "oxygen";
     };
   };
 

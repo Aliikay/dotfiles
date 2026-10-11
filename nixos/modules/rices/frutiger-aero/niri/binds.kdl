@@ -35,7 +35,7 @@ binds {
     // Alt+Shift+Tab repeat=false { spawn "gdbus" "call" "--session" "--dest" "io.github.isaksamsten.Niriswitcher" "--object-path" "/io/github/isaksamsten/Niriswitcher" "--method" "io.github.isaksamsten.Niriswitcher.application" ; }
 
     Mod+Q { close-window; }
-    Mod+MouseMiddle { close-window; }
+    Mod+MouseMiddle { spawn "~/dotfiles/scripts/interactive-close-window.sh"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-or-workspace-down; }
@@ -308,4 +308,6 @@ binds {
 
     Ctrl+Shift+Escape repeat=false { spawn "alacritty" "-e" "btop"; }
     Ctrl+Shift+Grave repeat=false { spawn "alacritty" "-e" "nvtop"; }
+
+    Mod+Slash { spawn "emacs"; }
 }

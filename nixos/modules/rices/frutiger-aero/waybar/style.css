@@ -24,19 +24,19 @@
 
 window#waybar {
     background: transparent;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 window#waybar box {
     padding-left: 1px;
     padding-right: 1px;
-    background-color: rgba(0, 0, 0, 0.2);
     min-width: 32px;
 }
 
 .modules-left,
 /* .modules-center, */
 .modules-right {
-    background: linear-gradient(180deg, rgba(233, 217, 239, 0.2) 3%, rgba(255, 255, 255, 0.3) 5%, rgba(200, 178, 223, 0.2) 100%);
+    background: linear-gradient(180deg, rgba(233, 217, 239, 0.2) 10%, rgba(255, 255, 255, 0.3) 50%, rgba(200, 178, 223, 0.2) 100%);
 
     box-shadow: inset 0px 1px 3px 1px rgba(255, 255, 255, 0.5);
 

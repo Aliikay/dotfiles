@@ -29,6 +29,7 @@
 (global-goto-address-mode) ; Make URL's links
 (setq word-wrap t)
 (setq wrap-prefix (make-string 30 ?\s))
+(fset 'yes-or-no-p 'y-or-n-p)  ;; Ask for y/n instead of yes/no
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
@@ -70,11 +71,26 @@
  auto-save-default nil
  create-lockfiles nil)
 
+; Make scripts executable automatically
+(add-hook 'after-save-hook
+  'executable-make-buffer-file-executable-if-script-p)
+
 ; Dired setup
 (setq
  dired-create-destination-dirs 'ask
  dired-kill-when-opening-new-dired-buffer t ; Don't open each directory in a new buffer
  dired-do-revert-buffer t)
+
+;Improved window navigation
+(use-package windmove
+  :ensure nil ; This packlage is built-in
+  :bind*
+  (("M-<left>" . windmove-left)
+   ("M-<right>" . windmove-right)
+   ("M-<up>" . windmove-up)
+   ("M-<down>" . windmove-down))
+  :config
+  (setq windmove-wrap-around t))
 
 ; Set font
 (set-face-attribute 'default nil

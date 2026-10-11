@@ -26,6 +26,10 @@
 
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
+
+    # cursor.package = pkgs.callPackage ./pTux-cursor.nix;
+    # cursor.name = "PTux-32";
+
     cursor.size = 32;
 
     targets.grub.useWallpaper = true;
