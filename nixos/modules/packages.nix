@@ -65,7 +65,7 @@
     #blender
     brightnessctl
     #bustle
-    cava
+    #cava
     calibre # eReader library manager
     #cavalier
     cartero
@@ -81,7 +81,7 @@
     #cubiomes-viewer
     #davinci-resolve
     #dart-sass
-    decibels
+    #decibels
     delta
     discord
     #decker
@@ -115,7 +115,7 @@
     fd
     file-roller
     #fishPlugins.tide
-    filezilla
+    #filezilla
     #footage
     fragments
     fractal
@@ -128,9 +128,9 @@
     #  ];
     #})
     gimp3
-    gradia
+    #gradia
 
-    gowall # cli to convert images and icons to color themes
+    #gowall # cli to convert images and icons to color themes
     #gradience
     #glaxnimate
 
@@ -142,15 +142,15 @@
     gnome-tweaks
     #gnome-sound-recorder
     #gnome-maps
-    ghex
-    gnome-graphs
+    #ghex
+    #gnome-graphs
     #gnome-frog
-    gnome-extension-manager
+    #gnome-extension-manager
     #gnome-obfuscate
     dconf-editor
     zenity
     #gnome-podcasts
-    gnome-decoder
+    #gnome-decoder
     #gnomecast # chrome cast
 
     #github-desktop
@@ -169,7 +169,7 @@
     impression
     itch
     krita
-    keypunch
+    #keypunch
     komikku
     #kooha
     killall
@@ -202,7 +202,7 @@
     #mousam
     #moonlight-qt
     mpv
-    mousai
+    #mousai
     mission-center
     nautilus-open-any-terminal
     ncdu
@@ -219,7 +219,7 @@
     #onlyoffice-desktopeditors
     #obsidian
     #obs-studio
-    paperwork
+    #paperwork
     #parsec-bin
     paleta
     papers
@@ -257,7 +257,7 @@
     #rstudio
     #rocm-opencl-icd doesnt exist anymore?
     #rocm-opencl-runtime
-    sly
+    #sly
     scrcpy
     shortwave
     setzer
@@ -295,7 +295,7 @@
     trackma-gtk
     tic-80
     tldr
-    turtle
+    #turtle
     thunderbird
     tuba
     # upscaler
@@ -303,7 +303,7 @@
     vesktop
     vlc
     vscode.fhs
-    video-trimmer
+    #video-trimmer
     wineWow64Packages.stable
     #warp
     webp-pixbuf-loader
@@ -317,7 +317,7 @@
     yt-dlp
     youtube-tui
     yazi
-    uwuify
+    #uwuify
     pkgs-unstable.zed-editor
     #zellij
 
