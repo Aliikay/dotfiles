@@ -8,7 +8,7 @@ mullvad split-tunnel add $!
 libreoffice /home/alikay/Documents/Notes/Personal\ Notes/Work/Sent\ Applications.ods & disown
 
 # Open obsidian
-flatpak run md.obsidian.Obsidian & disown
+# flatpak run md.obsidian.Obsidian & disown
 
 # Open file browser
 nautilus /home/alikay/Documents/Notes/Personal\ Notes/Work & disown

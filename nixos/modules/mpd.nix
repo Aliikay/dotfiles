@@ -41,5 +41,6 @@
     plattenalbum
     playerctl
     mpc
+    rmpc
   ];
 }

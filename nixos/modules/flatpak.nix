@@ -17,7 +17,7 @@
     }
   ];
   services.flatpak.packages = [
-    "md.obsidian.Obsidian"
+    # "md.obsidian.Obsidian"
     "com.usebottles.bottles"
     "com.github.tchx84.Flatseal"
     # "com.gitfiend.GitFiend"
@@ -26,7 +26,7 @@
     #"org.prismlauncher.PrismLauncher"
     #"com.spotify.Client"
     #"io.github.spacingbat3.webcord"
-    "us.zoom.Zoom"
+    # "us.zoom.Zoom"
     # "io.github.Foldex.AdwSteamGtk"
     #"dev.vencord.Vesktop"
     #"com.github.muriloventuroso.easyssh"

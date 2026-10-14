@@ -18,7 +18,7 @@ alacritty --working-directory ~/Documents/Unity/UntitledBubbleGame/ -T lazygit -
 #mullvad split-tunnel add $!
 
 # Open obsidian
-flatpak run md.obsidian.Obsidian & disown
+# flatpak run md.obsidian.Obsidian & disown
 
 # Open github issues
 firefox --new-window https://github.com/Daisy-Chain-Games-Inc/Slipstream/issues
