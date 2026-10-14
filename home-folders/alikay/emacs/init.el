@@ -34,7 +34,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
 ; I don't want to view these buffers when switching left and right!
-(setq skippable-buffers '("*Messages*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*"))
+(setq skippable-buffers '("*Messages*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*" "*html-ls::stderr*" "*html-ls*"))
 (defun change-buffer-with-skips (change-buffer)
   (interactive)
   (funcall change-buffer)
