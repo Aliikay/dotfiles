@@ -104,17 +104,17 @@
     home-manager,
     ...
   }: let
-    mySpecialArgs = {
+    extraArgs = {
       inherit inputs;
       # To use packages from nixpkgs-unstable,
       # we configure some parameters for it first
-      #pkgs-stable = import nixpkgs-stable {
+      pkgs-stable = import nixpkgs {
       # Refer to the `system` parameter from
       # the outer scope recursively
-      #  inherit inputs;
-      #  system = "x86_64-linux";
-      #  config.allowUnfree = true;
-      #};
+        inherit inputs;
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
 
       #pkgs-last-stable = import nixpkgs-last-stable {
       # Refer to the `system` parameter from
@@ -141,7 +141,7 @@
 
     generic-system = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = mySpecialArgs;
+      specialArgs = extraArgs;
       modules =
         [
           inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series1
@@ -184,7 +184,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = mySpecialArgs;
+            home-manager.extraSpecialArgs = extraArgs;
             home-manager.users.alikay = import ./nixos/alikay-home.nix;
             home-manager.users.alikay-alt = import ./nixos/alikay-alt-home.nix;
             home-manager.users.guest = import ./nixos/guest-home.nix;
@@ -196,8 +196,17 @@
         # This unfourtanatly makes the flake impure :( but there isn't a better way to have it only import if you have the secrets flake on disk.
         ++ nixpkgs.lib.optional (builtins.pathExists /home/alikay/dotfile-secrets) ./nixos/modules/secrets.nix;
     };
+
+    pkgs = import nixpkgs { system = "x86_64-linux"; };
   in {
     #, hyprland, ... }: {
     nixosConfigurations.alikay = generic-system;
+
+    # Apps (runnable with nix run)
+    apps.x86_64-linux.emacs = {
+      type = "app";
+      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {}}/bin/emacs";
+      meta.description = "My personal emacs configuration";
+    };
   };
 }

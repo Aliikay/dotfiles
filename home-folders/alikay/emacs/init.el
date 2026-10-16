@@ -30,6 +30,7 @@
 (setq word-wrap t)
 (setq wrap-prefix (make-string 30 ?\s))
 (fset 'yes-or-no-p 'y-or-n-p)  ;; Ask for y/n instead of yes/no
+(electric-pair-mode 1) ; Add closing delimiters when the opening ones are typed
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
@@ -142,7 +143,6 @@
 
 ; eat for using TUI's in eshell
 (use-package eat
-  :ensure t
   :config
   (eat-eshell-mode)
   (setq eshell-visual-commands '()))
@@ -172,7 +172,6 @@
 (setq gc-cons-threshold 100000000)
 
 (use-package doom-modeline ; Fancy modeline
-  :ensure t
   :init (doom-modeline-mode 1))
 
 ; Projectile
@@ -194,7 +193,6 @@
 
 ; Magit
 (use-package magit
-   :ensure t
    :bind (("C-x g" . magit)))
 
 ; Counsel
@@ -206,6 +204,12 @@
 	 ("C-r" . 'counsel-minibuffer-history))
   :config
   (setq ivy-initial-inputs-alist nil))
+
+; Beacon
+(use-package beacon
+  :init (beacon-mode 1)
+  :config
+  (setq beacon-color "#ea9a97"))
 
 ; Ivy completion
 (use-package ivy
@@ -235,13 +239,11 @@
 
 ; Swiper search
 (use-package swiper
-  :ensure
   :config
   (global-set-key (kbd "C-s") 'swiper))
 
 ; Fancy startup screen
 (use-package dashboard
-  :ensure t
   :config
   (dashboard-setup-startup-hook)
   :init
@@ -280,7 +282,7 @@
    '(5 ((shift) . hscroll) ((meta)) ((control meta) . global-text-scale)
        ((control) . text-scale)))
  '(package-selected-packages
-   '(auto-dim-other-buffers company counsel-projectile dashboard
+   '(auto-dim-other-buffers beacon company counsel-projectile dashboard
 			    doom-modeline doom-themes eat flycheck
 			    ivy-rich kdl-mode lsp-ui magit
 			    multiple-cursors nix-ts-mode orderless
