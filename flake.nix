@@ -67,6 +67,9 @@
     #stylix.url = "github:danth/stylix";
     #stylix.url = "github:danth/stylix/ffba1f1bab63ea49541f812c72a4fcf305461d67";
 
+    # emacs overlay
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+
     # Framework specific tweaks
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
@@ -205,7 +208,7 @@
     # Apps (runnable with nix run)
     apps.x86_64-linux.emacs = {
       type = "app";
-      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {}}/bin/emacs";
+      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs; }}/bin/emacs";
       meta.description = "My personal emacs configuration";
     };
   };
