@@ -223,7 +223,7 @@
           ‘';
         };
       in
-      "${lib.getExe install-system}”;
+      "${lib.getExe install-system}";
     };
   };
 }
