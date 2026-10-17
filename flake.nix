@@ -217,13 +217,11 @@
       program = let
         install-system = pkgs.writeShellApplication {
           name = "install-system";
-          runtimeInputs = [ gh git libnotify ];
-          text = ''
-            bash -c ${./scripts/install.sh}
-          ‘';
+          runtimeInputs = with pkgs; [ gh git libnotify ];
+          text = "bash -c ${./scripts/install.sh}";
         };
       in
-      "${lib.getExe install-system}";
+      "${nixpkgs.lib.getExe install-system}";
     };
   };
 }
