@@ -58,6 +58,9 @@ in
         # epkgs.cask
         # pkgs.shellcheck
 
+	# Fonts
+	nerd-fonts.space-mono
+
 	discount # Markdown support
 
 	# Treesitter support
