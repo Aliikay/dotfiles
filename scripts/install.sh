@@ -4,24 +4,24 @@
 #nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 #nix-channel --update
 
-#echo "Getting a new nix shell with the needed components for github auth..."
-#nix-shell -p gh --command "gh auth login"
+echo "Getting a new nix shell with the needed components for github auth..."
+nix-shell -p gh --command "gh auth login"
 
 echo "Cloning repo w/ git..."
-nix-shell -p git --command "git clone https://github.com/Aliikay/dotfiles.git ~/dotfiles"
+nix-shell -p git --command "git clone git@github.com:Aliikay/dotfiles.git ~/dotfiles"
 
 echo "Please add the following to your configuration.nix:
 nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];
 services.thermald.enable = true;
 "
 read -p "Press enter to continue"
-nix-shell -p emacs-pgtk --command "sudo emacs -nw --load ~/dotfiles/home-folders/alikay/emacs/init.el /etc/nixos/configuration.nix"
+nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
 
 echo "Please transfer any LUKS encryption stuff from the generated configuration.nix to the new one. First the generated config file will open, and then the new one will be opened."
 read -p "Press enter to open the generated configuration.nix"
-nix-shell -p emacs-pgtk --command "sudo emacs -nw --load ~/dotfiles/home-folders/alikay/emacs/init.el /etc/nixos/configuration.nix"
+nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
 read -p "Press enter to open the new configuration.nix"
-nix-shell -p emacs-pgtk --command "sudo emacs -nw --load ~/dotfiles/home-folders/alikay/emacs/init.el ~/dotfiles/nixos/configuration.nix"
+nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- ~/dotfiles/nixos/configuration.nix
 
 echo "Copy the current hardware config to the dotfiles"
 rm ~/dotfiles/nixos/hardware-configuration.nix

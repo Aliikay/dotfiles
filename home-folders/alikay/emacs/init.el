@@ -174,6 +174,9 @@
 (setq read-process-output-max (* 4 1024 1024)) ; Allow LSP to read a sensible amount of data
 (setq gc-cons-threshold 100000000)
 
+; Automatically activate yaml mode when editing a yaml file (dunno why this doesn't happen automatically \(o.o)/
+(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
+
 (use-package doom-modeline ; Fancy modeline
   :init (doom-modeline-mode 1))
 
