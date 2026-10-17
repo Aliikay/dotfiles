@@ -147,7 +147,7 @@ in {
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 15d";
+    options = "--delete-older-than 8d";
   };
 
   # Automatic store optimization
@@ -226,7 +226,6 @@ in {
   services.xserver.enable = true;
 
   # Enable autologin
-  #   Doesn't work for me since it doesn't unlock the keyring which prevents discord from starting at startup correctly :(
   services.displayManager = {
     defaultSession = "niri";
     autoLogin = {

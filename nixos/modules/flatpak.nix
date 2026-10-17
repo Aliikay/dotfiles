@@ -66,7 +66,7 @@
   services.flatpak.overrides = {
     global = {
       Environment = {
-        QT_STYLE_OVERRIDE = "kvantum";
+        QT_STYLE_OVERRIDE = "oxygen";
       };
 
       Context = {

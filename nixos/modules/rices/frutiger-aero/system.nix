@@ -24,8 +24,11 @@
     #image = ./retro-pc-wallpaper.png;
     image = ./perfect_hue_38.png;
 
-    cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata-Modern-Classic";
+    # cursor.package = pkgs.bibata-cursors;
+    # cursor.name = "Bibata-Modern-Classic";
+
+    cursor.package = pkgs.kdePackages.oxygen-icons;
+    cursor.name = "Oxygen Black";
 
     # cursor.package = pkgs.callPackage ./pTux-cursor.nix;
     # cursor.name = "PTux-32";
@@ -59,7 +62,7 @@
 
     polarity = "dark";
 
-    targets.qt.platform = lib.mkForce "qtct";
+    #targets.qt.platform = lib.mkForce "qtct";
   };
 
   environment.systemPackages = with pkgs; [
@@ -67,6 +70,9 @@
     eww
     waybar
     jq
+    
+    kdePackages.oxygen
+    kdePackages.oxygen-sounds
     #pkgs-unstable.niriswitcher
   ];
 }

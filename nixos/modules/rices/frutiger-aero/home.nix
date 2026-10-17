@@ -15,6 +15,7 @@
 
     targets.waybar.enable = false;
     targets.emacs.enable = false;
+    targets.qt.enable = false;
 
     icons = {
       enable = true;

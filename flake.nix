@@ -210,5 +210,20 @@
       program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs; }}/bin/emacs";
       meta.description = "My personal emacs configuration";
     };
+
+    # Install Script
+    apps.x86_64-linux.install = {
+      type = "app";
+      program = let
+        install-system = pkgs.writeShellApplication {
+          name = "install-system";
+          runtimeInputs = [ gh git libnotify ];
+          text = ''
+            bash -c ${./scripts/install.sh}
+          ‘';
+        };
+      in
+      "${lib.getExe install-system}”;
+    };
   };
 }
