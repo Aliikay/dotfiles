@@ -4,7 +4,10 @@
 			 ("org" . "https://orgmode.org/elpa/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-(package-initialize)
+
+(if (not package--initialized)
+    (package-initialize))
+
 (unless package-archive-contents
   (package-refresh-contents))
 (unless (package-installed-p 'use-package)

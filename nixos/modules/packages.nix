@@ -97,6 +97,9 @@
     dust
     dysk
     #enter-tex
+
+    (pkgs.callPackage ./emacs-package.nix { inputs = inputs; })
+    
     exhibit
     eloquent
     euphonica
