@@ -28,12 +28,12 @@
     # cursor.name = "Bibata-Modern-Classic";
 
     cursor.package = pkgs.kdePackages.oxygen-icons;
-    cursor.name = "Oxygen Black";
+    cursor.name = "Oxygen_Black";
 
     # cursor.package = pkgs.callPackage ./pTux-cursor.nix;
     # cursor.name = "PTux-32";
 
-    cursor.size = 32;
+    cursor.size = 40;
 
     targets.grub.useWallpaper = true;
 
@@ -62,7 +62,7 @@
 
     polarity = "dark";
 
-    #targets.qt.platform = lib.mkForce "qtct";
+    targets.qt.platform = lib.mkForce "qtct";
   };
 
   environment.systemPackages = with pkgs; [

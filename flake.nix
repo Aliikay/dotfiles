@@ -207,7 +207,7 @@
     # Apps (runnable with nix run)
     apps.x86_64-linux.emacs = {
       type = "app";
-      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs; }}/bin/emacs";
+      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs; }}/bin/emacs --load ${./home-folders/alikay/emacs/init.el}";
       meta.description = "My personal emacs configuration";
     };
 

@@ -1,8 +1,6 @@
 Alikay's Personal Dotfiles
 
-Install onto a NixOS system with the following commands:
+Install onto a NixOS system with the following command:
 ```
-curl https://raw.githubusercontent.com/Aliikay/dotfiles/main/scripts/install.sh > install.sh
-chmod +x install.sh
-./install.sh
+nix --experimental-features "nix-command flakes" --refresh run github:Aliikay/dotfiles#install
 ```

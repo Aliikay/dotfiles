@@ -55,8 +55,8 @@
 (global-set-key (kbd "C-'") 'next-buffer-with-skips)
 
 ; Make frames have transparent backgrounds - pretty!
-(set-frame-parameter (selected-frame) 'alpha-background 85)
-(add-to-list 'default-frame-alist '(alpha-background 85 85))
+;(set-frame-parameter (selected-frame) 'alpha-background 85)
+;(add-to-list 'default-frame-alist '(alpha-background 85 85))
 
 ; Line Numbers
 ; (column-number-mode)
@@ -87,7 +87,6 @@
 
 ;Improved window navigation
 (use-package windmove
-  :ensure nil ; This packlage is built-in
   :bind*
   (("M-<left>" . windmove-left)
    ("M-<right>" . windmove-right)
@@ -173,6 +172,11 @@
 (use-package lsp-ui :commands lsp-ui-mode)
 (setq read-process-output-max (* 4 1024 1024)) ; Allow LSP to read a sensible amount of data
 (setq gc-cons-threshold 100000000)
+
+; Direnv Integration
+(use-package direnv
+ :config
+ (direnv-mode))
 
 ; Automatically activate yaml mode when editing a yaml file (dunno why this doesn't happen automatically \(o.o)/
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))

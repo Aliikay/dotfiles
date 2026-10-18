@@ -267,6 +267,25 @@ window-rule {
     }
 }
 
+// Draw a shadow around the focused window
+window-rule {
+    match is-focused=true
+
+    shadow {
+        // Softness controls the shadow blur radius.
+        softness 10
+
+        // Spread expands the shadow.
+        spread 3
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=0
+
+        // You can also change the shadow color and opacity.
+        color "#31748f"
+    }
+}
+
 // Example: block out from screen capture
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
