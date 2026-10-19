@@ -70,7 +70,7 @@
     eww
     waybar
     jq
-    
+
     kdePackages.oxygen
     kdePackages.oxygen-sounds
     #pkgs-unstable.niriswitcher

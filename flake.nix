@@ -112,8 +112,8 @@
       # To use packages from nixpkgs-unstable,
       # we configure some parameters for it first
       pkgs-stable = import nixpkgs {
-      # Refer to the `system` parameter from
-      # the outer scope recursively
+        # Refer to the `system` parameter from
+        # the outer scope recursively
         inherit inputs;
         system = "x86_64-linux";
         config.allowUnfree = true;
@@ -199,7 +199,7 @@
         ++ nixpkgs.lib.optional (builtins.pathExists /home/alikay/dotfile-secrets) ./nixos/modules/secrets.nix;
     };
 
-    pkgs = import nixpkgs { system = "x86_64-linux"; };
+    pkgs = import nixpkgs {system = "x86_64-linux";};
   in {
     #, hyprland, ... }: {
     nixosConfigurations.alikay = generic-system;
@@ -207,7 +207,7 @@
     # Apps (runnable with nix run)
     apps.x86_64-linux.emacs = {
       type = "app";
-      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs; }}/bin/emacs --load ${./home-folders/alikay/emacs/init.el}";
+      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs;}}/bin/emacs";
       meta.description = "My personal emacs configuration";
     };
 
@@ -217,11 +217,10 @@
       program = let
         install-system = pkgs.writeShellApplication {
           name = "install-system";
-          runtimeInputs = with pkgs; [ gh git libnotify ];
+          runtimeInputs = with pkgs; [gh git libnotify];
           text = "bash -c ${./scripts/install.sh}";
         };
-      in
-      "${nixpkgs.lib.getExe install-system}";
+      in "${nixpkgs.lib.getExe install-system}";
     };
   };
 }

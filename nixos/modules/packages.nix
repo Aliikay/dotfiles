@@ -98,8 +98,11 @@
     dysk
     #enter-tex
 
-    (pkgs.callPackage ./emacs-package.nix { inputs = inputs; })
-    
+    (pkgs.callPackage ./emacs-package.nix {
+      inputs = inputs;
+      useDefaultConfig = false;
+    })
+
     exhibit
     eloquent
     euphonica
