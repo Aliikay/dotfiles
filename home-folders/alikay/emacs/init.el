@@ -38,13 +38,12 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
 ; I don't want to view these buffers when switching left and right!
-(setq skippable-buffers '("*Messages*" "*Backtrace*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*" "*html-ls::stderr*" "*html-ls*" "magit-diff:\\(.*\\)" "magit-process:\\(.*\\)"))
+(setq skippable-buffers '("*Messages*" "*Backtrace*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*" "*html-ls::stderr*" "*html-ls*" "magit-diff:\\(.*\\)" "magit-process:\\(.*\\)" "*Compile-Log*" "*direnv*"))
 (defun member-by-regex (target regex-list)
   (let (value)
     (dolist (regex regex-list value)
       (when (string-match regex target)
 	(setq value t)))))
-	
 (defun change-buffer-with-skips (change-buffer)
   (interactive)
   (funcall change-buffer)
@@ -61,8 +60,8 @@
 (global-set-key (kbd "C-'") 'next-buffer-with-skips)
 
 ; Make frames have transparent backgrounds - pretty!
-(set-frame-parameter (selected-frame) 'alpha-background 85)
-(add-to-list 'default-frame-alist '(alpha-background 85 85))
+; (set-frame-parameter (selected-frame) 'alpha-background 90)
+; (add-to-list 'default-frame-alist '(alpha-background 90 90))
 
 ; Line Numbers
 ; (column-number-mode)
@@ -175,9 +174,16 @@
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
-(use-package lsp-ui :commands lsp-ui-mode)
+
+(use-package lsp-ui
+  :commands lsp-ui-mode
+  :config
+  (setq lsp-ui-sideline-show-diagnostics nil))
+  ;(setq lsp-ui-doc-show-with-cursor t)) ; Done by flycheck instead
+
 (setq read-process-output-max (* 4 1024 1024)) ; Allow LSP to read a sensible amount of data
 (setq gc-cons-threshold 100000000)
+(global-flycheck-annotate-mode t) ; Inline error diagnostics
 
 ; Direnv Integration
 (use-package direnv
@@ -221,6 +227,11 @@
   :config
   (setq ivy-initial-inputs-alist nil))
 
+; Dirvish
+(use-package dirvish
+  :config
+  (dirvish-override-dired-mode t))
+
 ; Beacon
 (use-package beacon
   :init (beacon-mode 1)
@@ -244,6 +255,12 @@
 	 :map ivy-reverse-i-search-map
 	 ("C-k" . ivy-previous-line)
 	 ("C-d" . ivy-reverse-i-search-kill)))
+
+;; Make the last used command be the first-one
+(use-package ivy-prescient
+  :init
+  (ivy-prescient-mode 1)
+  (prescient-persist-mode 1))
 
 (use-package ivy-rich
   :init (ivy-rich-mode 1))
@@ -297,12 +314,7 @@
  '(mouse-wheel-scroll-amount
    '(5 ((shift) . hscroll) ((meta)) ((control meta) . global-text-scale)
        ((control) . text-scale)))
- '(package-selected-packages
-   '(auto-dim-other-buffers beacon company counsel-projectile dashboard
-			    doom-modeline doom-themes eat flycheck
-			    ivy-rich kdl-mode lsp-ui magit
-			    multiple-cursors nix-ts-mode orderless
-			    rainbow-delimiters)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

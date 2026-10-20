@@ -4,3 +4,4 @@
 !.gitignore
 !init.el
 !early-init.el
+!unused-configuration.el

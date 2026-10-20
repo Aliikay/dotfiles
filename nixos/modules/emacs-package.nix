@@ -60,9 +60,19 @@ in (emacsWithPackagesFromUsePackage {
       # pkgs.shellcheck
 
       # Fonts
+      # This doesn't do anything right now, I *think* it will work after 26.11 comes out
+      # https://github.com/NixOS/nixpkgs/pull/563175
       nerd-fonts.space-mono
 
       discount # Markdown support
+
+      # Dirvish file preview
+      vips
+      poppler
+      ffmpegthumbnailer
+      mediainfo
+      imagemagick
+      _7zip-zstd
 
       # Treesitter support
       (epkgs.treesit-grammars.with-grammars (
