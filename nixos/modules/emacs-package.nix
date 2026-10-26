@@ -69,6 +69,7 @@ in (emacsWithPackagesFromUsePackage {
       # Dirvish file preview
       vips
       poppler
+      poppler-utils
       ffmpegthumbnailer
       mediainfo
       imagemagick

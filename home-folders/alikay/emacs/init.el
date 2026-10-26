@@ -169,7 +169,7 @@
 	 (js-mode . lsp)
 	 (python-mode . lsp)
 	 (rust-ts-mode . lsp)
-	 ; (nix-ts-mode . lsp) ; Disabled because nix eval uses 10gb of memory and then coredumps
+	 ;(nix-ts-mode . lsp) ; Disabled because nix eval uses 10gb of memory and then coredumps
 	 
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
@@ -183,7 +183,11 @@
 
 (setq read-process-output-max (* 4 1024 1024)) ; Allow LSP to read a sensible amount of data
 (setq gc-cons-threshold 100000000)
-(global-flycheck-annotate-mode t) ; Inline error diagnostics
+
+(use-package flycheck
+  :config
+  (global-flycheck-annotate-mode t) ; Inline error diagnostics
+)
 
 ; Direnv Integration
 (use-package direnv

@@ -246,6 +246,7 @@
     #pgadmin4-desktopmode
     #pika-backup
     parabolic
+    poptracker #randomizer tracker for archipelago
     #psensor #deprecated due to lack of maintenence
 
     pkgs.rocmPackages.clr
