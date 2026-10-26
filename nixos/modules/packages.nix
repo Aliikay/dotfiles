@@ -37,7 +37,7 @@
     #ascii-draw
     atuin
     aria2
-    archipelago
+    pkgs-unstable.archipelago
     ani-cli
     android-tools
     android-studio
