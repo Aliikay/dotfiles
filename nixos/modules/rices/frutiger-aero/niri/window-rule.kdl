@@ -244,6 +244,25 @@ layer-rule {
     // baba-is-float true
 }
 
+// Draw a shadow around the focused window
+window-rule {
+    match is-focused=true
+
+    shadow {
+        // Softness controls the shadow blur radius.
+        softness 10
+
+        // Spread expands the shadow.
+        spread 3
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=0
+
+        // You can also change the shadow color and opacity.
+        color "#31748f"
+    }
+}
+
 // Indicate screencasted windows with red colors.
 window-rule {
     match is-window-cast-target=true
@@ -264,25 +283,6 @@ window-rule {
     tab-indicator {
         active-color "#fb4934"
         inactive-color "#cc241d"
-    }
-}
-
-// Draw a shadow around the focused window
-window-rule {
-    match is-focused=true
-
-    shadow {
-        // Softness controls the shadow blur radius.
-        softness 10
-
-        // Spread expands the shadow.
-        spread 3
-
-        // Offset moves the shadow relative to the window.
-        offset x=0 y=0
-
-        // You can also change the shadow color and opacity.
-        color "#31748f"
     }
 }
 

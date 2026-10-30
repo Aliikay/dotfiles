@@ -89,6 +89,15 @@
  dired-create-destination-dirs 'ask
  dired-kill-when-opening-new-dired-buffer t ; Don't open each directory in a new buffer
  dired-do-revert-buffer t)
+(add-hook 'dired-mode-hook
+ (lambda ()
+  (define-key dired-mode-map (kbd "C-<left>")
+	      (lambda () (interactive) (find-alternate-file ".."))) ; Allow using control-left to move up a folder
+   (define-key dired-mode-map (kbd "C-<right>")
+	      (lambda () (interactive) (dired-find-file)))
+  (define-key dired-mode-map [mouse-2] 'dired-mouse-find-file) ; Don't open folders in new windows when clicking in dired
+ ))
+
 
 ;Improved window navigation
 (use-package windmove
@@ -147,6 +156,9 @@
 
 (use-package kdl-mode ; Major mode for editing .kdl files
   :mode "\\.kdl\\'")
+
+(use-package rust-ts-mode
+  :mode "\\.rs\\'")
 
 ; eat for using TUI's in eshell
 (use-package eat
@@ -231,10 +243,24 @@
   :config
   (setq ivy-initial-inputs-alist nil))
 
+;; Use `nerd-icons' as Dirvish's icon backend
+(use-package nerd-icons)
+
 ; Dirvish
 (use-package dirvish
   :config
-  (dirvish-override-dired-mode t))
+  (dirvish-override-dired-mode t)
+  (setq dirvish-attributes
+      (append
+       ;; The order of these attributes is insignificant, they are always
+       ;; displayed in the same position.
+       '(vc-state subtree-state nerd-icons collapse)
+       ;; Other attributes are displayed in the order they appear in this list.
+       '(git-msg file-modes file-time file-size)))
+  ;; open large directory (over 20000 files) asynchronously with `fd' command
+  (setq dirvish-large-directory-threshold 20000)
+  (setq dired-mouse-drag-files t)
+  (setq mouse-drag-and-drop-region-cross-program t))
 
 ; Beacon
 (use-package beacon
