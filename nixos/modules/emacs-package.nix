@@ -64,6 +64,9 @@ in (emacsWithPackagesFromUsePackage {
       # https://github.com/NixOS/nixpkgs/pull/563175
       nerd-fonts.space-mono
 
+      # LSP Booster
+      emacs-lsp-booster
+
       discount # Markdown support
 
       # Dirvish file preview
