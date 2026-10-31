@@ -90,6 +90,11 @@ in (emacsWithPackagesFromUsePackage {
       omnisharp-roslyn # CSharp
       bash-language-server # Bash
 
+      # Other dependancies & libraries
+      openssl
+      udev
+      alsa-lib-with-plugins
+
       # Treesitter support
       (epkgs.treesit-grammars.with-grammars (
         grammars:
