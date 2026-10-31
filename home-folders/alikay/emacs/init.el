@@ -38,7 +38,7 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; Make escape quit minibuffer prompts
 
 ; I don't want to view these buffers when switching left and right!
-(setq skippable-buffers '("*Messages*" "*Backtrace*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*" "*html-ls::stderr*" "*html-ls*" "magit-diff:\\(.*\\)" "magit-process:\\(.*\\)" "*Compile-Log*" "*direnv*"))
+(setq skippable-buffers '("*Messages*" "*Backtrace*" "*Async-native-compile-log*" "*lsp-log*" "*omnisharp*" "*omnisharp::stderr*" "*css-ls*" "*css-ls::stderr*" "*html-ls::stderr*" "*html-ls*" "magit-diff:\\(.*\\)" "magit-process:\\(.*\\)" "*Compile-Log*" "*envrc-direnv - \\(.*\\)*" "*rust-analyzer*" "*rust-analyzer::stderr*"))
 (defun member-by-regex (target regex-list)
   (let (value)
     (dolist (regex regex-list value)
