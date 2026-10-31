@@ -205,11 +205,6 @@
   (global-flycheck-annotate-mode t) ; Inline error diagnostics
 )
 
-; Direnv Integration
-(use-package direnv
- :config
- (direnv-mode))
-
 ; Automatically activate yaml mode when editing a yaml file (dunno why this doesn't happen automatically \(o.o)/
 (add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-ts-mode))
 
@@ -333,6 +328,11 @@
   (setq dashboard-projects-backend 'projectile)
   (setq dashboard-center-content t)
   (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard"))
+
+; Direnv Integration
+; Must be last in the file so that it is at the *end* of the init hooks: this makes it run first (and ensures stuff like lsp-mode is in the environment when it starts up)
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
 
 ; Configure lsp-booster (copied from https://github.com/blahgeek/emacs-lsp-booster)
 ;; (defun lsp-booster--advice-json-parse (old-fn &rest args)
