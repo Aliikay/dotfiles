@@ -165,7 +165,7 @@
           ./nixos/modules/godot.nix
           ./nixos/modules/game-dev.nix
           ./nixos/modules/mpd.nix
-          #./nixos/modules/lsp.nix #handled in the emacs package instead
+          ./nixos/modules/lsp.nix
           ./nixos/modules/emulation.nix
           ./nixos/modules/audio-production.nix
           ./nixos/modules/samba.nix
