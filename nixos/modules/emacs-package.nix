@@ -56,7 +56,7 @@ in (emacsWithPackagesFromUsePackage {
   # This can also include extra executables to be run by Emacs (linters,
   # language servers, formatters, etc)
   extraEmacsPackages = epkgs:
-    with pkgs-unstable; [
+    with pkgs; [
       # epkgs.cask
       # pkgs.shellcheck
 
