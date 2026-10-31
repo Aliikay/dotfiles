@@ -65,9 +65,6 @@ in (emacsWithPackagesFromUsePackage {
       # https://github.com/NixOS/nixpkgs/pull/563175
       nerd-fonts.space-mono
 
-      # LSP Booster
-      # emacs-lsp-booster
-
       discount # Markdown support
 
       # Dirvish file preview
@@ -78,6 +75,20 @@ in (emacsWithPackagesFromUsePackage {
       mediainfo
       imagemagick
       _7zip-zstd
+
+      # LSP Booster
+      # emacs-lsp-booster
+
+      # LSP Servers
+      nixd # nix
+      typescript-language-server # JS and Typescript
+      cargo # Rust
+      rust-analyzer # Rust
+      rustfmt
+      tailwindcss-language-server # CSS
+      vscode-langservers-extracted # HTML, CSS, JSON, esLint
+      omnisharp-roslyn # CSharp
+      bash-language-server # Bash
 
       # Treesitter support
       (epkgs.treesit-grammars.with-grammars (
