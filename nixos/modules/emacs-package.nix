@@ -91,7 +91,7 @@ in (emacsWithPackagesFromUsePackage {
       bash-language-server # Bash
 
       # Other dependancies & libraries
-      openssl
+      openssl.dev
       udev
       alsa-lib-with-plugins
 
