@@ -9,7 +9,7 @@
   ...
 }: let
   emacsWithPackagesFromUsePackage = import "${inputs.emacs-overlay}/elisp.nix" {
-    inherit pkgs;
+    pkgs = pkgs-unstable;
   };
 in (emacsWithPackagesFromUsePackage {
   # Your Emacs config file. Org mode babel files are also
