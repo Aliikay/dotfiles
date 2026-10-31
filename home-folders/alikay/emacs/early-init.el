@@ -5,4 +5,4 @@
 			    (ns-transparent-titlebar . t))) 
 
 ; Force lsp-mode to use plists for performance
-(setenv "LSP_USE_PLISTS" "true")
+; (setenv "LSP_USE_PLISTS" "true")

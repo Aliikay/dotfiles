@@ -200,6 +200,7 @@
     };
 
     pkgs = import nixpkgs {system = "x86_64-linux";};
+    pkgs-unstable = import nixpkgs-unstable {system = "x86_64-linux";};
   in {
     #, hyprland, ... }: {
     nixosConfigurations.alikay = generic-system;
@@ -207,7 +208,10 @@
     # Apps (runnable with nix run)
     apps.x86_64-linux.emacs = {
       type = "app";
-      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {inputs = inputs;}}/bin/emacs";
+      program = "${pkgs.callPackage ./nixos/modules/emacs-package.nix {
+        inputs = inputs;
+        pkgs-unstable = pkgs-unstable;
+      }}/bin/emacs";
       meta.description = "My personal emacs configuration";
     };
 

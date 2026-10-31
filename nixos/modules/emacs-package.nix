@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  pkgs-unstable,
   inputs,
   #stdenv,
   #emacs-pgtk,
@@ -55,7 +56,7 @@ in (emacsWithPackagesFromUsePackage {
   # This can also include extra executables to be run by Emacs (linters,
   # language servers, formatters, etc)
   extraEmacsPackages = epkgs:
-    with pkgs; [
+    with pkgs-unstable; [
       # epkgs.cask
       # pkgs.shellcheck
 
@@ -65,7 +66,7 @@ in (emacsWithPackagesFromUsePackage {
       nerd-fonts.space-mono
 
       # LSP Booster
-      emacs-lsp-booster
+      # emacs-lsp-booster
 
       discount # Markdown support
 

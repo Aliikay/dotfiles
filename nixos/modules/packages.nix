@@ -100,6 +100,7 @@
 
     (pkgs.callPackage ./emacs-package.nix {
       inputs = inputs;
+      pkgs-unstable = pkgs-unstable;
       useDefaultConfig = false;
     })
 
