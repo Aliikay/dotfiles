@@ -80,20 +80,20 @@ in (emacsWithPackagesFromUsePackage {
       # emacs-lsp-booster
 
       # LSP Servers
-      nixd # nix
-      typescript-language-server # JS and Typescript
-      cargo # Rust
-      rust-analyzer # Rust
-      rustfmt
-      tailwindcss-language-server # CSS
-      vscode-langservers-extracted # HTML, CSS, JSON, esLint
-      omnisharp-roslyn # CSharp
-      bash-language-server # Bash
+      # nixd # nix
+      # typescript-language-server # JS and Typescript
+      # cargo # Rust
+      # rust-analyzer # Rust
+      # rustfmt
+      # tailwindcss-language-server # CSS
+      # vscode-langservers-extracted # HTML, CSS, JSON, esLint
+      # omnisharp-roslyn # CSharp
+      # bash-language-server # Bash
 
-      # Other dependancies & libraries
-      openssl.dev
-      udev
-      alsa-lib-with-plugins
+      # # Other dependancies & libraries
+      # openssl.dev
+      # udev
+      # alsa-lib-with-plugins
 
       # Treesitter support
       (epkgs.treesit-grammars.with-grammars (
