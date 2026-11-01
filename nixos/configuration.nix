@@ -105,8 +105,9 @@ in {
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Edmonton";
+  # time.timeZone = "America/Edmonton";
   # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "America/Guatemala";
   # services.localtimed.enable = true;
 
   # Select internationalisation properties.
