@@ -82,7 +82,12 @@
 
 ; Make scripts executable automatically
 (add-hook 'after-save-hook
-  'executable-make-buffer-file-executable-if-script-p)
+	  'executable-make-buffer-file-executable-if-script-p)
+
+; Direnv Integration
+; Must be early in the file so that it is at the *start* of the init hooks: this makes it run first (and ensures dependancies are in the environment when lsp-mode and others are started)
+(use-package envrc
+  :hook (after-init . envrc-global-mode))
 
 ; Dired setup
 (setq
@@ -91,10 +96,6 @@
  dired-do-revert-buffer t)
 (add-hook 'dired-mode-hook
  (lambda ()
-  (define-key dired-mode-map (kbd "C-<left>")
-	      (lambda () (interactive) (find-alternate-file ".."))) ; Allow using control-left to move up a folder
-   (define-key dired-mode-map (kbd "C-<right>")
-	      (lambda () (interactive) (dired-find-file)))
   (define-key dired-mode-map [mouse-2] 'dired-mouse-find-file) ; Don't open folders in new windows when clicking in dired
  ))
 
@@ -259,8 +260,13 @@
   ;; open large directory (over 20000 files) asynchronously with `fd' command
   (setq dirvish-large-directory-threshold 20000)
   (setq dired-mouse-drag-files t)
-  (setq mouse-drag-and-drop-region-cross-program t))
+  (setq mouse-drag-and-drop-region-cross-program t)
 
+  :bind (
+	 :map dirvish-mode-map
+	      ("<left>"  . dired-up-directory)
+	      ("<right>" . dired-find-file)))
+  
 ; Beacon
 (use-package beacon
   :init (beacon-mode 1)
@@ -328,11 +334,6 @@
   (setq dashboard-projects-backend 'projectile)
   (setq dashboard-center-content t)
   (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard"))
-
-; Direnv Integration
-; Must be last in the file so that it is at the *end* of the init hooks: this makes it run first (and ensures stuff like lsp-mode is in the environment when it starts up)
-(use-package envrc
-  :hook (after-init . envrc-global-mode))
 
 ; Configure lsp-booster (copied from https://github.com/blahgeek/emacs-lsp-booster)
 ;; (defun lsp-booster--advice-json-parse (old-fn &rest args)
