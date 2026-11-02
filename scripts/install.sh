@@ -15,13 +15,13 @@ nix.settings.experimental-features = [ \"nix-command\" \"flakes\" ];
 services.thermald.enable = true;
 "
 read -p "Press enter to continue"
-nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
+nix --experimental-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
 
 echo "Please transfer any LUKS encryption stuff from the generated configuration.nix to the new one. First the generated config file will open, and then the new one will be opened."
 read -p "Press enter to open the generated configuration.nix"
-nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
+nix --experimental-features "nix-command flakes" run ~/dotfiles#emacs -- /etc/nixos/configuration.nix
 read -p "Press enter to open the new configuration.nix"
-nix --experiemtal-features "nix-command flakes" run ~/dotfiles#emacs -- ~/dotfiles/nixos/configuration.nix
+nix --experimental-features "nix-command flakes" run ~/dotfiles#emacs -- ~/dotfiles/nixos/configuration.nix
 
 echo "Copy the current hardware config to the dotfiles"
 rm ~/dotfiles/nixos/hardware-configuration.nix

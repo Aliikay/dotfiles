@@ -262,7 +262,7 @@
   (setq dired-mouse-drag-files t)
   (setq mouse-drag-and-drop-region-cross-program t)
 
-  :bind (
+  :bind (("C-c e" . dirvish-side)
 	 :map dirvish-mode-map
 	      ("<left>"  . dired-up-directory)
 	      ("<right>" . dired-find-file)))
