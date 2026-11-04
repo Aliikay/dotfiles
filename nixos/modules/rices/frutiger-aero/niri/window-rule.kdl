@@ -203,6 +203,14 @@ window-rule {
     block-out-from "screencast"
 }
 
+// Open Steam Games on the main monitor and fullscreen
+window-rule {
+    match app-id=r#"steam_app_.*"#
+
+    open-fullscreen true
+    open-on-output "DP-5"
+}
+
 // Hide notifications from screencasts
 layer-rule {
     match namespace="swaync-notification-window"
