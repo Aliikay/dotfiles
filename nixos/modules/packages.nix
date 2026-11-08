@@ -309,7 +309,7 @@
     valent
     vesktop
     vlc
-    vscode.fhs
+    pkgs-unstable.vscode.fhs
     #video-trimmer
     wineWow64Packages.stable
     #warp

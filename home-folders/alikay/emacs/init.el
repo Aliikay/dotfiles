@@ -155,8 +155,8 @@
 (use-package nix-ts-mode ; Major mode for editing .nix files
   :mode "\\.nix\\'")
 
-(use-package kdl-mode ; Major mode for editing .kdl files
-  :mode "\\.kdl\\'")
+;(use-package kdl-mode ; Major mode for editing .kdl files
+;  :mode "\\.kdl\\'")
 
 (use-package rust-ts-mode
   :mode "\\.rs\\'")

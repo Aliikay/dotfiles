@@ -291,7 +291,12 @@ binds {
 
     // Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel" "--terminal=alacritty -e"; }
     Mod+Space hotkey-overlay-title="Run an Application" { spawn "~/dotfiles/scripts/toggle-launcher.sh"; }
+    
+    // Mod pass-through=false { // Disabled until next release
+    // 	press { spawn "~/dotfiles/scripts/toggle-launcher.sh"; }
+    // }
     // Mod+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    
     Mod+L hotkey-overlay-title="Lock the Screen" { spawn "bash" "-c" "wlogout"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.

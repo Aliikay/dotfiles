@@ -3,8 +3,6 @@
   pkgs,
   pkgs-unstable,
   inputs,
-  #stdenv,
-  #emacs-pgtk,
   useDefaultConfig ? true,
   ...
 }: let
@@ -32,7 +30,7 @@ in (emacsWithPackagesFromUsePackage {
   defaultInitFile = useDefaultConfig;
 
   # Package is optional, defaults to pkgs.emacs
-  package = pkgs.emacs-pgtk;
+  package = pkgs-unstable.emacs-pgtk;
 
   # By default emacsWithPackagesFromUsePackage will only pull in
   # packages with `:ensure`, `:ensure t` or `:ensure <package name>`.
@@ -56,7 +54,7 @@ in (emacsWithPackagesFromUsePackage {
   # This can also include extra executables to be run by Emacs (linters,
   # language servers, formatters, etc)
   extraEmacsPackages = epkgs:
-    with pkgs; [
+    with pkgs-unstable; [
       # epkgs.cask
       # pkgs.shellcheck
 
