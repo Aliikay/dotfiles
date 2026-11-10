@@ -589,7 +589,18 @@ in {
       google-fonts
       maple-mono.truetype
     ]
-    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); # include all nerdfonts! maybe i can trim this down later
+    ++ (with pkgs.nerd-fonts; [
+      space-mono
+      noto
+      iosevka
+      agave
+      zed-mono
+      mononoki
+      fira-code
+      fira-mono
+      inconsolata
+    ]);
+  #++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts); # include all nerdfonts! maybe i can trim this down later
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
