@@ -203,9 +203,10 @@ window-rule {
     block-out-from "screencast"
 }
 
-// Open Steam Games on the main monitor and fullscreen
+// Open games on the main monitor and fullscreen
 window-rule {
     match app-id=r#"steam_app_.*"#
+    //match app-id="com.mojang.minecraft"
 
     open-fullscreen true
     open-on-output "DP-5"
