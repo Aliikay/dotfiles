@@ -66,7 +66,7 @@
     brightnessctl
     #bustle
     #cava
-    calibre # eReader library manager
+    #calibre # eReader library manager
     #cavalier
     cartero
     constrict
