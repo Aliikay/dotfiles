@@ -61,7 +61,7 @@
     #boxbuddy
     btop-rocm
     #blackbox-terminal
-    bibata-cursors
+    #bibata-cursors
     #blender
     brightnessctl
     #bustle
@@ -75,7 +75,7 @@
     #celluloid
     #cartridges
     collision
-    ckan # KSP Mod Manager
+    #ckan # KSP Mod Manager
     #cartero
     commit
     #cubiomes-viewer
@@ -94,7 +94,7 @@
     #dialect
     distrobox
     distroshelf
-    dust
+    #dust
     dysk
     #enter-tex
 
@@ -104,7 +104,7 @@
       useDefaultConfig = false;
     })
 
-    exhibit
+    #exhibit
     eloquent
     euphonica
     clinfo
@@ -145,7 +145,7 @@
     totem
     nautilus
     nautilus-python
-    gnome-software
+    #gnome-software
     gnome-tweaks
     #gnome-sound-recorder
     #gnome-maps
@@ -200,7 +200,8 @@
     lutris
     mangohud
     #mangojuice # mangohud is declarative so this doesnt work
-    macchina
+    #macchina
+    meld
     #marker
     #metronome
     # micro
