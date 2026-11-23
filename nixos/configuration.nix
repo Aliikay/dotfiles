@@ -588,6 +588,7 @@ in {
       vista-fonts
       google-fonts
       maple-mono.truetype
+      helvetica-neue-lt-std
     ]
     ++ (with pkgs.nerd-fonts; [
       space-mono
