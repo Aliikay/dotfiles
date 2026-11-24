@@ -212,6 +212,12 @@ window-rule {
     open-on-output "DP-5"
 }
 
+// Open mpv sorter windows as floating
+window-rule {
+    match app-id="song_sorter_mpv"
+    open-floating true
+}
+
 // Hide notifications from screencasts
 layer-rule {
     match namespace="swaync-notification-window"
