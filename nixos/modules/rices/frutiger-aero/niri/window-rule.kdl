@@ -216,6 +216,9 @@ window-rule {
 window-rule {
     match app-id="song_sorter_mpv"
     open-floating true
+
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 1200; }
 }
 
 // Hide notifications from screencasts
